@@ -1,0 +1,3 @@
+[submodule "src/pages"]
+	path = src/pages
+	url = https://github.com/lih/WiQEE-pages.git

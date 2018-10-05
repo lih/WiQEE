@@ -1,0 +1,11 @@
+#!/bin/bash
+echo
+echo --- ; capricon prelude <<< "version \"capricon-version: %s\n\" printf" 
+printf "pandoc-version: "; pandoc --version | head -1 | cut -d' ' -f2 
+echo --- 
+echo
+for i in "$PAGES_ROOT"/*.md; do
+    i=${i#"$PAGES_ROOT/"}; i=${i%.md}
+    printf "[:%s]: %s.html\n" $i $i
+done
+echo
