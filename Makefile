@@ -24,7 +24,7 @@ $(CACHE_ROOT):  ; mkdir -p $@
 .PRECIOUS: $(CACHE_ROOT)/%.mdc
 
 $(CACHE_ROOT)/%.mdc: $(PAGES_ROOT)/%.md | $(CACHE_ROOT)
-	( cd $(PAGES_ROOT) && capricon prelude <<< "'$* open exec" ) > $@
+	( cd $(PAGES_ROOT) >/dev/null && capricon prelude <<< "'$* open exec" ) > $@
 
 $(CACHE_ROOT)/common.mdi: scripts/gencommon | $(CACHE_ROOT)
 	$< > $@
