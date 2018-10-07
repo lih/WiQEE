@@ -1,3 +1,4 @@
+WD := $(shell echo $$PWD)
 PAGES_ROOT := src/pages
 CSS_ROOT := src/css
 TEMPLATE_ROOT := src/template
@@ -15,6 +16,8 @@ TARGETS := $(PUBLIC_ROOT)/style.css \
 export PAGES_ROOT STATIC_ROOT CACHE_ROOT PUBLIC_ROOT
 
 all: $(TARGETS)
+sync: all
+	rsync -aP public/ wiqee:wiqee
 clean:
 	rm -rf $(TARGETS) $(CACHE_ROOT)
 
@@ -30,7 +33,7 @@ $(CACHE_ROOT)/common.mdi: scripts/gencommon | $(CACHE_ROOT)
 	$< > $@
 
 $(PUBLIC_ROOT)/%.html: $(CACHE_ROOT)/%.mdc $(TEMPLATE_ROOT)/header.html $(CACHE_ROOT)/common.mdi $(TEMPLATE_ROOT)/template.html | $(PUBLIC_ROOT)
-	pandoc -s -V module:$* -H $(TEMPLATE_ROOT)/header.html --toc --template=$(PWD)/$(TEMPLATE_ROOT)/template.html -f markdown -t html --css style.css $< $(CACHE_ROOT)/common.mdi > $@
+	pandoc -s -V module:$* -H $(WD)/$(TEMPLATE_ROOT)/header.html --toc --template=$(WD)/$(TEMPLATE_ROOT)/template.html -f markdown -t html --css style.css $< $(CACHE_ROOT)/common.mdi > $@
 
 $(PUBLIC_ROOT)/%.css: $(CSS_ROOT)/%.scss | $(PUBLIC_ROOT)
 	sassc < $^ > $@
