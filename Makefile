@@ -29,8 +29,8 @@ $(CACHE_ROOT):  ; mkdir -p $@
 $(CACHE_ROOT)/%.mdc: $(PAGES_ROOT)/%.md | $(CACHE_ROOT)
 	( cd $(PAGES_ROOT) >/dev/null && capricon prelude <<< "'$* open exec" ) > $@
 
-$(CACHE_ROOT)/common.mdi: scripts/gencommon | $(CACHE_ROOT)
-	$< > $@
+$(CACHE_ROOT)/common.mdi: scripts/gencommon $(STATIC_ROOT)/noise.png $(STATIC_ROOT)/steps.png $(PAGES_ROOT)/prelude | $(CACHE_ROOT)
+	$^ > $@
 
 $(PUBLIC_ROOT)/%.html: $(CACHE_ROOT)/%.mdc $(TEMPLATE_ROOT)/header.html $(CACHE_ROOT)/common.mdi $(TEMPLATE_ROOT)/template.html | $(PUBLIC_ROOT)
 	pandoc -s -V module:$* -H $(WD)/$(TEMPLATE_ROOT)/header.html --toc --template=$(WD)/$(TEMPLATE_ROOT)/template.html -f markdown -t html --css style.css $< $(CACHE_ROOT)/common.mdi > $@
@@ -39,6 +39,8 @@ $(PUBLIC_ROOT)/%.css: $(CSS_ROOT)/%.scss | $(PUBLIC_ROOT)
 	sassc < $^ > $@
 
 $(PUBLIC_ROOT)/%.png: $(STATIC_ROOT)/%.png | $(PUBLIC_ROOT)
+	cp $< $@
+$(PUBLIC_ROOT)/%.js: $(STATIC_ROOT)/%.js | $(PUBLIC_ROOT)
 	cp $< $@
 $(PUBLIC_ROOT)/%.jpg: $(STATIC_ROOT)/%.jpg | $(PUBLIC_ROOT)
 	cp $< $@

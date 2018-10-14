@@ -79,22 +79,19 @@ a {
 	    display: block;
 
 	    .capricon {
-		height: 8em;
+		height: 6em;
 		overflow: auto;
+		margin-bottom: 0;
+	    }
+	    .capricon-output { margin: 0; padding: 0; }
+	    .capricon-input { background: rgba(0,0,0,0); font-family: mono; width: 80%; }
+	    .user-input * {
+		height: 100%;
+		display: inline-block;
 	    }
 	}
     }
     & + .capricon-hidestache {
-	&::before {
-	    content: "";
-	    width: 0.5em; height: 0.5em; display: inline-block;
-	    position: relative; bottom: 0.3em;
-	    background: url(steps.png);
-	    background-size: 100% 100%;
-	    background-repeat: none;
-	    padding: 0.2em;
-	    border: 1px solid rgba(255,255,255,0);
-	}
 	&:hover::before {
 	    background-color: lighten($secondary-background,40%);
 	    border: 1px solid black;
@@ -227,14 +224,6 @@ nav.nav {
     padding: 0 0 0 1em;
     border-left: 2px outset darken($background,80%);
     border-right: 2px outset darken($background,80%);
-    &::after {
-	content: "";
-	position: absolute;
-	left: 0; top: 0; bottom: 0; right: 0;
-	background-image: url(noise.png);
-	opacity: 0.6;
-	z-index: -1;
-    }
 }
 
 #content {
