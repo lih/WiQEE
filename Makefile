@@ -16,6 +16,7 @@ TARGETS := $(PUBLIC_ROOT)/style.css \
 export PAGES_ROOT STATIC_ROOT CACHE_ROOT PUBLIC_ROOT
 
 all: $(TARGETS)
+
 sync: all
 	rsync -aP public/ wiqee:wiqee
 clean:
@@ -26,8 +27,15 @@ $(CACHE_ROOT):  ; mkdir -p $@
 
 .PRECIOUS: $(CACHE_ROOT)/%.mdc
 
+ifdef LOCAL_HS_SOURCE
+$(LOCAL_HS_SOURCE)/exe/WiQEE.js: $(LOCAL_HS_SOURCE)/exe/WiQEE.hs
+	cd $(LOCAL_HS_SOURCE) && haste-cabal install
+$(STATIC_ROOT)/WiQEE.js: $(LOCAL_HS_SOURCE)/exe/WiQEE.js
+	cp $< $@
+endif
+
 $(CACHE_ROOT)/%.mdc: $(PAGES_ROOT)/%.md | $(CACHE_ROOT)
-	( cd $(PAGES_ROOT) >/dev/null && capricon prelude <<< "'$* open exec" ) > $@
+	( cd $(PAGES_ROOT) >/dev/null && capricon prelude <<< "'$* source exec" ) > $@
 
 $(CACHE_ROOT)/common.mdi: scripts/gencommon $(STATIC_ROOT)/noise.png $(STATIC_ROOT)/steps.png $(PAGES_ROOT)/prelude | $(CACHE_ROOT)
 	$^ > $@
