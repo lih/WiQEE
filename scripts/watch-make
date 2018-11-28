@@ -1,0 +1,10 @@
+#!/bin/bash
+(
+    inotifywait -r -m src/ local/exe/ -e close_write &
+    trap "kill $!" EXIT
+    cat
+)   | grep --line-buffered '\(\.\(hs\|md\|html\|scss\)\|^\)$' \
+    | while read line; do
+    printf '\033[1m%s\033[m\n' "$line"
+    make LOCAL_HS_SOURCE=local sync 2>&1 | tee .log
+done

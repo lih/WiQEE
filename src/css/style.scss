@@ -29,6 +29,17 @@ $capricon-stache-border: lighten($highlight-secondary,25%);
 
 $break-wide: 1280px;
 
+$base-font-size: 112.5; // Is used as %
+$line-height: 1.5; // = 27px
+
+$base: 16 * ($base-font-size / 100);
+$leading: $base * $line-height;
+
+@mixin margin-bottom($number){
+  margin-bottom: #{$number * $leading + 'px'};
+  margin-bottom: #{$number * $line-height + 'rem'};
+}
+
 button {
     padding: 0.2em 0.5em;
     font-weight: bold;
@@ -45,17 +56,9 @@ button {
     }
 }
 
-h1 { text-align: center; margin-bottom: 1.2em; }
 h2 { width: 95%; } h3 { width: 90%; }
 h1, h2, h3 {
-    line-height: 1.2;
     border-bottom: 0.08em solid rgba($horiz-line,0.5);
-}
-h2 {
-    margin-bottom: 0px;
-}
-h5 {
-    margin-top: 0.1em;
 }
 
 hr {
@@ -260,7 +263,7 @@ nav.nav {
 }    
 #nav-head, #page-source { a { color: $nav-link-secondary; } }
 
-#content-scroll {
+#content-frame {
     position: relative;
     height: calc(100% - 2.25em - 2px); 
     padding: 0 0 0 1em;
@@ -268,12 +271,17 @@ nav.nav {
     border-right: 2px outset $content-border;
 }
 
-#content {
+#content-scroll {
     height: 100%; 
     overflow: auto;
-    padding: 0 1em 0 1em;
+    &:active, &:focus { outline: none; }
 }
-#content, #content-scroll { overflow-x: visible; }
+#content {
+    padding: 0 1em 5em 1em;
+    min-height: calc(100% - 6em);
+    position: relative;
+}
+#content-scroll, #content-frame { overflow-x: visible; }
 
 #capricon-console {
     .capricon-steps {
@@ -311,7 +319,7 @@ nav.nav {
     }
 }
 
-.footer {
+#footer {
     &::before {
 	content: "";
 	display: block; width: 90%; margin: auto;
@@ -319,7 +327,7 @@ nav.nav {
     }
     text-align: center;
     font-size: small;
-    margin-top: 10em;
+    position: absolute; bottom: 0; width: 80%; margin-left: 8%;
 }
 
 

@@ -16,9 +16,12 @@ TARGETS := $(PUBLIC_ROOT)/style.css \
 export PAGES_ROOT STATIC_ROOT CACHE_ROOT PUBLIC_ROOT
 
 all: $(TARGETS)
+	scripts/run-hook on-success
 
 sync: all
 	rsync -aP public/ wiqee:wiqee
+watch:
+	scripts/watch-make
 clean:
 	rm -rf $(TARGETS) $(CACHE_ROOT)
 
@@ -28,9 +31,10 @@ $(CACHE_ROOT):  ; mkdir -p $@
 .PRECIOUS: $(CACHE_ROOT)/%.mdc
 
 ifdef LOCAL_HS_SOURCE
-$(LOCAL_HS_SOURCE)/exe/WiQEE.js: $(LOCAL_HS_SOURCE)/exe/WiQEE.hs
-	cd $(LOCAL_HS_SOURCE) && haste-cabal install
-$(STATIC_ROOT)/WiQEE.js: $(LOCAL_HS_SOURCE)/exe/WiQEE.js
+$(LOCAL_HS_SOURCE)/dist/build/WiQEE.js/WiQEE.js: $(LOCAL_HS_SOURCE)/exe/WiQEE.hs
+	-haste-pkg unregister capricon
+	cd $(LOCAL_HS_SOURCE) && rm -rf dist && haste-cabal install
+$(STATIC_ROOT)/WiQEE.js: $(LOCAL_HS_SOURCE)/dist/build/WiQEE.js/WiQEE.js
 	cp $< $@
 endif
 
@@ -41,7 +45,7 @@ $(CACHE_ROOT)/common.mdi: scripts/gencommon $(STATIC_ROOT)/noise.png $(STATIC_RO
 	$^ > $@
 
 $(PUBLIC_ROOT)/%.html: $(CACHE_ROOT)/%.mdc $(TEMPLATE_ROOT)/header.html $(CACHE_ROOT)/common.mdi $(TEMPLATE_ROOT)/template.html | $(PUBLIC_ROOT)
-	pandoc -s -V module:$* -H $(WD)/$(TEMPLATE_ROOT)/header.html --toc --template=$(WD)/$(TEMPLATE_ROOT)/template.html -f markdown -t html --css style.css $< $(CACHE_ROOT)/common.mdi > $@
+	pandoc -s --mathml -V module:$* -H $(WD)/$(TEMPLATE_ROOT)/header.html --toc --template=$(WD)/$(TEMPLATE_ROOT)/template.html -f markdown -t html --css style.css $< $(CACHE_ROOT)/common.mdi > $@
 
 $(PUBLIC_ROOT)/%.css: $(CSS_ROOT)/%.scss | $(PUBLIC_ROOT)
 	sassc < $^ > $@
