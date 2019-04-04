@@ -103,7 +103,7 @@ $line-height: 1.5;
     margin: auto;
     
     p { @extend .ground-dark-7; background: none; }
-    h1 { font-size: 200%; line-height: $line-height * 1em; margin: 0; padding: ($line-height * 1em); }
+    h1 { font-size: 200%; line-height: $line-height * 1em; margin: 0; padding: ($line-height * 0.5em); }
     p { padding: 0; margin: 0 ($line-height * 1em); text-indent: 2 * $line-height * 1em; }
     pre, code {
 	margin: $line-height * 1em;
