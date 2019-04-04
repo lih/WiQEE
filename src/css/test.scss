@@ -96,6 +96,8 @@ $line-height: 1.5;
     font-size: 130%;
     line-height: $line-height * 1em;
     @extend .ground-dark-7.shiny;
+    max-width: $line-height * 50em;
+    margin: auto;
     
     p { @extend .ground-dark-7; max-width: $line-height * 60em; }
     h1 { font-size: 200%; margin: 0; padding: ($line-height * 1em); }
