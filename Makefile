@@ -65,6 +65,9 @@ $(PUBLIC_ROOT)/theme-test.html: $(STATIC_ROOT)/theme-test.html
 $(PUBLIC_ROOT)/%.css: $(CSS_ROOT)/%.scss $(wildcard $(CSS_ROOT)/_*.scss) | $(PUBLIC_ROOT)
 	"$(SASSC)" -I$(CSS_ROOT) $< $@
 
+$(PUBLIC_ROOT)/mathjax: $(STATIC_ROOT)/mathjax | $(PUBLIC_ROOT)
+	cp -Ta $< $@
+
 $(PUBLIC_ROOT)/%.png: $(STATIC_ROOT)/%.png | $(PUBLIC_ROOT)
 	cp $< $@
 $(PUBLIC_ROOT)/%.js: $(STATIC_ROOT)/%.js | $(PUBLIC_ROOT)
