@@ -1169,6 +1169,9 @@
   font-size: 130%;
   line-height: 1.5em;
 }
+.content-dark h1 {
+  margin: 0 1.5em 3em;
+}
 .content-dark p {
   margin: 0 1.5em;
   text-indent: 3em;
