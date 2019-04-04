@@ -65,6 +65,13 @@ a:active, a:focus {
   background: rgba(255, 255, 255, 0.2);
 }
 
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: #6e655e;
+}
+h1:active, h1:focus, h2:active, h2:focus, h3:active, h3:focus, h4:active, h4:focus, h5:active, h5:focus, h6:active, h6:focus {
+  padding: 0;
+}
+
 button {
   padding: 0 0.5em;
   font-weight: bold;
