@@ -91,8 +91,11 @@ $line-height: 1.5em;
 
 .content-dark {
     line-height: $line-height;
-    &, p { @extend .ground-dark-12; }
-    pre, code { @extend .ground-dark-9; }
+    &, p { @extend .ground-dark-10; }
+    pre, code { @extend .ground-dark-7; }
+    pre {
+	
+    }
 }
 
 
