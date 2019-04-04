@@ -46,11 +46,11 @@
   background-image: linear-gradient(#ffc6b6, #ffbaa7 20%, #ffbaa7, #ffbaa7 20%, #ffae98);
 }
 
-.ground-dark-4 {
+.ground-dark-4, .content-dark pre, .content-dark code {
   color: #edc2c2;
   background-color: #4f1200;
 }
-.ground-dark-4.shiny {
+.ground-dark-4.shiny, .content-dark pre.shiny, .content-dark code.shiny {
   background-image: linear-gradient(#5e1600, #4f1200 20%, #4f1200, #4f1200 20%, #400f00);
 }
 
@@ -94,11 +94,11 @@
   background-image: linear-gradient(#ffddd1, #ffd1c2 20%, #ffd1c2, #ffd1c2 20%, #ffc6b3);
 }
 
-.ground-dark-7, .content-dark pre, .content-dark code {
+.ground-dark-7, .content-dark, .content-dark p {
   color: #f1d9d9;
   background-color: #340e00;
 }
-.ground-dark-7.shiny, .content-dark pre.shiny, .content-dark code.shiny {
+.ground-dark-7.shiny, .shiny.content-dark, .content-dark p.shiny {
   background-image: linear-gradient(#441200, #340e00 20%, #340e00, #340e00 20%, #250a00);
 }
 
@@ -142,11 +142,11 @@
   background-image: linear-gradient(#fff1ec, #ffe7dd 20%, #ffe7dd, #ffe7dd 20%, #ffdccd);
 }
 
-.ground-dark-10, .content-dark, .content-dark p {
+.ground-dark-10 {
   color: #f8eeee;
   background-color: #1a0800;
 }
-.ground-dark-10.shiny, .shiny.content-dark, .content-dark p.shiny {
+.ground-dark-10.shiny {
   background-image: linear-gradient(#290c00, #1a0800 20%, #1a0800, #1a0800 20%, #0a0300);
 }
 
