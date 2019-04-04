@@ -66,7 +66,8 @@ a:active, a:focus {
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  color: #6e655e;
+  color: #1c1917;
+  text-decoration: none;
 }
 h1:active, h1:focus, h2:active, h2:focus, h3:active, h3:focus, h4:active, h4:focus, h5:active, h5:focus, h6:active, h6:focus {
   padding: 0;
