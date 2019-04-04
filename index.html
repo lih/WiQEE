@@ -91,7 +91,7 @@ Such code is executed, and its output is added to the document.
 <p>If you feel hesitant about trusting a bunch of Haskell functions written by a stranger on the Internet, don't hesitate to start hijacking bits of it to write CaPriCon interepreters of your own, in your language of choice. Mine just happens to be Haskell, but maybe yours will bring something new and interesting to the table as well.</p>
 <h1 id="contributing-to-wiqee-or-creating-your-own"><a href="#contributing-to-wiqee-or-creating-your-own">Contributing to WiQEE, or creating your own</a></h1>
 <p>It goes without saying that I encourage you to contribute to WiQEE in any way you'd like. You may find the project template for this site <a href="https://github.com/lih/WiQEE">in this Git repository</a>, and the source for the actual pages in this <a href="https://github.com/lih/WiQEE-pages">other Git repository</a>.</p>
-<p>If you want to contribute to this specific site, you can use the power of Pull Requests on the WiQEE-pages repository (the second one).</p>
+<p>If you want to contribute to this specific site, you can use the power of Pull Requests on the WiQEE-pages repository (the second one). I can't promise an immediate reply, but I'm working on automating the builds to allow every contributor to have their own sub-hierarchy, without needing my validation.</p>
 <p>If like me you lack that sort of patience, you can also test your pages by running your own version of this site (how exciting !). To do so, you have to clone the first repository, apply your modifications in the <code>src/pages</code> subdirectory, and run <code>make</code> over the whole thing. You'll need Pandoc and Sass to be installed, for Markdown and SCSS processing, as well as CaPriCon for obvious reasons. Once <code>make</code> has run its course, you should find a workable HTML version of your WiQEE in the <code>public</code> subdirectory.</p>
 <h1 id="example-pages"><a href="#example-pages">Example pages</a></h1>
 <p>The basics :</p>
@@ -103,7 +103,7 @@ Such code is executed, and its output is added to the document.
 <li><a href="Relations.html">Relations</a></li>
 </ul>
 <div id="footer">
-  Page generated on Thursday, April 04 of 2019, at 03:41 AM UTC, using capricon-0.12.1 and pandoc-1.12.2.1.
+  Page generated on Thursday, April 04 of 2019, at 03:45 AM UTC, using capricon-0.12.1 and pandoc-1.12.2.1.
 </div>
 </div></div></div>
 <div id="capricon-prelude" style="display: none;">'nop { { } } def 'get { nop nop lookup } def 'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys { { 1 dupn 1 dupn get def } each pop } def 'import { dup dict-keys import-keys } def [ dict term-index construction query context io list arith string ] { import } each 'printf { format print pop } def 'show { &quot;%v\n&quot; printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def 'mustache. { show } def 'tex { 'mustache. { &quot;<span class="math">\(%l\)</span>\n&quot; printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { &quot;

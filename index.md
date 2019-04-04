@@ -150,7 +150,10 @@ source for the actual pages in this [other Git
 repository](https://github.com/lih/WiQEE-pages).
 
 If you want to contribute to this specific site, you can use the power
-of Pull Requests on the WiQEE-pages repository (the second one). 
+of Pull Requests on the WiQEE-pages repository (the second one). I
+can't promise an immediate reply, but I'm working on automating the
+builds to allow every contributor to have their own sub-hierarchy,
+without needing my validation.
 
 If like me you lack that sort of patience, you can also test your
 pages by running your own version of this site (how exciting !). To do
