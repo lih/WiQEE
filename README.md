@@ -31,5 +31,5 @@ Happy hacking !
 
 [sassc]: https://github.com/sass/sassc
 [pandoc]: https://pandoc.org/
-[capricon]: https://github.com/lih/stack-libs/releases
+[capricon]: https://github.com/lih/BHR/releases
 [wiqee]: https://wiqee.curly-lang.org

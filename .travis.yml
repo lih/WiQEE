@@ -1,0 +1,37 @@
+# Use new container infrastructure to enable caching
+sudo: false
+
+# Do not choose a language; we provide our own build tools.
+language: generic
+
+# Caching so the next build will be fast too.
+cache:
+  directories: []
+
+# If you need to have different apt packages for each combination in the
+# matrix, you can use a line such as:
+#     addons: {apt: {packages: [libfcgi-dev,libgmp-dev]}}
+matrix:
+  include:
+  - compiler: "CaPriCon Pages"
+    addons: {apt: {packages: [ruby-sass,pandoc]}}
+
+install:
+- . scripts/ci/inline/install
+
+script:
+- make
+
+branches:
+  only:
+  - master
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_API_KEY  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  local_dir: public
+  on:
+    branch: master
+

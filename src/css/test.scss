@@ -1,0 +1,92 @@
+@function adjust-hues($color,$x) {
+    @return (nth($color,1),
+	     hsl(hue(nth($color,2)) + $x, saturation(nth($color,2)), lightness(nth($color,2))),
+	     nth($color,3));
+}
+@function rate($n) {
+    @return ($n * 3.5 + 55) * 1%;
+}
+@function ground-dark($n,$color) {
+    $rate: rate($n);
+    $bg: darken(mix(nth($color,1),nth($color,2),$rate / 3),$rate / 2);
+    $fg: lighten(mix(nth($color,3),nth($color,2),$rate / 3),$rate / 2);
+    @return ($fg,$bg);
+}
+@function ground-light($n,$color) {
+    $rate: rate($n);
+    $bg: lighten(mix(nth($color,1),nth($color,2),$rate / 3),$rate / 2);
+    $fg: darken(mix(nth($color,3),nth($color,2),$rate / 3),$rate / 2);
+    @return ($fg,$bg);
+}
+
+@mixin colors($ground) {
+    color: nth($ground,1);
+    background-color: nth($ground,2);
+}
+@mixin shiny-colors($gnd) {
+    color: nth($gnd,1);
+    $bg: nth($gnd,2);
+    background-image: linear-gradient(lighten($bg,3%),
+				      $bg 20%,
+				      $bg,
+				      $bg 20%,darken($bg,3%));
+}
+
+$primary: ( hsl(60,100%,50%), hsl(0,100%,50%), hsl(180,100%,50%) );
+$line-height: 1.5em;
+
+.showDiv { display: inline-block; width: 200px; height: 2 * $line-height; text-align: center; padding-top: $line-height - 0.5em; }
+.nestingDolls div { display: block; padding: 2em; border: 1px solid; border-radius: 5px; }
+
+
+$color: $primary;
+
+
+@for $i from 1 through 12 {
+    .ground-dark-#{$i} {
+	@include shiny-colors(ground-dark($i,$color));
+    }
+    .ground-light-#{$i} {
+	@include shiny-colors(ground-light($i,$color));
+    }
+}
+
+@for $i from 1 through 12 {
+    .ground-r-dark-#{$i} {
+	@include shiny-colors(ground-dark($i,adjust-hues($color,180)));
+    }
+    .ground-r-light-#{$i} {
+	@include shiny-colors(ground-light($i,adjust-hues($color,180)));
+    }
+}
+
+@for $i from 1 through 12 {
+    .ground-tr1-dark-#{$i} {
+	@include shiny-colors(ground-dark($i,adjust-hues($color,120)));
+    }
+    .ground-tr2-dark-#{$i} {
+	@include shiny-colors(ground-dark($i,adjust-hues($color,240)));
+    }
+    .ground-tr1-light-#{$i} {
+	@include shiny-colors(ground-light($i,adjust-hues($color,120)));
+    }
+    .ground-tr2-light-#{$i} {
+	@include shiny-colors(ground-light($i,adjust-hues($color,240)));
+    }
+}
+
+@for $i from 1 through 12 {
+    .ground-t1-dark-#{$i} {
+	@include shiny-colors(ground-dark($i,adjust-hues($color,90)));
+    }
+    .ground-t3-dark-#{$i} {
+	@include shiny-colors(ground-dark($i,adjust-hues($color,270)));
+    }
+    .ground-t1-light-#{$i} {
+	@include shiny-colors(ground-light($i,adjust-hues($color,90)));
+    }
+    .ground-t3-light-#{$i} {
+	@include shiny-colors(ground-light($i,adjust-hues($color,270)));
+    }
+}
+

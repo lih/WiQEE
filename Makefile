@@ -5,13 +5,15 @@ TEMPLATE_ROOT := src/template
 CACHE_ROOT := cache
 STATIC_ROOT := static
 PUBLIC_ROOT := public
+SASSC := $(shell which sassc || which scss 2>/dev/null)
 
 SRC := $(wildcard $(PAGES_ROOT)/*.md)
 STATIC_SRC := $(wildcard $(STATIC_ROOT)/*)
-TARGETS := $(PUBLIC_ROOT)/style.css \
+TARGETS := $(PUBLIC_ROOT)/style.css $(PUBLIC_ROOT)/test.css \
   $(SRC:$(PAGES_ROOT)/%.md=$(PUBLIC_ROOT)/%.html) \
   $(SRC:$(PAGES_ROOT)/%.md=$(PUBLIC_ROOT)/%.md) \
   $(STATIC_SRC:$(STATIC_ROOT)/%=$(PUBLIC_ROOT)/%) 
+FULL_DATE := $(shell date +"%A, %B %d of %Y, at %R %p %Z")
 
 export PAGES_ROOT STATIC_ROOT CACHE_ROOT PUBLIC_ROOT
 
@@ -38,17 +40,26 @@ $(STATIC_ROOT)/WiQEE.js: $(LOCAL_HS_SOURCE)/dist/build/WiQEE.js/WiQEE.js
 	cp $< $@
 endif
 
-$(CACHE_ROOT)/%.mdc: $(PAGES_ROOT)/%.md | $(CACHE_ROOT)
-	( cd $(PAGES_ROOT) >/dev/null && capricon prelude <<< "'$* source exec" ) > $@
+$(CACHE_ROOT)/env: | $(CACHE_ROOT)
+	echo "'source-dir \"$(PAGES_ROOT)/\" def" > $@
+	echo "'output-dir \"$(CACHE_ROOT)/\" def" >> $@
+	echo "'cache-dir \"$(CACHE_ROOT)/\" def" >> $@
+
+$(CACHE_ROOT)/%.mdc: $(PAGES_ROOT)/%.md $(CACHE_ROOT)/env | $(CACHE_ROOT)
+	rm -f $(CACHE_ROOT)/$*.mdo.blob
+	capricon $(PAGES_ROOT)/prelude $(CACHE_ROOT)/env <<< "'$* require"
 
 $(CACHE_ROOT)/common.mdi: scripts/gencommon $(STATIC_ROOT)/noise.png $(STATIC_ROOT)/steps.png $(PAGES_ROOT)/prelude | $(CACHE_ROOT)
 	$^ > $@
 
 $(PUBLIC_ROOT)/%.html: $(CACHE_ROOT)/%.mdc $(TEMPLATE_ROOT)/header.html $(CACHE_ROOT)/common.mdi $(TEMPLATE_ROOT)/template.html | $(PUBLIC_ROOT)
-	pandoc -s --mathml -V module:$* -H $(WD)/$(TEMPLATE_ROOT)/header.html --toc --template=$(WD)/$(TEMPLATE_ROOT)/template.html -f markdown -t html --css style.css $< $(CACHE_ROOT)/common.mdi > $@
+	pandoc -s --mathjax='mathjax/MathJax.js?config=TeX-AMS_HTML' -V module:$* -V "full-date:$(FULL_DATE)" -H $(WD)/$(TEMPLATE_ROOT)/header.html --toc --template=$(WD)/$(TEMPLATE_ROOT)/template.html -f markdown -t html --css style.css $< $(CACHE_ROOT)/common.mdi > $@
 
-$(PUBLIC_ROOT)/%.css: $(CSS_ROOT)/%.scss | $(PUBLIC_ROOT)
-	sassc < $^ > $@
+$(PUBLIC_ROOT)/theme-test.html: $(STATIC_ROOT)/theme-test.html
+	cp $< $@
+
+$(PUBLIC_ROOT)/%.css: $(CSS_ROOT)/%.scss $(wildcard $(CSS_ROOT)/_*.scss) | $(PUBLIC_ROOT)
+	$(SASSC) -I$(CSS_ROOT) < $< > $@
 
 $(PUBLIC_ROOT)/%.png: $(STATIC_ROOT)/%.png | $(PUBLIC_ROOT)
 	cp $< $@

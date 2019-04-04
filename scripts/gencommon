@@ -1,7 +1,9 @@
 #!/bin/bash
 echo
-echo --- ; capricon src/pages/prelude <<< "version \"capricon-version: %s\n\" printf" 
-printf "pandoc-version: "; pandoc --version | head -1 | cut -d' ' -f2
+echo ---
+capricon_version="$(capricon src/pages/prelude <<< "version print")"
+printf "capricon-version: \"%s\"\n" "$capricon_version"
+printf "pandoc-version: \"%s\"\n" $(pandoc --version | head -1 | cut -d' ' -f2)
 printf "noise-image-url: \"data:image/png;base64,%s\"\n" "$(base64 -w0 "$1")"
 printf "steps-image-url: \"data:image/png;base64,%s\"\n" "$(base64 -w0 "$2")"
 printf "prelude-text: '%s'\n" "$(sed ':loop;$!{N;bloop};s/'\''/'\'\''/g;s/\n/ /gm;s/\\/\\\\/g' "$3")"
@@ -12,3 +14,8 @@ for i in "$PAGES_ROOT"/*.md; do
     printf "[:%s]: %s.html\n" $i $i
 done
 echo
+cat <<EOF
+[capricon-linux]: https://github.com/lih/BHR/releases/download/release-capricon-0.11/capricon.linux.x86_64.tar.xz
+[capricon-macos]: https://github.com/lih/BHR/releases/download/release-capricon-0.11/capricon.osx.x86_64.tar.xz
+EOF
+

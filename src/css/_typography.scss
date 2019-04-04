@@ -1,0 +1,81 @@
+$base-font-size: 112.5; // Is used as %
+$line-height: 1.6; // = 27px
+$base: 16 * ($base-font-size / 100);
+$leading: $base * $line-height;
+
+@mixin margin-bottom($number){
+  margin-bottom: #{$number * $leading + 'px'};
+  margin-bottom: #{$number * $line-height + 'rem'};
+}
+
+h2 { width: 95%; } h3 { width: 90%; }
+h1, h2, h3 {
+    border-bottom: 0.08em solid rgba($horiz-line,0.5);
+    letter-spacing: -0.04em;
+}
+
+hr {
+    color: $horiz-line;
+    background-color: $horiz-line;
+    border: none;
+    height: 2px;
+}
+
+p { text-indent: 2em; &:first-child { text-indent: 0; }; margin: 0 auto; }
+h1, h2, h3 { & + p { text-indent: 0; } }
+
+code {
+    display: inline-block;
+    text-indent: 0;
+    font-size: 0.85em;
+    font-family: monospace;
+    background-color: $secondary-background;
+    padding: 0em 0.2em;
+    border-radius: 3px;
+}
+
+pre {
+    font-family: monospace;
+    line-height: 1.2;
+    overflow-x: auto;
+    background-color: $secondary-background;
+    padding: 0.2em;
+    &:first-child { margin-top: 0; }
+    border-radius: 3px;
+
+    code {
+	padding: 0;
+    }
+}
+
+a {
+    color: $link;
+    &:active, &:focus { padding: 0.1em; outline: 0; background: rgba(255,255,255,0.2); }
+}
+
+@mixin grad($col) {
+    background-image: linear-gradient(darken($col,10%) 5%, $col 80%, darken($col,5%));
+}
+button {
+    padding: 0 0.5em;
+    font-weight: bold;
+    max-width: 15em;
+    &, * {
+	text-overflow: ellipsis;
+	overflow: hidden; white-space: nowrap;
+    }
+    display: inline-block;
+    border: outset 1px darken($secondary,30%);
+    border-radius: 0.2em;
+
+    @include grad(rgba(lighten($secondary-background,10%),1));
+    &:hover {
+	@include grad(rgba(lighten($secondary-background,5%),1));
+    }
+    &:active {
+	border-style: inset;
+	@include grad(rgba($secondary-background,1));
+    }
+}
+
+
