@@ -47,7 +47,7 @@ $(CACHE_ROOT)/env: | $(CACHE_ROOT)
 
 $(CACHE_ROOT)/%.mdc: $(PAGES_ROOT)/%.md $(CACHE_ROOT)/env | $(CACHE_ROOT)
 	rm -f $(CACHE_ROOT)/$*.mdo.blob
-	capricon $(PAGES_ROOT)/prelude $(CACHE_ROOT)/env <<< "'$* require"
+	echo "'$* require" | capricon $(PAGES_ROOT)/prelude $(CACHE_ROOT)/env
 
 $(CACHE_ROOT)/common.mdi: scripts/gencommon $(STATIC_ROOT)/noise.png $(STATIC_ROOT)/steps.png $(PAGES_ROOT)/prelude | $(CACHE_ROOT)
 	$^ > $@
@@ -59,7 +59,7 @@ $(PUBLIC_ROOT)/theme-test.html: $(STATIC_ROOT)/theme-test.html
 	cp $< $@
 
 $(PUBLIC_ROOT)/%.css: $(CSS_ROOT)/%.scss $(wildcard $(CSS_ROOT)/_*.scss) | $(PUBLIC_ROOT)
-	$(SASSC) -I$(CSS_ROOT) < $< > $@
+	"$(SASSC)" -I$(CSS_ROOT) < $< > $@
 
 $(PUBLIC_ROOT)/%.png: $(STATIC_ROOT)/%.png | $(PUBLIC_ROOT)
 	cp $< $@
