@@ -6,6 +6,9 @@
 @function rate($n) {
     @return ($n * 3.5 + 55) * 1%;
 }
+@function set-lum($color,$l) {
+    @return hsl(hue($color),saturation($color),$l);
+}
 @function ground-dark($n,$color) {
     $rate: rate($n);
     $bg: darken(mix(nth($color,1),nth($color,2),$rate / 3),$rate / 2);
