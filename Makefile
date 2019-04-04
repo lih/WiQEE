@@ -16,6 +16,10 @@ TARGETS := $(PUBLIC_ROOT)/style.css $(PUBLIC_ROOT)/test.css \
 FULL_DATE := $(shell date +"%A, %B %d of %Y, at %R %p %Z")
 
 export PAGES_ROOT STATIC_ROOT CACHE_ROOT PUBLIC_ROOT
+.config.mk:
+	echo "AUTOCOMMIT := " >> $@
+	echo "export AUTOCOMMIT" >> $@
+-include .config.mk
 
 all: $(TARGETS)
 	scripts/run-hook on-success
@@ -59,7 +63,7 @@ $(PUBLIC_ROOT)/theme-test.html: $(STATIC_ROOT)/theme-test.html
 	cp $< $@
 
 $(PUBLIC_ROOT)/%.css: $(CSS_ROOT)/%.scss $(wildcard $(CSS_ROOT)/_*.scss) | $(PUBLIC_ROOT)
-	"$(SASSC)" -I$(CSS_ROOT) < $< > $@
+	"$(SASSC)" -I$(CSS_ROOT) $< $@
 
 $(PUBLIC_ROOT)/%.png: $(STATIC_ROOT)/%.png | $(PUBLIC_ROOT)
 	cp $< $@
