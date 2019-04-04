@@ -27,10 +27,12 @@
     background-color: nth($ground,2);
 }
 @mixin shiny-colors($gnd) {
-    color: nth($gnd,1);
-    text-color: nth($gnd,1);
     $bg: nth($gnd,2);
-    background-color: $bg;
+    &, &.shiny {
+	color: nth($gnd,1);
+	text-color: nth($gnd,1);
+	background-color: $bg;
+    }
     &.shiny {
 	background-image: linear-gradient(lighten($bg,3%),
 					  $bg 20%,
