@@ -1,7 +1,7 @@
 #!/bin/sh
-mkdir -p /local/opt
+sudo mkdir -p /local/opt
 
 curl -sL https://github.com/lih/BHR/releases/download/release-capricon-0.12.1/capricon.linux.x86_64.tar.xz | \
-    tar -xJ -C /local/opt
+    sudo tar -xJ -C /local/opt
 
-ln -s /local/opt/capricon-0.12.1 /usr/bin/capricon
+sudo ln -s /local/opt/capricon-0.12.1/capricon /usr/bin/capricon
