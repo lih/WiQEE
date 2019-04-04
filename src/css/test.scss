@@ -96,7 +96,7 @@ $line-height: 1.5;
     font-size: 130%;
     line-height: $line-height * 1em;
     @extend .ground-dark-7.shiny;
-    max-width: $line-height * 50em;
+    max-width: $line-height * 40em;
     margin: auto;
     
     p { @extend .ground-dark-7; }
