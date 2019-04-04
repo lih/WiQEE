@@ -3,5 +3,8 @@ sudo mkdir -p /local/opt
 
 curl -sL https://github.com/lih/BHR/releases/download/release-capricon-0.12.1/capricon.linux.x86_64.tar.xz | \
     sudo tar -xJ -C /local/opt
-
 sudo ln -s /local/opt/capricon-0.12.1/capricon /usr/bin/capricon
+
+curl -sL https://github.com/sass/dart-sass/releases/download/1.17.4/dart-sass-1.17.4-linux-x64.tar.gz | \
+    sudo tar -xJ -C /local/opt
+sudo ln -s /local/opt/dart-sass/sass /usr/bin/sassc
