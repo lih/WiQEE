@@ -26,10 +26,13 @@
 @mixin shiny-colors($gnd) {
     color: nth($gnd,1);
     $bg: nth($gnd,2);
-    background-image: linear-gradient(lighten($bg,3%),
-				      $bg 20%,
-				      $bg,
-				      $bg 20%,darken($bg,3%));
+    background-color: $bg;
+    &.shiny {
+	background-image: linear-gradient(lighten($bg,3%),
+					  $bg 20%,
+					  $bg,
+					  $bg 20%,darken($bg,3%));
+    }
 }
 
 $primary: ( hsl(60,100%,50%), hsl(0,100%,50%), hsl(180,100%,50%) );
