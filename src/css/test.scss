@@ -105,7 +105,7 @@ $line-height: 1.5;
     pre, code {
 	margin: $line-height * 1em;
 	line-height: 1em;
-	@extend .ground-dark-4;
+	@extend .ground-dark-4.shiny;
     }
 }
 
