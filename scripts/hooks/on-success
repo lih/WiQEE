@@ -7,5 +7,5 @@ if [ "$AUTOCOMMIT" = true ]; then
     )
     git add -A
     git commit -am "Pages updated (on $(date))"
-    git push --recurse-submodules=on-demand master
+    git push --recurse-submodules=on-demand 
 fi
