@@ -1,6 +1,8 @@
 The WiQEE site template
 =======================
 
+![Travis Build Status](https://travis-ci.org/lih/WiQEE.svg?branch=master)
+
 This is the forge for the [WiQEE project][wiqee]. Its structure is fairly
 straightforward : pages (written in Markdown+CaPriCon) are put in
 `src/pages`, and you can run `make` to produce a static site from
