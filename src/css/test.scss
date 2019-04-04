@@ -90,6 +90,7 @@ $line-height: 1.5em;
 .nestingDolls div { display: block; padding: 2em; border: 1px solid; border-radius: 5px; }
 
 .content-dark {
+    line-height: $line-height;
     &, p { @extend .ground-dark-12; }
     pre, code { @extend .ground-dark-9; }
 }
