@@ -52,6 +52,10 @@ a {
     color: $link;
     &:active, &:focus { padding: 0.1em; outline: 0; background: rgba(255,255,255,0.2); }
 }
+h1, h2, h3, h4, h5, h6 {
+    a { color: darken($text,30%); text-decoration: none; }
+    &:active, &:focus { padding: 0; }
+}
 
 @mixin grad($col) {
     background-image: linear-gradient(darken($col,10%) 5%, $col 80%, darken($col,5%));
