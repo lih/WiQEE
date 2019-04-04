@@ -145,30 +145,21 @@ Contributing to WiQEE, or creating your own
 
 It goes without saying that I encourage you to contribute to WiQEE in
 any way you'd like. You may find the project template for this site
-[in this Git repository](https://git.curly-lang.org/marc/WiQEE), and the
+[in this Git repository](https://github.com/lih/WiQEE), and the
 source for the actual pages in this [other Git
-repository](https://git.curly-lang.org/marc/WiQEE-pages).
+repository](https://github.com/lih/WiQEE-pages).
 
 If you want to contribute to this specific site, you can use the power
-of Pull Requests on the WiQEE-pages repository (the second one), by
-forking it and creating a new branch called `contributor-<keyID>`,
-where the key ID should be a valid GPG key identifier. Every commit
-made to this branch should be signed by the corresponding GPG secret
-key, if at all possible.
-
-Once your work is done on this branch, simply push it to the
-repository using the guest account (login: `guest`, password:
-`guest`), and open a pull request on the `master` branch. The rest is
-a matter of patience.
+of Pull Requests on the WiQEE-pages repository (the second one). 
 
 If like me you lack that sort of patience, you can also test your
 pages by running your own version of this site (how exciting !). To do
-so, you have to clone the first repository, put your pages in the
-`src/pages` subdirectory, and run `make` over the whole thing. You'll
-need Pandoc and Sass to be installed, for Markdown and SCSS
-processing, as well as CaPriCon for obvious reasons. Once `make` has
-run its course, you should find a workable HTML version of your WiQEE
-in the `public` subdirectory.
+so, you have to clone the first repository, apply your modifications
+in the `src/pages` subdirectory, and run `make` over the whole
+thing. You'll need Pandoc and Sass to be installed, for Markdown and
+SCSS processing, as well as CaPriCon for obvious reasons. Once `make`
+has run its course, you should find a workable HTML version of your
+WiQEE in the `public` subdirectory.
 
 Example pages
 =============
