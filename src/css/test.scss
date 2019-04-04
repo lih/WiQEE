@@ -86,4 +86,10 @@ $line-height: 1.5em;
 .showDiv { display: inline-block; width: 200px; height: 2 * $line-height; text-align: center; padding-top: $line-height - 0.5em; }
 .nestingDolls div { display: block; padding: 2em; border: 1px solid; border-radius: 5px; }
 
+.content-dark {
+    p { @extend .ground-dark-3; }
+    pre, code { @extend .ground-dark-6; }
+}
+
+
 
