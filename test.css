@@ -18,7 +18,7 @@
   background-image: linear-gradient(#ffbead, #ffb29e 20%, #ffb29e, #ffb29e 20%, #ffa68f);
 }
 
-.ground-dark-3 {
+.ground-dark-3, .content-dark, .content-dark p {
   color: #ecbaba;
   background-image: linear-gradient(#671700, #581300 20%, #581300, #581300 20%, #491000);
 }
@@ -48,7 +48,7 @@
   background-image: linear-gradient(#ffd6c8, #ffcab9 20%, #ffcab9, #ffcab9 20%, #ffbeaa);
 }
 
-.ground-dark-6 {
+.ground-dark-6, .content-dark pre, .content-dark code {
   color: #efd1d1;
   background-image: linear-gradient(#4d1400, #3d1000 20%, #3d1000, #3d1000 20%, #2e0c00);
 }
