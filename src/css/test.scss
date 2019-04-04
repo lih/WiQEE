@@ -33,15 +33,7 @@
 }
 
 $primary: ( hsl(60,100%,50%), hsl(0,100%,50%), hsl(180,100%,50%) );
-$line-height: 1.5em;
-
-.showDiv { display: inline-block; width: 200px; height: 2 * $line-height; text-align: center; padding-top: $line-height - 0.5em; }
-.nestingDolls div { display: block; padding: 2em; border: 1px solid; border-radius: 5px; }
-
-
 $color: $primary;
-
-
 @for $i from 1 through 12 {
     .ground-dark-#{$i} {
 	@include shiny-colors(ground-dark($i,$color));
@@ -89,4 +81,9 @@ $color: $primary;
 	@include shiny-colors(ground-light($i,adjust-hues($color,270)));
     }
 }
+
+$line-height: 1.5em;
+.showDiv { display: inline-block; width: 200px; height: 2 * $line-height; text-align: center; padding-top: $line-height - 0.5em; }
+.nestingDolls div { display: block; padding: 2em; border: 1px solid; border-radius: 5px; }
+
 
