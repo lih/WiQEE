@@ -1,15 +1,12 @@
 #!/bin/bash
 if [ "$AUTOCOMMIT" = true ]; then
     (
-	export GIT_DIR=.autocommit/src/pages/.git GIT_WORK_TREE=src/pages
+	export GIT_DIR=src/pages/.git GIT_WORK_TREE=src/pages
 	git add -A
-	git commit -am "Autocommit on $(date)"
+	git commit -am "Pages updated (on $(date))"
 	git push
     )
-    (
-	export GIT_DIR=.autocommit/.git
-	git add -A
-	git commit -am "Autocommit on $(date)"
-	git push
-    )
+    git add -A
+    git commit -am "Pages updated (on $(date))"
+    git push
 fi
