@@ -1153,7 +1153,7 @@
 .showDiv {
   display: inline-block;
   width: 200px;
-  height: 3em;
+  height: 3;
   text-align: center;
   padding-top: 1em;
 }
@@ -1166,7 +1166,11 @@
 }
 
 .content-dark {
+  font-size: 130%;
   line-height: 1.5em;
+}
+.content-dark p {
+  text-indent: 3em;
 }
 
 /*# sourceMappingURL=test.css.map */
