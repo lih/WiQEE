@@ -35,7 +35,7 @@
     }
 }
 
-$primary: ( hsl(60,100%,50%), hsl(70,100%,50%), hsl(180,100%,50%) );
+$primary: ( hsl(60,100%,50%), hsl(170,100%,50%), hsl(180,100%,50%) );
 $color: $primary;
 @for $i from 1 through 12 {
     .ground-dark-#{$i} {
