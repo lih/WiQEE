@@ -101,9 +101,12 @@ $line-height: 1.5;
     
     p { @extend .ground-dark-7; }
     h1 { font-size: 200%; margin: 0; padding: ($line-height * 1em); }
-    p, pre, code { margin: 0 ($line-height * 1em); }
-    p { text-indent: 2 * $line-height * 1em; }
-    pre, code { line-height: 1em; @extend .ground-dark-4; }
+    p { margin: 0 ($line-height * 1em); text-indent: 2 * $line-height * 1em; }
+    pre, code {
+	margin: $line-height * 1em;
+	line-height: 1em;
+	@extend .ground-dark-4;
+    }
 }
 
 
