@@ -50,10 +50,10 @@ $capricon-keyword: darken($secondary,30%);
     }
 }
 .capricon {
-    @include quoteColor(6,adjust-hue(rgba(mix($secondary-background,grey,80%),1),0deg),60deg);
+    @include quoteColor(6,adjust-hue(rgba(mix($secondary-background,hsl(0,0%,50%),80%),1),0deg),60deg);
 }
 #capricon-console .capricon {
-    @include quoteColor(6,adjust-hue(rgba(lighten(mix($secondary-background,grey,80%),20%),1),0deg),60deg);
+    @include quoteColor(6,adjust-hue(rgba(lighten(mix($secondary-background,hsl(0,0%,50%),80%),20%),1),0deg),60deg);
 }
 .user-input {
     display: flex; width: 100%;
