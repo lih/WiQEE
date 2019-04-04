@@ -4,7 +4,6 @@ if [ "$AUTOCOMMIT" = true ]; then
 	export GIT_DIR=src/pages/.git GIT_WORK_TREE=src/pages
 	git add -A
 	git commit -am "Pages updated (on $(date))"
-	git push
     )
     git add -A
     git commit -am "Pages updated (on $(date))"
