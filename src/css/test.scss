@@ -95,7 +95,7 @@ $line-height: 1.5;
     
     &, p { @extend .ground-dark-10; }
     p { margin: 0 ($line-height * 1em); text-indent: 2 * $line-height * 1em; }
-    pre, code { @extend .ground-dark-7.shiny; }
+    pre, code { @extend .ground-dark-7; }
     pre {
 	
     }
