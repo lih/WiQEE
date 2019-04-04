@@ -30,7 +30,6 @@
     $bg: nth($gnd,2);
     &, &.shiny {
 	color: nth($gnd,1);
-	text-color: nth($gnd,1);
 	background-color: $bg;
     }
     &.shiny {
