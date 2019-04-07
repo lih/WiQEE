@@ -15,7 +15,7 @@ for i in "$PAGES_ROOT"/*.md; do
 done
 echo
 cat <<EOF
-[capricon-linux]: https://github.com/lih/BHR/releases/download/release-capricon-0.11/capricon.linux.x86_64.tar.xz
-[capricon-macos]: https://github.com/lih/BHR/releases/download/release-capricon-0.11/capricon.osx.x86_64.tar.xz
+[capricon-linux]: https://github.com/lih/BHR/releases/download/release-capricon-0.12.2.1/capricon.linux.x86_64.tar.xz
+[capricon-macos]: https://github.com/lih/BHR/releases/download/release-capricon-0.12.2.1/capricon.osx.x86_64.tar.xz
 EOF
 
