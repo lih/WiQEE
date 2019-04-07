@@ -37,7 +37,7 @@ $(CACHE_ROOT):  ; mkdir -p $@
 .PRECIOUS: $(CACHE_ROOT)/%.mdc
 
 ifdef LOCAL_HS_SOURCE
-$(LOCAL_HS_SOURCE)/dist/build/capricon-engine.js/capricon-engine.js: $(LOCAL_HS_SOURCE)/exe/capricon-engine.hs
+$(LOCAL_HS_SOURCE)/dist/build/capricon-engine.js/capricon-engine.js: $(LOCAL_HS_SOURCE)/exe/CaPriCon_Engine.hs
 	-haste-pkg unregister capricon
 	cd $(LOCAL_HS_SOURCE) && rm -rf dist && haste-cabal install
 $(STATIC_ROOT)/capricon-engine.js: $(LOCAL_HS_SOURCE)/dist/build/capricon-engine.js/capricon-engine.js
