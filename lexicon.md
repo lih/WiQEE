@@ -9,64 +9,68 @@ Stack manipulation
 The environment of the interpreter consists mostly of a stack of
 values, that can be manipulated with the following words.
 
-### `dup` / `dupn`
+`dup` / `dupn`
 
-Duplicates the top element, or the nth top element of the stack.
+: Duplicates the top element, or the nth top element of the stack.
 
-`dup` : $x\ ...\ \rightarrow\ x\ x\ ...$  
-`dupn` : $n\ x_0 .. x_n\ ...\ \rightarrow\ x_n\ x_0 .. x_n\ ...$
+  - `dup` : $x\ ...\ \rightarrow\ x\ x\ ...$  
+  - `dupn` : $n\ x_0 .. x_n\ ...\ \rightarrow\ x_n\ x_0 .. x_n\ ...$
 
-### `swap` / `swapn`
+`swap` / `swapn`
 
-Swaps the top element of the stack with the second, or the nth
-element.
+: Swaps the top element of the stack with the second, or the nth
+  element.
 
-`swap` : $x\ y\ ...\ \rightarrow\ y\ x\ ...$  
-`swapn` : $n\ x\ y_0 .. y_n\ ...\ \rightarrow\ y_n\ y_0 .. y_{n-1}\ x\ ...$
+  - `swap` : $x\ y\ ...\ \rightarrow\ y\ x\ ...$  
+  - `swapn` : $n\ x\ y_0 .. y_n\ ...\ \rightarrow\ y_n\ y_0 .. y_{n-1}\ x\ ...$
 
-### `shift` / `shaft`
+`shift` / `shaft`
 
-Shifts the nth element towards the top, or shaft the top to the nth place.
+: Shifts the nth element towards the top, or shaft the top to the nth place.
 
-`shift` : $n\ x_1..x_n\ ...\ \rightarrow\ x_n\ x_1..x_{n-1}\ ...$  
-`shaft` : $n\ x_1..x_n\ ...\ \rightarrow\ x_2..x_n\ x_1...$  
+  - `shift` : $n\ x_1..x_n\ ...\ \rightarrow\ x_n\ x_1..x_{n-1}\ ...$  
+  - `shaft` : $n\ x_1..x_n\ ...\ \rightarrow\ x_2..x_n\ x_1...$  
 
-### `pop` / `popn`
+`pop` / `popn`
 
-Pops the top element, or the nth top element, off the stack.
+: Pops the top element, or the nth top element, off the stack.
 
-`pop` : $x\ ...\ \rightarrow\ ...$  
-`popn` : $n\ x_0..x_n\ ...\ \rightarrow\ x_0..x_{n-1}\ ...$
+  - `pop` : $x\ ...\ \rightarrow\ ...$  
+  - `popn` : $n\ x_0..x_n\ ...\ \rightarrow\ x_0..x_{n-1}\ ...$
 
-### `clear`
+`clear`
 
-Clears the stack.
+: Clears the stack.
+  
+  - `clear` : $...\ \rightarrow\ $
 
-`clear` : $...\ \rightarrow\ $
+`stack` / `set-stack`
 
-### `stack`
+: Pushes the current stack, as a list, on top of the current stack. In
+the second case, sets the top element of the stack as the new stack.
 
-Pushes the current stack, as a list, on top of the current stack.
+  - `stack` : $Stack\ \rightarrow\ [Stack] Stack$
+  - `set-stack` : $[Stack] ...\ \rightarrow\ Stack$
 
-`stack` : $Stack\ \rightarrow\ [Stack] Stack$
+`pick`
 
-### `pick`
+: Picks the i-between-nth element of the stack, and discards all
+others. Can be useful for implementing arbitrary switch-like
+control-flow.
 
-Picks the i-between-nth element of the stack, and discards all others.
-
-`pick` : $i\ n\ x_0..x_i..x_{n-1}\ ...\ \rightarrow\ x_i\ ...$
+  - `pick` : $i\ n\ x_0..x_i..x_{n-1}\ ...\ \rightarrow\ x_i\ ...$
 
 Names and variables
 ------------------
 
-### `def`
+`def`
 
-Sets the value of a variable.
+: Sets the value of a variable.
 
-`def` : $value\ name\ ... \rightarrow ...$ in an environment where
+  - `def` : $value\ name\ ... \rightarrow ...$ in an environment where
 $value$ is associated with the variable named $name$.
 
-Examples :
+  Examples :
 
 > 'x 3 def 'y 7 def
 > x y x y + y * "(x + y) * y = %v; y = %v ; x = %v" printf

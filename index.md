@@ -24,7 +24,7 @@ Markdown in this case, although it would be trivial to adapt it to
 other textual markup languages such as TeX.
 
 Literate Programming in Wiki Form
-=================================
+----------------------------------
 
 Everything you've read until now is a comment of the "index.md"
 program. If you want to write programs, though, you will probably need
@@ -34,6 +34,8 @@ sort of code that you can execute is a code paragraph, and is
 indicated in the source by starting a line with `> `.
 
 > "<p>Such code is executed, and its output is added to the document.</p>" printf
+>? "Hello" printf
+>? version "CaPriCon version: %s\n" printf
 
 You can also write some inline code between "mustaches" (a mustache is
 a pair of nested `{}` inside the source), which will be executed as
@@ -43,7 +45,7 @@ previous case and without surprises, show you the steps that were
 taken to produce this output.
 
 A Concatenative Scripting Language
-==================================
+----------------------------------
 
 If you peeked at the examples given before, you may have noticed
 something strange. In order to produce some output, you'd expect a
@@ -95,7 +97,7 @@ scripts, [this tutorial](capricon-tutorial.md) may help walk you
 through the first hurdles.
 
 Proofs With Prismatic Constructions
-===================================
+-----------------------------------
 
 While CaPriCon can be a decent addition to a documentation format, it
 was first designed as an interactive interface for the construction of
@@ -141,7 +143,7 @@ your language of choice.  Mine just happens to be Haskell, but maybe
 yours will bring something new and interesting to the table as well.
 
 Contributing to WiQEE, or creating your own
-===========================================
+-------------------------------------------
 
 It goes without saying that I encourage you to contribute to WiQEE in
 any way you'd like. You may find the project template for this site
@@ -166,7 +168,7 @@ has run its course, you should find a workable HTML version of your
 WiQEE in the `public` subdirectory.
 
 Example pages
-=============
+-------------
 
 The basics :
 

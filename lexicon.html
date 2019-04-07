@@ -35,25 +35,17 @@
   <script src="mathjax/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
   <link rel="icon" type="image/png" href="favicon.png" />
   <!-- <script src="WiQEE.js"></script> -->
+  <script src="capricon.js"></script>
+  <script src="theme-tweak.js"></script>
 </head>
-<body>
-<nav class="nav">
-  <ul>
-    <li id="nav-head"><a href="index.html">WiQEE</a><ul>
-	<li><a href="lexicon.html">Lexicon</a></li>
-    </ul></li><li id="nav-title"><a class="#">The CaPriCon Scripting Language Reference</a>
+<body class="ground-light primary">
+<div id="content-frame" class="frame"><div class="nav header reverse">
+    <span class="menu left"><a href="index.html">WiQEE</a><ul>
+  	<li><a href="lexicon.html">Lexicon</a></li>
+    </ul></span><span class="menu middle"><a class="#">The CaPriCon Scripting Language Reference</a>
             <ul>
-      <li><a href="#stack-manipulation">Stack manipulation</a><ul>
-      <li><a href="#dup-dupn"><code>dup</code> / <code>dupn</code></a></li>
-      <li><a href="#swap-swapn"><code>swap</code> / <code>swapn</code></a></li>
-      <li><a href="#shift-shaft"><code>shift</code> / <code>shaft</code></a></li>
-      <li><a href="#pop-popn"><code>pop</code> / <code>popn</code></a></li>
-      <li><a href="#clear"><code>clear</code></a></li>
-      <li><a href="#stack"><code>stack</code></a></li>
-      <li><a href="#pick"><code>pick</code></a></li>
-      </ul></li>
+      <li><a href="#stack-manipulation">Stack manipulation</a></li>
       <li><a href="#names-and-variables">Names and variables</a><ul>
-      <li><a href="#def"><code>def</code></a></li>
       <li><a href="#section"><code>$</code></a></li>
       <li><a href="#vocabulary-set-vocabulary"><code>vocabulary</code> / <code>set-vocabulary</code></a></li>
       <li><a href="#lookup"><code>lookup</code></a></li>
@@ -109,40 +101,63 @@
       <li><a href="#hypotheses"><code>hypotheses</code></a></li>
       </ul></li>
       </ul>
-          </li><li id="page-source"><a href="lexicon.md">Page source</a></li>
-  </ul>
-</nav>
-<div id="content-frame"><div id="content-scroll" autofocus="autofocus"><div id="content">
+          </span><span class="menu right"><a href="#">More...</a><ul>
+	<li><a href="lexicon.md">Page source</a></li>
+	<li><a href="#" onclick="document.getElementById('body-theme-chooser').classList.toggle('active')">Tweak theme</a></li>
+      </ul></span>
+  </div><div id="content-scroll" autofocus="autofocus"><div id="content" class="sheet">
+      <h1>The CaPriCon Scripting Language Reference</h1>
 <p>All the basic words are described below.</p>
 <h2 id="stack-manipulation"><a href="#stack-manipulation">Stack manipulation</a></h2>
 <p>The environment of the interpreter consists mostly of a stack of values, that can be manipulated with the following words.</p>
-<h3 id="dup-dupn"><a href="#dup-dupn"><code>dup</code> / <code>dupn</code></a></h3>
-<p>Duplicates the top element, or the nth top element of the stack.</p>
-<p><code>dup</code> : <span class="math">\(x\ ...\ \rightarrow\ x\ x\ ...\)</span><br /><code>dupn</code> : <span class="math">\(n\ x_0 .. x_n\ ...\ \rightarrow\ x_n\ x_0 .. x_n\ ...\)</span></p>
-<h3 id="swap-swapn"><a href="#swap-swapn"><code>swap</code> / <code>swapn</code></a></h3>
-<p>Swaps the top element of the stack with the second, or the nth element.</p>
-<p><code>swap</code> : <span class="math">\(x\ y\ ...\ \rightarrow\ y\ x\ ...\)</span><br /><code>swapn</code> : <span class="math">\(n\ x\ y_0 .. y_n\ ...\ \rightarrow\ y_n\ y_0 .. y_{n-1}\ x\ ...\)</span></p>
-<h3 id="shift-shaft"><a href="#shift-shaft"><code>shift</code> / <code>shaft</code></a></h3>
-<p>Shifts the nth element towards the top, or shaft the top to the nth place.</p>
-<p><code>shift</code> : <span class="math">\(n\ x_1..x_n\ ...\ \rightarrow\ x_n\ x_1..x_{n-1}\ ...\)</span><br /><code>shaft</code> : <span class="math">\(n\ x_1..x_n\ ...\ \rightarrow\ x_2..x_n\ x_1...\)</span></p>
-<h3 id="pop-popn"><a href="#pop-popn"><code>pop</code> / <code>popn</code></a></h3>
-<p>Pops the top element, or the nth top element, off the stack.</p>
-<p><code>pop</code> : <span class="math">\(x\ ...\ \rightarrow\ ...\)</span><br /><code>popn</code> : <span class="math">\(n\ x_0..x_n\ ...\ \rightarrow\ x_0..x_{n-1}\ ...\)</span></p>
-<h3 id="clear"><a href="#clear"><code>clear</code></a></h3>
-<p>Clears the stack.</p>
-<p><code>clear</code> : <span class="math">\(...\ \rightarrow\ \)</span></p>
-<h3 id="stack"><a href="#stack"><code>stack</code></a></h3>
-<p>Pushes the current stack, as a list, on top of the current stack.</p>
-<p><code>stack</code> : <span class="math">\(Stack\ \rightarrow\ [Stack] Stack\)</span></p>
-<h3 id="pick"><a href="#pick"><code>pick</code></a></h3>
-<p>Picks the i-between-nth element of the stack, and discards all others.</p>
-<p><code>pick</code> : <span class="math">\(i\ n\ x_0..x_i..x_{n-1}\ ...\ \rightarrow\ x_i\ ...\)</span></p>
+<p><code>dup</code> / <code>dupn</code></p>
+<p>: Duplicates the top element, or the nth top element of the stack.</p>
+<ul>
+<li><code>dup</code> : <span class="math">\(x\ ...\ \rightarrow\ x\ x\ ...\)</span><br /></li>
+<li><code>dupn</code> : <span class="math">\(n\ x_0 .. x_n\ ...\ \rightarrow\ x_n\ x_0 .. x_n\ ...\)</span></li>
+</ul>
+<p><code>swap</code> / <code>swapn</code></p>
+<p>: Swaps the top element of the stack with the second, or the nth element.</p>
+<ul>
+<li><code>swap</code> : <span class="math">\(x\ y\ ...\ \rightarrow\ y\ x\ ...\)</span><br /></li>
+<li><code>swapn</code> : <span class="math">\(n\ x\ y_0 .. y_n\ ...\ \rightarrow\ y_n\ y_0 .. y_{n-1}\ x\ ...\)</span></li>
+</ul>
+<p><code>shift</code> / <code>shaft</code></p>
+<p>: Shifts the nth element towards the top, or shaft the top to the nth place.</p>
+<ul>
+<li><code>shift</code> : <span class="math">\(n\ x_1..x_n\ ...\ \rightarrow\ x_n\ x_1..x_{n-1}\ ...\)</span><br /></li>
+<li><code>shaft</code> : <span class="math">\(n\ x_1..x_n\ ...\ \rightarrow\ x_2..x_n\ x_1...\)</span></li>
+</ul>
+<p><code>pop</code> / <code>popn</code></p>
+<p>: Pops the top element, or the nth top element, off the stack.</p>
+<ul>
+<li><code>pop</code> : <span class="math">\(x\ ...\ \rightarrow\ ...\)</span><br /></li>
+<li><code>popn</code> : <span class="math">\(n\ x_0..x_n\ ...\ \rightarrow\ x_0..x_{n-1}\ ...\)</span></li>
+</ul>
+<p><code>clear</code></p>
+<p>: Clears the stack.</p>
+<ul>
+<li><code>clear</code> : <span class="math">\(...\ \rightarrow\ \)</span></li>
+</ul>
+<p><code>stack</code> / <code>set-stack</code></p>
+<p>: Pushes the current stack, as a list, on top of the current stack. In the second case, sets the top element of the stack as the new stack.</p>
+<ul>
+<li><code>stack</code> : <span class="math">\(Stack\ \rightarrow\ [Stack] Stack\)</span></li>
+<li><code>set-stack</code> : <span class="math">\([Stack] ...\ \rightarrow\ Stack\)</span></li>
+</ul>
+<p><code>pick</code></p>
+<p>: Picks the i-between-nth element of the stack, and discards all others. Can be useful for implementing arbitrary switch-like control-flow.</p>
+<ul>
+<li><code>pick</code> : <span class="math">\(i\ n\ x_0..x_i..x_{n-1}\ ...\ \rightarrow\ x_i\ ...\)</span></li>
+</ul>
 <h2 id="names-and-variables"><a href="#names-and-variables">Names and variables</a></h2>
-<h3 id="def"><a href="#def"><code>def</code></a></h3>
-<p>Sets the value of a variable.</p>
-<p><code>def</code> : <span class="math">\(value\ name\ ... \rightarrow ...\)</span> in an environment where <span class="math">\(value\)</span> is associated with the variable named <span class="math">\(name\)</span>.</p>
+<p><code>def</code></p>
+<p>: Sets the value of a variable.</p>
+<ul>
+<li><code>def</code> : <span class="math">\(value\ name\ ... \rightarrow ...\)</span> in an environment where <span class="math">\(value\)</span> is associated with the variable named <span class="math">\(name\)</span>.</li>
+</ul>
 <p>Examples :</p>
-<label class="hide-label"><input type="checkbox" class="capricon-hide"/><span class="capricon-hideparagraph"></span><span class="capricon-reveal" data-linecount="2">
+<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 3.25">
 <div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'x">'x</span> <span class="symbol" data-symbol-name="3">3</span> <span class="symbol" data-symbol-name="def">def</span> <span class="symbol" data-symbol-name="'y">'y</span> <span class="symbol" data-symbol-name="7">7</span> <span class="symbol" data-symbol-name="def">def</span>
 <span class="symbol" data-symbol-name="x">x</span> <span class="symbol" data-symbol-name="y">y</span> <span class="symbol" data-symbol-name="x">x</span> <span class="symbol" data-symbol-name="y">y</span> <span class="symbol" data-symbol-name="+">+</span> <span class="symbol" data-symbol-name="y">y</span> <span class="symbol" data-symbol-name="*">*</span> <span class="symbol" data-symbol-name="&quot;(x + y) * y = %v; y = %v ; x = %v&quot;">&quot;(x + y) * y = %v; y = %v ; x = %v&quot;</span> <span class="symbol" data-symbol-name="printf">printf</span></pre><div class="user-input interactive"><button class="capricon-trigger">
 Try It Out
@@ -173,7 +188,7 @@ Try It Out
 <h3 id="each"><a href="#each"><code>each</code></a></h3>
 <p>Iterates over each element of its second argument, pushing it on the stack and running its second argument afterward.</p>
 <p>Examples :</p>
-<label class="hide-label"><input type="checkbox" class="capricon-hide"/><span class="capricon-hideparagraph"></span><span class="capricon-reveal" data-linecount="1">
+<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 2.25">
 <div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="&quot;Values: &quot;">&quot;Values: &quot;</span> <span class="symbol" data-symbol-name="print">print</span> <span class="symbol" data-symbol-name="[">[</span> <span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="3">3</span> <span class="symbol" data-symbol-name="]">]</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="show">show</span> <span class="symbol" data-symbol-name="pop">pop</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="each">each</span></pre><div class="user-input interactive"><button class="capricon-trigger">
 Try It Out
 </button>
@@ -195,7 +210,7 @@ Values: 1 2 3
 <h3 id="format"><a href="#format"><code>format</code></a></h3>
 <p>Much like the <code>sprintf()</code> function in C, produces a string which may contain textual representations of various other values.</p>
 <p>Examples :</p>
-<label class="hide-label"><input type="checkbox" class="capricon-hide"/><span class="capricon-hideparagraph"></span><span class="capricon-reveal" data-linecount="1">
+<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 2.25">
 <div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="&quot;Some text&quot;">&quot;Some text&quot;</span> <span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="&quot;&lt;p&gt;%v: %s&lt;/p&gt;&quot;">&quot;&lt;p&gt;%v: %s&lt;/p&gt;&quot;</span> <span class="symbol" data-symbol-name="format">format</span> <span class="symbol" data-symbol-name="show">show</span></pre><div class="user-input interactive"><button class="capricon-trigger">
 Try It Out
 </button>
@@ -275,9 +290,7 @@ Try It Out
 <p>Given a hypothesis name, and a term of the same type as that hypothesis, remove that hypothesis from the context by substituting all its occurences by the given term.</p>
 <h3 id="hypotheses"><a href="#hypotheses"><code>hypotheses</code></a></h3>
 <p>Pushes a list of all the hypotheses' names in context, from most recent to the oldest.</p>
-<div id="footer">
-  Page generated on Thursday, April 04 of 2019, at 15:07 PM UTC, using capricon-0.12.1 and pandoc-1.12.2.1.
-</div>
+      <div id="footer">Page generated on Sunday, April 07 of 2019, at 19:30 PM UTC, using capricon-0.12.2 and pandoc-1.12.2.1.</div>
 </div></div></div>
 <div id="capricon-prelude" style="display: none;">'nop { { } } def 'get { nop nop lookup } def 'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys { { 1 dupn 1 dupn get def } each pop } def 'import { dup dict-keys import-keys } def [ dict term-index construction query context io list arith string ] { import } each 'printf { format print pop } def 'show { &quot;%v\n&quot; printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def 'mustache. { show } def 'tex { 'mustache. { &quot;<span class="math">\(%l\)</span>\n&quot; printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { &quot;
 <svg class='formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\\"http://www.w3.org/2000/svg\\">
@@ -286,102 +299,6 @@ Try It Out
 <p>&quot; printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { &quot;%s\n&quot; printf 'mustache. ,{ dup $ } def } def } def 'collect { { 'exports empty def ,{ } exec exports ,{ vocabulary } set-vocabulary } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def [ 'source-dir 'output-dir 'cache-dir ] { &quot;&quot; def } each 'module { dup source-dir &quot;%s%s&quot; format source swap output-dir &quot;%s%s.mdc&quot; format redirect } def 'require { dup dup &quot; * Required module: [%s]\(%s.html\)\n&quot; printf { ,{ dup } { module } collect } swap cache-dir &quot;%s%s.mdo&quot; format cache } def</p></div>
 <div id="capricon-console"></div>
 <script type="text/javascript">
-  capriconWorker = new Worker('WiQEE-worker.js');
-
-  workerCallbacks = [];
-  capriconWorker.onmessage = function (e) {
-      var callback = workerCallbacks[e.data[0]];
-      callback(e.data[1]);
-  };
-
-  function runCaPriCon(state,code,then) {
-      var nextCallback = workerCallbacks.length;
-      workerCallbacks.push(then);
-      capriconWorker.postMessage([0,nextCallback,state,code]);
-  };
-  function evalCaPriCon(state,code,then) {
-      var nextCallback = workerCallbacks.length;
-      workerCallbacks.push(then);
-      capriconWorker.postMessage([1,nextCallback,state,code]);
-  };
-
-  prel = document.getElementById('capricon-prelude').textContent;
-  roots = Array.prototype.slice.call(document.getElementsByClassName('capricon-steps'));
-  console = document.getElementById('capricon-console');
-  function loop0(i) { return function (st) {
-      // alert('loop0 called with '+i+' roots.length='+roots.length);
-      if(i < roots.length) {
-      	  var root = roots[i];
-	  if(root.tagName == 'CODE') {
-	      runCaPriCon(st,root.textContent + " mustache.",loop0(i+1));
-	  }
-	  else {
-	      var mainInput = root.getElementsByClassName('capricon-input')[0];
-	      mainInput.classList.add('pending');
-
-	      var consoleRoot = root.cloneNode(true);
-	      var consoleTitle = document.createElement('h3');
-	      var consoleClose = document.createElement('button');
-	      
-	      var mainExamples = root.getElementsByClassName('capricon-example');
-	      for(var j = 0; j < mainExamples.length; j++) {
-		  (function () {
-		      var example = mainExamples[j];
-		      example.addEventListener('click', function (ev) {
-			  mainInput.value = example.getAttribute('data-code');
-		      });
-		  })();
-	      }
-
-	      consoleClose.textContent = "Close";
-	      consoleClose.addEventListener('click', function() {
-		  consoleRoot.classList.remove('active');
-		  mainInput.value = consoleInput.value;
-	      });
-	      consoleTitle.textContent = "CaPriCon Console";
-	      consoleTitle.appendChild(consoleClose);
-	      consoleRoot.insertBefore(consoleTitle,consoleRoot.firstChild);
-	      console.appendChild(consoleRoot);
-
-
-	      var text = root.getElementsByClassName('capricon')[0].textContent;
-	      runCaPriCon(st,text,function(st0) {
-		  var mainTrigger = root.getElementsByClassName('capricon-trigger')[0];
-		  var consoleInput = consoleRoot.getElementsByClassName('capricon-input')[0];
-		  var consoleOutput = consoleRoot.getElementsByClassName('capricon-output')[0];
-		  
-		  mainInput.classList.add('ready'); mainInput.classList.remove('pending');
-		  mainTrigger.addEventListener('click', function (ev) {
-		      if(!consoleRoot.classList.contains('active')) {
-			  consoleRoot.classList.add('active');
-			  consoleInput.value = mainInput.value;
-			  evalCaPriCon(st0,consoleInput.value,function(ret) { consoleOutput.textContent = ret; });
-		      	  consoleInput.focus();
-		      }
-		  });
-
-		  consoleInput.addEventListener('keypress', function (ev) {
-		      if(ev.keyCode == 13) { // Press Enter
-			  evalCaPriCon(st0,consoleInput.value,function(ret) { consoleOutput.textContent = ret; });
-		      }
-		  });
-		  
-		  mainInput.addEventListener('keypress', function (ev) {
-		      if(ev.keyCode == 13) { // Press Enter
-			  consoleRoot.classList.add('active');
-			  consoleInput.value = mainInput.value;
-			  evalCaPriCon(st0,mainInput.value,function(ret) { consoleOutput.textContent = ret; });
-			  consoleInput.focus();
-		      }
-		  });
-
-		  loop0(i+1)(st0);
-	      });
-	  }
-      }
-  };}
-  runCaPriCon(0,prel,loop0(0));
-
   window.addEventListener("load",function() {
       var formulae = document.getElementsByClassName('formula');
       for(var i in formulae) {
@@ -396,5 +313,22 @@ Try It Out
       }
   });
 </script>
+<div id="body-theme-chooser" style="z-index: 100; position: fixed; text-align: right; right: 0; bottom: 0; font-size: 1rem !important" class="opaque sheet frame level-12">
+    <script>
+      document.addEventListener('DOMContentLoaded',function() {
+	  Theme.attach(document.getElementsByTagName('body')[0]);
+      });
+    </script>
+    <button onclick="Theme.setProp(document.getElementsByTagName('body')[0],'light', !(Theme.props['light']))">Invert Lights</button>
+    <style>.theme-prop-display { min-width: 4em; display: inline-block; }</style>
+    <label class="theme-slider" style="display: block">Primary hue<input type="range" min="0" max="360" value="180"/><span class="theme-prop-display" data-prop-name="--prim-hue"></span></label>	
+    <label class="theme-slider" style="display: block">Primary saturation<input type="range" min="0" max="100" value="50" /><span class="theme-prop-display" data-prop-name="--prim-saturation"></span></label>
+    <label class="theme-slider" style="display: block">Low hue<input type="range" min="-180" max="180" value="0"/><span class="theme-prop-display" data-prop-name="--low-hue"></span></label>	
+    <label class="theme-slider" style="display: block">Low saturation<input type="range" min="0" max="100" value="50"/><span class="theme-prop-display" data-prop-name="--low-saturation"></span></label>
+    <label class="theme-slider" style="display: block">High hue<input type="range" min="-180" max="180" value="0"/><span class="theme-prop-display" data-prop-name="--high-hue"></span></label>	
+    <label class="theme-slider" style="display: block">High saturation<input type="range" min="0" max="100" value="50"/><span class="theme-prop-display" data-prop-name="--high-saturation"></span></label>
+    <label class="theme-slider" style="display: block">Min contrast<input type="range" min="10" max="100" value="50" /><span class="theme-prop-display" data-prop-name="--min-contrast"></span></label>
+    <label class="theme-slider" style="display: block">Max contrast<input type="range" min="10" max="100" value="0" /><span class="theme-prop-display" data-prop-name="--max-contrast"></span></label>
+</div>
 </body>
 </html>

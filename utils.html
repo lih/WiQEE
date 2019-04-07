@@ -35,29 +35,23 @@
   <script src="mathjax/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
   <link rel="icon" type="image/png" href="favicon.png" />
   <!-- <script src="WiQEE.js"></script> -->
+  <script src="capricon.js"></script>
+  <script src="theme-tweak.js"></script>
 </head>
-<body>
-<nav class="nav">
-  <ul>
-    <li id="nav-head"><a href="index.html">WiQEE</a><ul>
-	<li><a href="lexicon.html">Lexicon</a></li>
-    </ul></li><li id="nav-title"><a class="#">Miscellaneous utilities</a>
-            <ul>
-      <li><a href="#exporting-definitions">Exporting definitions</a></li>
-      <li><a href="#navigating-the-environment">Navigating the environment</a></li>
-      <li><a href="#binders-and-contexts">Binders and contexts</a></li>
-      <li><a href="#constructing-typed-terms">Constructing typed terms</a></li>
-      <li><a href="#managing-the-type-environment">Managing the type environment</a></li>
-      <li><a href="#defining-inductive-constructors">Defining inductive constructors</a></li>
-      <li><a href="#acting-on-list-as-stacks">Acting on list as stacks</a></li>
-      </ul>
-          </li><li id="page-source"><a href="utils.md">Page source</a></li>
-  </ul>
-</nav>
-<div id="content-frame"><div id="content-scroll" autofocus="autofocus"><div id="content">
+<body class="ground-light primary">
+<div id="content-frame" class="frame"><div class="nav header reverse">
+    <span class="menu left"><a href="index.html">WiQEE</a><ul>
+  	<li><a href="lexicon.html">Lexicon</a></li>
+    </ul></span><span class="menu middle"><a class="#">Miscellaneous utilities</a>
+          </span><span class="menu right"><a href="#">More...</a><ul>
+	<li><a href="utils.md">Page source</a></li>
+	<li><a href="#" onclick="document.getElementById('body-theme-chooser').classList.toggle('active')">Tweak theme</a></li>
+      </ul></span>
+  </div><div id="content-scroll" autofocus="autofocus"><div id="content" class="sheet">
+      <h1>Miscellaneous utilities</h1>
 <p>Reminder : all builtin functions can be found documented <a href="lexicon.html">here</a></p>
-<h3 id="exporting-definitions"><a href="#exporting-definitions">Exporting definitions</a></h3>
-<label class="hide-label"><input type="checkbox" class="capricon-hide"/><span class="capricon-hideparagraph"></span><span class="capricon-reveal" data-linecount="1">
+<h4 id="exporting-definitions"><a href="#exporting-definitions">Exporting definitions</a></h4>
+<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 2.25">
 <div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'defX">'defX</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="dupn">dupn</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="def">def</span> <span class="symbol" data-symbol-name="export">export</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="def">def</span> <span class="symbol" data-symbol-name="'defX">'defX</span> <span class="symbol" data-symbol-name="export">export</span></pre><div class="user-input interactive"><button class="capricon-trigger">
 Try It Out
 </button>
@@ -67,8 +61,8 @@ Try It Out
 <div class="capricon-paragraphresult">
 
 </div>
-<h3 id="navigating-the-environment"><a href="#navigating-the-environment">Navigating the environment</a></h3>
-<label class="hide-label"><input type="checkbox" class="capricon-hide"/><span class="capricon-hideparagraph"></span><span class="capricon-reveal" data-linecount="7">
+<h4 id="navigating-the-environment"><a href="#navigating-the-environment">Navigating the environment</a></h4>
+<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 8.25">
 <div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'show-context">'show-context</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span>
    <span class="symbol" data-symbol-name="&quot;&quot;">&quot;&quot;</span> <span class="symbol" data-symbol-name="hypotheses">hypotheses</span>
    <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="dup">dup</span> <span class="symbol" data-symbol-name="variable">variable</span> <span class="symbol" data-symbol-name="type">type</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="&quot;%s : %v\n%s&quot;">&quot;%s : %v\n%s&quot;</span> <span class="symbol" data-symbol-name="format">format</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="each">each</span>
@@ -84,8 +78,8 @@ Try It Out
 <div class="capricon-paragraphresult">
 
 </div>
-<h3 id="binders-and-contexts"><a href="#binders-and-contexts">Binders and contexts</a></h3>
-<label class="hide-label"><input type="checkbox" class="capricon-hide"/><span class="capricon-hideparagraph"></span><span class="capricon-reveal" data-linecount="4">
+<h4 id="binders-and-contexts"><a href="#binders-and-contexts">Binders and contexts</a></h4>
+<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 5.25">
 <div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'binder">'binder</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="shaft">shaft</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="quote quote-exec"><span class="symbol" data-symbol-name="${">${</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="-&gt;">-&gt;</span> <span class="quote quote-exec"><span class="symbol" data-symbol-name="${">${</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="quote quote-exec"><span class="symbol" data-symbol-name="${">${</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
 <span class="symbol" data-symbol-name="'funs">'funs</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="reverse">reverse</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="'!">'!</span> <span class="symbol" data-symbol-name="$">$</span> <span class="symbol" data-symbol-name="binder">binder</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="each">each</span> <span class="symbol" data-symbol-name="exec">exec</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
 <span class="symbol" data-symbol-name="'prods">'prods</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="reverse">reverse</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="'?">'?</span> <span class="symbol" data-symbol-name="$">$</span> <span class="symbol" data-symbol-name="binder">binder</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="each">each</span> <span class="symbol" data-symbol-name="exec">exec</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
@@ -98,8 +92,8 @@ Try It Out
 <div class="capricon-paragraphresult">
 
 </div>
-<h3 id="constructing-typed-terms"><a href="#constructing-typed-terms">Constructing typed terms</a></h3>
-<label class="hide-label"><input type="checkbox" class="capricon-hide"/><span class="capricon-hideparagraph"></span><span class="capricon-reveal" data-linecount="1">
+<h4 id="constructing-typed-terms"><a href="#constructing-typed-terms">Constructing typed terms</a></h4>
+<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 2.25">
 <div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'Type">'Type</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="0">0</span> <span class="symbol" data-symbol-name="universe">universe</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span></pre><div class="user-input interactive"><button class="capricon-trigger">
 Try It Out
 </button>
@@ -109,7 +103,7 @@ Try It Out
 <div class="capricon-paragraphresult">
 
 </div>
-<label class="hide-label"><input type="checkbox" class="capricon-hide"/><span class="capricon-hideparagraph"></span><span class="capricon-reveal" data-linecount="5">
+<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 6.25">
 <div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'foralls">'foralls</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="extro-forall">extro-forall</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="times">times</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
 <span class="symbol" data-symbol-name="'lambdas">'lambdas</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="extro-lambda">extro-lambda</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="times">times</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
 <span class="symbol" data-symbol-name="'applys">'applys</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="range">range</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="pop">pop</span> <span class="symbol" data-symbol-name="apply">apply</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="each">each</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
@@ -123,7 +117,7 @@ Try It Out
 <div class="capricon-paragraphresult">
 
 </div>
-<label class="hide-label"><input type="checkbox" class="capricon-hide"/><span class="capricon-hideparagraph"></span><span class="capricon-reveal" data-linecount="2">
+<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 3.25">
 <div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'(">'(</span> <span class="symbol" data-symbol-name="'[">'[</span> <span class="symbol" data-symbol-name="$">$</span> <span class="symbol" data-symbol-name="defX">defX</span>
 <span class="symbol" data-symbol-name="')">')</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="]">]</span> <span class="symbol" data-symbol-name="applyl">applyl</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span></pre><div class="user-input interactive"><button class="capricon-trigger">
 Try It Out
@@ -134,8 +128,8 @@ Try It Out
 <div class="capricon-paragraphresult">
 
 </div>
-<h3 id="managing-the-type-environment"><a href="#managing-the-type-environment">Managing the type environment</a></h3>
-<label class="hide-label"><input type="checkbox" class="capricon-hide"/><span class="capricon-hideparagraph"></span><span class="capricon-reveal" data-linecount="3">
+<h4 id="managing-the-type-environment"><a href="#managing-the-type-environment">Managing the type environment</a></h4>
+<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 4.25">
 <div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'-&gt;">'-&gt;</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="dup">dup</span> <span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="swapn">swapn</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="intro">intro</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="quote quote-splice"><span class="symbol" data-symbol-name=",{">,{</span> <span class="symbol" data-symbol-name="dup">dup</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="variable">variable</span> <span class="symbol" data-symbol-name="pull">pull</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="def">def</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
 <span class="symbol" data-symbol-name="'!">'!</span> <span class="symbol" data-symbol-name="'extro-lambda">'extro-lambda</span> <span class="symbol" data-symbol-name="$">$</span> <span class="symbol" data-symbol-name="defX">defX</span>
 <span class="symbol" data-symbol-name="'?">'?</span> <span class="symbol" data-symbol-name="'extro-forall">'extro-forall</span> <span class="symbol" data-symbol-name="$">$</span> <span class="symbol" data-symbol-name="defX">defX</span></pre><div class="user-input interactive"><button class="capricon-trigger">
@@ -147,8 +141,8 @@ Try It Out
 <div class="capricon-paragraphresult">
 
 </div>
-<h3 id="defining-inductive-constructors"><a href="#defining-inductive-constructors">Defining inductive constructors</a></h3>
-<label class="hide-label"><input type="checkbox" class="capricon-hide"/><span class="capricon-hideparagraph"></span><span class="capricon-reveal" data-linecount="1">
+<h4 id="defining-inductive-constructors"><a href="#defining-inductive-constructors">Defining inductive constructors</a></h4>
+<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 2.25">
 <div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'defconstr">'defconstr</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="dupn">dupn</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="showdef">showdef</span> <span class="symbol" data-symbol-name="def">def</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span></pre><div class="user-input interactive"><button class="capricon-trigger">
 Try It Out
 </button>
@@ -158,8 +152,8 @@ Try It Out
 <div class="capricon-paragraphresult">
 
 </div>
-<h3 id="acting-on-list-as-stacks"><a href="#acting-on-list-as-stacks">Acting on list as stacks</a></h3>
-<label class="hide-label"><input type="checkbox" class="capricon-hide"/><span class="capricon-hideparagraph"></span><span class="capricon-reveal capricon-with-examples" data-linecount="6">
+<h4 id="acting-on-list-as-stacks"><a href="#acting-on-list-as-stacks">Acting on list as stacks</a></h4>
+<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 8.5">
 <div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'in-list">'in-list</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span>
   <span class="symbol" data-symbol-name="swap">swap</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span>
     <span class="quote quote-splice"><span class="symbol" data-symbol-name=",{">,{</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="set-stack">set-stack</span> <span class="quote quote-exec"><span class="symbol" data-symbol-name="${">${</span> <span class="symbol" data-symbol-name="}">}</span></span>
@@ -174,9 +168,7 @@ Try It Out
 <div class="capricon-paragraphresult">
 
 </div>
-<div id="footer">
-  Page generated on Thursday, April 04 of 2019, at 15:07 PM UTC, using capricon-0.12.1 and pandoc-1.12.2.1.
-</div>
+      <div id="footer">Page generated on Sunday, April 07 of 2019, at 19:30 PM UTC, using capricon-0.12.2 and pandoc-1.12.2.1.</div>
 </div></div></div>
 <div id="capricon-prelude" style="display: none;">'nop { { } } def 'get { nop nop lookup } def 'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys { { 1 dupn 1 dupn get def } each pop } def 'import { dup dict-keys import-keys } def [ dict term-index construction query context io list arith string ] { import } each 'printf { format print pop } def 'show { &quot;%v\n&quot; printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def 'mustache. { show } def 'tex { 'mustache. { &quot;<span class="math">\(%l\)</span>\n&quot; printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { &quot;
 <svg class='formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\\"http://www.w3.org/2000/svg\\">
@@ -185,102 +177,6 @@ Try It Out
 <p>&quot; printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { &quot;%s\n&quot; printf 'mustache. ,{ dup $ } def } def } def 'collect { { 'exports empty def ,{ } exec exports ,{ vocabulary } set-vocabulary } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def [ 'source-dir 'output-dir 'cache-dir ] { &quot;&quot; def } each 'module { dup source-dir &quot;%s%s&quot; format source swap output-dir &quot;%s%s.mdc&quot; format redirect } def 'require { dup dup &quot; * Required module: [%s]\(%s.html\)\n&quot; printf { ,{ dup } { module } collect } swap cache-dir &quot;%s%s.mdo&quot; format cache } def</p></div>
 <div id="capricon-console"></div>
 <script type="text/javascript">
-  capriconWorker = new Worker('WiQEE-worker.js');
-
-  workerCallbacks = [];
-  capriconWorker.onmessage = function (e) {
-      var callback = workerCallbacks[e.data[0]];
-      callback(e.data[1]);
-  };
-
-  function runCaPriCon(state,code,then) {
-      var nextCallback = workerCallbacks.length;
-      workerCallbacks.push(then);
-      capriconWorker.postMessage([0,nextCallback,state,code]);
-  };
-  function evalCaPriCon(state,code,then) {
-      var nextCallback = workerCallbacks.length;
-      workerCallbacks.push(then);
-      capriconWorker.postMessage([1,nextCallback,state,code]);
-  };
-
-  prel = document.getElementById('capricon-prelude').textContent;
-  roots = Array.prototype.slice.call(document.getElementsByClassName('capricon-steps'));
-  console = document.getElementById('capricon-console');
-  function loop0(i) { return function (st) {
-      // alert('loop0 called with '+i+' roots.length='+roots.length);
-      if(i < roots.length) {
-      	  var root = roots[i];
-	  if(root.tagName == 'CODE') {
-	      runCaPriCon(st,root.textContent + " mustache.",loop0(i+1));
-	  }
-	  else {
-	      var mainInput = root.getElementsByClassName('capricon-input')[0];
-	      mainInput.classList.add('pending');
-
-	      var consoleRoot = root.cloneNode(true);
-	      var consoleTitle = document.createElement('h3');
-	      var consoleClose = document.createElement('button');
-	      
-	      var mainExamples = root.getElementsByClassName('capricon-example');
-	      for(var j = 0; j < mainExamples.length; j++) {
-		  (function () {
-		      var example = mainExamples[j];
-		      example.addEventListener('click', function (ev) {
-			  mainInput.value = example.getAttribute('data-code');
-		      });
-		  })();
-	      }
-
-	      consoleClose.textContent = "Close";
-	      consoleClose.addEventListener('click', function() {
-		  consoleRoot.classList.remove('active');
-		  mainInput.value = consoleInput.value;
-	      });
-	      consoleTitle.textContent = "CaPriCon Console";
-	      consoleTitle.appendChild(consoleClose);
-	      consoleRoot.insertBefore(consoleTitle,consoleRoot.firstChild);
-	      console.appendChild(consoleRoot);
-
-
-	      var text = root.getElementsByClassName('capricon')[0].textContent;
-	      runCaPriCon(st,text,function(st0) {
-		  var mainTrigger = root.getElementsByClassName('capricon-trigger')[0];
-		  var consoleInput = consoleRoot.getElementsByClassName('capricon-input')[0];
-		  var consoleOutput = consoleRoot.getElementsByClassName('capricon-output')[0];
-		  
-		  mainInput.classList.add('ready'); mainInput.classList.remove('pending');
-		  mainTrigger.addEventListener('click', function (ev) {
-		      if(!consoleRoot.classList.contains('active')) {
-			  consoleRoot.classList.add('active');
-			  consoleInput.value = mainInput.value;
-			  evalCaPriCon(st0,consoleInput.value,function(ret) { consoleOutput.textContent = ret; });
-		      	  consoleInput.focus();
-		      }
-		  });
-
-		  consoleInput.addEventListener('keypress', function (ev) {
-		      if(ev.keyCode == 13) { // Press Enter
-			  evalCaPriCon(st0,consoleInput.value,function(ret) { consoleOutput.textContent = ret; });
-		      }
-		  });
-		  
-		  mainInput.addEventListener('keypress', function (ev) {
-		      if(ev.keyCode == 13) { // Press Enter
-			  consoleRoot.classList.add('active');
-			  consoleInput.value = mainInput.value;
-			  evalCaPriCon(st0,mainInput.value,function(ret) { consoleOutput.textContent = ret; });
-			  consoleInput.focus();
-		      }
-		  });
-
-		  loop0(i+1)(st0);
-	      });
-	  }
-      }
-  };}
-  runCaPriCon(0,prel,loop0(0));
-
   window.addEventListener("load",function() {
       var formulae = document.getElementsByClassName('formula');
       for(var i in formulae) {
@@ -295,5 +191,22 @@ Try It Out
       }
   });
 </script>
+<div id="body-theme-chooser" style="z-index: 100; position: fixed; text-align: right; right: 0; bottom: 0; font-size: 1rem !important" class="opaque sheet frame level-12">
+    <script>
+      document.addEventListener('DOMContentLoaded',function() {
+	  Theme.attach(document.getElementsByTagName('body')[0]);
+      });
+    </script>
+    <button onclick="Theme.setProp(document.getElementsByTagName('body')[0],'light', !(Theme.props['light']))">Invert Lights</button>
+    <style>.theme-prop-display { min-width: 4em; display: inline-block; }</style>
+    <label class="theme-slider" style="display: block">Primary hue<input type="range" min="0" max="360" value="180"/><span class="theme-prop-display" data-prop-name="--prim-hue"></span></label>	
+    <label class="theme-slider" style="display: block">Primary saturation<input type="range" min="0" max="100" value="50" /><span class="theme-prop-display" data-prop-name="--prim-saturation"></span></label>
+    <label class="theme-slider" style="display: block">Low hue<input type="range" min="-180" max="180" value="0"/><span class="theme-prop-display" data-prop-name="--low-hue"></span></label>	
+    <label class="theme-slider" style="display: block">Low saturation<input type="range" min="0" max="100" value="50"/><span class="theme-prop-display" data-prop-name="--low-saturation"></span></label>
+    <label class="theme-slider" style="display: block">High hue<input type="range" min="-180" max="180" value="0"/><span class="theme-prop-display" data-prop-name="--high-hue"></span></label>	
+    <label class="theme-slider" style="display: block">High saturation<input type="range" min="0" max="100" value="50"/><span class="theme-prop-display" data-prop-name="--high-saturation"></span></label>
+    <label class="theme-slider" style="display: block">Min contrast<input type="range" min="10" max="100" value="50" /><span class="theme-prop-display" data-prop-name="--min-contrast"></span></label>
+    <label class="theme-slider" style="display: block">Max contrast<input type="range" min="10" max="100" value="0" /><span class="theme-prop-display" data-prop-name="--max-contrast"></span></label>
+</div>
 </body>
 </html>

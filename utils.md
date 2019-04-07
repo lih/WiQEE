@@ -3,11 +3,11 @@
 
 Reminder : all builtin functions can be found documented [here](lexicon.html)
 
-### Exporting definitions
+#### Exporting definitions
 
 > 'defX { 1 dupn swap def export } def 'defX export
 
-### Navigating the environment
+#### Navigating the environment
 
 > 'show-context {
 >    "" hypotheses
@@ -17,14 +17,14 @@ Reminder : all builtin functions can be found documented [here](lexicon.html)
 > 'showdef { pattern-index 1 swapn swap index-insert set-pattern-index } defX
 > 'vis { show-context "-------\n" printf show-stack } defX
 
-### Binders and contexts
+#### Binders and contexts
 
 > 'binder { 2 shaft { ${ swap } -> ${ } ${ } } } defX
 > 'funs { swap reverse { swap '! $ binder } each exec } defX
 > 'prods { swap reverse { swap '? $ binder } each exec } defX
 > '# { swap cons } defX
 
-### Constructing typed terms
+#### Constructing typed terms
 
 > 'Type { 0 universe } defX
 
@@ -37,17 +37,17 @@ Reminder : all builtin functions can be found documented [here](lexicon.html)
 > '( '[ $ defX
 > ') { ] applyl } defX
 
-### Managing the type environment
+#### Managing the type environment
 
 > '-> { dup 1 swapn swap intro { ,{ dup } variable pull } def } defX
 > '! 'extro-lambda $ defX
 > '? 'extro-forall $ defX
 
-### Defining inductive constructors
+#### Defining inductive constructors
 
 > 'defconstr { 1 dupn swap showdef def } defX
 
-### Acting on list as stacks
+#### Acting on list as stacks
 
 > 'in-list {
 >   swap {

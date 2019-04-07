@@ -35,13 +35,14 @@
   <script src="mathjax/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
   <link rel="icon" type="image/png" href="favicon.png" />
   <!-- <script src="WiQEE.js"></script> -->
+  <script src="capricon.js"></script>
+  <script src="theme-tweak.js"></script>
 </head>
-<body>
-<nav class="nav">
-  <ul>
-    <li id="nav-head"><a href="index.html">WiQEE</a><ul>
-	<li><a href="lexicon.html">Lexicon</a></li>
-    </ul></li><li id="nav-title"><a class="#">WiQEE : A Wiki for mathematical proofs</a>
+<body class="ground-light primary">
+<div id="content-frame" class="frame"><div class="nav header reverse">
+    <span class="menu left"><a href="index.html">WiQEE</a><ul>
+  	<li><a href="lexicon.html">Lexicon</a></li>
+    </ul></span><span class="menu middle"><a class="#">WiQEE : A Wiki for mathematical proofs</a>
             <ul>
       <li><a href="#literate-programming-in-wiki-form">Literate Programming in Wiki Form</a></li>
       <li><a href="#a-concatenative-scripting-language">A Concatenative Scripting Language</a></li>
@@ -49,17 +50,19 @@
       <li><a href="#contributing-to-wiqee-or-creating-your-own">Contributing to WiQEE, or creating your own</a></li>
       <li><a href="#example-pages">Example pages</a></li>
       </ul>
-          </li><li id="page-source"><a href="index.md">Page source</a></li>
-  </ul>
-</nav>
-<div id="content-frame"><div id="content-scroll" autofocus="autofocus"><div id="content">
+          </span><span class="menu right"><a href="#">More...</a><ul>
+	<li><a href="index.md">Page source</a></li>
+	<li><a href="#" onclick="document.getElementById('body-theme-chooser').classList.toggle('active')">Tweak theme</a></li>
+      </ul></span>
+  </div><div id="content-scroll" autofocus="autofocus"><div id="content" class="sheet">
+      <h1>WiQEE : A Wiki for mathematical proofs</h1>
 <p>The Quod Erat Edificandum Wiki -- WiQEE for short -- is a mix of two ideas. First of all, it is a documentation platform, whose main content is the articles written by its contributors. Secondly, it aims to become a formally-verified library of mathematical proofs and programs, that can be extracted to executable form, or composed together to prove more complicated theories.</p>
 <p>Every page on this wiki is generated from a source file, written in a language called CaPriCon. The source of a page can be downloaded from its menu. If you want to know how the sausage gets made, I invite you to take a look at <a href="index.md">this index's source</a> for an example of such source files.</p>
 <p>If you do so, you may notice that the source doesn't look that different from the article itself. That is because CaPriCon is an exclusively <a href="https://en.wikipedia.org/wiki/Literate_programming">literate programming language</a>, in which most text is simply text, and the code is specially identified through dedicated syntaxes. The comment formatting language itself is Markdown in this case, although it would be trivial to adapt it to other textual markup languages such as TeX.</p>
-<h1 id="literate-programming-in-wiki-form"><a href="#literate-programming-in-wiki-form">Literate Programming in Wiki Form</a></h1>
+<h2 id="literate-programming-in-wiki-form"><a href="#literate-programming-in-wiki-form">Literate Programming in Wiki Form</a></h2>
 <p>Everything you've read until now is a comment of the &quot;index.md&quot; program. If you want to write programs, though, you will probably need to write some <em>code</em>, which in this case consists in a sequence of <em>steps</em> that are executed in the order in which they appear. The first sort of code that you can execute is a code paragraph, and is indicated in the source by starting a line with <code>&gt;</code>.</p>
-<label class="hide-label"><input type="checkbox" class="capricon-hide"/><span class="capricon-hideparagraph"></span><span class="capricon-reveal" data-linecount="1">
-<div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="&quot;&lt;p&gt;Such code is executed, and its output is added to the document.&lt;/p&gt;&quot;">&quot;&lt;p&gt;Such code is executed, and its output is added to the document.&lt;/p&gt;&quot;</span> <span class="symbol" data-symbol-name="printf">printf</span></pre><div class="user-input interactive"><button class="capricon-trigger">
+<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
+<div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="&quot;&lt;p&gt;Such code is executed, and its output is added to the document.&lt;/p&gt;&quot;">&quot;&lt;p&gt;Such code is executed, and its output is added to the document.&lt;/p&gt;&quot;</span> <span class="symbol" data-symbol-name="printf">printf</span></pre><div class="capricon-examples"><button class="capricon-example" data-code="&quot;Hello&quot; printf"><pre class="capricon"><span class="symbol" data-symbol-name="&quot;Hello&quot;">&quot;Hello&quot;</span> <span class="symbol" data-symbol-name="printf">printf</span></pre></button><button class="capricon-example" data-code="version &quot;CaPriCon version: %s\n&quot; printf"><pre class="capricon"><span class="symbol" data-symbol-name="version">version</span> <span class="symbol" data-symbol-name="&quot;CaPriCon version: %s\n&quot;">&quot;CaPriCon version: %s\n&quot;</span> <span class="symbol" data-symbol-name="printf">printf</span></pre></button></div><div class="user-input interactive"><button class="capricon-trigger">
 Try It Out
 </button>
 <label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
@@ -69,8 +72,8 @@ Try It Out
 Such code is executed, and its output is added to the document.
 </p></div>
 
-<p>You can also write some inline code between &quot;mustaches&quot; (a mustache is a pair of nested <code>{}</code> inside the source), which will be executed as part of a paragraph, and whose output <span class="capricon-result">will look like this </span><label class="hide-label"><input type="checkbox" class="capricon-hide" checked="checked"/><span class="capricon-hidestache"></span><span class="capricon-reveal" data-linecount="1"><code class="capricon capricon-steps">&quot;will look like this&quot; raw</code></span></label>. If all works well, you should see a small image of steps next to the generated output. Clicking on those steps will, as in the previous case and without surprises, show you the steps that were taken to produce this output.</p>
-<h1 id="a-concatenative-scripting-language"><a href="#a-concatenative-scripting-language">A Concatenative Scripting Language</a></h1>
+<p>You can also write some inline code between &quot;mustaches&quot; (a mustache is a pair of nested <code>{}</code> inside the source), which will be executed as part of a paragraph, and whose output <label class="expansible inline"><span>will look like this </span><input type="checkbox"/><span class="expand-then"><code class="capricon capricon-steps">&quot;will look like this&quot; raw</code></span></label>. If all works well, you should see a small image of steps next to the generated output. Clicking on those steps will, as in the previous case and without surprises, show you the steps that were taken to produce this output.</p>
+<h2 id="a-concatenative-scripting-language"><a href="#a-concatenative-scripting-language">A Concatenative Scripting Language</a></h2>
 <p>If you peeked at the examples given before, you may have noticed something strange. In order to produce some output, you'd expect a sentence to look like <code>print &quot;...&quot;</code>, but instead the program was written in the reverse order, as <code>&quot;...&quot; print</code>.</p>
 <p>Indeed, in the tradition of PostScript, CaPriCon is a concatenative, stack-based language. In such a language, programs are represented as sequences of symbols, that are executed from first to last, and that may keep intermediate results on a shared stack. All the power of the language comes from the words that are made available, rather than from the particular syntax of those words.</p>
 <p>Concatenative languages have a few interesting properties that make them perfect candidates for integration into a literate environment like the one CaPriCon provides :</p>
@@ -82,18 +85,18 @@ Such code is executed, and its output is added to the document.
 <p>A prelude is simply a file containing the basic definitions needed to write simple programs. Without one, you're left with the basic functions, which require you to be much more verbose. The default CaPriCon prelude can be found in the above packages, under the name &quot;prelude&quot;.</p></li>
 </ul>
 <p>If you still aren't quite sure how to go about writing your own scripts, <a href="capricon-tutorial.md">this tutorial</a> may help walk you through the first hurdles.</p>
-<h1 id="proofs-with-prismatic-constructions"><a href="#proofs-with-prismatic-constructions">Proofs With Prismatic Constructions</a></h1>
+<h2 id="proofs-with-prismatic-constructions"><a href="#proofs-with-prismatic-constructions">Proofs With Prismatic Constructions</a></h2>
 <p>While CaPriCon can be a decent addition to a documentation format, it was first designed as an interactive interface for the construction of proof terms, described in the Calculus of Prismatic Constructions (hence the name CaPriCon), which is an extension of the basic CoC with a lifting operator for naturally inductive values.</p>
 <p>That operator is called <span class="math">\(\mu\)</span>, and it works by projecting inductive values onto a larger version of themselves, universe-wise. For example, given the &quot;inductive&quot; type <span class="math">\(Id := \forall T:Set_n, T \rightarrow T\)</span>, and a hypothesis <span class="math">\(id : Id\)</span>, <span class="math">\(\mu(id)\)</span> represents a computationally sound proof of <span class="math">\(\forall (T^*:Id \rightarrow Set_{n+1}), T^*\ (\lambda (T:Set_n) (t:T), t) \rightarrow T^*\ id\)</span>. Each branch of the base inductive type is &quot;projected&quot; through <span class="math">\(\mu\)</span> to a parallel branch in a larger universe, with additional &quot;rays&quot; to provide reflection into that universe. <span class="math">\(\mu\)</span> thus acts like a sort of <em>prism</em> (in fact, an <em>endoprism</em>) that continuously projects inductive values onto their induction principle, giving rise to the eponymous <em>prismatic constructions</em>.</p>
 <p>This generalization can be applied to model many common cases which previously required the introduction of abstract-only inductive types, including but not limited to : general dependent inductive types, complete with recursive and inductive-inductive types; co-inductive types and their associated semantics; and even some kinds of quotient types, though the full scope of those quotient types is still to be discovered.</p>
 <h4 id="talk-is-cheap-show-me-the-code"><a href="#talk-is-cheap-show-me-the-code">Talk is cheap, show me the code</a></h4>
 <p>From the previous overview, <span class="math">\(\mu\)</span> may seem quite complex, but it is actually implemented as an almost linear operation on De Bruijn indices. You can look at <a href="https://github.com/lih/stack-libs/blob/master/capricon/src/Data/CaPriCon.hs">CaPriCon's Haskell implementation</a> of this model to convince yourself of that. All in all, the whole interpreter/typechecker/pattern-matcher boils down to ~300 lines of index-shifting code.</p>
 <p>If you feel hesitant about trusting a bunch of Haskell functions written by a stranger on the Internet, don't hesitate to start hijacking bits of it to write CaPriCon interepreters of your own, in your language of choice. Mine just happens to be Haskell, but maybe yours will bring something new and interesting to the table as well.</p>
-<h1 id="contributing-to-wiqee-or-creating-your-own"><a href="#contributing-to-wiqee-or-creating-your-own">Contributing to WiQEE, or creating your own</a></h1>
+<h2 id="contributing-to-wiqee-or-creating-your-own"><a href="#contributing-to-wiqee-or-creating-your-own">Contributing to WiQEE, or creating your own</a></h2>
 <p>It goes without saying that I encourage you to contribute to WiQEE in any way you'd like. You may find the project template for this site <a href="https://github.com/lih/WiQEE">in this Git repository</a>, and the source for the actual pages in this <a href="https://github.com/lih/WiQEE-pages">other Git repository</a>.</p>
 <p>If you want to contribute to this specific site, you can use the power of Pull Requests on the WiQEE-pages repository (the second one). I can't promise an immediate reply, but I'm working on automating the builds to allow every contributor to participate, without needing my validation at every turn.</p>
 <p>If like me you lack that sort of patience, you can also test your pages by running your own version of this site (how exciting !). To do so, you have to clone the first repository, apply your modifications in the <code>src/pages</code> subdirectory, and run <code>make</code> over the whole thing. You'll need Pandoc and Sass to be installed, for Markdown and SCSS processing, as well as CaPriCon for obvious reasons. Once <code>make</code> has run its course, you should find a workable HTML version of your WiQEE in the <code>public</code> subdirectory.</p>
-<h1 id="example-pages"><a href="#example-pages">Example pages</a></h1>
+<h2 id="example-pages"><a href="#example-pages">Example pages</a></h2>
 <p>The basics :</p>
 <ul>
 <li><a href="Booleans.html">Booleans</a></li>
@@ -102,9 +105,7 @@ Such code is executed, and its output is added to the document.
 <li><a href="Lists.html">Lists</a></li>
 <li><a href="Relations.html">Relations</a></li>
 </ul>
-<div id="footer">
-  Page generated on Thursday, April 04 of 2019, at 15:07 PM UTC, using capricon-0.12.1 and pandoc-1.12.2.1.
-</div>
+      <div id="footer">Page generated on Sunday, April 07 of 2019, at 19:30 PM UTC, using capricon-0.12.2 and pandoc-1.12.2.1.</div>
 </div></div></div>
 <div id="capricon-prelude" style="display: none;">'nop { { } } def 'get { nop nop lookup } def 'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys { { 1 dupn 1 dupn get def } each pop } def 'import { dup dict-keys import-keys } def [ dict term-index construction query context io list arith string ] { import } each 'printf { format print pop } def 'show { &quot;%v\n&quot; printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def 'mustache. { show } def 'tex { 'mustache. { &quot;<span class="math">\(%l\)</span>\n&quot; printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { &quot;
 <svg class='formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\\"http://www.w3.org/2000/svg\\">
@@ -113,102 +114,6 @@ Such code is executed, and its output is added to the document.
 <p>&quot; printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { &quot;%s\n&quot; printf 'mustache. ,{ dup $ } def } def } def 'collect { { 'exports empty def ,{ } exec exports ,{ vocabulary } set-vocabulary } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def [ 'source-dir 'output-dir 'cache-dir ] { &quot;&quot; def } each 'module { dup source-dir &quot;%s%s&quot; format source swap output-dir &quot;%s%s.mdc&quot; format redirect } def 'require { dup dup &quot; * Required module: [%s]\(%s.html\)\n&quot; printf { ,{ dup } { module } collect } swap cache-dir &quot;%s%s.mdo&quot; format cache } def</p></div>
 <div id="capricon-console"></div>
 <script type="text/javascript">
-  capriconWorker = new Worker('WiQEE-worker.js');
-
-  workerCallbacks = [];
-  capriconWorker.onmessage = function (e) {
-      var callback = workerCallbacks[e.data[0]];
-      callback(e.data[1]);
-  };
-
-  function runCaPriCon(state,code,then) {
-      var nextCallback = workerCallbacks.length;
-      workerCallbacks.push(then);
-      capriconWorker.postMessage([0,nextCallback,state,code]);
-  };
-  function evalCaPriCon(state,code,then) {
-      var nextCallback = workerCallbacks.length;
-      workerCallbacks.push(then);
-      capriconWorker.postMessage([1,nextCallback,state,code]);
-  };
-
-  prel = document.getElementById('capricon-prelude').textContent;
-  roots = Array.prototype.slice.call(document.getElementsByClassName('capricon-steps'));
-  console = document.getElementById('capricon-console');
-  function loop0(i) { return function (st) {
-      // alert('loop0 called with '+i+' roots.length='+roots.length);
-      if(i < roots.length) {
-      	  var root = roots[i];
-	  if(root.tagName == 'CODE') {
-	      runCaPriCon(st,root.textContent + " mustache.",loop0(i+1));
-	  }
-	  else {
-	      var mainInput = root.getElementsByClassName('capricon-input')[0];
-	      mainInput.classList.add('pending');
-
-	      var consoleRoot = root.cloneNode(true);
-	      var consoleTitle = document.createElement('h3');
-	      var consoleClose = document.createElement('button');
-	      
-	      var mainExamples = root.getElementsByClassName('capricon-example');
-	      for(var j = 0; j < mainExamples.length; j++) {
-		  (function () {
-		      var example = mainExamples[j];
-		      example.addEventListener('click', function (ev) {
-			  mainInput.value = example.getAttribute('data-code');
-		      });
-		  })();
-	      }
-
-	      consoleClose.textContent = "Close";
-	      consoleClose.addEventListener('click', function() {
-		  consoleRoot.classList.remove('active');
-		  mainInput.value = consoleInput.value;
-	      });
-	      consoleTitle.textContent = "CaPriCon Console";
-	      consoleTitle.appendChild(consoleClose);
-	      consoleRoot.insertBefore(consoleTitle,consoleRoot.firstChild);
-	      console.appendChild(consoleRoot);
-
-
-	      var text = root.getElementsByClassName('capricon')[0].textContent;
-	      runCaPriCon(st,text,function(st0) {
-		  var mainTrigger = root.getElementsByClassName('capricon-trigger')[0];
-		  var consoleInput = consoleRoot.getElementsByClassName('capricon-input')[0];
-		  var consoleOutput = consoleRoot.getElementsByClassName('capricon-output')[0];
-		  
-		  mainInput.classList.add('ready'); mainInput.classList.remove('pending');
-		  mainTrigger.addEventListener('click', function (ev) {
-		      if(!consoleRoot.classList.contains('active')) {
-			  consoleRoot.classList.add('active');
-			  consoleInput.value = mainInput.value;
-			  evalCaPriCon(st0,consoleInput.value,function(ret) { consoleOutput.textContent = ret; });
-		      	  consoleInput.focus();
-		      }
-		  });
-
-		  consoleInput.addEventListener('keypress', function (ev) {
-		      if(ev.keyCode == 13) { // Press Enter
-			  evalCaPriCon(st0,consoleInput.value,function(ret) { consoleOutput.textContent = ret; });
-		      }
-		  });
-		  
-		  mainInput.addEventListener('keypress', function (ev) {
-		      if(ev.keyCode == 13) { // Press Enter
-			  consoleRoot.classList.add('active');
-			  consoleInput.value = mainInput.value;
-			  evalCaPriCon(st0,mainInput.value,function(ret) { consoleOutput.textContent = ret; });
-			  consoleInput.focus();
-		      }
-		  });
-
-		  loop0(i+1)(st0);
-	      });
-	  }
-      }
-  };}
-  runCaPriCon(0,prel,loop0(0));
-
   window.addEventListener("load",function() {
       var formulae = document.getElementsByClassName('formula');
       for(var i in formulae) {
@@ -223,5 +128,22 @@ Such code is executed, and its output is added to the document.
       }
   });
 </script>
+<div id="body-theme-chooser" style="z-index: 100; position: fixed; text-align: right; right: 0; bottom: 0; font-size: 1rem !important" class="opaque sheet frame level-12">
+    <script>
+      document.addEventListener('DOMContentLoaded',function() {
+	  Theme.attach(document.getElementsByTagName('body')[0]);
+      });
+    </script>
+    <button onclick="Theme.setProp(document.getElementsByTagName('body')[0],'light', !(Theme.props['light']))">Invert Lights</button>
+    <style>.theme-prop-display { min-width: 4em; display: inline-block; }</style>
+    <label class="theme-slider" style="display: block">Primary hue<input type="range" min="0" max="360" value="180"/><span class="theme-prop-display" data-prop-name="--prim-hue"></span></label>	
+    <label class="theme-slider" style="display: block">Primary saturation<input type="range" min="0" max="100" value="50" /><span class="theme-prop-display" data-prop-name="--prim-saturation"></span></label>
+    <label class="theme-slider" style="display: block">Low hue<input type="range" min="-180" max="180" value="0"/><span class="theme-prop-display" data-prop-name="--low-hue"></span></label>	
+    <label class="theme-slider" style="display: block">Low saturation<input type="range" min="0" max="100" value="50"/><span class="theme-prop-display" data-prop-name="--low-saturation"></span></label>
+    <label class="theme-slider" style="display: block">High hue<input type="range" min="-180" max="180" value="0"/><span class="theme-prop-display" data-prop-name="--high-hue"></span></label>	
+    <label class="theme-slider" style="display: block">High saturation<input type="range" min="0" max="100" value="50"/><span class="theme-prop-display" data-prop-name="--high-saturation"></span></label>
+    <label class="theme-slider" style="display: block">Min contrast<input type="range" min="10" max="100" value="50" /><span class="theme-prop-display" data-prop-name="--min-contrast"></span></label>
+    <label class="theme-slider" style="display: block">Max contrast<input type="range" min="10" max="100" value="0" /><span class="theme-prop-display" data-prop-name="--max-contrast"></span></label>
+</div>
 </body>
 </html>
