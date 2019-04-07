@@ -1,5 +1,5 @@
 window.addEventListener('load',function () {
-    var capriconWorker = new Worker('WiQEE-worker.js');
+    var capriconWorker = new Worker('capricon-worker.js');
 
     var workerCallbacks = [];
     capriconWorker.onmessage = function (e) {
