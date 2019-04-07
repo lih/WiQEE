@@ -11,4 +11,4 @@
 
 The `Nat` type is defined to {{Nat svg}}. {{Nat 'n recursor dup svg}} has type {{type svg}}.
 
-{{succ dup svg}} has type {{type svg}}.
+{{succ dup svg}} has type {{type svg}}. Or does it ?
