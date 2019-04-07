@@ -111,22 +111,16 @@
 <p>The environment of the interpreter consists mostly of a stack of values, that can be manipulated with the following words.</p>
 <p><code>dup</code> / <code>dupn</code></p>
 <p>: Duplicates the top element, or the nth top element of the stack.</p>
-<ul>
-<li><code>dup</code> : <span class="math">\(x\ ...\ \rightarrow\ x\ x\ ...\)</span><br /></li>
-<li><code>dupn</code> : <span class="math">\(n\ x_0 .. x_n\ ...\ \rightarrow\ x_n\ x_0 .. x_n\ ...\)</span></li>
-</ul>
+<pre><code>- `dup` : $x\ ...\ \rightarrow\ x\ x\ ...$  
+- `dupn` : $n\ x_0 .. x_n\ ...\ \rightarrow\ x_n\ x_0 .. x_n\ ...$</code></pre>
 <p><code>swap</code> / <code>swapn</code></p>
 <p>: Swaps the top element of the stack with the second, or the nth element.</p>
-<ul>
-<li><code>swap</code> : <span class="math">\(x\ y\ ...\ \rightarrow\ y\ x\ ...\)</span><br /></li>
-<li><code>swapn</code> : <span class="math">\(n\ x\ y_0 .. y_n\ ...\ \rightarrow\ y_n\ y_0 .. y_{n-1}\ x\ ...\)</span></li>
-</ul>
+<pre><code>- `swap` : $x\ y\ ...\ \rightarrow\ y\ x\ ...$  
+- `swapn` : $n\ x\ y_0 .. y_n\ ...\ \rightarrow\ y_n\ y_0 .. y_{n-1}\ x\ ...$</code></pre>
 <p><code>shift</code> / <code>shaft</code></p>
 <p>: Shifts the nth element towards the top, or shaft the top to the nth place.</p>
-<ul>
-<li><code>shift</code> : <span class="math">\(n\ x_1..x_n\ ...\ \rightarrow\ x_n\ x_1..x_{n-1}\ ...\)</span><br /></li>
-<li><code>shaft</code> : <span class="math">\(n\ x_1..x_n\ ...\ \rightarrow\ x_2..x_n\ x_1...\)</span></li>
-</ul>
+<pre><code>- `shift` : $n\ x_1..x_n\ ...\ \rightarrow\ x_n\ x_1..x_{n-1}\ ...$  
+- `shaft` : $n\ x_1..x_n\ ...\ \rightarrow\ x_2..x_n\ x_1...$  </code></pre>
 <p><code>pop</code> / <code>popn</code></p>
 <p>: Pops the top element, or the nth top element, off the stack.</p>
 <ul>
@@ -291,7 +285,7 @@ Try It Out
 <p>Given a hypothesis name, and a term of the same type as that hypothesis, remove that hypothesis from the context by substituting all its occurences by the given term.</p>
 <h3 id="hypotheses"><a href="#hypotheses"><code>hypotheses</code></a></h3>
 <p>Pushes a list of all the hypotheses' names in context, from most recent to the oldest.</p>
-      <div id="footer">Page generated on Sunday, April 07 of 2019, at 22:57 PM UTC, using capricon-0.12.2.1 and pandoc-1.12.2.1.</div>
+      <div id="footer">Page generated on Sunday, April 07 of 2019, at 22:59 PM UTC, using capricon-0.12.2.1 and pandoc-1.12.2.1.</div>
 </div></div></div>
 <div id="capricon-prelude" style="display: none;">'nop { { } } def 'get { nop nop lookup } def 'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys { { 1 dupn 1 dupn get def } each pop } def 'import { dup dict-keys import-keys } def [ dict term-index construction query context io list arith string ] { import } each 'printf { format print pop } def 'show { &quot;%v\n&quot; printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def 'mustache. { show } def 'tex { 'mustache. { &quot;<span class="math">\(%l\)</span>\n&quot; printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { &quot;
 <svg class='formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\\"http://www.w3.org/2000/svg\\">

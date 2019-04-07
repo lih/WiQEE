@@ -13,23 +13,23 @@ values, that can be manipulated with the following words.
 
 : Duplicates the top element, or the nth top element of the stack.
 
-  - `dup` : $x\ ...\ \rightarrow\ x\ x\ ...$  
-  - `dupn` : $n\ x_0 .. x_n\ ...\ \rightarrow\ x_n\ x_0 .. x_n\ ...$
+    - `dup` : $x\ ...\ \rightarrow\ x\ x\ ...$  
+    - `dupn` : $n\ x_0 .. x_n\ ...\ \rightarrow\ x_n\ x_0 .. x_n\ ...$
 
 `swap` / `swapn`
 
 : Swaps the top element of the stack with the second, or the nth
   element.
 
-  - `swap` : $x\ y\ ...\ \rightarrow\ y\ x\ ...$  
-  - `swapn` : $n\ x\ y_0 .. y_n\ ...\ \rightarrow\ y_n\ y_0 .. y_{n-1}\ x\ ...$
+    - `swap` : $x\ y\ ...\ \rightarrow\ y\ x\ ...$  
+    - `swapn` : $n\ x\ y_0 .. y_n\ ...\ \rightarrow\ y_n\ y_0 .. y_{n-1}\ x\ ...$
 
 `shift` / `shaft`
 
 : Shifts the nth element towards the top, or shaft the top to the nth place.
 
-  - `shift` : $n\ x_1..x_n\ ...\ \rightarrow\ x_n\ x_1..x_{n-1}\ ...$  
-  - `shaft` : $n\ x_1..x_n\ ...\ \rightarrow\ x_2..x_n\ x_1...$  
+    - `shift` : $n\ x_1..x_n\ ...\ \rightarrow\ x_n\ x_1..x_{n-1}\ ...$  
+    - `shaft` : $n\ x_1..x_n\ ...\ \rightarrow\ x_2..x_n\ x_1...$  
 
 `pop` / `popn`
 
