@@ -33,10 +33,10 @@
     .reverse { --level-incr: -1; }
     --prim-hue: #{hue(nth($primary,3))};
     --prim-saturation: #{saturation(nth($primary,3))};
-    --low-hue: nth($primary,4);
-    --low-saturation: nth($primary,5);
-    --high-hue: nth($primary,1);
-    --high-saturation: nth($primary,2);
+    --low-hue: #{nth($primary,4)};
+    --low-saturation: #{nth($primary,5)};
+    --high-hue: #{nth($primary,1)};
+    --high-saturation: #{nth($primary,2)};
 }
 
 @mixin set-level($i) {
