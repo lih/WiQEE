@@ -123,32 +123,23 @@
 - `shaft` : $n\ x_1..x_n\ ...\ \rightarrow\ x_2..x_n\ x_1...$  </code></pre>
 <p><code>pop</code> / <code>popn</code></p>
 <p>: Pops the top element, or the nth top element, off the stack.</p>
-<ul>
-<li><code>pop</code> : <span class="math">\(x\ ...\ \rightarrow\ ...\)</span><br /></li>
-<li><code>popn</code> : <span class="math">\(n\ x_0..x_n\ ...\ \rightarrow\ x_0..x_{n-1}\ ...\)</span></li>
-</ul>
+<pre><code>- `pop` : $x\ ...\ \rightarrow\ ...$  
+- `popn` : $n\ x_0..x_n\ ...\ \rightarrow\ x_0..x_{n-1}\ ...$</code></pre>
 <p><code>clear</code></p>
 <p>: Clears the stack.</p>
-<ul>
-<li><code>clear</code> : <span class="math">\(...\ \rightarrow\ \)</span></li>
-</ul>
+<pre><code>- `clear` : $...\ \rightarrow\ $</code></pre>
 <p><code>stack</code> / <code>set-stack</code></p>
 <p>: Pushes the current stack, as a list, on top of the current stack. In the second case, sets the top element of the stack as the new stack.</p>
-<ul>
-<li><code>stack</code> : <span class="math">\(Stack\ \rightarrow\ [Stack] Stack\)</span></li>
-<li><code>set-stack</code> : <span class="math">\([Stack] ...\ \rightarrow\ Stack\)</span></li>
-</ul>
+<pre><code>- `stack` : $Stack\ \rightarrow\ [Stack] Stack$
+- `set-stack` : $[Stack] ...\ \rightarrow\ Stack$</code></pre>
 <p><code>pick</code></p>
 <p>: Picks the i-between-nth element of the stack, and discards all others. Can be useful for implementing arbitrary switch-like control-flow.</p>
-<ul>
-<li><code>pick</code> : <span class="math">\(i\ n\ x_0..x_i..x_{n-1}\ ...\ \rightarrow\ x_i\ ...\)</span></li>
-</ul>
+<pre><code>- `pick` : $i\ n\ x_0..x_i..x_{n-1}\ ...\ \rightarrow\ x_i\ ...$</code></pre>
 <h2 id="names-and-variables"><a href="#names-and-variables">Names and variables</a></h2>
 <p><code>def</code></p>
 <p>: Sets the value of a variable.</p>
-<ul>
-<li><code>def</code> : <span class="math">\(value\ name\ ... \rightarrow ...\)</span> in an environment where <span class="math">\(value\)</span> is associated with the variable named <span class="math">\(name\)</span>.</li>
-</ul>
+<pre><code>- `def` : $value\ name\ ... \rightarrow ...$ in an environment where</code></pre>
+<p><span class="math">\(value\)</span> is associated with the variable named <span class="math">\(name\)</span>.</p>
 <p>Examples :</p>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 3.25">
 <div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'x">'x</span> <span class="symbol" data-symbol-name="3">3</span> <span class="symbol" data-symbol-name="def">def</span> <span class="symbol" data-symbol-name="'y">'y</span> <span class="symbol" data-symbol-name="7">7</span> <span class="symbol" data-symbol-name="def">def</span>
@@ -285,7 +276,7 @@ Try It Out
 <p>Given a hypothesis name, and a term of the same type as that hypothesis, remove that hypothesis from the context by substituting all its occurences by the given term.</p>
 <h3 id="hypotheses"><a href="#hypotheses"><code>hypotheses</code></a></h3>
 <p>Pushes a list of all the hypotheses' names in context, from most recent to the oldest.</p>
-      <div id="footer">Page generated on Sunday, April 07 of 2019, at 22:59 PM UTC, using capricon-0.12.2.1 and pandoc-1.12.2.1.</div>
+      <div id="footer">Page generated on Sunday, April 07 of 2019, at 23:01 PM UTC, using capricon-0.12.2.1 and pandoc-1.12.2.1.</div>
 </div></div></div>
 <div id="capricon-prelude" style="display: none;">'nop { { } } def 'get { nop nop lookup } def 'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys { { 1 dupn 1 dupn get def } each pop } def 'import { dup dict-keys import-keys } def [ dict term-index construction query context io list arith string ] { import } each 'printf { format print pop } def 'show { &quot;%v\n&quot; printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def 'mustache. { show } def 'tex { 'mustache. { &quot;<span class="math">\(%l\)</span>\n&quot; printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { &quot;
 <svg class='formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\\"http://www.w3.org/2000/svg\\">

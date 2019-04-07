@@ -35,22 +35,22 @@ values, that can be manipulated with the following words.
 
 : Pops the top element, or the nth top element, off the stack.
 
-  - `pop` : $x\ ...\ \rightarrow\ ...$  
-  - `popn` : $n\ x_0..x_n\ ...\ \rightarrow\ x_0..x_{n-1}\ ...$
+    - `pop` : $x\ ...\ \rightarrow\ ...$  
+    - `popn` : $n\ x_0..x_n\ ...\ \rightarrow\ x_0..x_{n-1}\ ...$
 
 `clear`
 
 : Clears the stack.
   
-  - `clear` : $...\ \rightarrow\ $
+    - `clear` : $...\ \rightarrow\ $
 
 `stack` / `set-stack`
 
 : Pushes the current stack, as a list, on top of the current stack. In
 the second case, sets the top element of the stack as the new stack.
 
-  - `stack` : $Stack\ \rightarrow\ [Stack] Stack$
-  - `set-stack` : $[Stack] ...\ \rightarrow\ Stack$
+    - `stack` : $Stack\ \rightarrow\ [Stack] Stack$
+    - `set-stack` : $[Stack] ...\ \rightarrow\ Stack$
 
 `pick`
 
@@ -58,7 +58,7 @@ the second case, sets the top element of the stack as the new stack.
 others. Can be useful for implementing arbitrary switch-like
 control-flow.
 
-  - `pick` : $i\ n\ x_0..x_i..x_{n-1}\ ...\ \rightarrow\ x_i\ ...$
+    - `pick` : $i\ n\ x_0..x_i..x_{n-1}\ ...\ \rightarrow\ x_i\ ...$
 
 Names and variables
 ------------------
@@ -67,7 +67,7 @@ Names and variables
 
 : Sets the value of a variable.
 
-  - `def` : $value\ name\ ... \rightarrow ...$ in an environment where
+    - `def` : $value\ name\ ... \rightarrow ...$ in an environment where
 $value$ is associated with the variable named $name$.
 
   Examples :
