@@ -25,7 +25,7 @@
     --low-hue: #{nth($primary,1)};
     --low-saturation: #{nth($primary,2)};
     --high-hue: nth($primary,4);
-    --high-saturation: #{nth($primary,5)};
+    --high-saturation: nth($primary,5);
 }
 
 .ground-dark {
