@@ -1,5 +1,5 @@
 window = self;
-importScripts('WiQEE.js');
+importScripts('capricon-engine.js');
 
 CaPriCon = {
     'states': [],
