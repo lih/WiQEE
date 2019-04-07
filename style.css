@@ -270,6 +270,9 @@
 .frame code, #body-theme-chooser code, #capricon-console code {
   display: inline-block;
 }
+.frame dt, #body-theme-chooser dt, #capricon-console dt {
+  margin: 0.809em 0;
+}
 .frame button, #body-theme-chooser button, #capricon-console button {
   display: inline-block;
   border-width: 1px;

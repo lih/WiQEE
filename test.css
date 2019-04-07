@@ -269,6 +269,9 @@
 .frame code {
   display: inline-block;
 }
+.frame dt {
+  margin: 0.809em 0;
+}
 .frame button {
   display: inline-block;
   border-width: 1px;
