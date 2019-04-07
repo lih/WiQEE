@@ -22,10 +22,10 @@
   --level-incr: -1;
   --prim-hue: 53deg;
   --prim-saturation: 36%;
-  --low-hue: nth($primary,1);
-  --low-saturation: nth($primary,2);
-  --high-hue: nth($primary,4);
-  --high-saturation: nth($primary,5);
+  --low-hue: -50deg;
+  --low-saturation: -30%;
+  --high-hue: 50deg;
+  --high-saturation: 30%;
 }
 .ground-light .reverse {
   --level-incr: 1;
