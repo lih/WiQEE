@@ -70,6 +70,10 @@
     }
     code { display: inline-block; }
 
+    dt {
+	padding: ($line-height * 0.5em) 0;
+    }
+    
     button {
 	@extend .medium;
 	display: inline-block;
