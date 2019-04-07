@@ -1,7 +1,7 @@
-@mixin keyword($name, $color: darken(rgb(255,0,255),30%)) {
-    &[data-symbol-name = "#{$name}"] { font-weight: bold; color: $color; }
+@mixin keyword($name, $color: primary) {
+    &[data-symbol-name = "#{$name}"] { font-weight: bold; @extend .#{$color}; @include set-level(6); }
 }
-@mixin keyword-replace($name, $repl, $color: darken(rgb(255,0,255),30%)) {
+@mixin keyword-replace($name, $repl, $color: primary) {
     &[data-symbol-name = "#{$name}"] {
 	visibility: hidden;
 	position: relative;
@@ -9,60 +9,65 @@
 	    position: absolute;
 	    top: 0; left: 0;
 	    visibility: visible;
-	    font-weight: bold; color: $color;
+	    font-weight: bold;
+	    @extend .#{$color};
+	    @include set-level(6);
 	    content: "#{$repl}"; }
     }
 }
-$capricon-keyword: darken($secondary,30%);
 
-.capricon {
+.sheet .capricon {
     span.symbol {
 	@each $k in ('exec', '[',']','each', 'dup','$','swap','dupn','shift','shaft','def','printf', 'cons', 'pop', 'range', 'print', 'swapn', 'format', 'stack', 'set-stack') {
 	    @include keyword($k); }
 	@each $k in ('{',',{','${','}') {
-	    @include keyword($k,hsl(50,65%,20%));
+	    @include keyword($k,hexad-2);
 	    // &[data-symbol-name = "#{$name}"] { font-weight: bold; color: $color; }
 	};
 	@each $k in ('(',')','type','defconstr', 'hypotheses', 'variable', 'universe', 'extro-forall', 'extro-lambda', 'apply', 'mu', 'pattern-index', 'set-pattern-index', 'index-insert', 'pull', 'intro') {
-	    @include keyword($k,$capricon-keyword) };
+	    @include keyword($k,hexad-2) };
 	@each $k in (('!','λ'),('?','∀'),('->','→'),('\'foralls','\'∀*'),('\'lambdas','\'λ*')) {
 	    @include keyword-replace(nth($k,1),nth($k,2)); }
-	&[data-symbol-name ^= "\'"] { font-style: italic; color: darken(blue,20%); }
-	&[data-symbol-name ^= '"'][data-symbol-name $= '"'] { font-style: italic; color: darken(red,30%); }
+	&[data-symbol-name ^= "\'"] { font-style: italic; @extend .pentad-2; @include set-level(2); }
+	&[data-symbol-name ^= '"'][data-symbol-name $= '"'] { font-style: italic; @extend .pentad-4; @include set-level(1); }
     }
     span.quote {
 	border-radius: 0.5em;
     }
 }
 
-@mixin quoteColor($depth,$base-color,$adjustment: 90deg) {
-    span.quote {
-	background-color: adjust-hue($base-color,$adjustment);
-	@if ($depth > 0) {
-	    @include quoteColor($depth - 1,adjust-hue($base-color,$adjustment),$adjustment);
+@mixin quoteDepth($depth,$max) {
+    --quote-depth: #{$depth};
+    
+    @if ($max > 0) {
+	span.quote.quote-brace {
+	    @include quoteDepth($depth + 1, $max - 1);
 	}
-	&.quote-splice, &.quote-exec {
-	    background-color: adjust-hue($base-color,- $adjustment);
-	    @if ($depth > 0) {
-		@include quoteColor($depth - 1,adjust-hue($base-color,- $adjustment),$adjustment);
-	    }
+	span.quote.quote-exec, span.quote.quote-splice {
+	    @include quoteDepth($depth - 1, $max - 1);
 	}
     }
 }
 .capricon {
-    @include quoteColor(6,adjust-hue(rgba(mix($secondary-background,hsl(0,0%,50%),80%),1),0deg),60deg);
-}
-#capricon-console .capricon {
-    @include quoteColor(6,adjust-hue(rgba(lighten(mix($secondary-background,hsl(0,0%,50%),80%),20%),1),0deg),60deg);
+    --quote-depth: 0;
+    --max-contrast: 85%;
+    * { --quote-depth: inherit; }
+    span.quote {
+	@extend .opaque;
+	--tint: calc(var(--quote-depth) * -72deg);
+	
+	@include quoteDepth(1,5);
+    }
 }
 .user-input {
-    display: flex; width: 100%;
+    display: block; width: 100%;
     .capricon-trigger {
-	display: inline-block; 
+	display: inline-block;
+	width: 15%;
     }
     .capricon-input-prefix {
-	flex: 1; display: flex;
-	&, * { background: black; color: white; }
+	display: inline-block;
+	&, * { background: black; color: white !important; }
 	.capricon-input {
 	    transition: background 1s;
 	    display: inline-block;
@@ -72,152 +77,99 @@ $capricon-keyword: darken($secondary,30%);
 	    &.ready { background-color: mix(black,green,80%); }
 	    border: none;
 	    font-family: mono;
-	    height: $line-height;
-	    line-height: $line-height;
-	    flex: 1;
+	    width: calc(100% - 1em);
 	}
+	border-width: 1px;
+	border-style: solid;
+	width: calc(84% - 2px);
+	@extend .with-border;
     }
+    .capricon-output { display: none; }
 }
 
 .capricon-examples {
-    &::before { content: "Examples: "; font-weight: bold; }
-    display: flex; height: $line-height * 1em;
+    &::before {
+	content: "Examples: "; font-weight: bold; display: inline-block;
+	height: $line-height * 1.25em;
+	padding: $line-height * 0.125em;
+	vertical-align: middle;
+    }
+    display: block;
+    height: $line-height * 1.25em;
+    width: 100%;
     overflow-y: auto;
     .capricon-example {
-	display: inline-block; 
+	display: inline-block;
+	max-width: 25%;
+	* { padding: 0; margin: 0; }
     }
 }
 
-.capricon-hide {
-    display:none;
-
-    & + .capricon-hideparagraph {
-	&, & + .capricon-reveal {
-	    display: block;
-	    width: 85%; margin: auto;
-	}
-	&::before {
-	    content: "Hide Steps";
-	    opacity: 0.7;
-	    display: block;
-	    width: 100%;
-	    margin-top: 1em;
-	    border-bottom: 1px solid black;
-	}
-	&:hover::before {
-	    background-color: $secondary-background;
-	    font-weight: bold;
-	}
-
-	& + .capricon-reveal {
-	    transition: visibility 0.2s, height 0.5s;
-	    visibility: visible;
-	    overflow: hidden;
-	    border-bottom: 1px solid;
-	    border-left: 1px solid;
-	    border-right: 1px solid;
-	    margin-bottom: 1em;
-
-	    @mixin linecount($num) {
-		&[data-linecount="#{$num}"] {
-		    height: calc(#{2em + $num * 1.2em} - 1px);
-		    & > pre.capricon { height: $num * 1.2em; }
-		}
-		&.capricon-with-examples[data-linecount="#{$num}"] {
-		    height: calc(#{2.3em + ($num + 1) * 1.2em} - 1px);
-		    & > pre.capricon { height: $num * 1.2em; }
-		}
-	    }
-	    &[data-linecount] { height: 16em; & > pre.capricon { height: 12em; } }
-	    @for $i from 1 to 30 {
-		@include linecount($i);
-	    }
-
-	    .capricon {
-		overflow: auto;
-		margin-bottom: 0;
-	    }
-	    .user-input {
-		.capricon-output {
-		    height: 100%;
-		    display: none;
-		}
-	    }
-	}
-	
-
-    }
-    & + .capricon-hidestache {
-	&:hover::before {
-	    background-color: $hidestache-background;
-	    border: 1px solid black;
-    	}
-	& + .capricon-reveal {
-	    position: fixed; display: inline-block;
-	    background: rgba(255,255,255,0.2);
-	    top: 0; right: 0; bottom: 0; left: 0; margin: 0;
-	    z-index: 3;
-	    text-align: center;
-
-	    .capricon {
-		position: relative;
-		top: 45%;
-		background: $capricon-stache-background;
-		border: 2px outset $capricon-stache-border;
-		display: inline-block;
-		padding: 0.4em 1em;
-		border-radius: 3px;
-		text-align: left;
-	    }
-	}
-    }
-    &:checked + .capricon-hideparagraph::before {
-	content: "Show Steps";
-    }
-    &:checked + .capricon-hideparagraph + .capricon-reveal {
-	&, &.capricon-with-examples {
-	    visibility: hidden; height: 0;
-	    .capricon { overflow: hidden; }
-	}
-    }
-    &:checked + .capricon-hidestache + .capricon-reveal {
-	display: none;
-    }
-}
 .capricon-result {
     display: inline;
     font-style: italic;
-    color: $capricon-result;
 }
 .capricon-paragraphresult {
     display: block;
     margin-bottom: 1em;
 }
 
+.capricon-show::before {
+    content: "Show Steps";
+}
+.capricon-hide::before {
+    content: "Hide Steps";
+}
+.expansible {
+    &.inline .capricon-show { display: none !important; }
+    .capricon-steps { position: relative; width: 100%; }
+    .capricon-paragraph {
+	margin: 0; padding: 0;
+	display: block;
+	max-width: none;
+	width: 100%;
+    }
+}
+
 #capricon-console {
+    @extend .frame;
+    z-index: 1000;
     .capricon-steps {
 	display: none;
-	border: none;
+
+	@extend .sheet;
+	@extend .with-border;
+	@extend .opaque;
 	border-radius: 0.2em;
+	border-width: 2px;
+	border-style: solid; 
 
 	&.active {
 	    display: block;
-	    background: rgba(lighten($secondary-background,40%),0.9);
 	    
-	    h3 { margin: 0 0 1em 0; display: block; width: calc(100% - 2em); border-bottom: 1px solid;
-		 padding: 0.3em 1em;
-		 position: relative;
-		 background: darken($primary-background,40%);
-		 color: lighten($primary,30%);
-		 button { text-align: right; position: absolute; right: 0.3em; top: 0.3em; } }
-	    
+	    .header {
+		width: 100%;
+		@extend .opaque;
+		@extend .hexad-3;
+		.left { width: 90%; }
+		.right { width: 10%; }
+		h4 { padding: 0; height: #{$line-height * 1.25em}; line-height: #{$line-height * 1em}; }
+		border-bottom: 1px solid;
+	    }
+
+	    pre { margin: 0; }
 	    .capricon-trigger, .capricon-examples { display: none; }
 	    .user-input {
-		display: block;
+		display: block; width: 100%; 
 		.capricon-output { display: block; max-height: 15em; overflow: auto; }
-		.capricon-input { background: black; }
+		.capricon-input-prefix {
+		    width: 100%;
+		    .capricon-input {
+			background: black; border: none; font-family: mono; }
+		}
 	    }
 	    .capricon-submit { display: inline-block; margin: 0; }
+	    .capricon-output { display: block; }
 	}
     }
     h3 { margin: 0 0 1em 0; display: block; width: 100%; border-radius: 0.2em 0.2em 0 0; }

@@ -1,2 +1,4 @@
 #!/bin/sh
-[ -n "$1" ] && [ -x "scripts/hooks/$1" ] && "./scripts/hooks/$@"
+if [ -n "$1" ] && [ -x "scripts/hooks/$1" ]; then
+    "./scripts/hooks/$@"
+fi

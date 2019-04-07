@@ -1,0 +1,74 @@
+$expansible-ground: 0deg;
+.frame .sheet {
+    .expansible {
+	@include set-ground($expansible-ground);
+	@extend .opaque;
+	position: relative;
+	input[type="checkbox"] {
+	    display: none;
+	    & ~ * {
+		&.expand-then {
+		    @include set-ground($expansible-ground);
+		    @extend .opaque;
+		    @include set-level(6);
+		}
+		&.expand-else {
+		    @include set-ground($expansible-ground);
+		    @extend .opaque;
+		    @include set-level(9);
+		}
+		display: block;
+		width: 100%;
+		transition: height 0.5s;
+		overflow: hidden;
+		
+	    }
+	    & ~ .expand-then, &:checked ~ .expand-else {
+		height: 0; 
+	    }
+	    &:checked ~ .expand-then, & ~ .expand-else {
+		height: calc(var(--num-lines,1) * #{$line-height * 1em});
+	    }
+	}
+	&.inline {
+	    @include set-ground($expansible-ground);
+	    @include set-level(9);
+	    @extend .opaque;
+	    display: inline-block;
+	    max-height: $line-height * 1em;
+	    vertical-align: bottom;
+	    input[type="checkbox"] {
+		display: inline-block;
+		position: relative;
+		left: -9999px;
+		width: 0; height: 0;
+		overflow: visible;
+		transition: width 0.5s;
+		& ~ * {
+		    position: absolute;
+		    top: 100%; left: 0;
+		    display: block;
+		}
+		&:checked {
+		    width: calc(var(--expand-width,1) * 1em);
+		    & ~ * { z-index: 1000; }
+		}
+	    }
+	    &::after {
+		display: block; width: 1em; height: $line-height * 1em;
+		position: absolute; right: 0;
+		content: " ";
+		opacity: 0.4;
+		z-index: 100;
+		top: 0;
+		background-image: var(--checkbox-filler);
+		background-size: 1em 1em;
+		background-position: top;
+		background-repeat: no-repeat;
+	    }
+	}
+	&.box {
+	    display: block;
+	}
+    }
+}

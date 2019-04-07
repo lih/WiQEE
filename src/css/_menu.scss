@@ -1,0 +1,66 @@
+
+.menu {
+    position: relative;
+    display: inline-block;
+    ul { transition: opacity 0.2s; }
+    ul, li { margin: 0; padding: 0; }
+    li { list-style-type: none; }
+    a {
+	@include set-level(3);
+	@extend .opaque;
+	@extend .shiny;
+	&:hover { @include set-level(6); }
+	display: block; padding: ($line-height * 0.125em);
+	height: $line-height * 1em;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-decoration: none;
+	line-height: $line-height * 1em;
+    }
+    & > ul {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+
+	li {
+	    position: relative;
+	    li { width: 100%; }
+	    
+	    ul {
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+	    }
+	    
+	    &:hover > ul { opacity: 1;
+			   visibility: visible;
+			   z-index: 1000; }
+	}
+    }
+    &:not(.right) > ul li ul {
+	@extend .with-border;
+	border-left-style: solid;
+	border-left-width: $line-height * 0.1em;
+	left: $line-height * 1em; right: 0; top: 100%;
+    }
+    &.right {
+	text-align: right; 
+	> ul li ul {
+	    @extend .with-border;
+	    border-right-style: solid;
+	    border-right-width: $line-height * 0.1em;
+	    right: $line-height * 1em; left: 0; top: 100%;
+	}
+    }
+    
+    &:hover > ul {
+	opacity: 1;
+	z-index: 10000;
+	visibility: visible;
+    }
+}
+

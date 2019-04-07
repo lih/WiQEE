@@ -1,112 +1,30 @@
-@function adjust-hues($color,$x) {
-    @return (nth($color,1),
-	     hsl(hue(nth($color,2)) + $x, saturation(nth($color,2)), lightness(nth($color,2))),
-	     nth($color,3));
-}
-@function rate($n) {
-    @return ($n * 3.5 + 55) * 1%;
-}
-@function set-lum($color,$l) {
-    @return hsl(hue($color),saturation($color),$l);
-}
-@function ground-dark($n,$color) {
-    $rate: rate($n);
-    $bg: darken(mix(nth($color,1),nth($color,2),$rate / 3),$rate / 2);
-    $fg: lighten(mix(nth($color,3),nth($color,2),$rate / 3),$rate / 2);
-    @return ($fg,$bg);
-}
-@function ground-light($n,$color) {
-    $rate: rate($n);
-    $bg: lighten(mix(nth($color,1),nth($color,2),$rate / 3),$rate / 2);
-    $fg: darken(mix(nth($color,3),nth($color,2),$rate / 3),$rate / 2);
-    @return ($fg,$bg);
-}
+$primary: ( -50deg, -30%, hsl(53,36%,50%), 50deg, 30% );
 
-@mixin colors($ground) {
-    color: nth($ground,1);
-    background-color: nth($ground,2);
-}
-@mixin shiny-colors($gnd) {
-    $bg: nth($gnd,2);
-    &, &.shiny {
-	color: nth($gnd,1);
-	background-color: $bg;
-    }
-    &.shiny {
-	background-image: linear-gradient(lighten($bg,3%),
-					  $bg 20%,
-					  $bg,
-					  $bg 20%,darken($bg,3%));
-    }
-}
+@import "palette";
 
-$primary: ( hsl(60,100%,50%), hsl(270,100%,50%), hsl(180,100%,50%) );
-$color: $primary;
-@for $i from 1 through 12 {
-    .ground-dark-#{$i} {
-	@include shiny-colors(ground-dark($i,$color));
-    }
-    .ground-light-#{$i} {
-	@include shiny-colors(ground-light($i,$color));
-    }
-}
+$line-height: 1.618;
 
-@for $i from 1 through 12 {
-    .ground-r-dark-#{$i} {
-	@include shiny-colors(ground-dark($i,adjust-hues($color,180)));
-    }
-    .ground-r-light-#{$i} {
-	@include shiny-colors(ground-light($i,adjust-hues($color,180)));
-    }
-}
+@import "sheet";
+@import "expansible";
+@import "menu";
 
-@for $i from 1 through 12 {
-    .ground-tr1-dark-#{$i} {
-	@include shiny-colors(ground-dark($i,adjust-hues($color,120)));
-    }
-    .ground-tr2-dark-#{$i} {
-	@include shiny-colors(ground-dark($i,adjust-hues($color,240)));
-    }
-    .ground-tr1-light-#{$i} {
-	@include shiny-colors(ground-light($i,adjust-hues($color,120)));
-    }
-    .ground-tr2-light-#{$i} {
-	@include shiny-colors(ground-light($i,adjust-hues($color,240)));
-    }
-}
-
-@for $i from 1 through 12 {
-    .ground-t1-dark-#{$i} {
-	@include shiny-colors(ground-dark($i,adjust-hues($color,90)));
-    }
-    .ground-t3-dark-#{$i} {
-	@include shiny-colors(ground-dark($i,adjust-hues($color,270)));
-    }
-    .ground-t1-light-#{$i} {
-	@include shiny-colors(ground-light($i,adjust-hues($color,90)));
-    }
-    .ground-t3-light-#{$i} {
-	@include shiny-colors(ground-light($i,adjust-hues($color,270)));
-    }
-}
-
-$line-height: 1.5;
-.showDiv { display: inline-block; width: 200px; height: 2 * $line-height; text-align: center; padding-top: $line-height - 0.5em; }
+.showDiv { @extend .shiny; display: inline-block; width: 200px; height: 2 * $line-height; text-align: center; padding-top: $line-height - 0.5em; }
 .nestingDolls div { display: block; padding: 2em; border: 1px solid; border-radius: 5px; }
 
-.content-dark {
-    font-size: 130%;
-    line-height: $line-height * 1em;
-    @extend .ground-dark-7.shiny;
-    max-width: $line-height * 40em;
-    margin: auto;
-    
-    p { @extend .ground-dark-7; background: none; }
-    h1 { font-size: 200%; line-height: $line-height * 1em; margin: 0; padding: ($line-height * 0.5em); }
-    p { padding: 0; margin: 0 ($line-height * 1em); text-indent: 2 * $line-height * 1em; }
-    pre, code {
-	margin: $line-height * 1em;
-	line-height: 1em;
-	@extend .ground-dark-4.shiny;
-    }
+.hideshow + div { display: none; }
+.hideshow:checked + div { display: block; }
+
+* { transition: color 0.3s; transition: background-color 0.3s; }
+
+body { font-family: 'Merriweather' };
+
+.expansible.inline {
+    --checkbox-filler: url('steps.png');
+    --expand-width: 20;
 }
+
+#sheet-view { margin: auto; }
+
+body { font-size: 112.5%; }
+
+

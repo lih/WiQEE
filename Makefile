@@ -57,7 +57,7 @@ $(CACHE_ROOT)/common.mdi: scripts/gencommon $(STATIC_ROOT)/noise.png $(STATIC_RO
 	$^ > $@
 
 $(PUBLIC_ROOT)/%.html: $(CACHE_ROOT)/%.mdc $(TEMPLATE_ROOT)/header.html $(CACHE_ROOT)/common.mdi $(TEMPLATE_ROOT)/template.html | $(PUBLIC_ROOT)
-	pandoc -s --mathjax='mathjax/MathJax.js?config=TeX-AMS_HTML' -V module:$* -V "full-date:$(FULL_DATE)" -H $(WD)/$(TEMPLATE_ROOT)/header.html --toc --template=$(WD)/$(TEMPLATE_ROOT)/template.html -f markdown -t html --css style.css $< $(CACHE_ROOT)/common.mdi > $@
+	pandoc -s --mathjax='mathjax/MathJax.js?config=TeX-AMS_HTML' -V module:$* -V "full-date:$(FULL_DATE)" -H $(WD)/$(TEMPLATE_ROOT)/header.html --toc --template=$(WD)/$(TEMPLATE_ROOT)/template.html -f markdown+raw_html -t html --css style.css $< $(CACHE_ROOT)/common.mdi > $@
 
 $(PUBLIC_ROOT)/theme-test.html: $(STATIC_ROOT)/theme-test.html
 	cp $< $@
@@ -71,6 +71,8 @@ $(PUBLIC_ROOT)/mathjax: $(STATIC_ROOT)/mathjax | $(PUBLIC_ROOT)
 $(PUBLIC_ROOT)/%.png: $(STATIC_ROOT)/%.png | $(PUBLIC_ROOT)
 	cp $< $@
 $(PUBLIC_ROOT)/%.js: $(STATIC_ROOT)/%.js | $(PUBLIC_ROOT)
+	cp $< $@
+$(PUBLIC_ROOT)/%.woff2: $(STATIC_ROOT)/%.woff2 | $(PUBLIC_ROOT)
 	cp $< $@
 $(PUBLIC_ROOT)/%.jpg: $(STATIC_ROOT)/%.jpg | $(PUBLIC_ROOT)
 	cp $< $@

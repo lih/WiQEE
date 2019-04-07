@@ -4,220 +4,392 @@
     <link rel="stylesheet" href="test.css" type="text/css" />
   </head>
   <body>
-    <h1>Primary</h1>
-    <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;">
-      <div class="showDiv ground-dark-12">Dark Ground 12</div>
-      <div class="showDiv ground-dark-11">Dark Ground 11</div>
-      <div class="showDiv ground-dark-10">Dark Ground 10</div>
-      <div class="showDiv ground-dark-9"> Dark Ground 9</div>
-      <div class="showDiv ground-dark-8"> Dark Ground 8</div>
-      <div class="showDiv ground-dark-7"> Dark Ground 7</div>
-      <div class="showDiv ground-dark-6"> Dark Ground 6</div>
-      <div class="showDiv ground-dark-5"> Dark Ground 5</div>
-      <div class="showDiv ground-dark-4"> Dark Ground 4</div>
-      <div class="showDiv ground-dark-3"> Dark Ground 3</div>
-      <div class="showDiv ground-dark-2"> Dark Ground 2</div>
-      <div class="showDiv ground-dark-1"> Dark Ground 1</div>
-      <div class="showDiv ground-light-1"> Light Ground 1</div>
-      <div class="showDiv ground-light-2"> Light Ground 2</div>
-      <div class="showDiv ground-light-3"> Light Ground 3</div>
-      <div class="showDiv ground-light-4"> Light Ground 4</div>
-      <div class="showDiv ground-light-5"> Light Ground 5</div>
-      <div class="showDiv ground-light-6"> Light Ground 6</div>
-      <div class="showDiv ground-light-7"> Light Ground 7</div>
-      <div class="showDiv ground-light-8"> Light Ground 8</div>
-      <div class="showDiv ground-light-9"> Light Ground 9</div>
-      <div class="showDiv ground-light-10">Light Ground 10</div>
-      <div class="showDiv ground-light-11">Light Ground 11</div>
-      <div class="showDiv ground-light-12">Light Ground 12</div>
-    </div>
+    <label for="show-palette">Show Palette</label>
+    <label for="show-nested">Show Nested</label>
+    <label for="show-typo">Show Typo</label>
+    
+    <input type="checkbox"  class="hideshow" id="show-palette" />
+    <div>
+      <h1>Primary</h1>
+      <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;" class="ground-dark">
+        <div class="showDiv primary level-12">Dark 12</div>
+        <div class="showDiv primary level-11">Dark 11</div>
+        <div class="showDiv primary level-10">Dark 10</div>
+        <div class="showDiv primary level-9"> Dark 9</div>
+        <div class="showDiv primary level-8"> Dark 8</div>
+        <div class="showDiv primary level-7"> Dark 7</div>
+        <div class="showDiv primary level-6"> Dark 6</div>
+        <div class="showDiv primary level-5"> Dark 5</div>
+        <div class="showDiv primary level-4"> Dark 4</div>
+        <div class="showDiv primary level-3"> Dark 3</div>
+        <div class="showDiv primary level-2"> Dark 2</div>
+        <div class="showDiv primary level-1"> Dark 1</div>
+      </div>
+      <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;" class="ground-light">
+        <div class="showDiv primary level-1"> Light 1</div>
+        <div class="showDiv primary level-2"> Light 2</div>
+        <div class="showDiv primary level-3"> Light 3</div>
+        <div class="showDiv primary level-4"> Light 4</div>
+        <div class="showDiv primary level-5"> Light 5</div>
+        <div class="showDiv primary level-6"> Light 6</div>
+        <div class="showDiv primary level-7"> Light 7</div>
+        <div class="showDiv primary level-8"> Light 8</div>
+        <div class="showDiv primary level-9"> Light 9</div>
+        <div class="showDiv primary level-10">Light 10</div>
+        <div class="showDiv primary level-11">Light 11</div>
+        <div class="showDiv primary level-12">Light 12</div>
+      </div>
 
-    <h1>Opposite</h1>
-    <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;">
-      <div class="showDiv ground-r-dark-12">Dark Ground-R 12</div>
-      <div class="showDiv ground-r-dark-11">Dark Ground-R 11</div>
-      <div class="showDiv ground-r-dark-10">Dark Ground-R 10</div>
-      <div class="showDiv ground-r-dark-9"> Dark Ground-R 9</div>
-      <div class="showDiv ground-r-dark-8"> Dark Ground-R 8</div>
-      <div class="showDiv ground-r-dark-7"> Dark Ground-R 7</div>
-      <div class="showDiv ground-r-dark-6"> Dark Ground-R 6</div>
-      <div class="showDiv ground-r-dark-5"> Dark Ground-R 5</div>
-      <div class="showDiv ground-r-dark-4"> Dark Ground-R 4</div>
-      <div class="showDiv ground-r-dark-3"> Dark Ground-R 3</div>
-      <div class="showDiv ground-r-dark-2"> Dark Ground-R 2</div>
-      <div class="showDiv ground-r-dark-1"> Dark Ground-R 1</div>
-      <div class="showDiv ground-r-light-1"> Light Ground-R 1</div>
-      <div class="showDiv ground-r-light-2"> Light Ground-R 2</div>
-      <div class="showDiv ground-r-light-3"> Light Ground-R 3</div>
-      <div class="showDiv ground-r-light-4"> Light Ground-R 4</div>
-      <div class="showDiv ground-r-light-5"> Light Ground-R 5</div>
-      <div class="showDiv ground-r-light-6"> Light Ground-R 6</div>
-      <div class="showDiv ground-r-light-7"> Light Ground-R 7</div>
-      <div class="showDiv ground-r-light-8"> Light Ground-R 8</div>
-      <div class="showDiv ground-r-light-9"> Light Ground-R 9</div>
-      <div class="showDiv ground-r-light-10">Light Ground-R 10</div>
-      <div class="showDiv ground-r-light-11">Light Ground-R 11</div>
-      <div class="showDiv ground-r-light-12">Light Ground-R 12</div>
-    </div>
+      <h1>Triad-1</h1>
+      <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;" class="ground-dark">
+        <div class="showDiv triad-1 level-12">Dark 12</div>
+        <div class="showDiv triad-1 level-11">Dark 11</div>
+        <div class="showDiv triad-1 level-10">Dark 10</div>
+        <div class="showDiv triad-1 level-9"> Dark 9</div>
+        <div class="showDiv triad-1 level-8"> Dark 8</div>
+        <div class="showDiv triad-1 level-7"> Dark 7</div>
+        <div class="showDiv triad-1 level-6"> Dark 6</div>
+        <div class="showDiv triad-1 level-5"> Dark 5</div>
+        <div class="showDiv triad-1 level-4"> Dark 4</div>
+        <div class="showDiv triad-1 level-3"> Dark 3</div>
+        <div class="showDiv triad-1 level-2"> Dark 2</div>
+        <div class="showDiv triad-1 level-1"> Dark 1</div>
+      </div>
+      <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;" class="ground-light">
+        <div class="showDiv triad-1 level-1"> Light 1</div>
+        <div class="showDiv triad-1 level-2"> Light 2</div>
+        <div class="showDiv triad-1 level-3"> Light 3</div>
+        <div class="showDiv triad-1 level-4"> Light 4</div>
+        <div class="showDiv triad-1 level-5"> Light 5</div>
+        <div class="showDiv triad-1 level-6"> Light 6</div>
+        <div class="showDiv triad-1 level-7"> Light 7</div>
+        <div class="showDiv triad-1 level-8"> Light 8</div>
+        <div class="showDiv triad-1 level-9"> Light 9</div>
+        <div class="showDiv triad-1 level-10">Light 10</div>
+        <div class="showDiv triad-1 level-11">Light 11</div>
+        <div class="showDiv triad-1 level-12">Light 12</div>
+      </div>
 
-    <h1>First triad</h1>
-    <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;">
-      <div class="showDiv ground-tr1-dark-12">Dark Ground-R 12</div>
-      <div class="showDiv ground-tr1-dark-11">Dark Ground-R 11</div>
-      <div class="showDiv ground-tr1-dark-10">Dark Ground-R 10</div>
-      <div class="showDiv ground-tr1-dark-9"> Dark Ground-R 9</div>
-      <div class="showDiv ground-tr1-dark-8"> Dark Ground-R 8</div>
-      <div class="showDiv ground-tr1-dark-7"> Dark Ground-R 7</div>
-      <div class="showDiv ground-tr1-dark-6"> Dark Ground-R 6</div>
-      <div class="showDiv ground-tr1-dark-5"> Dark Ground-R 5</div>
-      <div class="showDiv ground-tr1-dark-4"> Dark Ground-R 4</div>
-      <div class="showDiv ground-tr1-dark-3"> Dark Ground-R 3</div>
-      <div class="showDiv ground-tr1-dark-2"> Dark Ground-R 2</div>
-      <div class="showDiv ground-tr1-dark-1"> Dark Ground-R 1</div>
-      <div class="showDiv ground-tr1-light-1"> Light Ground-R 1</div>
-      <div class="showDiv ground-tr1-light-2"> Light Ground-R 2</div>
-      <div class="showDiv ground-tr1-light-3"> Light Ground-R 3</div>
-      <div class="showDiv ground-tr1-light-4"> Light Ground-R 4</div>
-      <div class="showDiv ground-tr1-light-5"> Light Ground-R 5</div>
-      <div class="showDiv ground-tr1-light-6"> Light Ground-R 6</div>
-      <div class="showDiv ground-tr1-light-7"> Light Ground-R 7</div>
-      <div class="showDiv ground-tr1-light-8"> Light Ground-R 8</div>
-      <div class="showDiv ground-tr1-light-9"> Light Ground-R 9</div>
-      <div class="showDiv ground-tr1-light-10">Light Ground-R 10</div>
-      <div class="showDiv ground-tr1-light-11">Light Ground-R 11</div>
-      <div class="showDiv ground-tr1-light-12">Light Ground-R 12</div>
+      <h1>Triad-2</h1>
+      <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;" class="ground-dark">
+        <div class="showDiv triad-2 level-12">Dark 12</div>
+        <div class="showDiv triad-2 level-11">Dark 11</div>
+        <div class="showDiv triad-2 level-10">Dark 10</div>
+        <div class="showDiv triad-2 level-9"> Dark 9</div>
+        <div class="showDiv triad-2 level-8"> Dark 8</div>
+        <div class="showDiv triad-2 level-7"> Dark 7</div>
+        <div class="showDiv triad-2 level-6"> Dark 6</div>
+        <div class="showDiv triad-2 level-5"> Dark 5</div>
+        <div class="showDiv triad-2 level-4"> Dark 4</div>
+        <div class="showDiv triad-2 level-3"> Dark 3</div>
+        <div class="showDiv triad-2 level-2"> Dark 2</div>
+        <div class="showDiv triad-2 level-1"> Dark 1</div>
+      </div>
+      <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;" class="ground-light">
+        <div class="showDiv triad-2 level-1"> Light 1</div>
+        <div class="showDiv triad-2 level-2"> Light 2</div>
+        <div class="showDiv triad-2 level-3"> Light 3</div>
+        <div class="showDiv triad-2 level-4"> Light 4</div>
+        <div class="showDiv triad-2 level-5"> Light 5</div>
+        <div class="showDiv triad-2 level-6"> Light 6</div>
+        <div class="showDiv triad-2 level-7"> Light 7</div>
+        <div class="showDiv triad-2 level-8"> Light 8</div>
+        <div class="showDiv triad-2 level-9"> Light 9</div>
+        <div class="showDiv triad-2 level-10">Light 10</div>
+        <div class="showDiv triad-2 level-11">Light 11</div>
+        <div class="showDiv triad-2 level-12">Light 12</div>
+      </div>
+
+      <h1>Tetrad-1</h1>
+      <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;" class="ground-dark">
+        <div class="showDiv tetrad-1 level-12">Dark 12</div>
+        <div class="showDiv tetrad-1 level-11">Dark 11</div>
+        <div class="showDiv tetrad-1 level-10">Dark 10</div>
+        <div class="showDiv tetrad-1 level-9"> Dark 9</div>
+        <div class="showDiv tetrad-1 level-8"> Dark 8</div>
+        <div class="showDiv tetrad-1 level-7"> Dark 7</div>
+        <div class="showDiv tetrad-1 level-6"> Dark 6</div>
+        <div class="showDiv tetrad-1 level-5"> Dark 5</div>
+        <div class="showDiv tetrad-1 level-4"> Dark 4</div>
+        <div class="showDiv tetrad-1 level-3"> Dark 3</div>
+        <div class="showDiv tetrad-1 level-2"> Dark 2</div>
+        <div class="showDiv tetrad-1 level-1"> Dark 1</div>
+      </div>
+      <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;" class="ground-light">
+        <div class="showDiv tetrad-1 level-1"> Light 1</div>
+        <div class="showDiv tetrad-1 level-2"> Light 2</div>
+        <div class="showDiv tetrad-1 level-3"> Light 3</div>
+        <div class="showDiv tetrad-1 level-4"> Light 4</div>
+        <div class="showDiv tetrad-1 level-5"> Light 5</div>
+        <div class="showDiv tetrad-1 level-6"> Light 6</div>
+        <div class="showDiv tetrad-1 level-7"> Light 7</div>
+        <div class="showDiv tetrad-1 level-8"> Light 8</div>
+        <div class="showDiv tetrad-1 level-9"> Light 9</div>
+        <div class="showDiv tetrad-1 level-10">Light 10</div>
+        <div class="showDiv tetrad-1 level-11">Light 11</div>
+        <div class="showDiv tetrad-1 level-12">Light 12</div>
+      </div>
+
+      <h1>Tetrad-2</h1>
+      <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;" class="ground-dark">
+        <div class="showDiv tetrad-2 level-12">Dark 12</div>
+        <div class="showDiv tetrad-2 level-11">Dark 11</div>
+        <div class="showDiv tetrad-2 level-10">Dark 10</div>
+        <div class="showDiv tetrad-2 level-9"> Dark 9</div>
+        <div class="showDiv tetrad-2 level-8"> Dark 8</div>
+        <div class="showDiv tetrad-2 level-7"> Dark 7</div>
+        <div class="showDiv tetrad-2 level-6"> Dark 6</div>
+        <div class="showDiv tetrad-2 level-5"> Dark 5</div>
+        <div class="showDiv tetrad-2 level-4"> Dark 4</div>
+        <div class="showDiv tetrad-2 level-3"> Dark 3</div>
+        <div class="showDiv tetrad-2 level-2"> Dark 2</div>
+        <div class="showDiv tetrad-2 level-1"> Dark 1</div>
+      </div>
+      <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;" class="ground-light">
+        <div class="showDiv tetrad-2 level-1"> Light 1</div>
+        <div class="showDiv tetrad-2 level-2"> Light 2</div>
+        <div class="showDiv tetrad-2 level-3"> Light 3</div>
+        <div class="showDiv tetrad-2 level-4"> Light 4</div>
+        <div class="showDiv tetrad-2 level-5"> Light 5</div>
+        <div class="showDiv tetrad-2 level-6"> Light 6</div>
+        <div class="showDiv tetrad-2 level-7"> Light 7</div>
+        <div class="showDiv tetrad-2 level-8"> Light 8</div>
+        <div class="showDiv tetrad-2 level-9"> Light 9</div>
+        <div class="showDiv tetrad-2 level-10">Light 10</div>
+        <div class="showDiv tetrad-2 level-11">Light 11</div>
+        <div class="showDiv tetrad-2 level-12">Light 12</div>
+      </div>
+
+      <h1>tetrad-3</h1>
+      <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;" class="ground-dark">
+        <div class="showDiv tetrad-3 level-12">Dark 12</div>
+        <div class="showDiv tetrad-3 level-11">Dark 11</div>
+        <div class="showDiv tetrad-3 level-10">Dark 10</div>
+        <div class="showDiv tetrad-3 level-9"> Dark 9</div>
+        <div class="showDiv tetrad-3 level-8"> Dark 8</div>
+        <div class="showDiv tetrad-3 level-7"> Dark 7</div>
+        <div class="showDiv tetrad-3 level-6"> Dark 6</div>
+        <div class="showDiv tetrad-3 level-5"> Dark 5</div>
+        <div class="showDiv tetrad-3 level-4"> Dark 4</div>
+        <div class="showDiv tetrad-3 level-3"> Dark 3</div>
+        <div class="showDiv tetrad-3 level-2"> Dark 2</div>
+        <div class="showDiv tetrad-3 level-1"> Dark 1</div>
+      </div>
+      <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;" class="ground-light">
+        <div class="showDiv tetrad-3 level-1"> Light 1</div>
+        <div class="showDiv tetrad-3 level-2"> Light 2</div>
+        <div class="showDiv tetrad-3 level-3"> Light 3</div>
+        <div class="showDiv tetrad-3 level-4"> Light 4</div>
+        <div class="showDiv tetrad-3 level-5"> Light 5</div>
+        <div class="showDiv tetrad-3 level-6"> Light 6</div>
+        <div class="showDiv tetrad-3 level-7"> Light 7</div>
+        <div class="showDiv tetrad-3 level-8"> Light 8</div>
+        <div class="showDiv tetrad-3 level-9"> Light 9</div>
+        <div class="showDiv tetrad-3 level-10">Light 10</div>
+        <div class="showDiv tetrad-3 level-11">Light 11</div>
+        <div class="showDiv tetrad-3 level-12">Light 12</div>
+      </div>
     </div>
     
-    <h1>Second triad</h1>
-    <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;">
-      <div class="showDiv ground-tr2-dark-12">Dark Ground-R 12</div>
-      <div class="showDiv ground-tr2-dark-11">Dark Ground-R 11</div>
-      <div class="showDiv ground-tr2-dark-10">Dark Ground-R 10</div>
-      <div class="showDiv ground-tr2-dark-9"> Dark Ground-R 9</div>
-      <div class="showDiv ground-tr2-dark-8"> Dark Ground-R 8</div>
-      <div class="showDiv ground-tr2-dark-7"> Dark Ground-R 7</div>
-      <div class="showDiv ground-tr2-dark-6"> Dark Ground-R 6</div>
-      <div class="showDiv ground-tr2-dark-5"> Dark Ground-R 5</div>
-      <div class="showDiv ground-tr2-dark-4"> Dark Ground-R 4</div>
-      <div class="showDiv ground-tr2-dark-3"> Dark Ground-R 3</div>
-      <div class="showDiv ground-tr2-dark-2"> Dark Ground-R 2</div>
-      <div class="showDiv ground-tr2-dark-1"> Dark Ground-R 1</div>
-      <div class="showDiv ground-tr2-light-1"> Light Ground-R 1</div>
-      <div class="showDiv ground-tr2-light-2"> Light Ground-R 2</div>
-      <div class="showDiv ground-tr2-light-3"> Light Ground-R 3</div>
-      <div class="showDiv ground-tr2-light-4"> Light Ground-R 4</div>
-      <div class="showDiv ground-tr2-light-5"> Light Ground-R 5</div>
-      <div class="showDiv ground-tr2-light-6"> Light Ground-R 6</div>
-      <div class="showDiv ground-tr2-light-7"> Light Ground-R 7</div>
-      <div class="showDiv ground-tr2-light-8"> Light Ground-R 8</div>
-      <div class="showDiv ground-tr2-light-9"> Light Ground-R 9</div>
-      <div class="showDiv ground-tr2-light-10">Light Ground-R 10</div>
-      <div class="showDiv ground-tr2-light-11">Light Ground-R 11</div>
-      <div class="showDiv ground-tr2-light-12">Light Ground-R 12</div>
-    </div>
-
-    <h1>First tetrad</h1>
-    <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;">
-      <div class="showDiv ground-t1-dark-12">Dark Ground-R 12</div>
-      <div class="showDiv ground-t1-dark-11">Dark Ground-R 11</div>
-      <div class="showDiv ground-t1-dark-10">Dark Ground-R 10</div>
-      <div class="showDiv ground-t1-dark-9"> Dark Ground-R 9</div>
-      <div class="showDiv ground-t1-dark-8"> Dark Ground-R 8</div>
-      <div class="showDiv ground-t1-dark-7"> Dark Ground-R 7</div>
-      <div class="showDiv ground-t1-dark-6"> Dark Ground-R 6</div>
-      <div class="showDiv ground-t1-dark-5"> Dark Ground-R 5</div>
-      <div class="showDiv ground-t1-dark-4"> Dark Ground-R 4</div>
-      <div class="showDiv ground-t1-dark-3"> Dark Ground-R 3</div>
-      <div class="showDiv ground-t1-dark-2"> Dark Ground-R 2</div>
-      <div class="showDiv ground-t1-dark-1"> Dark Ground-R 1</div>
-      <div class="showDiv ground-t1-light-1"> Light Ground-R 1</div>
-      <div class="showDiv ground-t1-light-2"> Light Ground-R 2</div>
-      <div class="showDiv ground-t1-light-3"> Light Ground-R 3</div>
-      <div class="showDiv ground-t1-light-4"> Light Ground-R 4</div>
-      <div class="showDiv ground-t1-light-5"> Light Ground-R 5</div>
-      <div class="showDiv ground-t1-light-6"> Light Ground-R 6</div>
-      <div class="showDiv ground-t1-light-7"> Light Ground-R 7</div>
-      <div class="showDiv ground-t1-light-8"> Light Ground-R 8</div>
-      <div class="showDiv ground-t1-light-9"> Light Ground-R 9</div>
-      <div class="showDiv ground-t1-light-10">Light Ground-R 10</div>
-      <div class="showDiv ground-t1-light-11">Light Ground-R 11</div>
-      <div class="showDiv ground-t1-light-12">Light Ground-R 12</div>
+    <input type="checkbox" class="hideshow" id="show-nested" /><div>
+      <div class="nestingDolls">
+	<div class="ground-light-12">
+	  Level 1
+	  <div class="ground-light-9">
+	    Level 2
+	    <div class="ground-light-6">
+	      Level 3
+	      <div class="ground-light-3">
+		Level 4
+      </div></div></div></div></div>
+      <div class="nestingDolls">
+	<div class="ground-dark-12">
+	  Level 1
+	  <div class="ground-dark-9">
+	    Level 2
+	    <div class="ground-dark-6">
+	      Level 3
+	      <div class="ground-dark-3">
+		Level 4
+      </div></div></div></div></div>
     </div>
     
-    <h1>Third tetrad</h1>
-    <div style="display: grid; grid-template-columns: auto auto auto auto auto auto; grid-gap: 3px;">
-      <div class="showDiv ground-t3-dark-12">Dark Ground-R 12</div>
-      <div class="showDiv ground-t3-dark-11">Dark Ground-R 11</div>
-      <div class="showDiv ground-t3-dark-10">Dark Ground-R 10</div>
-      <div class="showDiv ground-t3-dark-9"> Dark Ground-R 9</div>
-      <div class="showDiv ground-t3-dark-8"> Dark Ground-R 8</div>
-      <div class="showDiv ground-t3-dark-7"> Dark Ground-R 7</div>
-      <div class="showDiv ground-t3-dark-6"> Dark Ground-R 6</div>
-      <div class="showDiv ground-t3-dark-5"> Dark Ground-R 5</div>
-      <div class="showDiv ground-t3-dark-4"> Dark Ground-R 4</div>
-      <div class="showDiv ground-t3-dark-3"> Dark Ground-R 3</div>
-      <div class="showDiv ground-t3-dark-2"> Dark Ground-R 2</div>
-      <div class="showDiv ground-t3-dark-1"> Dark Ground-R 1</div>
-      <div class="showDiv ground-t3-light-1"> Light Ground-R 1</div>
-      <div class="showDiv ground-t3-light-2"> Light Ground-R 2</div>
-      <div class="showDiv ground-t3-light-3"> Light Ground-R 3</div>
-      <div class="showDiv ground-t3-light-4"> Light Ground-R 4</div>
-      <div class="showDiv ground-t3-light-5"> Light Ground-R 5</div>
-      <div class="showDiv ground-t3-light-6"> Light Ground-R 6</div>
-      <div class="showDiv ground-t3-light-7"> Light Ground-R 7</div>
-      <div class="showDiv ground-t3-light-8"> Light Ground-R 8</div>
-      <div class="showDiv ground-t3-light-9"> Light Ground-R 9</div>
-      <div class="showDiv ground-t3-light-10">Light Ground-R 10</div>
-      <div class="showDiv ground-t3-light-11">Light Ground-R 11</div>
-      <div class="showDiv ground-t3-light-12">Light Ground-R 12</div>
-    </div>
+    <input type="checkbox"  class="hideshow" id="show-typo"  /><div>
+      <script src="theme-tweak.js"></script><script>
+	document.addEventListener('DOMContentLoaded',function() {
+	    Theme.attach(document.getElementById('sheet-view'));
+	});
+      </script>
+      <div id="sheet-view" class="frame ground-light">
+	<div style="display: block; position: fixed; text-align: right; right: 0; top: 100px; font-size: 1rem !important" class="opaque sheet">
+	  <button onclick="Theme.setProp(document.getElementById('sheet-view'),'light', !(Theme.props['light']))">Invert Lights</button>
+	  <style>.theme-prop-display { min-width: 4em; display: inline-block; }</style>
+	  <label class="theme-slider" style="display: block">Font size<input type="range" min="30" max="150" value="100"/><span class="theme-prop-display" data-prop-name="font-size"></span></label>
+	  <label class="theme-slider" style="display: block">Primary hue<input type="range" min="0" max="360" value="180"/><span class="theme-prop-display" data-prop-name="--prim-hue"></span></label>	
+	  <label class="theme-slider" style="display: block">Primary saturation<input type="range" min="0" max="100" value="50" /><span class="theme-prop-display" data-prop-name="--prim-saturation"></span></label>
+	  <label class="theme-slider" style="display: block">Low hue<input type="range" min="0" max="360" value="180"/><span class="theme-prop-display" data-prop-name="--low-hue"></span></label>	
+	  <label class="theme-slider" style="display: block">Low saturation<input type="range" min="0" max="100" value="50"/><span class="theme-prop-display" data-prop-name="--low-saturation"></span></label>
+	  <label class="theme-slider" style="display: block">High hue<input type="range" min="0" max="360" value="180"/><span class="theme-prop-display" data-prop-name="--high-hue"></span></label>	
+	  <label class="theme-slider" style="display: block">High saturation<input type="range" min="0" max="100" value="50"/><span class="theme-prop-display" data-prop-name="--high-saturation"></span></label>
+	  <label class="theme-slider" style="display: block">Min contrast<input type="range" min="10" max="100" value="50" /><span class="theme-prop-display" data-prop-name="--min-contrast"></span></label>
+	  <label class="theme-slider" style="display: block">Max contrast<input type="range" min="10" max="100" value="0" /><span class="theme-prop-display" data-prop-name="--max-contrast"></span></label>
+	  <script>
+	  </script>
+	</div>
+	<div class="header reverse">
+	  <div class="menu" style="width: 20%" href="#"><a href="#">Left</a><ul>
+	    <li><a href="#">Sub1</a></li>
+	    <li><a href="#">Very long Sub2 with some text</a><ul>
+		<li><a href="#">SubSub1</a></li>
+		<li><a href="#">SubSub2</a></li>
+	    </ul></li>
+	    <li><a href="#">Sub3</a><ul>
+		<li><a href="#">SubSub1</a></li>
+		<li><a href="#">SubSub2</a></li>
+	    </ul></li>
+	    </ul>
+	  </div><div class="menu" style="width: 60%" href="#"><a href="#" style="text-align: center">Middle</a><ul>
+	      <li><a href="#">Sub1</a></li>
+	      <li><a href="#">Very long Sub2 with some text</a><ul>
+		  <li><a href="#">SubSub1</a></li>
+		  <li><a href="#">SubSub2</a></li>
+	      </ul></li>
+	  </ul></div><div class="menu right" style="width: 20%" href="#"><a href="#">Right</a><ul>
+	      <li><a href="#">Sub1</a></li>
+	      <li><a href="#">Very long Sub2 with some text</a><ul>
+		  <li><a href="#">SubSub1</a></li>
+		  <li><a href="#">SubSub2</a></li>
+	      </ul></li>
+	      <li><a href="#">Sub3</a><ul>
+		  <li><a href="#">SubSub1</a></li>
+		  <li><a href="#">SubSub2</a></li>
+	      </ul></li>
+	  </ul></div>
+	</div>
+	<div class="sheet">
+          <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+	  
+	  <div class="box">
+	    <button class="button">Button</button>
+	    <button class="button triad-1">Button Triad 1</button>
+	    <button class="button triad-2">Button Triad 2</button>
+	  </div>
+	  <div class="box">
+	    <button class="button primary">Button</button>
+	    <button class="button tetrad-1">Button Tetrad 1</button>
+	    <button class="button tetrad-2">Button Tetrad 2 (Opposite)</button>
+	    <button class="button tetrad-3">Button Tetrad 3</button>
+	  </div>
+	  <div class="box">
+	    <button class="button primary">Button</button>
+	    <button class="button pentad-1">Button Pentad 1</button>
+	    <button class="button pentad-2">Button Pentad 2</button>
+	    <button class="button pentad-3">Button Pentad 3</button>
+	    <button class="button pentad-4">Button Pentad 4</button>
+	  </div>
+	  <div class="box">
+	    <button class="button primary">Button</button>
+	    <button class="button hexad-1">Button Hexad 1</button>
+	    <button class="button hexad-2">Button Hexad 2</button>
+	    <button class="button hexad-3">Button Hexad 3</button>
+	    <button class="button hexad-4">Button Hexad 4</button>
+	    <button class="button hexad-5">Button Hexad 5</button>
+	  </div>
+	  <div class="box">
+	    <button class="button primary">Button</button>
+	    <input type="text" />
+	    <textarea>Some text</textarea>
+	  </div>
 
-    <div class="nestingDolls">
-      <div class="ground-light-12">
-	Level 1
-	<div class="ground-light-9">
-	  Level 2
-	  <div class="ground-light-6">
-	    Level 3
-	    <div class="ground-light-3">
-	      Level 4
-    </div></div></div></div></div>
-    <div class="nestingDolls">
-      <div class="ground-dark-12">
-	Level 1
-	<div class="ground-dark-9">
-	  Level 2
-	  <div class="ground-dark-6">
-	    Level 3
-	    <div class="ground-dark-3">
-	      Level 4
-    </div></div></div></div></div>
-    
-    <div class="content-dark">
-      <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
-      
-      <p>Donec at felis eu lorem volutpat vehicula. Praesent hendrerit ultricies libero, at convallis metus congue non. Nunc egestas elit nec dui sollicitudin volutpat. Ut volutpat sem fermentum ex varius auctor. Quisque in aliquam turpis, non suscipit sem. Suspendisse vulputate nibh id lacus ullamcorper, a facilisis nisl iaculis. Sed ullamcorper ante tortor, vitae vulputate purus pretium at. Nunc auctor fermentum diam, at consectetur orci bibendum nec. Sed nec consequat nisi. Curabitur ut leo vel quam porta tincidunt. Nunc tristique eu dolor eu auctor. Sed varius aliquet mauris vel sollicitudin.</p>
+          <p>
+  	    Donec at <a href="#">felis eu lorem volutpat
+  	      vehicula</a>. Praesent hendrerit ultricies libero, at
+  	      convallis metus congue non. Nunc egestas elit nec dui
+  	      sollicitudin
+  	      volutpat. Ut <label class="expansible inline">volutpat<input type="checkbox" /><span class="expand-then">See me ?</span></label> sem
+  	      fermentum ex varius auctor. Quisque in aliquam turpis,
+  	      non suscipit sem.
+          </p>
+	  <label class="expansible box"><input type="checkbox" /><h2 class="expand-then handlebar">Hide steps</h2><h2 class="expand-else handlebar">Show steps</h2><div class="expand-then" style="--num-lines: 3;">
+	      <p>
+		Vivamus non rhoncus lectus. Vestibulum sed odio sit
+		 est ullamcorper vehicula sed vitae nibh. Praesent
+		tincidunt semper nisl, eu vehicula quam efficitur ac. Sed
+		fermentum rutrum metus ac malesuada. Nunc dignissim
+		consequat facilisis.
+	      </p>
+	    </div>
+	  </label>
+	  <p>
+  	    Suspendisse vulputate Sed ullamcorper ante tortor, vitae vulputate
+  	    purus pretium at. <label class="expansible inline"><a>amet</a><input type="checkbox" /><span class="expand-then">See me ?</span></label> nibh id lacus ullamcorper, a facilisis
+  	    nisl iaculis.  Nunc auctor fermentum diam, at consectetur
+  	    orci bibendum nec. Sed nec consequat nisi. Curabitur ut leo
+  	    vel quam porta tincidunt. Nunc tristique eu dolor eu
+  	    auctor. Sed varius aliquet mauris vel sollicitudin.
+          </p>
+	  
+          <h2>Donec laoreet, nulla vitae sollicitudin consequat</h2>
+	  
+          <p>
+	    Dui nunc blandit eros, vitae vulputate neque velit at
+            ligula. Donec iaculis, mauris vitae porta vulputate, ex sem
+            ultricies nibh, non accumsan orci lectus sit amet quam. Fusce
+            tincidunt ante eget enim malesuada, id porttitor purus
+            bibendum. Mauris ultricies mauris at tortor viverra
+            placerat.
+	  </p>
+	  <p>
+	    Proin aliquam sodales pulvinar. Aliquam mattis sit
+            amet augue sed mattis. Pellentesque eu consequat dolor. Aenean
+            ultrices, lacus a tempor rutrum, mi tellus vulputate ligula,
+            eget faucibus urna neque et nisl. Quisque at ligula finibus,
+            lacinia metus ac, fringilla enim. Suspendisse lobortis sapien
+            ac consectetur pellentesque. Aenean id commodo nisl. Mauris
+            vestibulum lacus massa, a dignissim dolor aliquam id.
+	  </p>
+	  
+          <h3>Etiam finibus aliquam urna ac feugiat</h3>
+	  
+          <p>
+	    Pellentesque congue eros a justo vestibulum, ut accumsan
+            nunc gravida. Mauris suscipit quam in ultricies
+            tristique. Ut id laoreet est. Nullam mauris elit, rutrum sit
+            amet nisi sit amet, tristique pharetra diam. Integer quis
+            turpis leo. Mauris ut turpis molestie, eleifend est at,
+            aliquet enim. In hac habitasse platea dictumst.
+	  </p>
+	  <p>
+	    Vestibulum feugiat est non velit congue, iaculis vulputate
+            justo bibendum. Etiam non lectus nisi. Vestibulum vehicula
+            facilisis ipsum, eget mattis lorem porttitor sit amet. Sed ac
+            enim sit amet ligula blandit interdum vel quis quam. Nam
+            faucibus dolor nec commodo accumsan. Donec at ex aliquet,
+            porttitor arcu eu, pharetra dui.
+	  </p>
+	  
+          <h4>Dui nunc blandit eros, vitae vulputate neque velit at ligula</h4>
+          <p>Donec iaculis, mauris vitae porta vulputate, ex sem ultricies nibh, non accumsan orci lectus sit amet quam. Fusce tincidunt ante eget enim malesuada, id porttitor purus bibendum. Mauris ultricies mauris at tortor viverra placerat. Proin aliquam sodales pulvinar. Aliquam mattis sit amet augue sed mattis. Pellentesque eu consequat dolor. Aenean ultrices, lacus a tempor rutrum, mi tellus vulputate ligula, eget faucibus urna neque et nisl. Quisque at ligula finibus, lacinia metus ac, fringilla enim. Suspendisse lobortis sapien ac consectetur pellentesque. Aenean id commodo nisl. Mauris vestibulum lacus massa, a dignissim dolor aliquam id.</p>
 
-      <h2>Donec laoreet, nulla vitae sollicitudin consequat</h2>
-
-      <p>Dui nunc blandit eros, vitae vulputate neque velit at ligula. Donec iaculis, mauris vitae porta vulputate, ex sem ultricies nibh, non accumsan orci lectus sit amet quam. Fusce tincidunt ante eget enim malesuada, id porttitor purus bibendum. Mauris ultricies mauris at tortor viverra placerat. Proin aliquam sodales pulvinar. Aliquam mattis sit amet augue sed mattis. Pellentesque eu consequat dolor. Aenean ultrices, lacus a tempor rutrum, mi tellus vulputate ligula, eget faucibus urna neque et nisl. Quisque at ligula finibus, lacinia metus ac, fringilla enim. Suspendisse lobortis sapien ac consectetur pellentesque. Aenean id commodo nisl. Mauris vestibulum lacus massa, a dignissim dolor aliquam id.</p>
-      
-      <p>Etiam finibus aliquam urna ac feugiat. Pellentesque congue eros a justo vestibulum, ut accumsan nunc gravida. Mauris suscipit quam in ultricies tristique. Ut id laoreet est. Nullam mauris elit, rutrum sit amet nisi sit amet, tristique pharetra diam. Integer quis turpis leo. Mauris ut turpis molestie, eleifend est at, aliquet enim. In hac habitasse platea dictumst. Vestibulum feugiat est non velit congue, iaculis vulputate justo bibendum. Etiam non lectus nisi. Vestibulum vehicula facilisis ipsum, eget mattis lorem porttitor sit amet. Sed ac enim sit amet ligula blandit interdum vel quis quam. Nam faucibus dolor nec commodo accumsan. Donec at ex aliquet, porttitor arcu eu, pharetra dui.</p>
-
-      <pre>Aliquam quis blandit turpis. Integer nec vehicula felis,
-sed aliquam augue. Pellentesque placerat volutpat felis vitae
-egestas. Nunc eu orci nulla. Nulla quis convallis lacus. Aenean
-ut pulvinar ex. Vestibulum ante ipsum primis in faucibus orci
-luctus et ultrices posuere cubilia Curae; Mauris vestibulum eros
-velit, sit amet luctus nunc blandit a. Sed vel lacinia mauris,
-nec venenatis quam. Nullam quis tellus nunc. Nullam dapibus
+	  <pre><code>Aliquam quis blandit turpis. Integer nec vehicula felis,</code>
+sed aliquam augue. Pellentesque placerat volutpat felis vitae egestas. Nunc eu orci nulla. Nulla quis convallis lacus. Aenean ut pulvinar ex. Vestibulum ante ipsum primis in faucibus orci
+luctus et ultrices posuere cubilia Curae; Mauris vestibulum eros velit, sit amet luctus nunc blandit a. Sed vel lacinia mauris, nec venenatis quam. Nullam quis tellus nunc. Nullam dapibus
 dignissim purus, et mattis est pretium eu. Donec in tellus
 faucibus, scelerisque diam et, dictum erat. Maecenas ex nibh,
 rutrum vel ipsum non, feugiat semper ipsum. Cras interdum justo
 at massa dictum, nec pellentesque lorem mattis. Aliquam a semper
 ante, non posuere enim. In hac habitasse platea dictumst.</pre>
       
-      <p>Donec eleifend a ligula eu porttitor. Nulla facilisi. Duis posuere hendrerit magna id rutrum. Vestibulum ornare tristique orci nec dictum. Maecenas interdum, arcu in efficitur laoreet, metus nunc euismod ipsum, sed dictum tellus tellus quis mi. Vivamus non rhoncus lectus. Vestibulum sed odio sit amet est ullamcorper vehicula sed vitae nibh. Praesent tincidunt semper nisl, eu vehicula quam efficitur ac. Sed fermentum rutrum metus ac malesuada. Nunc dignissim consequat facilisis. </p>
+	  <p>
+	    Donec eleifend a ligula eu porttitor.
+	    <code>Nulla facilisi</code>. Duis posuere hendrerit magna
+	    id rutrum. Vestibulum ornare tristique orci nec
+	    dictum. Maecenas interdum, arcu in efficitur laoreet,
+	    metus nunc euismod ipsum, sed dictum tellus tellus quis
+	    mi.
+	  </p>
+	</div>
+      </div>
     </div>
   </body>
 </html>

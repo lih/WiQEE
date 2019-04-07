@@ -1,0 +1,146 @@
+@import "fonts";
+
+.shiny {
+    background-image: linear-gradient(rgba(white,0.05),
+				      rgba(white,0) 33%,
+				      rgba(black,0) 66%,
+				      rgba(black,0.05) 100%);
+}
+.huge { font-size: 200%; }
+.large { font-size: 150%; }
+.big { font-size: 125%; }
+.medium { font-size: 100%; }
+
+* {
+    --font-size: inherit;
+}
+
+.frame {
+    display: inline-block;
+    // border: 2px solid;
+    vertical-align: top;
+    .header {
+	font-family: 'pretty-sans-serif';
+	display: block;
+	& > * {
+	    display: inline-block;
+	    height: $line-height * 1.25em;
+	    vertical-align: middle;
+	}
+    }
+    
+    .handlebar {
+	@extend .medium; 
+	display: block;
+	font-weight: bold;
+	padding: 0; margin: 0 !important;
+    }
+
+    .sheet {
+	font-family: pretty-sans-serif, sans-serif;
+	line-height: $line-height * 1em;
+	max-width: $line-height * 50em;
+
+    }
+
+    h1 { text-align: center; }
+    h1,h2,h3,h4,h5 { line-height: $line-height * 1em; margin: 0; }
+    h1 { @extend .huge;   padding: ($line-height * 0.5em) 0; }
+    h2 { @extend .large;  padding: (($line-height / 3) * 2em) 0; }
+    h3 { @extend .big;    padding: (($line-height / 5) * 3em) 0; }
+    h4 { @extend .medium; padding: ($line-height * 0.5em) 0; }
+    h5 { @extend .medium; padding: ($line-height * 1em) 0 0; }
+
+    p { padding: 0; margin: 0;
+	& + p { text-indent: $line-height * 1.5em;
+		* { text-indent: 0; }
+	      } }
+
+    pre, code {
+	font-family: pretty-mono, mono;
+	line-height: $line-height * 1em;
+    }
+    .box { display: block; }
+    pre, .box {
+	margin: ($line-height * 1em) auto;
+    }
+    pre {
+	max-width: 60em;
+	overflow: auto;
+    }
+    code { display: inline-block; }
+
+    button {
+	@extend .medium;
+	display: inline-block;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: $line-height * 0.1em;
+	height: $line-height * 1.25em;
+	line-height: calc(#{$line-height * 1em} - 2px);
+	
+	vertical-align: top;
+    }
+    a {
+	text-decoration: none;
+ 	&:hover { text-decoration: underline; }
+    }
+    input, textarea {
+	@extend .medium;
+	line-height: calc(#{$line-height * 1em} - 2px);
+	border-width: 1px;
+	border-style: solid;
+	border-radius: $line-height * 0.1em;
+	font-family: pretty-sans-serif;
+	display: inline-block; vertical-align: top;
+    }
+    textarea {
+	height: calc(#{$line-height * 1.25em} - 2px);
+	position: relative;
+	top: -1px; left: -1px;
+    }
+    input {
+	padding: 0;
+	height: calc(#{$line-height * 1.25em} - 2px);
+    }
+    a { text-decoration: underline; }
+}
+
+.frame {
+    @include set-level(6);
+    @include set-ground(0deg);
+    @extend .opaque;
+    .header {
+	@include set-level(3);
+    }
+
+    .sheet {
+	@include set-level(12); @include set-ground(0deg); @extend .opaque; 
+
+	p { @include set-level(12); }
+	
+	code { @include set-level(9); @extend .opaque; }
+	pre { @include set-level(9); @extend .opaque;
+	      code { background: none; } }
+	
+	input, textarea { @include set-level(9); @include set-ground(0deg); @extend .opaque; @extend .with-border; }
+	
+	a { @include set-level(6); @include set-ground(3 * 72deg); }
+
+        button {
+	    @include set-level(6);
+	    @extend .shiny;
+	    @extend .with-border;
+	    &:hover { @include set-level(9); }
+	    &:active { @include set-level(3); }
+	    @extend .opaque;
+	    transition: none !important;
+	}
+    }
+    @each $var in $color-variations {
+	.#{$var} {
+	    @extend .#{$var};
+	}
+    }
+}
+

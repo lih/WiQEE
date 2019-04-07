@@ -1,0 +1,103 @@
+* {
+    --level-incr: inherit;
+    --level: inherit;
+    --min-contrast: inherit;
+    --max-contrast: inherit;
+    --prim-hue: inherit;
+    --prim-saturation: inherit;
+    --low-hue: inherit;
+    --high-hue: inherit;
+    --low-saturation: inherit;
+    --high-saturation: inherit;
+    --tint: inherit;
+}
+
+.ground-light, .ground-dark {
+    --level: 12;
+    --min-contrast: 54%; 
+    --max-contrast: 90%;
+}
+.ground-light {
+    --level-incr: -1;
+    .reverse { --level-incr: 1; }
+    --prim-hue: #{hue(nth($primary,3))};
+    --prim-saturation: #{saturation(nth($primary,3))};
+    --low-hue: #{nth($primary,1)};
+    --low-saturation: #{nth($primary,2)};
+    --high-hue: #{nth($primary,4))};
+    --high-saturation: #{nth($primary,5)};
+}
+
+.ground-dark {
+    --level-incr: 1;
+    .reverse { --level-incr: -1; }
+    --prim-hue: #{hue(nth($primary,3))};
+    --prim-saturation: #{saturation(nth($primary,3))};
+    --low-hue: #{nth($primary,4)};
+    --low-saturation: #{nth($primary,5)};
+    --high-hue: #{nth($primary,1))};
+    --high-saturation: #{nth($primary,2)};
+}
+
+@mixin set-level($i) {
+    --level: #{$i};
+}
+
+$local-rate: calc(1 / (14 - var(--level)));
+$local-rate-r: calc(1 - 1 / (14 - var(--level)));
+$contrast-delta: calc(var(--level-incr) * (var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)
+		      / 2);
+
+$default-color: hsl(calc(var(--tint) + var(--prim-hue) * #{$local-rate-r} + var(--high-hue) * #{$local-rate}),
+		    calc(var(--prim-saturation) * #{$local-rate-r} + var(--high-saturation) * #{$local-rate}),
+		    calc(50% + #{$contrast-delta})); 
+$default-background: hsl(calc(var(--tint) + var(--prim-hue) * #{$local-rate-r} + var(--low-hue) * #{$local-rate}),
+			 calc(var(--prim-saturation) * #{$local-rate-r} + var(--low-saturation) * #{$local-rate}),
+			 calc(50% - #{$contrast-delta}));
+$default-border: hsla(calc(var(--tint) + var(--prim-hue) * #{$local-rate-r} + var(--high-hue) * #{$local-rate}),
+		      calc(var(--prim-saturation) * #{$local-rate-r} + var(--high-saturation) * #{$local-rate}),
+		      calc(50% + #{$contrast-delta}),0.3); 
+
+@mixin set-ground($tint) {
+    --tint: #{$tint};
+    &, * {
+	color: $default-color;
+    }
+}
+.opaque {
+    background-color: $default-background;
+}
+.with-border {
+    border-color: $default-border;
+
+}
+
+.primary {
+    @include set-ground(0deg);
+}
+@for $i from 1 through 5 {
+    .hexad-#{$i} {
+	@include set-ground($i * 60deg);
+    }
+}
+@for $i from 1 through 4 {
+    .pentad-#{$i} {
+	@include set-ground($i * 72deg);
+    }
+}
+@for $i from 1 through 3 {
+    .tetrad-#{$i} {
+	@include set-ground($i * 90deg);
+    }
+}
+@for $i from 1 through 2 {
+    .triad-#{$i} {
+	@include set-ground($i * 120deg);
+    }
+}
+
+$color-variations: ('primary',
+		    'hexad-1', 'hexad-2', 'hexad-3', 'hexad-4', 'hexad-5',
+		    'pentad-1', 'pentad-2', 'pentad-3', 'pentad-4', 
+		    'tetrad-1', 'tetrad-2', 'tetrad-3', 
+		    'triad-1', 'triad-2');

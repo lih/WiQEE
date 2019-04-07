@@ -54,128 +54,31 @@ $for(header-includes)$
   $header-includes$
 $endfor$
 </head>
-<body>
+<body class="ground-light primary">
 $for(include-before)$
 $include-before$
 $endfor$
-<nav class="nav">
-  <ul>
-    <li id="nav-head"><a href="index.html">WiQEE</a><ul>
-	<li><a href="lexicon.html">Lexicon</a></li>
-    </ul></li><li id="nav-title"><a class="#">$title$</a>
+<div id="content-frame" class="frame"><div class="nav header reverse">
+    <span class="menu left"><a href="index.html">WiQEE</a><ul>
+  	<li><a href="lexicon.html">Lexicon</a></li>
+    </ul></span><span class="menu middle"><a class="#">$title$</a>
       $if(toc)$
       $toc$
       $endif$
-    </li><li id="page-source"><a href="$module$.md">Page source</a></li>
-  </ul>
-</nav>
-<div id="content-frame"><div id="content-scroll" autofocus="autofocus"><div id="content">
+    </span><span class="menu right"><a href="#">More...</a><ul>
+	<li><a href="$module$.md">Page source</a></li>
+	<li><a href="#" onclick="document.getElementById('body-theme-chooser').classList.toggle('active')">Tweak theme</a></li>
+      </ul></span>
+  </div><div id="content-scroll" autofocus="autofocus"><div id="content" class="sheet">
+      <h1>$title$</h1>
 $body$
-<div id="footer">
-  Page generated on $full-date$, using capricon-$capricon-version$ and pandoc-$pandoc-version$.
-</div>
+      <div id="footer">Page generated on $full-date$, using capricon-$capricon-version$ and pandoc-$pandoc-version$.</div>
 </div></div></div>
 $if(prelude-text)$
 <div id="capricon-prelude" style="display: none;">$prelude-text$</div>
 $endif$
 <div id="capricon-console"></div>
 <script type="text/javascript">
-  capriconWorker = new Worker('WiQEE-worker.js');
-
-  workerCallbacks = [];
-  capriconWorker.onmessage = function (e) {
-      var callback = workerCallbacks[e.data[0]];
-      callback(e.data[1]);
-  };
-
-  function runCaPriCon(state,code,then) {
-      var nextCallback = workerCallbacks.length;
-      workerCallbacks.push(then);
-      capriconWorker.postMessage([0,nextCallback,state,code]);
-  };
-  function evalCaPriCon(state,code,then) {
-      var nextCallback = workerCallbacks.length;
-      workerCallbacks.push(then);
-      capriconWorker.postMessage([1,nextCallback,state,code]);
-  };
-
-  prel = document.getElementById('capricon-prelude').textContent;
-  roots = Array.prototype.slice.call(document.getElementsByClassName('capricon-steps'));
-  console = document.getElementById('capricon-console');
-  function loop0(i) { return function (st) {
-      // alert('loop0 called with '+i+' roots.length='+roots.length);
-      if(i < roots.length) {
-      	  var root = roots[i];
-	  if(root.tagName == 'CODE') {
-	      runCaPriCon(st,root.textContent + " mustache.",loop0(i+1));
-	  }
-	  else {
-	      var mainInput = root.getElementsByClassName('capricon-input')[0];
-	      mainInput.classList.add('pending');
-
-	      var consoleRoot = root.cloneNode(true);
-	      var consoleTitle = document.createElement('h3');
-	      var consoleClose = document.createElement('button');
-	      
-	      var mainExamples = root.getElementsByClassName('capricon-example');
-	      for(var j = 0; j < mainExamples.length; j++) {
-		  (function () {
-		      var example = mainExamples[j];
-		      example.addEventListener('click', function (ev) {
-			  mainInput.value = example.getAttribute('data-code');
-		      });
-		  })();
-	      }
-
-	      consoleClose.textContent = "Close";
-	      consoleClose.addEventListener('click', function() {
-		  consoleRoot.classList.remove('active');
-		  mainInput.value = consoleInput.value;
-	      });
-	      consoleTitle.textContent = "CaPriCon Console";
-	      consoleTitle.appendChild(consoleClose);
-	      consoleRoot.insertBefore(consoleTitle,consoleRoot.firstChild);
-	      console.appendChild(consoleRoot);
-
-
-	      var text = root.getElementsByClassName('capricon')[0].textContent;
-	      runCaPriCon(st,text,function(st0) {
-		  var mainTrigger = root.getElementsByClassName('capricon-trigger')[0];
-		  var consoleInput = consoleRoot.getElementsByClassName('capricon-input')[0];
-		  var consoleOutput = consoleRoot.getElementsByClassName('capricon-output')[0];
-		  
-		  mainInput.classList.add('ready'); mainInput.classList.remove('pending');
-		  mainTrigger.addEventListener('click', function (ev) {
-		      if(!consoleRoot.classList.contains('active')) {
-			  consoleRoot.classList.add('active');
-			  consoleInput.value = mainInput.value;
-			  evalCaPriCon(st0,consoleInput.value,function(ret) { consoleOutput.textContent = ret; });
-		      	  consoleInput.focus();
-		      }
-		  });
-
-		  consoleInput.addEventListener('keypress', function (ev) {
-		      if(ev.keyCode == 13) { // Press Enter
-			  evalCaPriCon(st0,consoleInput.value,function(ret) { consoleOutput.textContent = ret; });
-		      }
-		  });
-		  
-		  mainInput.addEventListener('keypress', function (ev) {
-		      if(ev.keyCode == 13) { // Press Enter
-			  consoleRoot.classList.add('active');
-			  consoleInput.value = mainInput.value;
-			  evalCaPriCon(st0,mainInput.value,function(ret) { consoleOutput.textContent = ret; });
-			  consoleInput.focus();
-		      }
-		  });
-
-		  loop0(i+1)(st0);
-	      });
-	  }
-      }
-  };}
-  runCaPriCon(0,prel,loop0(0));
-
   window.addEventListener("load",function() {
       var formulae = document.getElementsByClassName('formula');
       for(var i in formulae) {
@@ -190,6 +93,23 @@ $endif$
       }
   });
 </script>
+<div id="body-theme-chooser" style="z-index: 100; position: fixed; text-align: right; right: 0; bottom: 0; font-size: 1rem !important" class="opaque sheet frame level-12">
+    <script>
+      document.addEventListener('DOMContentLoaded',function() {
+	  Theme.attach(document.getElementsByTagName('body')[0]);
+      });
+    </script>
+    <button onclick="Theme.setProp(document.getElementsByTagName('body')[0],'light', !(Theme.props['light']))">Invert Lights</button>
+    <style>.theme-prop-display { min-width: 4em; display: inline-block; }</style>
+    <label class="theme-slider" style="display: block">Primary hue<input type="range" min="0" max="360" value="180"/><span class="theme-prop-display" data-prop-name="--prim-hue"></span></label>	
+    <label class="theme-slider" style="display: block">Primary saturation<input type="range" min="0" max="100" value="50" /><span class="theme-prop-display" data-prop-name="--prim-saturation"></span></label>
+    <label class="theme-slider" style="display: block">Low hue<input type="range" min="-180" max="180" value="0"/><span class="theme-prop-display" data-prop-name="--low-hue"></span></label>	
+    <label class="theme-slider" style="display: block">Low saturation<input type="range" min="0" max="100" value="50"/><span class="theme-prop-display" data-prop-name="--low-saturation"></span></label>
+    <label class="theme-slider" style="display: block">High hue<input type="range" min="-180" max="180" value="0"/><span class="theme-prop-display" data-prop-name="--high-hue"></span></label>	
+    <label class="theme-slider" style="display: block">High saturation<input type="range" min="0" max="100" value="50"/><span class="theme-prop-display" data-prop-name="--high-saturation"></span></label>
+    <label class="theme-slider" style="display: block">Min contrast<input type="range" min="10" max="100" value="50" /><span class="theme-prop-display" data-prop-name="--min-contrast"></span></label>
+    <label class="theme-slider" style="display: block">Max contrast<input type="range" min="10" max="100" value="0" /><span class="theme-prop-display" data-prop-name="--max-contrast"></span></label>
+</div>
 $for(include-after)$
 $include-after$
 $endfor$
