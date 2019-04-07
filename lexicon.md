@@ -75,13 +75,13 @@ $value$ is associated with the variable named $name$.
   > 'x 3 def 'y 7 def
 > x y x y + y * "(x + y) * y = %v; y = %v ; x = %v" printf
 
-### `$`
+`$`
 
-The inverse of `def`. Given the name of a variable at the top of the
+: The inverse of `def`. Given the name of a variable at the top of the
 stack, this function produces the value of the corresponding variable
 in the current environment.
 
-`$` : $name\ ...\ \rightarrow\ \$name\ ...$
+  - `$` : $name\ ...\ \rightarrow\ \$name\ ...$
 
 ### `vocabulary` / `set-vocabulary`
 

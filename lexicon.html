@@ -46,7 +46,6 @@
             <ul>
       <li><a href="#stack-manipulation">Stack manipulation</a></li>
       <li><a href="#names-and-variables">Names and variables</a><ul>
-      <li><a href="#section"><code>$</code></a></li>
       <li><a href="#vocabulary-set-vocabulary"><code>vocabulary</code> / <code>set-vocabulary</code></a></li>
       <li><a href="#lookup"><code>lookup</code></a></li>
       </ul></li>
@@ -54,8 +53,8 @@
       <li><a href="#exec"><code>exec</code></a></li>
       </ul></li>
       <li><a href="#lists">Lists</a><ul>
-      <li><a href="#section-1"><code>[</code></a></li>
-      <li><a href="#section-2"><code>]</code></a></li>
+      <li><a href="#section"><code>[</code></a></li>
+      <li><a href="#section-1"><code>]</code></a></li>
       <li><a href="#each"><code>each</code></a></li>
       <li><a href="#range"><code>range</code></a></li>
       </ul></li>
@@ -168,9 +167,11 @@ Try It Out
 <div class="capricon-paragraphresult">
 (x + y) * y = 70; y = 7 ; x = 3
 </div>
-<h3 id="section"><a href="#section"><code>$</code></a></h3>
-<p>The inverse of <code>def</code>. Given the name of a variable at the top of the stack, this function produces the value of the corresponding variable in the current environment.</p>
-<p><code>$</code> : <span class="math">\(name\ ...\ \rightarrow\ \$name\ ...\)</span></p>
+<p><code>$</code></p>
+<p>: The inverse of <code>def</code>. Given the name of a variable at the top of the stack, this function produces the value of the corresponding variable in the current environment.</p>
+<ul>
+<li><code>$</code> : <span class="math">\(name\ ...\ \rightarrow\ \$name\ ...\)</span></li>
+</ul>
 <h3 id="vocabulary-set-vocabulary"><a href="#vocabulary-set-vocabulary"><code>vocabulary</code> / <code>set-vocabulary</code></a></h3>
 <p>Pushes the active dictionary, that contains all defined variables, on top of the stack. In the second case, make the top of the stack the current dictionary, redefining all variables at once.</p>
 <h3 id="lookup"><a href="#lookup"><code>lookup</code></a></h3>
@@ -179,10 +180,10 @@ Try It Out
 <h3 id="exec"><a href="#exec"><code>exec</code></a></h3>
 <p>Executes the value at the top of the stack, as if it were the meaning of a word. To illustrate, given a function, <code>'f $ exec</code> is equivalent to <code>f</code> itself. That is, evaluating a symbol is no different than looking it up in the current dictionary, and <code>exec</code>uting its value.</p>
 <h2 id="lists"><a href="#lists">Lists</a></h2>
-<h3 id="section-1"><a href="#section-1"><code>[</code></a></h3>
+<h3 id="section"><a href="#section"><code>[</code></a></h3>
 <p>Puts a &quot;list beginning&quot; (LB) marker on the stack</p>
 <p><code>[</code> : <span class="math">\(...\ \rightarrow\ LB\ ...\)</span></p>
-<h3 id="section-2"><a href="#section-2"><code>]</code></a></h3>
+<h3 id="section-1"><a href="#section-1"><code>]</code></a></h3>
 <p>Creates a list of the elements on the stack until the next &quot;list beginning&quot; marker, and pushes it on the remaining stack.</p>
 <p><code>]</code> : <span class="math">\(x_0..x_n\ LB\ ...\ \rightarrow\ [x_n..x_0]\ ...\)</span></p>
 <h3 id="each"><a href="#each"><code>each</code></a></h3>
@@ -290,7 +291,7 @@ Try It Out
 <p>Given a hypothesis name, and a term of the same type as that hypothesis, remove that hypothesis from the context by substituting all its occurences by the given term.</p>
 <h3 id="hypotheses"><a href="#hypotheses"><code>hypotheses</code></a></h3>
 <p>Pushes a list of all the hypotheses' names in context, from most recent to the oldest.</p>
-      <div id="footer">Page generated on Sunday, April 07 of 2019, at 22:56 PM UTC, using capricon-0.12.2.1 and pandoc-1.12.2.1.</div>
+      <div id="footer">Page generated on Sunday, April 07 of 2019, at 22:57 PM UTC, using capricon-0.12.2.1 and pandoc-1.12.2.1.</div>
 </div></div></div>
 <div id="capricon-prelude" style="display: none;">'nop { { } } def 'get { nop nop lookup } def 'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys { { 1 dupn 1 dupn get def } each pop } def 'import { dup dict-keys import-keys } def [ dict term-index construction query context io list arith string ] { import } each 'printf { format print pop } def 'show { &quot;%v\n&quot; printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def 'mustache. { show } def 'tex { 'mustache. { &quot;<span class="math">\(%l\)</span>\n&quot; printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { &quot;
 <svg class='formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\\"http://www.w3.org/2000/svg\\">
