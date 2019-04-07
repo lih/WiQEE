@@ -22,10 +22,10 @@
     .reverse { --level-incr: 1; }
     --prim-hue: #{hue(nth($primary,3))};
     --prim-saturation: #{saturation(nth($primary,3))};
-    --low-hue: nth($primary,1);
-    --low-saturation: nth($primary,2);
-    --high-hue: nth($primary,4);
-    --high-saturation: nth($primary,5);
+    --low-hue: #{nth($primary,1)};
+    --low-saturation: #{nth($primary,2)};
+    --high-hue: #{nth($primary,4)};
+    --high-saturation: #{nth($primary,5)};
 }
 
 .ground-dark {
