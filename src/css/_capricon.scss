@@ -67,10 +67,11 @@
     }
     .capricon-input-prefix {
 	display: inline-block;
-	&, * { background: black; color: white !important; }
+	&, * { color: white !important; }
 	.capricon-input {
 	    transition: background 1s, opacity 1s;
 	    display: inline-block;
+	    background: black;
 	    background-color: grey;
 	    background-image: linear-gradient(to right, black, rgba(black,0.5) 40%, rgba(black,0.5) 60%, rgba(black,1) 100%);
 	    opacity: 0;
