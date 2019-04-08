@@ -43,7 +43,9 @@
   	<li><a href="lexicon.html">Lexicon</a></li>
     </ul></span><span class="menu middle"><a class="#">First steps with CaPriCon</a>
             <ul>
-      <li><a href="#the-stack">The stack</a></li>
+      <li><a href="#stacks-and-the-stack">Stacks, and The Stack</a><ul>
+      <li><a href="#first-words">First words</a></li>
+      </ul></li>
       </ul>
           </span><span class="menu right"><a href="#">More...</a><ul>
 	<li><a href="https://github.com/lih/WiQEE-pages/edit/master/capricon-tutorial.md">Page source</a></li>
@@ -70,9 +72,35 @@ Try It Out
 </ul>
 </div>
 <p>Among other things, this module defines one function that will be of interest to us : <code>vis</code>. When called, this function simply prints out every hypothesis in context and every value currently on the stack. It’s very useful as the final word in a sentence, to show the resulting context. It doesn’t change anything, so feel free to sprinkle it at any point of your scripts for debugging purposes.</p>
-<p>Now, in order to understand what a stack-based language is, we first have to understand the basic concept of a <em>stack</em>.</p>
-<h2 id="the-stack">The stack</h2>
-      <div id="footer">Page generated on Monday, April 08 of 2019, at 21:20 PM UTC, using capricon-0.12.2.1 and pandoc-2.7.2.</div>
+<p>Now, in order to understand what a stack-based language is, we first have to understand the basic concept of a <em>stack</em>, and the role it plays during the execution of a script.</p>
+<h2 id="stacks-and-the-stack">Stacks, and The Stack</h2>
+<p>A stack, in general, is a list of values, to which we arbitrarily assign two extremes, a <em>top</em> and a <em>bottom</em>. We can operate on either side, but as a general simplifying convention, all stack operations will take place at the top unless specified otherwise.</p>
+<p>The most fundamental operations that can be carried out on a stack are <em>pushing</em> and <em>popping</em> values to and from it (at the top).</p>
+<p>What does that have to do with CaPriCon ? Well, stack-based languages, as their name implies, implicitly operate on a stack, that serves as temporary storage for all the intermediate results of a computation. When we talk about <em>the stack</em>, without any more context, you can assume we’re talking about this one.</p>
+<p>In most stack-based languages, including CaPriCon, words designate <em>instructions</em> that modify the stack according to predefined rules, and complex scripts can be written by stringing words together in the right order.</p>
+<h3 id="first-words">First words</h3>
+<p>Let’s start talking. The simplest kinds of words are <em>symbols</em>, more commonly known as strings, and written as a single quote (<code>'</code>), followed by some non-space characters.</p>
+<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
+<div class="capricon-steps">
+<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'greetings">'greetings</span></pre>
+<div class="capricon-examples">
+<button class="capricon-example" data-code="vis">
+<pre class="capricon"><span class="symbol" data-symbol-name="vis">vis</span></pre>
+</button>
+</div>
+<div class="user-input interactive">
+<button class="capricon-trigger">
+Try It Out
+</button>
+<label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
+<pre class="capricon-output"></pre>
+</div>
+</div>
+</span></label>
+<div class="capricon-paragraphresult">
+
+</div>
+      <div id="footer">Page generated on Monday, April 08 of 2019, at 21:48 PM UTC, using capricon-0.12.2.1 and pandoc-2.7.2.</div>
 </div></div></div>
 <script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def  'collect { { 'exports empty def ,{ } exec exports ,{ vocabulary } set-vocabulary } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { dup source-dir "%s%s" format source swap output-dir "%s%s.mdc" format redirect } def 'require { dup dup "  * Required module: [%s]\(%s.html\)\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def</script>
 <div id="capricon-console"></div>
