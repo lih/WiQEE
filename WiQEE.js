@@ -1,5 +1,5 @@
 window.addEventListener('load',function () {
-    var capriconWorker = new Worker('capricon-worker.js');
+    var capriconWorker = new Worker(window.location.pathname.substring(0, loc.lastIndexOf('/')) + '/capricon-worker.js');
 
     var workerCallbacks = [];
     capriconWorker.onmessage = function (e) {
