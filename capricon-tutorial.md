@@ -31,6 +31,8 @@ will take place at the top unless specified otherwise.
 The most fundamental operations that can be carried out on a stack are
 *pushing* and *popping* values to and from it (at the top).
 
+<br/>
+
 What does that have to do with CaPriCon ? Well, stack-based languages,
 as their name implies, implicitly operate on a stack, that serves as
 temporary storage for all the intermediate results of a
