@@ -44,7 +44,8 @@ In most stack-based languages, including CaPriCon, words designate
 and complex scripts can be written by stringing words together in the
 right order, changing the stack in ever more interesting ways.
 
-### First words
+First words
+-----------
 
 Let's start talking. The simplest kinds of words are *symbols*, more
 commonly known as strings, and written as a single quote (`'`),
