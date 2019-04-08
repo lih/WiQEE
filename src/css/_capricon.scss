@@ -68,6 +68,7 @@
     .capricon-input-prefix {
 	display: inline-block;
 	&, * { color: white !important; }
+	& { background: black; }
 	.capricon-input {
 	    transition: background 1s, opacity 1s;
 	    display: inline-block;
