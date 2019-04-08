@@ -82,7 +82,7 @@ $endif$
   window.addEventListener("load",function() {
       var formulae = document.getElementsByClassName('formula');
       for(var i in formulae) {
-	  var formula = formulae[i];
+	  var formula = formulae.item(i);
 	  var box = formula.getBBox();
 	  var w = Math.ceil(box.width)*1.05; h = Math.ceil(box.height)*1.05;
 	  var x = Math.floor(box.x), y = Math.floor(box.y);
