@@ -979,19 +979,22 @@
   color: white !important;
 }
 .user-input .capricon-input-prefix .capricon-input {
-  transition: background 1s;
+  transition: background 1s, opacity 1s;
   display: inline-block;
   background-color: grey;
   background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.5) 60%, black 100%);
+  opacity: 0;
   border: none;
   font-family: mono;
   width: calc(100% - 1em);
 }
 .user-input .capricon-input-prefix .capricon-input.pending {
   background-color: green;
+  opacity: 0.5;
 }
 .user-input .capricon-input-prefix .capricon-input.ready {
   background-color: #001a00;
+  opacity: 1;
 }
 .user-input .capricon-output {
   display: none;
