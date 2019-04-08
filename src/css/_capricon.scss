@@ -68,7 +68,7 @@
     .capricon-input-prefix {
 	display: inline-block;
 	&, * { color: white !important; }
-	& { background: black; }
+	& { background-image: linear-gradient(to-right, black, black 2em, white 2em, white); }
 	.capricon-input {
 	    transition: background 1s, opacity 1s;
 	    display: inline-block;
