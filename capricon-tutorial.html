@@ -83,13 +83,13 @@ Try It Out
 <p>Let’s start talking. The simplest kinds of words are <em>symbols</em>, more commonly known as strings, and written as a single quote (<code>'</code>), followed by some non-space characters.</p>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
 <div class="capricon-steps">
-<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'greetings">'greetings</span></pre>
+<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'Bender">'Bender</span></pre>
 <div class="capricon-examples">
 <button class="capricon-example" data-code="vis">
 <pre class="capricon"><span class="symbol" data-symbol-name="vis">vis</span></pre>
 </button>
-<button class="capricon-example" data-code="pop &#39;Bender &#39;is &#39;great vis">
-<pre class="capricon"><span class="symbol" data-symbol-name="pop">pop</span> <span class="symbol" data-symbol-name="'Bender">'Bender</span> <span class="symbol" data-symbol-name="'is">'is</span> <span class="symbol" data-symbol-name="'great">'great</span> <span class="symbol" data-symbol-name="vis">vis</span></pre>
+<button class="capricon-example" data-code="&#39;is &#39;great vis">
+<pre class="capricon"><span class="symbol" data-symbol-name="'is">'is</span> <span class="symbol" data-symbol-name="'great">'great</span> <span class="symbol" data-symbol-name="vis">vis</span></pre>
 </button>
 </div>
 <div class="user-input interactive">
@@ -108,7 +108,7 @@ Try It Out
 <p>You can also write numbers, in the usual decimal format, and those numbers will be pushed onto the stack as well.</p>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
 <div class="capricon-steps">
-<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="2">2</span></pre>
+<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="10021321012">10021321012</span></pre>
 <div class="capricon-examples">
 <button class="capricon-example" data-code="vis">
 <pre class="capricon"><span class="symbol" data-symbol-name="vis">vis</span></pre>
@@ -126,7 +126,7 @@ Try It Out
 <div class="capricon-paragraphresult">
 
 </div>
-      <div id="footer">Page generated on Monday, April 08 of 2019, at 21:57 PM UTC, using capricon-0.12.2.1 and pandoc-2.7.2.</div>
+      <div id="footer">Page generated on Monday, April 08 of 2019, at 21:58 PM UTC, using capricon-0.12.2.1 and pandoc-2.7.2.</div>
 </div></div></div>
 <script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def  'collect { { 'exports empty def ,{ } exec exports ,{ vocabulary } set-vocabulary } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { dup source-dir "%s%s" format source swap output-dir "%s%s.mdc" format redirect } def 'require { dup dup "  * Required module: [%s]\(%s.html\)\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def</script>
 <div id="capricon-console"></div>

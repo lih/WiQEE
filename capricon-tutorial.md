@@ -50,9 +50,9 @@ Let's start talking. The simplest kinds of words are *symbols*, more
 commonly known as strings, and written as a single quote (`'`),
 followed by some non-space characters.
 
-> 'greetings
+> 'Bender
 >? vis
->? pop 'Bender 'is 'great vis
+>? 'is 'great vis
 
 As you can see, each symbol you write is pushed onto the stack, in the
 order in which they appear. Nothing mysterious here.
@@ -60,6 +60,6 @@ order in which they appear. Nothing mysterious here.
 You can also write numbers, in the usual decimal format, and those
 numbers will be pushed onto the stack as well.
 
-> 1 2
+> 1 2 10021321012
 >? vis
 
