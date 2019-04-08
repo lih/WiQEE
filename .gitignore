@@ -2,6 +2,5 @@ cache
 public
 local
 .*
-mathjax
 \#*
 scripts/hooks
