@@ -81,7 +81,7 @@ $endif$
 <script type="text/javascript">
   window.addEventListener("load",function() {
       var formulae = document.getElementsByClassName('formula');
-      for(var i in formulae) {
+      for(var i = 0; i < formulae.length; i++) {
 	  var formula = formulae.item(i);
 	  var box = formula.getBBox();
 	  var w = Math.ceil(box.width)*1.05; h = Math.ceil(box.height)*1.05;
