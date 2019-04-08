@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Marc Coiffier" />
-  <title>Booleans, the original true-false dichotomy</title>
+  <title>First steps with CaPriCon</title>
   <style type="text/css">
     code{white-space: pre;}
     #capricon-prelude { display: none; }
@@ -32,7 +32,6 @@
     <style>.interactive { display: none !important; }</style>
   </noscript>
   <link rel="stylesheet" href="style.css" />
-  <script src="mathjax/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
   <link rel="icon" type="image/png" href="favicon.png" />
   <!-- <script src="WiQEE.js"></script> -->
   <script src="WiQEE.js"></script>
@@ -42,16 +41,17 @@
 <div id="content-frame" class="frame"><div class="nav header reverse">
     <span class="menu left"><a href="index.html">WiQEE</a><ul>
   	<li><a href="lexicon.html">Lexicon</a></li>
-    </ul></span><span class="menu middle"><a class="#">Booleans, the original true-false dichotomy</a>
+    </ul></span><span class="menu middle"><a class="#">First steps with CaPriCon</a>
             <ul>
-      <li><a href="#functions-on-booleans">Functions on Booleans</a></li>
+      <li><a href="#the-stack">The stack</a></li>
       </ul>
           </span><span class="menu right"><a href="#">More...</a><ul>
-	<li><a href="https://github.com/lih/WiQEE-pages/edit/master/Booleans.md">Page source</a></li>
+	<li><a href="https://github.com/lih/WiQEE-pages/edit/master/capricon-tutorial.md">Page source</a></li>
 	<li><a href="#" onclick="document.getElementById('body-theme-chooser').classList.toggle('active')">Tweak theme</a></li>
       </ul></span>
   </div><div id="content-scroll" autofocus="autofocus"><div id="content" class="sheet">
-      <h1>Booleans, the original true-false dichotomy</h1>
+      <h1>First steps with CaPriCon</h1>
+<p>This page is intended as a tutorial on the use of a stack-based proof environment like the one provided on this site. Since we’re going to need to print things out, and we don’t yet have the knowledge to write such features ourselves, let’s first import a few useful functions from a preexisting module.</p>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 2.25">
 <div class="capricon-steps">
 <pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'utils">'utils</span> <span class="symbol" data-symbol-name="require">require</span> <span class="symbol" data-symbol-name="import">import</span></pre>
@@ -69,101 +69,9 @@ Try It Out
 <li>Required module: <a href="utils.html">utils</a></li>
 </ul>
 </div>
-<p>Booleans can have two values, in any given universe. First, we define the Boolean context :</p>
-<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 2.25">
-<div class="capricon-steps">
-<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'Bool-context">'Bool-context</span> <span class="symbol" data-symbol-name="[">[</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="Type">Type</span> <span class="symbol" data-symbol-name="'.Bool">'.Bool</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name=".Bool">.Bool</span> <span class="symbol" data-symbol-name="'.true">'.true</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name=".Bool">.Bool</span> <span class="symbol" data-symbol-name="'.false">'.false</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="]">]</span> <span class="symbol" data-symbol-name="def">def</span></pre>
-<div class="user-input interactive">
-<button class="capricon-trigger">
-Try It Out
-</button>
-<label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
-<pre class="capricon-output"></pre>
-</div>
-</div>
-</span></label>
-<div class="capricon-paragraphresult">
-
-</div>
-<p>In this context, the type of booleans is simply the .Bool type in context, and the ‘true’ and ‘false’ values are respectively the ‘.true’ and ‘.false’ hypotheses.</p>
-<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 6.5">
-<div class="capricon-steps">
-<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'Bool">'Bool</span> <span class="symbol" data-symbol-name="Bool-context">Bool-context</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name=".Bool">.Bool</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="prods">prods</span>  <span class="symbol" data-symbol-name="&quot;Boolean&quot;">&quot;Boolean&quot;</span> <span class="symbol" data-symbol-name="defconstr">defconstr</span>
-<span class="symbol" data-symbol-name="'true">'true</span> <span class="symbol" data-symbol-name="Bool-context">Bool-context</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name=".true">.true</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="funs">funs</span>   <span class="symbol" data-symbol-name="&quot;true&quot;">&quot;true&quot;</span>    <span class="symbol" data-symbol-name="defconstr">defconstr</span> 
-<span class="symbol" data-symbol-name="'false">'false</span> <span class="symbol" data-symbol-name="Bool-context">Bool-context</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name=".false">.false</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="funs">funs</span> <span class="symbol" data-symbol-name="&quot;false&quot;">&quot;false&quot;</span>   <span class="symbol" data-symbol-name="defconstr">defconstr</span>
-<span class="symbol" data-symbol-name="[">[</span> <span class="symbol" data-symbol-name="'Bool">'Bool</span> <span class="symbol" data-symbol-name="'true">'true</span> <span class="symbol" data-symbol-name="'false">'false</span> <span class="symbol" data-symbol-name="]">]</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="export">export</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="each">each</span></pre>
-<div class="capricon-examples">
-<button class="capricon-example" data-code="[ true false ] { [ swap dup type ] } each vis">
-<pre class="capricon"><span class="symbol" data-symbol-name="[">[</span> <span class="symbol" data-symbol-name="true">true</span> <span class="symbol" data-symbol-name="false">false</span> <span class="symbol" data-symbol-name="]">]</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="[">[</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="dup">dup</span> <span class="symbol" data-symbol-name="type">type</span> <span class="symbol" data-symbol-name="]">]</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="each">each</span> <span class="symbol" data-symbol-name="vis">vis</span></pre>
-</button>
-</div>
-<div class="user-input interactive">
-<button class="capricon-trigger">
-Try It Out
-</button>
-<label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
-<pre class="capricon-output"></pre>
-</div>
-</div>
-</span></label>
-<div class="capricon-paragraphresult">
-
-</div>
-<p>We can test that <span class="math inline">\(true\)</span> and <span class="math inline">\(false\)</span> have the correct type :</p>
-<ul>
-<li>type of <label class="expansible inline"><span>true </span><input type="checkbox"/><span class="expand-then"><code class="capricon capricon-steps">true dup</code></span></label> : <label class="expansible inline"><span><span class="math inline">\(Boolean\)</span> </span><input type="checkbox"/><span class="expand-then"><code class="capricon capricon-steps">type tex</code></span></label></li>
-<li>type of <label class="expansible inline"><span>false </span><input type="checkbox"/><span class="expand-then"><code class="capricon capricon-steps">false dup</code></span></label> : <label class="expansible inline"><span><span class="math inline">\(Boolean\)</span> </span><input type="checkbox"/><span class="expand-then"><code class="capricon capricon-steps">type tex</code></span></label></li>
-<li>type of <label class="expansible inline"><span><span class="math inline">\(λ(\mathrm{b}:Boolean).\,\mu(\mathrm{b})\)</span> </span><input type="checkbox"/><span class="expand-then"><code class="capricon capricon-steps">Bool ’b recursor dup tex</code></span></label> : <label class="expansible inline"><span><span class="math inline">\(∀(\mathrm{b}:Boolean)\,(\mathrm{Bool}^P:Boolean \rightarrow Set_{1}),\,\mathrm{Bool}^P\,true \rightarrow \mathrm{Bool}^P\,false \rightarrow \mathrm{Bool}^P\,\mathrm{b}\)</span> </span><input type="checkbox"/><span class="expand-then"><code class="capricon capricon-steps">type tex</code></span></label></li>
-</ul>
-<h2 id="functions-on-booleans">Functions on Booleans</h2>
-<p>Then, we can start defining first-level combinators, such as ‘not’, ‘and’ and ‘or’ :</p>
-<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 9.5">
-<div class="capricon-steps">
-<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'not">'not</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="Bool">Bool</span> <span class="symbol" data-symbol-name="'b">'b</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="Bool-context">Bool-context</span> <span class="symbol" data-symbol-name="#">#</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="b">b</span> <span class="symbol" data-symbol-name="(">(</span> <span class="symbol" data-symbol-name=".Bool">.Bool</span> <span class="symbol" data-symbol-name=".false">.false</span> <span class="symbol" data-symbol-name=".true">.true</span> <span class="symbol" data-symbol-name=")">)</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="funs">funs</span> <span class="symbol" data-symbol-name="def">def</span>
-<span class="symbol" data-symbol-name="'and">'and</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="Bool">Bool</span> <span class="symbol" data-symbol-name="'x">'x</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="Bool">Bool</span> <span class="symbol" data-symbol-name="'y">'y</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="Bool-context">Bool-context</span> <span class="symbol" data-symbol-name="#">#</span> <span class="symbol" data-symbol-name="#">#</span>
-  <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="x">x</span> <span class="symbol" data-symbol-name="(">(</span> <span class="symbol" data-symbol-name=".Bool">.Bool</span> <span class="symbol" data-symbol-name="y">y</span> <span class="symbol" data-symbol-name="(">(</span> <span class="symbol" data-symbol-name=".Bool">.Bool</span> <span class="symbol" data-symbol-name=".true">.true</span> <span class="symbol" data-symbol-name=".false">.false</span> <span class="symbol" data-symbol-name=")">)</span> <span class="symbol" data-symbol-name=".false">.false</span> <span class="symbol" data-symbol-name=")">)</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="funs">funs</span> <span class="symbol" data-symbol-name="def">def</span>
-<span class="symbol" data-symbol-name="'or">'or</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="Bool">Bool</span> <span class="symbol" data-symbol-name="'x">'x</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="Bool">Bool</span> <span class="symbol" data-symbol-name="'y">'y</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="Bool-context">Bool-context</span> <span class="symbol" data-symbol-name="#">#</span> <span class="symbol" data-symbol-name="#">#</span>
-  <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="x">x</span> <span class="symbol" data-symbol-name="(">(</span> <span class="symbol" data-symbol-name=".Bool">.Bool</span> <span class="symbol" data-symbol-name=".true">.true</span> <span class="symbol" data-symbol-name="y">y</span> <span class="symbol" data-symbol-name="(">(</span> <span class="symbol" data-symbol-name=".Bool">.Bool</span> <span class="symbol" data-symbol-name=".true">.true</span> <span class="symbol" data-symbol-name=".false">.false</span> <span class="symbol" data-symbol-name=")">)</span> <span class="symbol" data-symbol-name=")">)</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="funs">funs</span> <span class="symbol" data-symbol-name="def">def</span>
-<span class="symbol" data-symbol-name="'implies">'implies</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="Bool">Bool</span> <span class="symbol" data-symbol-name="'x">'x</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="Bool">Bool</span> <span class="symbol" data-symbol-name="'y">'y</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="Bool-context">Bool-context</span> <span class="symbol" data-symbol-name="#">#</span> <span class="symbol" data-symbol-name="#">#</span>
-  <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="x">x</span> <span class="symbol" data-symbol-name="(">(</span> <span class="symbol" data-symbol-name=".Bool">.Bool</span> <span class="symbol" data-symbol-name="y">y</span> <span class="symbol" data-symbol-name="(">(</span> <span class="symbol" data-symbol-name=".Bool">.Bool</span> <span class="symbol" data-symbol-name=".true">.true</span> <span class="symbol" data-symbol-name=".false">.false</span> <span class="symbol" data-symbol-name=")">)</span> <span class="symbol" data-symbol-name=".true">.true</span> <span class="symbol" data-symbol-name=")">)</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="funs">funs</span> <span class="symbol" data-symbol-name="def">def</span></pre>
-<div class="capricon-examples">
-<button class="capricon-example" data-code="&#39;and [ true false ] { dup ,{ swap dup $ } apply [ true false ] { dup 2 dupn apply swap 3 dupn ,{ ,{ } } &quot;%s(%v,%v) = %v\n&quot; printf } each } each">
-<pre class="capricon"><span class="symbol" data-symbol-name="'and">'and</span> <span class="symbol" data-symbol-name="[">[</span> <span class="symbol" data-symbol-name="true">true</span> <span class="symbol" data-symbol-name="false">false</span> <span class="symbol" data-symbol-name="]">]</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="dup">dup</span> <span class="quote quote-splice"><span class="symbol" data-symbol-name=",{">,{</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="dup">dup</span> <span class="symbol" data-symbol-name="$">$</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="apply">apply</span> <span class="symbol" data-symbol-name="[">[</span> <span class="symbol" data-symbol-name="true">true</span> <span class="symbol" data-symbol-name="false">false</span> <span class="symbol" data-symbol-name="]">]</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="dup">dup</span> <span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="dupn">dupn</span> <span class="symbol" data-symbol-name="apply">apply</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="3">3</span> <span class="symbol" data-symbol-name="dupn">dupn</span> <span class="quote quote-splice"><span class="symbol" data-symbol-name=",{">,{</span> <span class="quote quote-splice"><span class="symbol" data-symbol-name=",{">,{</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="&quot;%s(%v,%v) = %v\n&quot;">&quot;%s(%v,%v) = %v\n&quot;</span> <span class="symbol" data-symbol-name="printf">printf</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="each">each</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="each">each</span></pre>
-</button>
-</div>
-<div class="user-input interactive">
-<button class="capricon-trigger">
-Try It Out
-</button>
-<label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
-<pre class="capricon-output"></pre>
-</div>
-</div>
-</span></label>
-<div class="capricon-paragraphresult">
-
-</div>
-<p>As always, we should verify the type of our combinators, and test whether they truly conform to their specification :</p>
-<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 2.25">
-<div class="capricon-steps">
-<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="[">[</span> <span class="symbol" data-symbol-name="'not">'not</span> <span class="symbol" data-symbol-name="'or">'or</span> <span class="symbol" data-symbol-name="'and">'and</span> <span class="symbol" data-symbol-name="'implies">'implies</span> <span class="symbol" data-symbol-name="]">]</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="dup">dup</span> <span class="symbol" data-symbol-name="$">$</span> <span class="symbol" data-symbol-name="type">type</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="&quot;  - $%s : %l$\n&quot;">&quot;  - $%s : %l$\n&quot;</span> <span class="symbol" data-symbol-name="printf">printf</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="each">each</span></pre>
-<div class="user-input interactive">
-<button class="capricon-trigger">
-Try It Out
-</button>
-<label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
-<pre class="capricon-output"></pre>
-</div>
-</div>
-</span></label>
-<div class="capricon-paragraphresult">
-<ul>
-<li><span class="math inline">\(not : Boolean \rightarrow Boolean\)</span></li>
-<li><span class="math inline">\(or : Boolean \rightarrow Boolean \rightarrow Boolean\)</span></li>
-<li><span class="math inline">\(and : Boolean \rightarrow Boolean \rightarrow Boolean\)</span></li>
-<li><span class="math inline">\(implies : Boolean \rightarrow Boolean \rightarrow Boolean\)</span></li>
-</ul>
-</div>
+<p>Among other things, this module defines one function that will be of interest to us : <code>vis</code>. When called, this function simply prints out every hypothesis in context and every value currently on the stack. It’s very useful as the final word in a sentence, to show the resulting context. It doesn’t change anything, so feel free to sprinkle it at any point of your scripts for debugging purposes.</p>
+<p>Now, in order to understand what a stack-based language is, we first have to understand the basic concept of a <em>stack</em>.</p>
+<h2 id="the-stack">The stack</h2>
       <div id="footer">Page generated on Monday, April 08 of 2019, at 21:20 PM UTC, using capricon-0.12.2.1 and pandoc-2.7.2.</div>
 </div></div></div>
 <script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def  'collect { { 'exports empty def ,{ } exec exports ,{ vocabulary } set-vocabulary } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { dup source-dir "%s%s" format source swap output-dir "%s%s.mdc" format redirect } def 'require { dup dup "  * Required module: [%s]\(%s.html\)\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def</script>

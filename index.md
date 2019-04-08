@@ -93,7 +93,7 @@ like the one CaPriCon provides :
     name "prelude".
 
 If you still aren't quite sure how to go about writing your own
-scripts, [this tutorial](capricon-tutorial.md) may help walk you
+scripts, [this tutorial](capricon-tutorial.html) may help walk you
 through the first hurdles.
 
 Proofs With Prismatic Constructions
