@@ -975,13 +975,15 @@
   width: calc(84% - 2px);
 }
 .user-input .capricon-input-prefix, .user-input .capricon-input-prefix * {
-  background: black;
   color: white !important;
+}
+.user-input .capricon-input-prefix {
+  background: black;
 }
 .user-input .capricon-input-prefix .capricon-input {
   transition: background 1s, opacity 1s;
   display: inline-block;
-  background-color: grey;
+  background-color: black;
   background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.5) 60%, black 100%);
   opacity: 0;
   border: none;
