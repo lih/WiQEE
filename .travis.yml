@@ -7,7 +7,6 @@ language: generic
 matrix:
   include:
   - compiler: "CaPriCon Pages"
-    addons: {apt: {packages: [pandoc]}}
 
 install:
 - . scripts/ci/inline/install
