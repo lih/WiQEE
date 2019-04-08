@@ -1,6 +1,6 @@
 window = self;
 var wloc = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
-console.log('Worker window location: '+wloc);
+window.console.log('Worker window location: '+wloc);
 importScripts(wloc + '/capricon-engine.js');
 
 CaPriCon = {
