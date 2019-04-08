@@ -38,7 +38,8 @@ window.addEventListener('load',function () {
 		var consoleBar = document.createElement('div');
 		var consoleTitle = document.createElement('h4');
 		var consoleClose = document.createElement('button');
-		
+		var consoleInput = consoleRoot.getElementsByClassName('capricon-input')[0];
+		    
 		var mainExamples = root.getElementsByClassName('capricon-example');
 		for(var j = 0; j < mainExamples.length; j++) {
 		    (function () {
@@ -69,7 +70,6 @@ window.addEventListener('load',function () {
 		var text = root.getElementsByClassName('capricon')[0].textContent;
 		runCaPriCon(st,text,function(st0) {
 		    var mainTrigger = root.getElementsByClassName('capricon-trigger')[0];
-		    var consoleInput = consoleRoot.getElementsByClassName('capricon-input')[0];
 		    var consoleOutput = consoleRoot.getElementsByClassName('capricon-output')[0];
 		    
 		    mainInput.classList.add('ready'); mainInput.classList.remove('pending');
