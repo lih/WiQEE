@@ -2,7 +2,7 @@
 sudo mkdir -p /local/opt
 
 curl -sL https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-1-amd64.deb > pandoc.deb
-dpkg -i pandoc.deb
+sudo dpkg -i pandoc.deb
 
 curl -sL https://github.com/lih/BHR/releases/download/release-capricon-0.12.2.1/capricon.linux.x86_64.tar.xz | \
     sudo tar -xJ -C /local/opt
