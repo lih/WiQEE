@@ -64,6 +64,6 @@ numbers will be pushed onto the stack as well.
 the need arises, I'll be glad to throw in some BigInt or floating-point
 support
 
-> 1 2 10021321012
+> 1 2 100
 >? vis
 
