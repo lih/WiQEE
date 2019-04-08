@@ -78,7 +78,7 @@ Try It Out
 <p>The most fundamental operations that can be carried out on a stack are <em>pushing</em> and <em>popping</em> values to and from it (at the top).</p>
 <p><br/></p>
 <p>What does that have to do with CaPriCon ? Well, stack-based languages, as their name implies, implicitly operate on a stack, that serves as temporary storage for all the intermediate results of a computation. When we talk about <em>the stack</em>, without any more context, you can assume we’re talking about this one.</p>
-<p>In most stack-based languages, including CaPriCon, words designate <em>instructions</em> that modify the stack according to predefined rules, and complex scripts can be written by stringing words together in the right order.</p>
+<p>In most stack-based languages, including CaPriCon, words designate <em>instructions</em> that modify the stack according to predefined rules, and complex scripts can be written by stringing words together in the right order, changing the stack in ever more interesting ways.</p>
 <h3 id="first-words">First words</h3>
 <p>Let’s start talking. The simplest kinds of words are <em>symbols</em>, more commonly known as strings, and written as a single quote (<code>'</code>), followed by some non-space characters.</p>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
@@ -104,7 +104,7 @@ Try It Out
 <div class="capricon-paragraphresult">
 
 </div>
-      <div id="footer">Page generated on Monday, April 08 of 2019, at 21:51 PM UTC, using capricon-0.12.2.1 and pandoc-2.7.2.</div>
+      <div id="footer">Page generated on Monday, April 08 of 2019, at 21:53 PM UTC, using capricon-0.12.2.1 and pandoc-2.7.2.</div>
 </div></div></div>
 <script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def  'collect { { 'exports empty def ,{ } exec exports ,{ vocabulary } set-vocabulary } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { dup source-dir "%s%s" format source swap output-dir "%s%s.mdc" format redirect } def 'require { dup dup "  * Required module: [%s]\(%s.html\)\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def</script>
 <div id="capricon-console"></div>

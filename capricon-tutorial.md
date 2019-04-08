@@ -42,7 +42,7 @@ you can assume we're talking about this one.
 In most stack-based languages, including CaPriCon, words designate
 *instructions* that modify the stack according to predefined rules,
 and complex scripts can be written by stringing words together in the
-right order.
+right order, changing the stack in ever more interesting ways.
 
 ### First words
 
