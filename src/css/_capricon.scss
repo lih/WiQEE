@@ -74,7 +74,7 @@
 	    background-color: grey;
 	    background-image: linear-gradient(to right, black, rgba(black,0.5) 40%, rgba(black,0.5) 60%, rgba(black,1) 100%);
 	    opacity: 0;
-	    &.pending { background-color: green; }
+	    &.pending { background-color: green; opacity: 0.5; }
 	    &.ready { background-color: mix(black,green,80%);
 		      opacity: 1; }
 	    border: none;
