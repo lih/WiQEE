@@ -67,3 +67,10 @@ support
 > 1 2 100
 >? vis
 
+### Vocabularies and definitions
+
+You now know what happens when you write `'vis`, but how does `vis`
+get interpreted ?
+
+<br/>
+
