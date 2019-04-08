@@ -166,7 +166,7 @@
 }
 /* latin */
 @font-face {
-  font-family: "Roboto Mono";
+  font-family: "pretty-mono";
   font-style: normal;
   font-weight: 400;
   src: local("Roboto Mono"), local("RobotoMono-Regular"), url("RobotoMono-Regular.woff2") format("woff2");
