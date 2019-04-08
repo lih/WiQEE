@@ -31,7 +31,7 @@
   <noscript>
     <style>.interactive { display: none !important; }</style>
   </noscript>
-  <link rel="stylesheet" href="style.css" type="text/css" />
+  <link rel="stylesheet" href="style.css" />
   <script src="mathjax/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
   <link rel="icon" type="image/png" href="favicon.png" />
   <!-- <script src="WiQEE.js"></script> -->
@@ -50,11 +50,16 @@
   </div><div id="content-scroll" autofocus="autofocus"><div id="content" class="sheet">
       <h1>Encoding Structural Equality in CaPriCon</h1>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 2.25">
-<div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'utils">'utils</span> <span class="symbol" data-symbol-name="require">require</span> <span class="symbol" data-symbol-name="import">import</span></pre><div class="user-input interactive"><button class="capricon-trigger">
+<div class="capricon-steps">
+<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'utils">'utils</span> <span class="symbol" data-symbol-name="require">require</span> <span class="symbol" data-symbol-name="import">import</span></pre>
+<div class="user-input interactive">
+<button class="capricon-trigger">
 Try It Out
 </button>
 <label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
-<pre class="capricon-output"></pre></div></div>
+<pre class="capricon-output"></pre>
+</div>
+</div>
 </span></label>
 <div class="capricon-paragraphresult">
 <ul>
@@ -62,38 +67,44 @@ Try It Out
 </ul>
 </div>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 7.25">
-<div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="Type">Type</span> <span class="symbol" data-symbol-name="'A">'A</span> <span class="symbol" data-symbol-name="-&gt;">-&gt;</span> <span class="symbol" data-symbol-name="A">A</span> <span class="symbol" data-symbol-name="'x">'x</span> <span class="symbol" data-symbol-name="-&gt;">-&gt;</span> 
+<div class="capricon-steps">
+<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="Type">Type</span> <span class="symbol" data-symbol-name="'A">'A</span> <span class="symbol" data-symbol-name="-&gt;">-&gt;</span> <span class="symbol" data-symbol-name="A">A</span> <span class="symbol" data-symbol-name="'x">'x</span> <span class="symbol" data-symbol-name="-&gt;">-&gt;</span> 
 
 <span class="symbol" data-symbol-name="'Eq_context">'Eq_context</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="A">A</span> <span class="symbol" data-symbol-name="'a">'a</span> <span class="symbol" data-symbol-name="-&gt;">-&gt;</span> <span class="symbol" data-symbol-name="Type">Type</span> <span class="symbol" data-symbol-name="?">?</span> <span class="symbol" data-symbol-name="'.Eq">'.Eq</span> <span class="symbol" data-symbol-name="-&gt;">-&gt;</span> <span class="symbol" data-symbol-name=".Eq">.Eq</span> <span class="symbol" data-symbol-name="(">(</span> <span class="symbol" data-symbol-name="x">x</span> <span class="symbol" data-symbol-name=")">)</span> <span class="symbol" data-symbol-name="'.refl">'.refl</span> <span class="symbol" data-symbol-name="-&gt;">-&gt;</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="def">def</span>
 
 <span class="symbol" data-symbol-name="'Eq">'Eq</span> <span class="symbol" data-symbol-name="A">A</span> <span class="symbol" data-symbol-name="'y">'y</span> <span class="symbol" data-symbol-name="-&gt;">-&gt;</span> <span class="symbol" data-symbol-name="Eq_context">Eq_context</span> <span class="symbol" data-symbol-name=".Eq">.Eq</span> <span class="symbol" data-symbol-name="(">(</span> <span class="symbol" data-symbol-name="y">y</span> <span class="symbol" data-symbol-name=")">)</span> <span class="symbol" data-symbol-name="?">?</span> <span class="symbol" data-symbol-name="?">?</span> <span class="symbol" data-symbol-name="&quot;x = y&quot;">&quot;x = y&quot;</span> <span class="symbol" data-symbol-name="defconstr">defconstr</span> <span class="symbol" data-symbol-name="!">!</span>
-<span class="symbol" data-symbol-name="'refl">'refl</span> <span class="symbol" data-symbol-name="Eq_context">Eq_context</span> <span class="symbol" data-symbol-name=".refl">.refl</span> <span class="symbol" data-symbol-name="!">!</span> <span class="symbol" data-symbol-name="!">!</span> <span class="symbol" data-symbol-name="&quot;refl x&quot;">&quot;refl x&quot;</span> <span class="symbol" data-symbol-name="defconstr">defconstr</span></pre><div class="user-input interactive"><button class="capricon-trigger">
+<span class="symbol" data-symbol-name="'refl">'refl</span> <span class="symbol" data-symbol-name="Eq_context">Eq_context</span> <span class="symbol" data-symbol-name=".refl">.refl</span> <span class="symbol" data-symbol-name="!">!</span> <span class="symbol" data-symbol-name="!">!</span> <span class="symbol" data-symbol-name="&quot;refl x&quot;">&quot;refl x&quot;</span> <span class="symbol" data-symbol-name="defconstr">defconstr</span></pre>
+<div class="user-input interactive">
+<button class="capricon-trigger">
 Try It Out
 </button>
 <label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
-<pre class="capricon-output"></pre></div></div>
+<pre class="capricon-output"></pre>
+</div>
+</div>
 </span></label>
 <div class="capricon-paragraphresult">
 
 </div>
-<p>The type of <label class="expansible inline"><span><span class="math">\(λ(\mathrm{y}:\mathrm{A})\,(\mathrm{e}:\mathrm{x}\,=\,\mathrm{y}).\,\mu(\mathrm{e})\)</span> </span><input type="checkbox"/><span class="expand-then"><code class="capricon capricon-steps">A 'y -&gt; Eq ( y ) 'e recursor dup ! tex</code></span></label> is <label class="expansible inline"><span><span class="math">\(∀(\mathrm{y}:\mathrm{A})\,(\mathrm{e}:\mathrm{x}\,=\,\mathrm{y})\,(\mathrm{Eq}^P:∀(\mathrm{a}:\mathrm{A}),\,\mathrm{x}\,=\,\mathrm{a} \rightarrow Set_{1}),\,\mathrm{Eq}^P\,\mathrm{x}\,(refl\,\mathrm{x}) \rightarrow \mathrm{Eq}^P\,\mathrm{y}\,\mathrm{e}\)</span> </span><input type="checkbox"/><span class="expand-then"><code class="capricon capricon-steps">type tex</code></span></label>.</p>
+<p>The type of <label class="expansible inline"><span><span class="math inline">\(λ(\mathrm{y}:\mathrm{A})\,(\mathrm{e}:\mathrm{x}\,=\,\mathrm{y}).\,\mu(\mathrm{e})\)</span> </span><input type="checkbox"/><span class="expand-then"><code class="capricon capricon-steps">A ’y -&gt; Eq ( y ) ’e recursor dup ! tex</code></span></label> is <label class="expansible inline"><span><span class="math inline">\(∀(\mathrm{y}:\mathrm{A})\,(\mathrm{e}:\mathrm{x}\,=\,\mathrm{y})\,(\mathrm{Eq}^P:∀(\mathrm{a}:\mathrm{A}),\,\mathrm{x}\,=\,\mathrm{a} \rightarrow Set_{1}),\,\mathrm{Eq}^P\,\mathrm{x}\,(refl\,\mathrm{x}) \rightarrow \mathrm{Eq}^P\,\mathrm{y}\,\mathrm{e}\)</span> </span><input type="checkbox"/><span class="expand-then"><code class="capricon capricon-steps">type tex</code></span></label>.</p>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 2.25">
-<div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="lambdas">lambdas</span> <span class="symbol" data-symbol-name="[">[</span> <span class="symbol" data-symbol-name="'Eq">'Eq</span> <span class="symbol" data-symbol-name="'refl">'refl</span> <span class="symbol" data-symbol-name="]">]</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="export">export</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="each">each</span></pre><div class="user-input interactive"><button class="capricon-trigger">
+<div class="capricon-steps">
+<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="lambdas">lambdas</span> <span class="symbol" data-symbol-name="[">[</span> <span class="symbol" data-symbol-name="'Eq">'Eq</span> <span class="symbol" data-symbol-name="'refl">'refl</span> <span class="symbol" data-symbol-name="]">]</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="export">export</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="each">each</span></pre>
+<div class="user-input interactive">
+<button class="capricon-trigger">
 Try It Out
 </button>
 <label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
-<pre class="capricon-output"></pre></div></div>
+<pre class="capricon-output"></pre>
+</div>
+</div>
 </span></label>
 <div class="capricon-paragraphresult">
 
 </div>
-      <div id="footer">Page generated on Monday, April 08 of 2019, at 02:32 AM UTC, using capricon-0.12.2.1 and pandoc-1.12.2.1.</div>
+      <div id="footer">Page generated on Monday, April 08 of 2019, at 02:44 AM UTC, using capricon-0.12.2.1 and pandoc-2.7.2.</div>
 </div></div></div>
-<div id="capricon-prelude" style="display: none;">'nop { { } } def 'get { nop nop lookup } def 'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys { { 1 dupn 1 dupn get def } each pop } def 'import { dup dict-keys import-keys } def [ dict term-index construction query context io list arith string ] { import } each 'printf { format print pop } def 'show { &quot;%v\n&quot; printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def 'mustache. { show } def 'tex { 'mustache. { &quot;<span class="math">\(%l\)</span>\n&quot; printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { &quot;
-<svg class='formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\\"http://www.w3.org/2000/svg\\">
-<text class='formula-text' x='0' y='100'>%g</text>
-</svg>
-<p>&quot; printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { &quot;%s\n&quot; printf 'mustache. ,{ dup $ } def } def } def 'collect { { 'exports empty def ,{ } exec exports ,{ vocabulary } set-vocabulary } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def [ 'source-dir 'output-dir 'cache-dir ] { &quot;&quot; def } each 'module { dup source-dir &quot;%s%s&quot; format source swap output-dir &quot;%s%s.mdc&quot; format redirect } def 'require { dup dup &quot; * Required module: [%s]\(%s.html\)\n&quot; printf { ,{ dup } { module } collect } swap cache-dir &quot;%s%s.mdo&quot; format cache } def</p></div>
+<div id="capricon-prelude" style="display: none;">’nop { { } } def ’get { nop nop lookup } def ’each list 1 dupn get def ’dict-keys dict ’keys get def ’import-keys { { 1 dupn 1 dupn get def } each pop } def ’import { dup dict-keys import-keys } def [ dict term-index construction query context io list arith string ] { import } each ’printf { format print pop } def ’show { “%v\n” printf } def ’show-stack { stack { show } each } def ’times { range { pop dup exec } each pop } def ’reverse { [ ] swap { cons } each } def ’mustache. { show } def ’tex { ’mustache. { “<span class="math inline">\(%l\)</span>\n” printf ’mustache. ,{ dup $ } def } def } def ’svg { ’mustache. { “<svg class='formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\\"http://www.w3.org/2000/svg\\"><text class='formula-text' x='0' y='100'>%g</text></svg>” printf ’mustache. ,{ dup $ } def } def } def ’raw { ’mustache. { “%s\n” printf ’mustache. ,{ dup $ } def } def } def ’collect { { ’exports empty def ,{ } exec exports ,{ vocabulary } set-vocabulary } exec } def ’exports empty def ’export { exports swap dup $ insert ’exports swap def } def [ ’source-dir ’output-dir ’cache-dir ] { "" def } each ’module { dup source-dir “%s%s” format source swap output-dir “%s%s.mdc” format redirect } def ’require { dup dup " * Required module: [%s]\(%s.html\)\n" printf { ,{ dup } { module } collect } swap cache-dir “%s%s.mdo” format cache } def</div>
 <div id="capricon-console"></div>
 <script type="text/javascript">
   window.addEventListener("load",function() {

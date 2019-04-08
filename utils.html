@@ -31,7 +31,7 @@
   <noscript>
     <style>.interactive { display: none !important; }</style>
   </noscript>
-  <link rel="stylesheet" href="style.css" type="text/css" />
+  <link rel="stylesheet" href="style.css" />
   <script src="mathjax/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
   <link rel="icon" type="image/png" href="favicon.png" />
   <!-- <script src="WiQEE.js"></script> -->
@@ -50,131 +50,183 @@
   </div><div id="content-scroll" autofocus="autofocus"><div id="content" class="sheet">
       <h1>Miscellaneous utilities</h1>
 <p>Reminder : all builtin functions can be found documented <a href="lexicon.html">here</a></p>
-<h4 id="exporting-definitions"><a href="#exporting-definitions">Exporting definitions</a></h4>
+<h4 id="exporting-definitions">Exporting definitions</h4>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 2.25">
-<div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'defX">'defX</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="dupn">dupn</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="def">def</span> <span class="symbol" data-symbol-name="export">export</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="def">def</span> <span class="symbol" data-symbol-name="'defX">'defX</span> <span class="symbol" data-symbol-name="export">export</span></pre><div class="user-input interactive"><button class="capricon-trigger">
+<div class="capricon-steps">
+<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'defX">'defX</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="dupn">dupn</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="def">def</span> <span class="symbol" data-symbol-name="export">export</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="def">def</span> <span class="symbol" data-symbol-name="'defX">'defX</span> <span class="symbol" data-symbol-name="export">export</span></pre>
+<div class="user-input interactive">
+<button class="capricon-trigger">
 Try It Out
 </button>
 <label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
-<pre class="capricon-output"></pre></div></div>
+<pre class="capricon-output"></pre>
+</div>
+</div>
 </span></label>
 <div class="capricon-paragraphresult">
 
 </div>
-<h4 id="navigating-the-environment"><a href="#navigating-the-environment">Navigating the environment</a></h4>
+<h4 id="navigating-the-environment">Navigating the environment</h4>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 8.25">
-<div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'show-context">'show-context</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span>
+<div class="capricon-steps">
+<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'show-context">'show-context</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span>
    <span class="symbol" data-symbol-name="&quot;&quot;">&quot;&quot;</span> <span class="symbol" data-symbol-name="hypotheses">hypotheses</span>
    <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="dup">dup</span> <span class="symbol" data-symbol-name="variable">variable</span> <span class="symbol" data-symbol-name="type">type</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="&quot;%s : %v\n%s&quot;">&quot;%s : %v\n%s&quot;</span> <span class="symbol" data-symbol-name="format">format</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="each">each</span>
    <span class="symbol" data-symbol-name="print">print</span> <span class="symbol" data-symbol-name="pop">pop</span>
  <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
 <span class="symbol" data-symbol-name="'showdef">'showdef</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="pattern-index">pattern-index</span> <span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="swapn">swapn</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="index-insert">index-insert</span> <span class="symbol" data-symbol-name="set-pattern-index">set-pattern-index</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
-<span class="symbol" data-symbol-name="'vis">'vis</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="show-context">show-context</span> <span class="symbol" data-symbol-name="&quot;-------\n&quot;">&quot;-------\n&quot;</span> <span class="symbol" data-symbol-name="printf">printf</span> <span class="symbol" data-symbol-name="show-stack">show-stack</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span></pre><div class="user-input interactive"><button class="capricon-trigger">
+<span class="symbol" data-symbol-name="'vis">'vis</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="show-context">show-context</span> <span class="symbol" data-symbol-name="&quot;-------\n&quot;">&quot;-------\n&quot;</span> <span class="symbol" data-symbol-name="printf">printf</span> <span class="symbol" data-symbol-name="show-stack">show-stack</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span></pre>
+<div class="user-input interactive">
+<button class="capricon-trigger">
 Try It Out
 </button>
 <label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
-<pre class="capricon-output"></pre></div></div>
+<pre class="capricon-output"></pre>
+</div>
+</div>
 </span></label>
 <div class="capricon-paragraphresult">
 
 </div>
-<h4 id="binders-and-contexts"><a href="#binders-and-contexts">Binders and contexts</a></h4>
+<h4 id="binders-and-contexts">Binders and contexts</h4>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 5.25">
-<div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'binder">'binder</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="shaft">shaft</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="quote quote-exec"><span class="symbol" data-symbol-name="${">${</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="-&gt;">-&gt;</span> <span class="quote quote-exec"><span class="symbol" data-symbol-name="${">${</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="quote quote-exec"><span class="symbol" data-symbol-name="${">${</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
+<div class="capricon-steps">
+<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'binder">'binder</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="shaft">shaft</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="quote quote-exec"><span class="symbol" data-symbol-name="${">${</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="-&gt;">-&gt;</span> <span class="quote quote-exec"><span class="symbol" data-symbol-name="${">${</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="quote quote-exec"><span class="symbol" data-symbol-name="${">${</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
 <span class="symbol" data-symbol-name="'funs">'funs</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="reverse">reverse</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="'!">'!</span> <span class="symbol" data-symbol-name="$">$</span> <span class="symbol" data-symbol-name="binder">binder</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="each">each</span> <span class="symbol" data-symbol-name="exec">exec</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
 <span class="symbol" data-symbol-name="'prods">'prods</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="reverse">reverse</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="'?">'?</span> <span class="symbol" data-symbol-name="$">$</span> <span class="symbol" data-symbol-name="binder">binder</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="each">each</span> <span class="symbol" data-symbol-name="exec">exec</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
-<span class="symbol" data-symbol-name="'#">'#</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="cons">cons</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span></pre><div class="user-input interactive"><button class="capricon-trigger">
+<span class="symbol" data-symbol-name="'#">'#</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="cons">cons</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span></pre>
+<div class="user-input interactive">
+<button class="capricon-trigger">
 Try It Out
 </button>
 <label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
-<pre class="capricon-output"></pre></div></div>
+<pre class="capricon-output"></pre>
+</div>
+</div>
 </span></label>
 <div class="capricon-paragraphresult">
 
 </div>
-<h4 id="constructing-typed-terms"><a href="#constructing-typed-terms">Constructing typed terms</a></h4>
+<h4 id="constructing-typed-terms">Constructing typed terms</h4>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 2.25">
-<div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'Type">'Type</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="0">0</span> <span class="symbol" data-symbol-name="universe">universe</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span></pre><div class="user-input interactive"><button class="capricon-trigger">
+<div class="capricon-steps">
+<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'Type">'Type</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="0">0</span> <span class="symbol" data-symbol-name="universe">universe</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span></pre>
+<div class="user-input interactive">
+<button class="capricon-trigger">
 Try It Out
 </button>
 <label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
-<pre class="capricon-output"></pre></div></div>
+<pre class="capricon-output"></pre>
+</div>
+</div>
 </span></label>
 <div class="capricon-paragraphresult">
 
 </div>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 6.25">
-<div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'foralls">'foralls</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="extro-forall">extro-forall</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="times">times</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
+<div class="capricon-steps">
+<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'foralls">'foralls</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="extro-forall">extro-forall</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="times">times</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
 <span class="symbol" data-symbol-name="'lambdas">'lambdas</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="extro-lambda">extro-lambda</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="times">times</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
 <span class="symbol" data-symbol-name="'applys">'applys</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="range">range</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="pop">pop</span> <span class="symbol" data-symbol-name="apply">apply</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="each">each</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
 <span class="symbol" data-symbol-name="'applyl">'applyl</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="apply">apply</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="each">each</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
-<span class="symbol" data-symbol-name="'recursor">'recursor</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="dup">dup</span> <span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="shaft">shaft</span> <span class="symbol" data-symbol-name="-&gt;">-&gt;</span> <span class="symbol" data-symbol-name="variable">variable</span> <span class="symbol" data-symbol-name="mu">mu</span> <span class="symbol" data-symbol-name="!">!</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span></pre><div class="user-input interactive"><button class="capricon-trigger">
+<span class="symbol" data-symbol-name="'recursor">'recursor</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="dup">dup</span> <span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="shaft">shaft</span> <span class="symbol" data-symbol-name="-&gt;">-&gt;</span> <span class="symbol" data-symbol-name="variable">variable</span> <span class="symbol" data-symbol-name="mu">mu</span> <span class="symbol" data-symbol-name="!">!</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span></pre>
+<div class="user-input interactive">
+<button class="capricon-trigger">
 Try It Out
 </button>
 <label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
-<pre class="capricon-output"></pre></div></div>
+<pre class="capricon-output"></pre>
+</div>
+</div>
 </span></label>
 <div class="capricon-paragraphresult">
 
 </div>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 3.25">
-<div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'(">'(</span> <span class="symbol" data-symbol-name="'[">'[</span> <span class="symbol" data-symbol-name="$">$</span> <span class="symbol" data-symbol-name="defX">defX</span>
-<span class="symbol" data-symbol-name="')">')</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="]">]</span> <span class="symbol" data-symbol-name="applyl">applyl</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span></pre><div class="user-input interactive"><button class="capricon-trigger">
+<div class="capricon-steps">
+<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'(">'(</span> <span class="symbol" data-symbol-name="'[">'[</span> <span class="symbol" data-symbol-name="$">$</span> <span class="symbol" data-symbol-name="defX">defX</span>
+<span class="symbol" data-symbol-name="')">')</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="]">]</span> <span class="symbol" data-symbol-name="applyl">applyl</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span></pre>
+<div class="user-input interactive">
+<button class="capricon-trigger">
 Try It Out
 </button>
 <label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
-<pre class="capricon-output"></pre></div></div>
+<pre class="capricon-output"></pre>
+</div>
+</div>
 </span></label>
 <div class="capricon-paragraphresult">
 
 </div>
-<h4 id="managing-the-type-environment"><a href="#managing-the-type-environment">Managing the type environment</a></h4>
+<h4 id="managing-the-type-environment">Managing the type environment</h4>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 4.25">
-<div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'-&gt;">'-&gt;</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="dup">dup</span> <span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="swapn">swapn</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="intro">intro</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="quote quote-splice"><span class="symbol" data-symbol-name=",{">,{</span> <span class="symbol" data-symbol-name="dup">dup</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="variable">variable</span> <span class="symbol" data-symbol-name="pull">pull</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="def">def</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
+<div class="capricon-steps">
+<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'-&gt;">'-&gt;</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="dup">dup</span> <span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="swapn">swapn</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="intro">intro</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="quote quote-splice"><span class="symbol" data-symbol-name=",{">,{</span> <span class="symbol" data-symbol-name="dup">dup</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="variable">variable</span> <span class="symbol" data-symbol-name="pull">pull</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="def">def</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span>
 <span class="symbol" data-symbol-name="'!">'!</span> <span class="symbol" data-symbol-name="'extro-lambda">'extro-lambda</span> <span class="symbol" data-symbol-name="$">$</span> <span class="symbol" data-symbol-name="defX">defX</span>
-<span class="symbol" data-symbol-name="'?">'?</span> <span class="symbol" data-symbol-name="'extro-forall">'extro-forall</span> <span class="symbol" data-symbol-name="$">$</span> <span class="symbol" data-symbol-name="defX">defX</span></pre><div class="user-input interactive"><button class="capricon-trigger">
+<span class="symbol" data-symbol-name="'?">'?</span> <span class="symbol" data-symbol-name="'extro-forall">'extro-forall</span> <span class="symbol" data-symbol-name="$">$</span> <span class="symbol" data-symbol-name="defX">defX</span></pre>
+<div class="user-input interactive">
+<button class="capricon-trigger">
 Try It Out
 </button>
 <label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
-<pre class="capricon-output"></pre></div></div>
+<pre class="capricon-output"></pre>
+</div>
+</div>
 </span></label>
 <div class="capricon-paragraphresult">
 
 </div>
-<h4 id="defining-inductive-constructors"><a href="#defining-inductive-constructors">Defining inductive constructors</a></h4>
+<h4 id="defining-inductive-constructors">Defining inductive constructors</h4>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 2.25">
-<div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'defconstr">'defconstr</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="dupn">dupn</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="showdef">showdef</span> <span class="symbol" data-symbol-name="def">def</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span></pre><div class="user-input interactive"><button class="capricon-trigger">
+<div class="capricon-steps">
+<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'defconstr">'defconstr</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="dupn">dupn</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="showdef">showdef</span> <span class="symbol" data-symbol-name="def">def</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span></pre>
+<div class="user-input interactive">
+<button class="capricon-trigger">
 Try It Out
 </button>
 <label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
-<pre class="capricon-output"></pre></div></div>
+<pre class="capricon-output"></pre>
+</div>
+</div>
 </span></label>
 <div class="capricon-paragraphresult">
 
 </div>
-<h4 id="acting-on-list-as-stacks"><a href="#acting-on-list-as-stacks">Acting on list as stacks</a></h4>
+<h4 id="acting-on-list-as-stacks">Acting on list as stacks</h4>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 8.5">
-<div class="capricon-steps"><pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'in-list">'in-list</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span>
+<div class="capricon-steps">
+<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'in-list">'in-list</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span>
   <span class="symbol" data-symbol-name="swap">swap</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span>
     <span class="quote quote-splice"><span class="symbol" data-symbol-name=",{">,{</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="set-stack">set-stack</span> <span class="quote quote-exec"><span class="symbol" data-symbol-name="${">${</span> <span class="symbol" data-symbol-name="}">}</span></span>
     <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="quote quote-splice"><span class="symbol" data-symbol-name=",{">,{</span> <span class="quote quote-splice"><span class="symbol" data-symbol-name=",{">,{</span> <span class="symbol" data-symbol-name="stack">stack</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="set-stack">set-stack</span> <span class="quote quote-splice"><span class="symbol" data-symbol-name=",{">,{</span> <span class="symbol" data-symbol-name="stack">stack</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="exec">exec</span>
   <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="exec">exec</span>
-<span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span></pre><div class="capricon-examples"><button class="capricon-example" data-code="[ 1 2 3 4 ] { swap } in-list vis"><pre class="capricon"><span class="symbol" data-symbol-name="[">[</span> <span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="3">3</span> <span class="symbol" data-symbol-name="4">4</span> <span class="symbol" data-symbol-name="]">]</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="in-list">in-list</span> <span class="symbol" data-symbol-name="vis">vis</span></pre></button><button class="capricon-example" data-code="[ 'a 'b 'c ] { 2 shift pop } in-list vis"><pre class="capricon"><span class="symbol" data-symbol-name="[">[</span> <span class="symbol" data-symbol-name="'a">'a</span> <span class="symbol" data-symbol-name="'b">'b</span> <span class="symbol" data-symbol-name="'c">'c</span> <span class="symbol" data-symbol-name="]">]</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="shift">shift</span> <span class="symbol" data-symbol-name="pop">pop</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="in-list">in-list</span> <span class="symbol" data-symbol-name="vis">vis</span></pre></button><button class="capricon-example" data-code="[ 4 3 2 1 ] { + + + } in-list vis"><pre class="capricon"><span class="symbol" data-symbol-name="[">[</span> <span class="symbol" data-symbol-name="4">4</span> <span class="symbol" data-symbol-name="3">3</span> <span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="]">]</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="+">+</span> <span class="symbol" data-symbol-name="+">+</span> <span class="symbol" data-symbol-name="+">+</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="in-list">in-list</span> <span class="symbol" data-symbol-name="vis">vis</span></pre></button></div><div class="user-input interactive"><button class="capricon-trigger">
+<span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="defX">defX</span></pre>
+<div class="capricon-examples">
+<button class="capricon-example" data-code="[ 1 2 3 4 ] { swap } in-list vis">
+<pre class="capricon"><span class="symbol" data-symbol-name="[">[</span> <span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="3">3</span> <span class="symbol" data-symbol-name="4">4</span> <span class="symbol" data-symbol-name="]">]</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="in-list">in-list</span> <span class="symbol" data-symbol-name="vis">vis</span></pre>
+</button>
+<button class="capricon-example" data-code="[ &#39;a &#39;b &#39;c ] { 2 shift pop } in-list vis">
+<pre class="capricon"><span class="symbol" data-symbol-name="[">[</span> <span class="symbol" data-symbol-name="'a">'a</span> <span class="symbol" data-symbol-name="'b">'b</span> <span class="symbol" data-symbol-name="'c">'c</span> <span class="symbol" data-symbol-name="]">]</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="shift">shift</span> <span class="symbol" data-symbol-name="pop">pop</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="in-list">in-list</span> <span class="symbol" data-symbol-name="vis">vis</span></pre>
+</button>
+<button class="capricon-example" data-code="[ 4 3 2 1 ] { + + + } in-list vis">
+<pre class="capricon"><span class="symbol" data-symbol-name="[">[</span> <span class="symbol" data-symbol-name="4">4</span> <span class="symbol" data-symbol-name="3">3</span> <span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="]">]</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="+">+</span> <span class="symbol" data-symbol-name="+">+</span> <span class="symbol" data-symbol-name="+">+</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="in-list">in-list</span> <span class="symbol" data-symbol-name="vis">vis</span></pre>
+</button>
+</div>
+<div class="user-input interactive">
+<button class="capricon-trigger">
 Try It Out
 </button>
 <label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
-<pre class="capricon-output"></pre></div></div>
+<pre class="capricon-output"></pre>
+</div>
+</div>
 </span></label>
 <div class="capricon-paragraphresult">
 
 </div>
-      <div id="footer">Page generated on Monday, April 08 of 2019, at 02:32 AM UTC, using capricon-0.12.2.1 and pandoc-1.12.2.1.</div>
+      <div id="footer">Page generated on Monday, April 08 of 2019, at 02:44 AM UTC, using capricon-0.12.2.1 and pandoc-2.7.2.</div>
 </div></div></div>
-<div id="capricon-prelude" style="display: none;">'nop { { } } def 'get { nop nop lookup } def 'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys { { 1 dupn 1 dupn get def } each pop } def 'import { dup dict-keys import-keys } def [ dict term-index construction query context io list arith string ] { import } each 'printf { format print pop } def 'show { &quot;%v\n&quot; printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def 'mustache. { show } def 'tex { 'mustache. { &quot;<span class="math">\(%l\)</span>\n&quot; printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { &quot;
-<svg class='formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\\"http://www.w3.org/2000/svg\\">
-<text class='formula-text' x='0' y='100'>%g</text>
-</svg>
-<p>&quot; printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { &quot;%s\n&quot; printf 'mustache. ,{ dup $ } def } def } def 'collect { { 'exports empty def ,{ } exec exports ,{ vocabulary } set-vocabulary } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def [ 'source-dir 'output-dir 'cache-dir ] { &quot;&quot; def } each 'module { dup source-dir &quot;%s%s&quot; format source swap output-dir &quot;%s%s.mdc&quot; format redirect } def 'require { dup dup &quot; * Required module: [%s]\(%s.html\)\n&quot; printf { ,{ dup } { module } collect } swap cache-dir &quot;%s%s.mdo&quot; format cache } def</p></div>
+<div id="capricon-prelude" style="display: none;">’nop { { } } def ’get { nop nop lookup } def ’each list 1 dupn get def ’dict-keys dict ’keys get def ’import-keys { { 1 dupn 1 dupn get def } each pop } def ’import { dup dict-keys import-keys } def [ dict term-index construction query context io list arith string ] { import } each ’printf { format print pop } def ’show { “%v\n” printf } def ’show-stack { stack { show } each } def ’times { range { pop dup exec } each pop } def ’reverse { [ ] swap { cons } each } def ’mustache. { show } def ’tex { ’mustache. { “<span class="math inline">\(%l\)</span>\n” printf ’mustache. ,{ dup $ } def } def } def ’svg { ’mustache. { “<svg class='formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\\"http://www.w3.org/2000/svg\\"><text class='formula-text' x='0' y='100'>%g</text></svg>” printf ’mustache. ,{ dup $ } def } def } def ’raw { ’mustache. { “%s\n” printf ’mustache. ,{ dup $ } def } def } def ’collect { { ’exports empty def ,{ } exec exports ,{ vocabulary } set-vocabulary } exec } def ’exports empty def ’export { exports swap dup $ insert ’exports swap def } def [ ’source-dir ’output-dir ’cache-dir ] { "" def } each ’module { dup source-dir “%s%s” format source swap output-dir “%s%s.mdc” format redirect } def ’require { dup dup " * Required module: [%s]\(%s.html\)\n" printf { ,{ dup } { module } collect } swap cache-dir “%s%s.mdo” format cache } def</div>
 <div id="capricon-console"></div>
 <script type="text/javascript">
   window.addEventListener("load",function() {
