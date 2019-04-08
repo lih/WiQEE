@@ -978,7 +978,7 @@
   color: white !important;
 }
 .user-input .capricon-input-prefix {
-  background: black;
+  background-image: linear-gradient(to-right, black, black 2em, white 2em, white);
 }
 .user-input .capricon-input-prefix .capricon-input {
   transition: background 1s, opacity 1s;
