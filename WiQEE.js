@@ -1,6 +1,6 @@
 window.addEventListener('load',function () {
     var wloc = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
-    console.log('window location: ' + wloc);
+    window.console.log('window location: ' + wloc);
     var capriconWorker = new Worker(wloc + '/capricon-worker.js');
 
     var workerCallbacks = [];
