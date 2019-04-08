@@ -6,7 +6,7 @@ printf "capricon-version: \"%s\"\n" "$capricon_version"
 printf "pandoc-version: \"%s\"\n" $(pandoc --version | head -1 | cut -d' ' -f2)
 printf "noise-image-url: \"data:image/png;base64,%s\"\n" "$(base64 -w0 "$1")"
 printf "steps-image-url: \"data:image/png;base64,%s\"\n" "$(base64 -w0 "$2")"
-printf "prelude-text: <script type=\"text/plain\">%s</script>\n" "$(sed ':loop;$!{N;bloop};s/'\''/'\'\''/g;s/\n/ /gm;s/\\/\\\\/g;s/\$/\\$/g' "$3")"
+printf "prelude-text: <script id=\"capricon-prelude\" type=\"text/plain\">%s</script>\n" "$(sed ':loop;$!{N;bloop};s/'\''/'\'\''/g;s/\n/ /gm;s/\\/\\\\/g;s/\$/\\$/g' "$3")"
 echo --- 
 echo
 for i in "$PAGES_ROOT"/*.md; do
