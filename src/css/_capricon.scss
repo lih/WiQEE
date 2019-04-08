@@ -69,12 +69,14 @@
 	display: inline-block;
 	&, * { background: black; color: white !important; }
 	.capricon-input {
-	    transition: background 1s;
+	    transition: background 1s, opacity 1s;
 	    display: inline-block;
 	    background-color: grey;
 	    background-image: linear-gradient(to right, black, rgba(black,0.5) 40%, rgba(black,0.5) 60%, rgba(black,1) 100%);
+	    opacity: 0;
 	    &.pending { background-color: green; }
-	    &.ready { background-color: mix(black,green,80%); }
+	    &.ready { background-color: mix(black,green,80%);
+		      opacity: 1; }
 	    border: none;
 	    font-family: mono;
 	    width: calc(100% - 1em);
