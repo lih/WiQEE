@@ -1,5 +1,5 @@
 window = self;
-importScripts(window.location.pathname.substring(0, loc.lastIndexOf('/')) + '/capricon-engine.js');
+importScripts(window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')) + '/capricon-engine.js');
 
 CaPriCon = {
     'states': [],
