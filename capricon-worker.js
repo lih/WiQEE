@@ -4,7 +4,6 @@ window.console.log('Worker window location: '+wloc);
 importScripts(wloc + '/capricon-engine.js');
 window.console.log('Imported CaPriCon engine');
 
-
 CaPriCon = {
     'states': [],
     'initFS': function (ev) {
