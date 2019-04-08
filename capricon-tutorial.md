@@ -57,8 +57,12 @@ followed by some non-space characters.
 As you can see, each symbol you write is pushed onto the stack, in the
 order in which they appear. Nothing mysterious here.
 
-You can also write numbers, in the usual decimal format, and those
+You can also write numbers[^integer-format], in the usual decimal format, and those
 numbers will be pushed onto the stack as well.
+
+[^integer-format]: For now, 32-bit integers are the default, but if
+the need arises, I'll be glad to throw in some BigInt or floating-point
+support
 
 > 1 2 10021321012
 >? vis
