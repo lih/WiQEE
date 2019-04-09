@@ -131,12 +131,29 @@ brackets, like so :
 >? exec vis
 
 That's all fairly straightforward, which is nice, but quotes of this
-form aren't very dynamic. They will always depend on their surrounding
-environment for correct evaluation, which isn't a very robust way to
-write programs.
+form aren't very dynamic. They will always depend on, and possibly
+modify, their surrounding environment during evaluation (a feature
+commonly known as "dynamic binding"), which, while very flexible,
+doesn't provide a reliable way to write composable programs.
 
-<br/>
+This may not seem like a problem right away, and indeed it isn't for
+the kinds of small examples we've been playing with, but for more
+reusable scripts, you should always be careful about the environment
+you leave behind when you're done with your work. Also, it's kind of a
+good feeling when you know your programs won't accidentally rewrite an
+index and start an infinite loop.
 
-For instance, let's say we want to be able to execute a quote in a
-local environment, so that all nouns defined during that quote's
-execution don't accidentally override the outside vocabulary.
+#### Splices and quotes : a case study
+
+To better illustrate the need for a more powerful construct, let's
+imagine we want to be able to execute a quote in a local environment,
+so that all nouns defined during that quote's execution don't
+accidentally override the outside vocabulary.
+
+The idea is to use the `vocabulary` verb to retrieve the vocabulary
+before executing the quote, save that vocabulary somewhere, then run
+the quote (which can perform arbitrary modifications to the stack and
+the vocabulary), and restore the old vocabulary afterwards using
+`set-vocabulary`.
+
+
