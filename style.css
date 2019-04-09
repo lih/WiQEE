@@ -647,82 +647,82 @@
 }
 .sheet .capricon span.symbol[data-symbol-name="("], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="("] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=")"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=")"] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=type], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=type] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=defconstr], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=defconstr] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=hypotheses], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=hypotheses] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=variable], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=variable] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=universe], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=universe] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=extro-forall], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=extro-forall] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=extro-lambda], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=extro-lambda] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=apply], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=apply] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=mu], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=mu] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=pattern-index], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=pattern-index] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=set-pattern-index], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=set-pattern-index] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=index-insert], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=index-insert] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=pull], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=pull] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=intro], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=intro] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name="!"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="!"] {
