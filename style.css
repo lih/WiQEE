@@ -835,6 +835,15 @@
 .capricon span.quote span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace {
   --quote-depth: 7;
 }
+.capricon span.quote span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace {
+  --quote-depth: 8;
+}
+.capricon span.quote span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace {
+  --quote-depth: 9;
+}
+.capricon span.quote span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace span.quote.quote-brace {
+  --quote-depth: 10;
+}
 .capricon span.quote span.quote.quote-splice {
   --unquote-depth: 1;
 }
@@ -853,6 +862,15 @@
 .capricon span.quote span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice {
   --unquote-depth: 6;
 }
+.capricon span.quote span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice {
+  --unquote-depth: 7;
+}
+.capricon span.quote span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice {
+  --unquote-depth: 8;
+}
+.capricon span.quote span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice {
+  --unquote-depth: 9;
+}
 .capricon span.quote span.quote.quote-exec {
   --unquote-depth: 1;
 }
@@ -870,6 +888,15 @@
 }
 .capricon span.quote span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec {
   --unquote-depth: 6;
+}
+.capricon span.quote span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec {
+  --unquote-depth: 7;
+}
+.capricon span.quote span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec {
+  --unquote-depth: 8;
+}
+.capricon span.quote span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec {
+  --unquote-depth: 9;
 }
 
 .user-input {
