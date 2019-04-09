@@ -171,10 +171,10 @@ solution that CaPriCon proposes :
 >? { 'x 130 def x 2 * } local-exec x vis
 
 Let's break this down : `local-exec` is defined as the function that,
-first, creates a new function by splicing a constant `vocabulary`
-between executing the top of the stack (our only argument of
-interest), and resetting the vocabulary to whatever the constant was
-at the time of creation.
+first, creates a new function by splicing a constant -- derived from
+running `vocabulary` -- between executing the top of the stack (our
+only argument of interest), and resetting the vocabulary to whatever
+the constant was at the time of creation.
 
 Then, `local-exec` simply executes the newly-created function that
 already remembers the `vocabulary` from before. Our argument gets
