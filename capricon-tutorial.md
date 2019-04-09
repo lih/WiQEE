@@ -185,6 +185,10 @@ environment where our vocabulary is unchanged.
 
 <br/>
 
-This concludes the tour of all basic CaPriCon language features. Once
-you've mastered those three aspects, and learned about enough builtin
-operations, all the proofs presented herein will be within your reach.
+This concludes the tour of all the basic CaPriCon language
+features. Once you've mastered those three concepts (nouns, verbs and
+quotes), and learned about enough builtin operations, all the programs,
+proofs and examples presented from this point on will be within your
+reach.
+
+
