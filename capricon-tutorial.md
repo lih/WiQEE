@@ -116,9 +116,9 @@ Many stack-based language have features similar to our quotes. Let's
 start there.
 
 The *raison d'être* of a quote is, simply put, to be able to write a
-program and keep it in stasis, until it can be run (using a special
-verb called `exec`). In CaPriCon, this can be achieved by enclosing
-the code you want to "freeze" in brackets, like so :
+program and keep it in stasis, until it can be run from a verb (using
+a special verb called `exec`). In CaPriCon, this can be achieved by
+enclosing the code you want to "freeze" in brackets, like so :
 
 > pop pop pop 'is 'great
 > { swap 2 shift "%s %s %s !" format }
