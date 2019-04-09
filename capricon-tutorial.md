@@ -105,3 +105,22 @@ symbols up. They can be used as follows :
 
 > 'x 3 def 'y 4 def
 >? y 'x $ "\"'x $\"=%v; y=%v\n" printf
+
+Of course, the most interesting verbs, and the ones I kept for last,
+are the ones referencing quotes, because they allow you to build upon
+simpler concepts to yield complex effects.
+
+### Quotes
+
+Many stack-based language have features similar to our quotes. Let's
+start there.
+
+The *raison d'être* of a quote is, simply put, to be able to write a
+program and keep it in stasis, until it can be run (using a special
+verb called `exec`). In CaPriCon, this can be achieved by enclosing
+the code you want to "freeze" in brackets, like so :
+
+> { 3 popn swap 2 shift "%s %s %s !" format }
+>? vis
+>? exec vis
+
