@@ -219,7 +219,7 @@
 .frame .sheet, #body-theme-chooser .sheet, #capricon-console .sheet, #capricon-console .capricon-steps {
   font-family: pretty-sans-serif, sans-serif;
   line-height: 1.618em;
-  max-width: 80.9em;
+  max-width: 88.99em;
 }
 .frame h1, #body-theme-chooser h1, #capricon-console h1 {
   text-align: center;
@@ -1176,9 +1176,9 @@ body {
   font-size: 15px;
   position: relative;
 }
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   body {
-    width: 55em;
+    width: 60em;
   }
   body::before {
     content: "";
