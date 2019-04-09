@@ -23,6 +23,12 @@ svg.formula {
     --expand-width: 20;
 }
 
+.in-progress {
+    background: red;
+    color: black;
+    contents: "In Progress";
+}
+
 #body-theme-chooser {
     @extend .frame;
     @extend .primary;
