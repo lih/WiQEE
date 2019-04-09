@@ -135,7 +135,7 @@ form aren't very dynamic. They will always depend on their surrounding
 environment for correct evaluation, which isn't a very robust way to
 write programs.
 
-{{br}}
+<br/>
 
 For instance, let's say we want to be able to execute a quote in a
 local environment, so that all nouns defined during that quote's
