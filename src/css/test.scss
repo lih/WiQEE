@@ -3,6 +3,7 @@ $primary: ( -50deg, -30%, hsl(53,36%,50%), 50deg, 30% );
 @import "palette";
 
 $line-height: 1.618;
+$break-wide: 55em;
 
 @import "sheet";
 @import "expansible";

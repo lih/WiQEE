@@ -39,7 +39,7 @@
     .sheet {
 	font-family: pretty-sans-serif, sans-serif;
 	line-height: $line-height * 1em;
-	max-width: $line-height * 50em;
+	max-width: $line-height * $break-wide;
 
     }
 
