@@ -216,4 +216,25 @@ takes in a level and pushes a universe of that level on the stack :
 > 0 universe
 >? vis
 
+We just proved something ! Granted, we only proved that some universes
+exist, by giving an example of one, but still. Using that universe as
+a starting point, we can explore a bit further.
+
+The first useful thing we can do given a term is ask CaPriCon to give
+us its type, unsurprisingly by using the `type` builtin.
+
+> dup type
+>? vis
+
+We can see that $Set_{0}$ has type $Set_{1}$. In general, when a term
+has type $Set_{n}$ for some $n$, we can treat that term as a *domain*,
+that can contain *witnesses*.
+
+If we have a domain, like we do now, we can `intro`duce a variable
+whose values come from that domain. If our domain is a universe, we'll
+call that variable a *property* of the domain.
+
+> pop 'Prop intro
+>? vis
+
 <div class="in-progress"></div>
