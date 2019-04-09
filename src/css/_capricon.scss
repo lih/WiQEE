@@ -53,10 +53,10 @@
 	* { --quote-depth: inherit;
 	    --unquote-depth: inherit; }
 	@extend .opaque;
-	--tint: calc((var(--quote-depth) - var(--unquote-depth)) * -72deg);
-	@include quoteDepth(('quote','brace'),1,8);
-	@include quoteDepth(('unquote','splice'),0,8);
-	@include quoteDepth(('unquote','exec'),0,8);
+	--tint: calc((var(--quote-depth) - var(--unquote-depth)) * -60deg);
+	@include quoteDepth(('quote','brace'),1,6);
+	@include quoteDepth(('unquote','splice'),0,6);
+	@include quoteDepth(('unquote','exec'),0,6);
     }
 }
 .user-input {
