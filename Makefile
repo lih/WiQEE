@@ -60,7 +60,7 @@ $(CACHE_ROOT)/common.mdi: scripts/gencommon $(STATIC_ROOT)/noise.png $(STATIC_RO
 
 PANDOC_FLAGS := --standalone --mathjax='mathjax/MathJax.js?config=TeX-AMS_HTML' --toc --css style.css
 PANDOC_FLAGS += -H $(WD)/$(TEMPLATE_ROOT)/header.html --template=$(WD)/$(TEMPLATE_ROOT)/template.html 
-PANDOC_FLAGS += -V module:$* -V "full-date:$(FULL_DATE)"
+PANDOC_FLAGS += -V "full-date:$(FULL_DATE)"
 ifeq ($(PANDOC_MAJOR_VERSION),1)
 PANDOC_FLAGS += -f markdown+definition_lists --smart -t html
 else
@@ -68,7 +68,7 @@ PANDOC_FLAGS += -f markdown+definition_lists+smart -t html
 endif
 
 $(PUBLIC_ROOT)/%.html: $(CACHE_ROOT)/%.mdc $(TEMPLATE_ROOT)/header.html $(CACHE_ROOT)/common.mdi $(TEMPLATE_ROOT)/template.html | $(PUBLIC_ROOT)
-	pandoc $(PANDOC_FLAGS) $< $(CACHE_ROOT)/common.mdi > $@
+	pandoc $(PANDOC_FLAGS) -V module:$*  $< $(CACHE_ROOT)/common.mdi > $@
 
 $(PUBLIC_ROOT)/theme-test.html: $(STATIC_ROOT)/theme-test.html
 	cp $< $@
