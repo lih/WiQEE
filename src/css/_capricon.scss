@@ -56,7 +56,7 @@
 	--tint: calc((var(--quote-depth) - var(--unquote-depth)) * -72deg);
 	
 	@include quoteDepth(('quote','brace'),1,5);
-	@include quoteDepth(('unquote','splice'),1,5);
+	@include quoteDepth(('unquote','splice'),0,5);
     }
 }
 .user-input {
