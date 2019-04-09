@@ -627,22 +627,22 @@
 }
 .sheet .capricon span.symbol[data-symbol-name="{"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="{"] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=",{"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=",{"] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name="${"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="${"] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name="}"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="}"] {
   font-weight: bold;
-  --tint: hexad-2;
+  --tint: 120deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name="("], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="("] {
