@@ -165,10 +165,10 @@ a definition in the vocabulary can always be overridden.
 Answer, we save it in a quote. Without further ado, here is the
 solution that CaPriCon proposes :
 
-> clear 'local-quote {
+> clear 'local-exec {
 >   { exec ,{ vocabulary } set-vocabulary }
 >   exec } def
->? { 'x 130 def x 2 * } local-quote x vis
+>? { 'x 130 def x 2 * } local-exec x vis
 
 Let's break this down : `local-quote` is defined as the function that,
 first, creates a new function by splicing a constant `vocabulary`
