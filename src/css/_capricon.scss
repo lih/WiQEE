@@ -49,9 +49,9 @@
     --quote-depth: 0;
     --unquote-depth: 0;
     --max-contrast: 85%;
-    * { --quote-depth: inherit;
-	--unquote-depth: inherit; }
     span.quote {
+	* { --quote-depth: inherit;
+	    --unquote-depth: inherit; }
 	@extend .opaque;
 	--tint: calc((var(--quote-depth) - var(--unquote-depth)) * -72deg);
 	@include quoteDepth(('quote','brace'),1,5);
