@@ -24,9 +24,11 @@ svg.formula {
 }
 
 .in-progress {
-    background: red;
-    color: black;
-    content: "In Progress";
+    &::before {
+	background: red;
+	color: black;
+	content: "In Progress";
+    }
 }
 
 #body-theme-chooser {
