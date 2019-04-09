@@ -231,8 +231,9 @@ has type $Set_{n}$ for some $n$, we can treat that term as a *domain*,
 that can contain *witnesses*.
 
 If we have a domain, like we do now, we can `intro`duce a variable
-whose values come from that domain. If our domain is a universe, we'll
-call that variable a *property* of the domain.
+whose value comes from that domain. If our domain is a universe, like
+$Set_{0}$, we'll call that variable a *property* of the domain, as a
+convention.
 
 > pop 'Prop intro
 >? vis

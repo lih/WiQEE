@@ -277,7 +277,7 @@ Try It Out
 
 </div>
 <p>We can see that <span class="math inline">\(Set_{0}\)</span> has type <span class="math inline">\(Set_{1}\)</span>. In general, when a term has type <span class="math inline">\(Set_{n}\)</span> for some <span class="math inline">\(n\)</span>, we can treat that term as a <em>domain</em>, that can contain <em>witnesses</em>.</p>
-<p>If we have a domain, like we do now, we can <code>intro</code>duce a variable whose values come from that domain. If our domain is a universe, we’ll call that variable a <em>property</em> of the domain.</p>
+<p>If we have a domain, like we do now, we can <code>intro</code>duce a variable whose value comes from that domain. If our domain is a universe, like <span class="math inline">\(Set_{0}\)</span>, we’ll call that variable a <em>property</em> of the domain, as a convention.</p>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
 <div class="capricon-steps">
 <pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="pop">pop</span> <span class="symbol" data-symbol-name="'Prop">'Prop</span> <span class="symbol" data-symbol-name="intro">intro</span></pre>
@@ -307,7 +307,7 @@ Try It Out
 <li id="fn1" role="doc-endnote"><p>For now, 32-bit integers are the default, but if the need arises, I’ll be glad to throw in some BigInt or floating-point support<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
-      <div id="footer">Page generated on Tuesday, April 09 of 2019, at 19:35 PM UTC, using capricon-0.12.2.1 and pandoc-2.7.2.</div>
+      <div id="footer">Page generated on Tuesday, April 09 of 2019, at 19:37 PM UTC, using capricon-0.12.2.1 and pandoc-2.7.2.</div>
 </div></div></div>
 <script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def 'br { "<br/>" print } def  'collect { { 'exports empty def ,{ } exec exports ,{ vocabulary } set-vocabulary } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { dup source-dir "%s%s" format source swap output-dir "%s%s.mdc" format redirect } def 'require { dup dup "  * Required module: [%s]\(%s.html\)\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def</script>
 <div id="capricon-console"></div>
