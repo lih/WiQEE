@@ -15,6 +15,8 @@ TARGETS := $(PUBLIC_ROOT)/style.css $(PUBLIC_ROOT)/test.css \
   $(STATIC_SRC:$(STATIC_ROOT)/%=$(PUBLIC_ROOT)/%) 
 FULL_DATE := $(shell date +"%A, %B %d of %Y, at %R %p %Z")
 
+PANDOC_MAJOR_VERSION := $(shell pandoc --version | head -1 | cut -d' ' -f2 | cut -d. -f1)
+
 export PAGES_ROOT STATIC_ROOT CACHE_ROOT PUBLIC_ROOT
 .config.mk:
 	echo "AUTOCOMMIT := " >> $@
@@ -56,8 +58,17 @@ $(CACHE_ROOT)/%.mdc: $(PAGES_ROOT)/%.md $(CACHE_ROOT)/env | $(CACHE_ROOT)
 $(CACHE_ROOT)/common.mdi: scripts/gencommon $(STATIC_ROOT)/noise.png $(STATIC_ROOT)/steps.png $(PAGES_ROOT)/prelude | $(CACHE_ROOT)
 	$^ > $@
 
+PANDOC_FLAGS := --standalone --mathjax='mathjax/MathJax.js?config=TeX-AMS_HTML' --toc --css style.css
+PANDOC_FLAGS += -H $(WD)/$(TEMPLATE_ROOT)/header.html --template=$(WD)/$(TEMPLATE_ROOT)/template.html 
+PANDOC_FLAGS += -V module:$* -V "full-date:$(FULL_DATE)"
+ifeq ($PANDOC_MAJOR_VERSION,1)
+PANDOC_FLAGS += -f markdown+definition_lists --smart -t html
+else
+PANDOC_FLAGS += -f markdown+definition_lists+smart -t html
+endif
+
 $(PUBLIC_ROOT)/%.html: $(CACHE_ROOT)/%.mdc $(TEMPLATE_ROOT)/header.html $(CACHE_ROOT)/common.mdi $(TEMPLATE_ROOT)/template.html | $(PUBLIC_ROOT)
-	pandoc -s --mathjax='mathjax/MathJax.js?config=TeX-AMS_HTML' -V module:$* -V "full-date:$(FULL_DATE)" -H $(WD)/$(TEMPLATE_ROOT)/header.html --toc --template=$(WD)/$(TEMPLATE_ROOT)/template.html -f markdown+definition_lists --smart -t html --css style.css $< $(CACHE_ROOT)/common.mdi > $@
+	pandoc $(PANDOC_FLAGS) $< $(CACHE_ROOT)/common.mdi > $@
 
 $(PUBLIC_ROOT)/theme-test.html: $(STATIC_ROOT)/theme-test.html
 	cp $< $@
