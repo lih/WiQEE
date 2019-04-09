@@ -1125,7 +1125,7 @@
   width: 100%;
   border-radius: 0.2em 0.2em 0 0;
 }
-@media (min-width: 1280px) {
+@media (min-width: 55em) {
   #capricon-console {
     left: 20%;
     width: 60%;
@@ -1176,9 +1176,9 @@ body {
   font-size: 15px;
   position: relative;
 }
-@media (min-width: 1280px) {
+@media (min-width: 55em) {
   body {
-    width: 70%;
+    width: 55em;
   }
   body::before {
     content: "";
@@ -1186,11 +1186,11 @@ body {
     background-color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--low-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--low-saturation) * calc(1 / (14 - var(--level)))), calc(50% - calc(var(--level-incr) * (var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) 		      / 2)));
     background-size: 150%;
     opacity: 0.1;
-    position: absolute;
-    width: 21%;
-    right: 100%;
+    position: fixed;
+    left: 0;
+    right: 50%;
     top: 0;
-    bottom: 0;
+    bottom: 100%;
   }
   body::after {
     content: "";
@@ -1198,11 +1198,11 @@ body {
     background-color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--low-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--low-saturation) * calc(1 / (14 - var(--level)))), calc(50% - calc(var(--level-incr) * (var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) 		      / 2)));
     background-size: 150%;
     opacity: 0.1;
-    position: absolute;
-    width: 21%;
-    left: 100%;
+    position: fixed;
+    left: 50%;
+    right: 100%;
     top: 0;
-    bottom: 0;
+    bottom: 100%;
   }
 }
 
