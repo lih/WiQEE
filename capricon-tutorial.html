@@ -44,8 +44,9 @@
     </ul></span><span class="menu middle"><a class="#">First steps with CaPriCon</a>
             <ul>
       <li><a href="#stacks-and-the-stack">Stacks, and The Stack</a></li>
-      <li><a href="#first-words">First words</a><ul>
-      <li><a href="#vocabularies-and-definitions">Vocabularies and definitions</a></li>
+      <li><a href="#your-first-words">Your First Words</a><ul>
+      <li><a href="#nouns">Nouns</a></li>
+      <li><a href="#verbs-and-vocabularies">Verbs and Vocabularies</a></li>
       </ul></li>
       </ul>
           </span><span class="menu right"><a href="#">More...</a><ul>
@@ -80,8 +81,15 @@ Try It Out
 <p><br/></p>
 <p>What does that have to do with CaPriCon ? Well, stack-based languages, as their name implies, implicitly operate on a stack, that serves as temporary storage for all the intermediate results of a computation. When we talk about <em>the stack</em>, without any more context, you can assume we’re talking about this one.</p>
 <p>In most stack-based languages, including CaPriCon, words designate <em>instructions</em> that modify the stack according to predefined rules, and complex scripts can be written by stringing words together in the right order, changing the stack in ever more interesting ways.</p>
-<h2 id="first-words">First words</h2>
-<p>Let’s start talking. The simplest kinds of words are <em>symbols</em>, more commonly known as strings, and written as a single quote (<code>'</code>), followed by some non-space characters.</p>
+<h2 id="your-first-words">Your First Words</h2>
+<p>Let’s start talking a little. As mentioned above, a sentence (or program) is comprised of several words separated by whitespace. Words can fall into one of three categories :</p>
+<ul>
+<li><em>nouns</em> are constant words, that push a value onto the stack when run</li>
+<li><em>verbs</em> are operational words, that can modify the stack or the environment when they are run</li>
+<li><em>quotes</em> are sequences of <em>steps</em>, where a step can be either a word step, or a splice step (quotes and steps will de described in more detail below).</li>
+</ul>
+<h3 id="nouns">Nouns</h3>
+<p>The simplest kinds of words are <em>nouns</em>, more commonly known as atoms or symbols, and are written as a single quote (<code>'</code>), followed by some non-space characters.</p>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
 <div class="capricon-steps">
 <pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'Bender">'Bender</span></pre>
@@ -105,8 +113,8 @@ Try It Out
 <div class="capricon-paragraphresult">
 
 </div>
-<p>As you can see, each symbol you write is pushed onto the stack, in the order in which they appear. Nothing mysterious here.</p>
-<p>You can also write numbers<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, in the usual decimal format, and those numbers will be pushed onto the stack as well.</p>
+<p>As you can see, each noun you write is pushed onto the stack, in the order in which they appear. Nothing mysterious here.</p>
+<p>The CaPriCon interpreter also recognizes numbers<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, in the usual decimal format, as another kind of noun, which means they will mostly behave as expected.</p>
 <label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
 <div class="capricon-steps">
 <pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="100">100</span></pre>
@@ -127,16 +135,42 @@ Try It Out
 <div class="capricon-paragraphresult">
 
 </div>
-<h3 id="vocabularies-and-definitions">Vocabularies and definitions</h3>
-<p>You now know what happens when you write <code>'vis</code>, but how does <code>vis</code> get interpreted ?</p>
-<p><br/></p>
+<p>You now know what happens when you write <code>'vis</code>, but how does <code>vis</code> alone get interpreted ?</p>
+<h3 id="verbs-and-vocabularies">Verbs and Vocabularies</h3>
+<p>In parallel to the stack, the interpreter also features its own <em>vocabulary</em>, which provides a correspondance between all the known nouns and their definitions.</p>
+<p>Whenever a verb is run, the interpreter looks into its vocabulary for the meaning of that verb and executes it, with a different strategy depending on that meaning :</p>
+<ul>
+<li>if it is a quote, then the interpreter runs each step in the quote</li>
+<li>otherwise, it is simply pushed onto the stack, as a constant</li>
+</ul>
+<p>There are two main verbs to interact with the vocabulary : <code>def</code>, for adding new definitions, and overriding old ones; and <code>$</code>, for looking symbols up. They can be used as follows :</p>
+<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
+<div class="capricon-steps">
+<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'x">'x</span> <span class="symbol" data-symbol-name="3">3</span> <span class="symbol" data-symbol-name="def">def</span> <span class="symbol" data-symbol-name="'y">'y</span> <span class="symbol" data-symbol-name="4">4</span> <span class="symbol" data-symbol-name="def">def</span></pre>
+<div class="capricon-examples">
+<button class="capricon-example" data-code="y &#39;x $ &quot;\&quot;&#39;x $\&quot;=%v; y=%v\n&quot; printf">
+<pre class="capricon"><span class="symbol" data-symbol-name="y">y</span> <span class="symbol" data-symbol-name="'x">'x</span> <span class="symbol" data-symbol-name="$">$</span> <span class="symbol" data-symbol-name="&quot;\&quot;">&quot;\&quot;</span><span class="symbol" data-symbol-name="'x">'x</span> <span class="symbol" data-symbol-name="$\&quot;=%v;">$\&quot;=%v;</span> <span class="symbol" data-symbol-name="y=%v\n&quot;">y=%v\n&quot;</span> <span class="symbol" data-symbol-name="printf">printf</span></pre>
+</button>
+</div>
+<div class="user-input interactive">
+<button class="capricon-trigger">
+Try It Out
+</button>
+<label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
+<pre class="capricon-output"></pre>
+</div>
+</div>
+</span></label>
+<div class="capricon-paragraphresult">
+
+</div>
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
 <li id="fn1" role="doc-endnote"><p>For now, 32-bit integers are the default, but if the need arises, I’ll be glad to throw in some BigInt or floating-point support<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
-      <div id="footer">Page generated on Monday, April 08 of 2019, at 22:19 PM UTC, using capricon-0.12.2.1 and pandoc-2.7.2.</div>
+      <div id="footer">Page generated on Tuesday, April 09 of 2019, at 01:28 AM UTC, using capricon-0.12.2.1 and pandoc-2.7.2.</div>
 </div></div></div>
 <script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def  'collect { { 'exports empty def ,{ } exec exports ,{ vocabulary } set-vocabulary } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { dup source-dir "%s%s" format source swap output-dir "%s%s.mdc" format redirect } def 'require { dup dup "  * Required module: [%s]\(%s.html\)\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def</script>
 <div id="capricon-console"></div>

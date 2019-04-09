@@ -44,22 +44,37 @@ In most stack-based languages, including CaPriCon, words designate
 and complex scripts can be written by stringing words together in the
 right order, changing the stack in ever more interesting ways.
 
-First words
------------
+Your First Words
+----------------
 
-Let's start talking. The simplest kinds of words are *symbols*, more
-commonly known as strings, and written as a single quote (`'`),
-followed by some non-space characters.
+Let's start talking a little. As mentioned above, a sentence (or
+program) is comprised of several words separated by whitespace. Words
+can fall into one of three categories :
+
+  - *nouns* are constant words, that push a value onto the stack when
+     run
+  - *verbs* are operational words, that can modify the stack or the
+     environment when they are run
+  - *quotes* are sequences of *steps*, where a step can be either a
+    word step, or a splice step (quotes and steps will de described in
+    more detail below).
+
+### Nouns
+
+The simplest kinds of words are *nouns*, more commonly known as atoms
+or symbols, and are written as a single quote (`'`), followed by some
+non-space characters.
 
 > 'Bender
 >? vis
 >? 'is 'great vis
 
-As you can see, each symbol you write is pushed onto the stack, in the
+As you can see, each noun you write is pushed onto the stack, in the
 order in which they appear. Nothing mysterious here.
 
-You can also write numbers[^integer-format], in the usual decimal format, and those
-numbers will be pushed onto the stack as well.
+The CaPriCon interpreter also recognizes numbers[^integer-format], in
+the usual decimal format, as another kind of noun, which means they
+will mostly behave as expected.
 
 [^integer-format]: For now, 32-bit integers are the default, but if
 the need arises, I'll be glad to throw in some BigInt or floating-point
@@ -68,10 +83,25 @@ support
 > 1 2 100
 >? vis
 
-### Vocabularies and definitions
-
 You now know what happens when you write `'vis`, but how does `vis`
-get interpreted ?
+alone get interpreted ?
 
-<br/>
+### Verbs and Vocabularies
 
+In parallel to the stack, the interpreter also features its own
+*vocabulary*, which provides a correspondance between all the known
+nouns and their definitions.
+
+Whenever a verb is run, the interpreter looks into its vocabulary for
+the meaning of that verb and executes it, with a different strategy
+depending on that meaning :
+
+  - if it is a quote, then the interpreter runs each step in the quote
+  - otherwise, it is simply pushed onto the stack, as a constant
+
+There are two main verbs to interact with the vocabulary : `def`, for
+adding new definitions, and overriding old ones; and `$`, for looking
+symbols up. They can be used as follows :
+
+> 'x 3 def 'y 4 def
+>? y 'x $ "\"'x $\"=%v; y=%v\n" printf
