@@ -814,7 +814,7 @@
 .capricon span.quote {
   --tint: calc((var(--quote-depth) - var(--unquote-depth)) * -72deg);
   --quote-depth: 1;
-  --unquote-depth: 1;
+  --unquote-depth: 0;
 }
 .capricon span.quote span.quote.quote-brace {
   --quote-depth: 2;
@@ -832,19 +832,19 @@
   --quote-depth: 6;
 }
 .capricon span.quote span.quote.quote-splice {
-  --unquote-depth: 2;
+  --unquote-depth: 1;
 }
 .capricon span.quote span.quote.quote-splice span.quote.quote-splice {
-  --unquote-depth: 3;
+  --unquote-depth: 2;
 }
 .capricon span.quote span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice {
-  --unquote-depth: 4;
+  --unquote-depth: 3;
 }
 .capricon span.quote span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice {
-  --unquote-depth: 5;
+  --unquote-depth: 4;
 }
 .capricon span.quote span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice {
-  --unquote-depth: 6;
+  --unquote-depth: 5;
 }
 
 .user-input {
