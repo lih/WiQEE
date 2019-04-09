@@ -1200,6 +1200,10 @@ body {
   }
 }
 
+li {
+  list-style-type: "-";
+}
+
 #content-frame {
   position: relative;
   width: 100%;
