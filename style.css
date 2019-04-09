@@ -1201,7 +1201,7 @@ body {
 }
 
 li {
-  list-style-type: kannada;
+  list-style-type: "− ";
 }
 
 #content-frame {
