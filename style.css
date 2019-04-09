@@ -219,7 +219,7 @@
 .frame .sheet, #body-theme-chooser .sheet, #capricon-console .sheet, #capricon-console .capricon-steps {
   font-family: pretty-sans-serif, sans-serif;
   line-height: 1.618em;
-  max-width: 88.99em;
+  max-width: 97.08em;
 }
 .frame h1, #body-theme-chooser h1, #capricon-console h1 {
   text-align: center;
@@ -1125,7 +1125,7 @@
   width: 100%;
   border-radius: 0.2em 0.2em 0 0;
 }
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   #capricon-console {
     left: 20%;
     width: 60%;
@@ -1176,9 +1176,9 @@ body {
   font-size: 15px;
   position: relative;
 }
-@media (min-width: 60em) {
+@media (min-width: 65em) {
   body {
-    width: 60em;
+    width: 65em;
   }
   body::before {
     content: "";
