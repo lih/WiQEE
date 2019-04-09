@@ -53,7 +53,7 @@ body {
     position: relative;
     @extend .opaque, .primary;
 
-    @media (min-width: $break-wide) {
+    @media (min-width: $break-wide + 5em) {
 	width: $break-wide + 5em;
     	&::before {
 	    content: "";
