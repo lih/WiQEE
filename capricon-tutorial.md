@@ -200,13 +200,16 @@ Please bear with me for this last section, as I try to explain how to
 build mathematical proofs out of stacks, quotes and a bit of magic.
 
 Proof assembly
---------------
+==============
 
 The easiest way to get comfortable manipulating mathematical proofs
 and theorems is to treat them like regular objects. In CaPriCon,
 theorems and proofs -- which will hereafter be referred to as *terms*
 -- are like numbers and symbols, that can be pushed onto the stack, or
 saved in the vocabulary.
+
+Types and Universes
+-------------------
 
 The most common kind of basic term you'll encounter are universes,
 noted $Set_{n}$, where $n \in \mathbb{N}$ is the *level* of that
@@ -232,10 +235,23 @@ that may or may not contain *objects*. Every term has a type, that can
 be computed with `type` as we observed, but not every term *is* a
 type.
 
-If we have a type, like we do now, we can `intro`duce a variable (or
-hypothesis) whose value comes from that type. Introducing a new
-hypothesis from a type is equivalent to assuming that at least one
-term of that type exists, without caring about that term's specific shape.
+The proof context
+-----------------
+
+Many mathematical proofs begin by assuming the existence of a few
+objects, before studying those objects in more detail ("let n, m be
+two natural numbers, ...", "let f be a function from A to B,
+..."). Once those objects are *introduced* to the reader, the rest of
+the proof can refer to them as though they already had a proper value
+of the given type.
+
+### Introducing new hypotheses
+
+CaPriCon works in a similar way. If we have a type on top of the
+stack, like we do now, we can `intro`duce a variable (or hypothesis)
+of that type. Introducing a new hypothesis from a type is equivalent
+to assuming that at least one term of that type exists, without caring
+about that term's specific shape.
 
 If our type is a universe, like $Set_{0}$, we'll call such a
 hypothesis a *property* of its type, as a convention. Otherwise, we'll
@@ -245,7 +261,7 @@ usually call it a *witness* of some property.
 >? vis
 
 We now have a fresh but unknown property of $Set_{0}$, called `Prop`,
-in the context. We can now retrieve that property by its name, using
+in the context. We can retrieve that property by using its name, using
 the `variable` builtin, and check that it is indeed an element of the
 universe $Set_{0}$.
 
