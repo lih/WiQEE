@@ -202,4 +202,23 @@ build mathematical proofs out of stacks, quotes and a bit of magic.
 Proof assembly
 --------------
 
+The easiest way to get comfortable manipulating mathematical proofs
+and theorems is to treat them like regular objects. In CaPriCon,
+theorems and proofs -- which will hereafter be referred to as *terms*
+-- are like numbers and symbols, that can be pushed onto the stack, or
+saved in the vocabulary.
+
+The most common kind of basic term you'll encounter are universes,
+noted $Set_{n}$, where $n \in \mathbb{N}$ is the *level* of that
+universe. You can introduce them with the `universe` builtin, that
+takes in a level and pushes a universe of that level on the stack :
+
+> 0 universe
+>? vis
+
+The only subtlety is that proofs come together with a implicit *proof
+context*. Much like a vocabulary, a proof context 
+
+### 
+
 <div class="in-progress"></div>
