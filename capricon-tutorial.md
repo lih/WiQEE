@@ -120,7 +120,7 @@ program and keep it in stasis, until it can be run (using a special
 verb called `exec`). In CaPriCon, this can be achieved by enclosing
 the code you want to "freeze" in brackets, like so :
 
-> { 3 popn swap 2 shift "%s %s %s !" format }
+> 3 popn 'is 'great { swap 2 shift "%s %s %s !" format }
 >? vis
 >? exec vis
 
