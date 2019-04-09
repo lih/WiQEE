@@ -53,10 +53,10 @@
   border-color: hsla(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(50% + calc(var(--level-incr) * (var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) 		      / 2)), 0.3);
 }
 
-.primary, body, .frame body, #capricon-console body, #body-theme-chooser body, #body-theme-chooser, .sheet .capricon span.symbol[data-symbol-name="'lambdas"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'lambdas"]::after, .sheet .capricon span.symbol[data-symbol-name="'foralls"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'foralls"]::after, .sheet .capricon span.symbol[data-symbol-name="->"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="->"]::after, .sheet .capricon span.symbol[data-symbol-name="?"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="?"]::after, .sheet .capricon span.symbol[data-symbol-name="!"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="!"]::after, .sheet .capricon span.symbol[data-symbol-name=set-stack], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=set-stack], .sheet .capricon span.symbol[data-symbol-name=stack], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=stack], .sheet .capricon span.symbol[data-symbol-name=format], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=format], .sheet .capricon span.symbol[data-symbol-name=swapn], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=swapn], .sheet .capricon span.symbol[data-symbol-name=print], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=print], .sheet .capricon span.symbol[data-symbol-name=range], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=range], .sheet .capricon span.symbol[data-symbol-name=pop], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=pop], .sheet .capricon span.symbol[data-symbol-name=cons], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=cons], .sheet .capricon span.symbol[data-symbol-name=printf], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=printf], .sheet .capricon span.symbol[data-symbol-name=def], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=def], .sheet .capricon span.symbol[data-symbol-name=shaft], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=shaft], .sheet .capricon span.symbol[data-symbol-name=shift], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=shift], .sheet .capricon span.symbol[data-symbol-name=dupn], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=dupn], .sheet .capricon span.symbol[data-symbol-name=swap], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=swap], .sheet .capricon span.symbol[data-symbol-name="$"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="$"], .sheet .capricon span.symbol[data-symbol-name=dup], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=dup], .sheet .capricon span.symbol[data-symbol-name=each], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=each], .sheet .capricon span.symbol[data-symbol-name="]"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="]"], .sheet .capricon span.symbol[data-symbol-name="["], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="["], .sheet .capricon span.symbol[data-symbol-name=exec], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=exec], .frame .primary, #body-theme-chooser .primary, #capricon-console .primary {
+.primary, body, .frame body, #capricon-console body, #body-theme-chooser body, #body-theme-chooser, .sheet .capricon span.symbol[data-symbol-name="'lambdas"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'lambdas"]::after, .sheet .capricon span.symbol[data-symbol-name="'foralls"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'foralls"]::after, .sheet .capricon span.symbol[data-symbol-name="->"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="->"]::after, .sheet .capricon span.symbol[data-symbol-name="?"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="?"]::after, .sheet .capricon span.symbol[data-symbol-name="!"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="!"]::after, .frame .primary, #body-theme-chooser .primary, #capricon-console .primary {
   --tint: 0deg;
 }
-.primary, body, .frame body, #capricon-console body, #body-theme-chooser body, #body-theme-chooser, .frame #body-theme-chooser, #capricon-console #body-theme-chooser, #body-theme-chooser #body-theme-chooser, .sheet .capricon span.symbol[data-symbol-name="'lambdas"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'lambdas"]::after, .sheet .capricon span.symbol[data-symbol-name="'foralls"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'foralls"]::after, .sheet .capricon span.symbol[data-symbol-name="->"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="->"]::after, .sheet .capricon span.symbol[data-symbol-name="?"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="?"]::after, .sheet .capricon span.symbol[data-symbol-name="!"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="!"]::after, .sheet .capricon span.symbol[data-symbol-name=set-stack], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=set-stack], .sheet .capricon span.symbol[data-symbol-name=stack], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=stack], .sheet .capricon span.symbol[data-symbol-name=format], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=format], .sheet .capricon span.symbol[data-symbol-name=swapn], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=swapn], .sheet .capricon span.symbol[data-symbol-name=print], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=print], .sheet .capricon span.symbol[data-symbol-name=range], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=range], .sheet .capricon span.symbol[data-symbol-name=pop], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=pop], .sheet .capricon span.symbol[data-symbol-name=cons], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=cons], .sheet .capricon span.symbol[data-symbol-name=printf], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=printf], .sheet .capricon span.symbol[data-symbol-name=def], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=def], .sheet .capricon span.symbol[data-symbol-name=shaft], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=shaft], .sheet .capricon span.symbol[data-symbol-name=shift], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=shift], .sheet .capricon span.symbol[data-symbol-name=dupn], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=dupn], .sheet .capricon span.symbol[data-symbol-name=swap], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=swap], .sheet .capricon span.symbol[data-symbol-name="$"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="$"], .sheet .capricon span.symbol[data-symbol-name=dup], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=dup], .sheet .capricon span.symbol[data-symbol-name=each], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=each], .sheet .capricon span.symbol[data-symbol-name="]"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="]"], .sheet .capricon span.symbol[data-symbol-name="["], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="["], .sheet .capricon span.symbol[data-symbol-name=exec], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=exec], .frame .primary, .frame body, .frame body, .frame #capricon-console body, #capricon-console .frame body, .frame #body-theme-chooser body, #body-theme-chooser .frame body, .frame #body-theme-chooser, .frame #body-theme-chooser, .frame #capricon-console #body-theme-chooser, #capricon-console .frame #body-theme-chooser, .frame #body-theme-chooser #body-theme-chooser, #body-theme-chooser .frame #body-theme-chooser, #body-theme-chooser .primary, #body-theme-chooser body, #body-theme-chooser .frame body, .frame #body-theme-chooser body, #body-theme-chooser #capricon-console body, #capricon-console #body-theme-chooser body, #body-theme-chooser body, #body-theme-chooser #body-theme-chooser, #body-theme-chooser .frame #body-theme-chooser, .frame #body-theme-chooser #body-theme-chooser, #body-theme-chooser #capricon-console #body-theme-chooser, #capricon-console #body-theme-chooser #body-theme-chooser, #body-theme-chooser #body-theme-chooser, #capricon-console .primary, #capricon-console body, #capricon-console .frame body, .frame #capricon-console body, #capricon-console body, #capricon-console #body-theme-chooser body, #body-theme-chooser #capricon-console body, #capricon-console #body-theme-chooser, #capricon-console .frame #body-theme-chooser, .frame #capricon-console #body-theme-chooser, #capricon-console #body-theme-chooser, #capricon-console #body-theme-chooser #body-theme-chooser, #body-theme-chooser #capricon-console #body-theme-chooser, .primary *, body *, .frame body *, #capricon-console body *, #body-theme-chooser body *, #body-theme-chooser *, .frame #body-theme-chooser *, #capricon-console #body-theme-chooser *, #body-theme-chooser #body-theme-chooser *, .sheet .capricon span.symbol[data-symbol-name="'lambdas"]::after *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'lambdas"]::after *, .sheet .capricon span.symbol[data-symbol-name="'foralls"]::after *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'foralls"]::after *, .sheet .capricon span.symbol[data-symbol-name="->"]::after *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="->"]::after *, .sheet .capricon span.symbol[data-symbol-name="?"]::after *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="?"]::after *, .sheet .capricon span.symbol[data-symbol-name="!"]::after *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="!"]::after *, .sheet .capricon span.symbol[data-symbol-name=set-stack] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=set-stack] *, .sheet .capricon span.symbol[data-symbol-name=stack] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=stack] *, .sheet .capricon span.symbol[data-symbol-name=format] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=format] *, .sheet .capricon span.symbol[data-symbol-name=swapn] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=swapn] *, .sheet .capricon span.symbol[data-symbol-name=print] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=print] *, .sheet .capricon span.symbol[data-symbol-name=range] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=range] *, .sheet .capricon span.symbol[data-symbol-name=pop] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=pop] *, .sheet .capricon span.symbol[data-symbol-name=cons] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=cons] *, .sheet .capricon span.symbol[data-symbol-name=printf] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=printf] *, .sheet .capricon span.symbol[data-symbol-name=def] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=def] *, .sheet .capricon span.symbol[data-symbol-name=shaft] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=shaft] *, .sheet .capricon span.symbol[data-symbol-name=shift] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=shift] *, .sheet .capricon span.symbol[data-symbol-name=dupn] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=dupn] *, .sheet .capricon span.symbol[data-symbol-name=swap] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=swap] *, .sheet .capricon span.symbol[data-symbol-name="$"] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="$"] *, .sheet .capricon span.symbol[data-symbol-name=dup] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=dup] *, .sheet .capricon span.symbol[data-symbol-name=each] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=each] *, .sheet .capricon span.symbol[data-symbol-name="]"] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="]"] *, .sheet .capricon span.symbol[data-symbol-name="["] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="["] *, .sheet .capricon span.symbol[data-symbol-name=exec] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=exec] *, .frame .primary *, .frame body *, .frame body *, .frame #capricon-console body *, #capricon-console .frame body *, .frame #body-theme-chooser body *, #body-theme-chooser .frame body *, .frame #body-theme-chooser *, .frame #body-theme-chooser *, .frame #capricon-console #body-theme-chooser *, #capricon-console .frame #body-theme-chooser *, .frame #body-theme-chooser #body-theme-chooser *, #body-theme-chooser .frame #body-theme-chooser *, #body-theme-chooser .primary *, #body-theme-chooser body *, #body-theme-chooser .frame body *, .frame #body-theme-chooser body *, #body-theme-chooser #capricon-console body *, #capricon-console #body-theme-chooser body *, #body-theme-chooser body *, #body-theme-chooser #body-theme-chooser *, #body-theme-chooser .frame #body-theme-chooser *, .frame #body-theme-chooser #body-theme-chooser *, #body-theme-chooser #capricon-console #body-theme-chooser *, #capricon-console #body-theme-chooser #body-theme-chooser *, #body-theme-chooser #body-theme-chooser *, #capricon-console .primary *, #capricon-console body *, #capricon-console .frame body *, .frame #capricon-console body *, #capricon-console body *, #capricon-console #body-theme-chooser body *, #body-theme-chooser #capricon-console body *, #capricon-console #body-theme-chooser *, #capricon-console .frame #body-theme-chooser *, .frame #capricon-console #body-theme-chooser *, #capricon-console #body-theme-chooser *, #capricon-console #body-theme-chooser #body-theme-chooser *, #body-theme-chooser #capricon-console #body-theme-chooser * {
+.primary, body, .frame body, #capricon-console body, #body-theme-chooser body, #body-theme-chooser, .sheet .capricon span.symbol[data-symbol-name="'lambdas"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'lambdas"]::after, .sheet .capricon span.symbol[data-symbol-name="'foralls"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'foralls"]::after, .sheet .capricon span.symbol[data-symbol-name="->"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="->"]::after, .sheet .capricon span.symbol[data-symbol-name="?"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="?"]::after, .sheet .capricon span.symbol[data-symbol-name="!"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="!"]::after, .frame .primary, #body-theme-chooser .primary, #capricon-console .primary, .primary *, body *, .frame body *, #capricon-console body *, #body-theme-chooser *, .sheet .capricon span.symbol[data-symbol-name="'lambdas"]::after *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'lambdas"]::after *, .sheet .capricon span.symbol[data-symbol-name="'foralls"]::after *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'foralls"]::after *, .sheet .capricon span.symbol[data-symbol-name="->"]::after *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="->"]::after *, .sheet .capricon span.symbol[data-symbol-name="?"]::after *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="?"]::after *, .sheet .capricon span.symbol[data-symbol-name="!"]::after *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="!"]::after *, .frame .primary *, #capricon-console .primary * {
   color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(50% + calc(var(--level-incr) * (var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) 		      / 2)));
 }
 
@@ -67,10 +67,10 @@
   color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(50% + calc(var(--level-incr) * (var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) 		      / 2)));
 }
 
-.hexad-2, .sheet .capricon span.symbol[data-symbol-name=intro], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=intro], .sheet .capricon span.symbol[data-symbol-name=pull], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=pull], .sheet .capricon span.symbol[data-symbol-name=index-insert], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=index-insert], .sheet .capricon span.symbol[data-symbol-name=set-pattern-index], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=set-pattern-index], .sheet .capricon span.symbol[data-symbol-name=pattern-index], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=pattern-index], .sheet .capricon span.symbol[data-symbol-name=mu], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=mu], .sheet .capricon span.symbol[data-symbol-name=apply], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=apply], .sheet .capricon span.symbol[data-symbol-name=extro-lambda], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=extro-lambda], .sheet .capricon span.symbol[data-symbol-name=extro-forall], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=extro-forall], .sheet .capricon span.symbol[data-symbol-name=universe], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=universe], .sheet .capricon span.symbol[data-symbol-name=variable], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=variable], .sheet .capricon span.symbol[data-symbol-name=hypotheses], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=hypotheses], .sheet .capricon span.symbol[data-symbol-name=defconstr], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=defconstr], .sheet .capricon span.symbol[data-symbol-name=type], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=type], .sheet .capricon span.symbol[data-symbol-name=")"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=")"], .sheet .capricon span.symbol[data-symbol-name="("], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="("], .sheet .capricon span.symbol[data-symbol-name="}"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="}"], .sheet .capricon span.symbol[data-symbol-name="${"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="${"], .sheet .capricon span.symbol[data-symbol-name=",{"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=",{"], .sheet .capricon span.symbol[data-symbol-name="{"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="{"], .frame .hexad-2, #body-theme-chooser .hexad-2, #capricon-console .hexad-2 {
+.hexad-2, .frame .hexad-2, #body-theme-chooser .hexad-2, #capricon-console .hexad-2 {
   --tint: 120deg;
 }
-.hexad-2, .sheet .capricon span.symbol[data-symbol-name=intro], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=intro], .sheet .capricon span.symbol[data-symbol-name=pull], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=pull], .sheet .capricon span.symbol[data-symbol-name=index-insert], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=index-insert], .sheet .capricon span.symbol[data-symbol-name=set-pattern-index], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=set-pattern-index], .sheet .capricon span.symbol[data-symbol-name=pattern-index], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=pattern-index], .sheet .capricon span.symbol[data-symbol-name=mu], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=mu], .sheet .capricon span.symbol[data-symbol-name=apply], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=apply], .sheet .capricon span.symbol[data-symbol-name=extro-lambda], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=extro-lambda], .sheet .capricon span.symbol[data-symbol-name=extro-forall], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=extro-forall], .sheet .capricon span.symbol[data-symbol-name=universe], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=universe], .sheet .capricon span.symbol[data-symbol-name=variable], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=variable], .sheet .capricon span.symbol[data-symbol-name=hypotheses], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=hypotheses], .sheet .capricon span.symbol[data-symbol-name=defconstr], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=defconstr], .sheet .capricon span.symbol[data-symbol-name=type], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=type], .sheet .capricon span.symbol[data-symbol-name=")"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=")"], .sheet .capricon span.symbol[data-symbol-name="("], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="("], .sheet .capricon span.symbol[data-symbol-name="}"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="}"], .sheet .capricon span.symbol[data-symbol-name="${"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="${"], .sheet .capricon span.symbol[data-symbol-name=",{"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=",{"], .sheet .capricon span.symbol[data-symbol-name="{"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="{"], .frame .hexad-2, #body-theme-chooser .hexad-2, #capricon-console .hexad-2, .hexad-2 *, .sheet .capricon span.symbol[data-symbol-name=intro] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=intro] *, .sheet .capricon span.symbol[data-symbol-name=pull] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=pull] *, .sheet .capricon span.symbol[data-symbol-name=index-insert] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=index-insert] *, .sheet .capricon span.symbol[data-symbol-name=set-pattern-index] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=set-pattern-index] *, .sheet .capricon span.symbol[data-symbol-name=pattern-index] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=pattern-index] *, .sheet .capricon span.symbol[data-symbol-name=mu] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=mu] *, .sheet .capricon span.symbol[data-symbol-name=apply] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=apply] *, .sheet .capricon span.symbol[data-symbol-name=extro-lambda] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=extro-lambda] *, .sheet .capricon span.symbol[data-symbol-name=extro-forall] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=extro-forall] *, .sheet .capricon span.symbol[data-symbol-name=universe] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=universe] *, .sheet .capricon span.symbol[data-symbol-name=variable] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=variable] *, .sheet .capricon span.symbol[data-symbol-name=hypotheses] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=hypotheses] *, .sheet .capricon span.symbol[data-symbol-name=defconstr] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=defconstr] *, .sheet .capricon span.symbol[data-symbol-name=type] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=type] *, .sheet .capricon span.symbol[data-symbol-name=")"] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=")"] *, .sheet .capricon span.symbol[data-symbol-name="("] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="("] *, .sheet .capricon span.symbol[data-symbol-name="}"] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="}"] *, .sheet .capricon span.symbol[data-symbol-name="${"] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="${"] *, .sheet .capricon span.symbol[data-symbol-name=",{"] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=",{"] *, .sheet .capricon span.symbol[data-symbol-name="{"] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="{"] *, .frame .hexad-2 *, #body-theme-chooser .hexad-2 *, #capricon-console .hexad-2 * {
+.hexad-2, .frame .hexad-2, #body-theme-chooser .hexad-2, #capricon-console .hexad-2, .hexad-2 *, .frame .hexad-2 *, #body-theme-chooser .hexad-2 *, #capricon-console .hexad-2 * {
   color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(50% + calc(var(--level-incr) * (var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) 		      / 2)));
 }
 
@@ -102,10 +102,10 @@
   color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(50% + calc(var(--level-incr) * (var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) 		      / 2)));
 }
 
-.pentad-2, .sheet .capricon span.symbol[data-symbol-name^="'"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name^="'"], .frame .pentad-2, #body-theme-chooser .pentad-2, #capricon-console .pentad-2 {
+.pentad-2, .sheet .capricon span.symbol[data-symbol-name^="'"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name^="'"], .frame .sheet .capricon span.symbol[data-symbol-name^="'"], #body-theme-chooser .sheet .capricon span.symbol[data-symbol-name^="'"], #capricon-console .sheet .capricon span.symbol[data-symbol-name^="'"], .sheet .capricon .frame span.symbol[data-symbol-name^="'"], .sheet .capricon #body-theme-chooser span.symbol[data-symbol-name^="'"], .sheet .capricon #capricon-console span.symbol[data-symbol-name^="'"], .frame .pentad-2, #body-theme-chooser .pentad-2, #capricon-console .pentad-2 {
   --tint: 144deg;
 }
-.pentad-2, .sheet .capricon span.symbol[data-symbol-name^="'"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name^="'"], .frame .pentad-2, #body-theme-chooser .pentad-2, #capricon-console .pentad-2, .pentad-2 *, .sheet .capricon span.symbol[data-symbol-name^="'"] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name^="'"] *, .frame .pentad-2 *, #body-theme-chooser .pentad-2 *, #capricon-console .pentad-2 * {
+.pentad-2, .sheet .capricon span.symbol[data-symbol-name^="'"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name^="'"], .frame .sheet .capricon span.symbol[data-symbol-name^="'"], #body-theme-chooser .sheet .capricon span.symbol[data-symbol-name^="'"], #capricon-console .sheet .capricon span.symbol[data-symbol-name^="'"], .sheet .capricon .frame span.symbol[data-symbol-name^="'"], .sheet .capricon #body-theme-chooser span.symbol[data-symbol-name^="'"], .sheet .capricon #capricon-console span.symbol[data-symbol-name^="'"], .frame .pentad-2, #body-theme-chooser .pentad-2, #capricon-console .pentad-2, .pentad-2 *, .sheet .capricon span.symbol[data-symbol-name^="'"] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name^="'"] *, .frame .sheet .capricon span.symbol[data-symbol-name^="'"] *, #body-theme-chooser .sheet .capricon span.symbol[data-symbol-name^="'"] *, #capricon-console .sheet .capricon span.symbol[data-symbol-name^="'"] *, .sheet .capricon .frame span.symbol[data-symbol-name^="'"] *, .sheet .capricon #body-theme-chooser span.symbol[data-symbol-name^="'"] *, .sheet .capricon #capricon-console span.symbol[data-symbol-name^="'"] *, .frame .pentad-2 *, #body-theme-chooser .pentad-2 *, #capricon-console .pentad-2 * {
   color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(50% + calc(var(--level-incr) * (var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) 		      / 2)));
 }
 
@@ -527,162 +527,202 @@
 
 .sheet .capricon span.symbol[data-symbol-name=exec], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=exec] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name="["], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="["] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name="]"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="]"] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=each], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=each] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=dup], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=dup] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name="$"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="$"] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=swap], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=swap] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=dupn], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=dupn] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=shift], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=shift] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=shaft], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=shaft] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=def], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=def] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=printf], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=printf] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=cons], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=cons] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=pop], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=pop] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=range], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=range] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=print], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=print] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=swapn], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=swapn] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=format], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=format] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=stack], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=stack] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=set-stack], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=set-stack] {
   font-weight: bold;
+  --tint: 0deg;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name="{"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="{"] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=",{"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=",{"] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name="${"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="${"] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name="}"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="}"] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name="("], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="("] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=")"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=")"] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=type], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=type] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=defconstr], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=defconstr] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=hypotheses], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=hypotheses] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=variable], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=variable] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=universe], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=universe] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=extro-forall], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=extro-forall] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=extro-lambda], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=extro-lambda] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=apply], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=apply] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=mu], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=mu] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=pattern-index], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=pattern-index] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=set-pattern-index], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=set-pattern-index] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=index-insert], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=index-insert] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=pull], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=pull] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name=intro], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name=intro] {
   font-weight: bold;
+  --tint: hexad-2;
   --level: 6;
 }
 .sheet .capricon span.symbol[data-symbol-name="!"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="!"] {
