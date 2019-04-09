@@ -36,27 +36,27 @@
     }
 }
 
-@mixin quoteDepth($depth,$max) {
-    --quote-depth: #{$depth};
+@mixin quoteDepth($type,$depth,$max) {
+    --#{nth($type,1)}-depth: #{$depth};
     
     @if ($max > 0) {
-	span.quote.quote-brace {
-	    @include quoteDepth($depth + 1, $max - 1);
-	}
-	span.quote.quote-exec, span.quote.quote-splice {
-	    @include quoteDepth($depth - 1, $max - 1);
+	span.quote.quote-#{nth($type,2)} {
+	    @include quoteDepth($type,$depth + 1, $max - 1);
 	}
     }
 }
 .capricon {
     --quote-depth: 0;
+    --unquote-depth: 0;
     --max-contrast: 85%;
-    * { --quote-depth: inherit; }
+    * { --quote-depth: inherit;
+	--unquote-depth: inherit; }
     span.quote {
 	@extend .opaque;
-	--tint: calc(var(--quote-depth) * -72deg);
+	--tint: calc((var(--quote-depth) - var(--unquote-depth)) * -72deg);
 	
-	@include quoteDepth(1,5);
+	@include quoteDepth(('quote','brace'),1,5);
+	@include quoteDepth(('unquote','splice'),1,5);
     }
 }
 .user-input {
