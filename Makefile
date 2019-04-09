@@ -19,9 +19,12 @@ PANDOC_MAJOR_VERSION := $(shell pandoc --version | head -1 | cut -d' ' -f2 | cut
 
 export PAGES_ROOT STATIC_ROOT CACHE_ROOT PUBLIC_ROOT
 .config.mk:
-	echo "AUTOCOMMIT := " >> $@
-	echo "export AUTOCOMMIT" >> $@
+	echo "CSS_COMPRESS :=" > $@
 -include .config.mk
+
+ifeq ($(CSS_COMPRESS),true)
+SASSC_FLAGS += --style compressed
+endif
 
 all: $(TARGETS)
 	scripts/run-hook on-success
@@ -74,7 +77,7 @@ $(PUBLIC_ROOT)/theme-test.html: $(STATIC_ROOT)/theme-test.html
 	cp $< $@
 
 $(PUBLIC_ROOT)/%.css: $(CSS_ROOT)/%.scss $(wildcard $(CSS_ROOT)/_*.scss) | $(PUBLIC_ROOT)
-	"$(SASSC)" -I$(CSS_ROOT) $< $@
+	"$(SASSC)" $(SASSC_FLAGS) -I$(CSS_ROOT) $< $@
 
 $(PUBLIC_ROOT)/mathjax: $(STATIC_ROOT)/mathjax | $(PUBLIC_ROOT)
 	cp -Ta $< $@
