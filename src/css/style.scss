@@ -70,7 +70,10 @@ body {
     }
 }
 
-li { list-style-type: ' −  '; }
+li {
+    list-style-type: ' -  ';
+    list-style-type: ' −  ';
+}
 
 #content-frame {
     position: relative;
