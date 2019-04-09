@@ -54,16 +54,16 @@ body {
     @extend .opaque, .primary;
 
     @media (min-width: $break-wide) {
-	width: 70%;
+	width: 55em;
     	&::before {
 	    content: "";
 	    background-image: url(math-tile.jpg);
 	    background-color: $default-background;
 	    background-size: 150%;
 	    opacity: 0.1;
-	    position: absolute;
-	    width: 21%; 
-	    right: 100%; top: 0; bottom: 0;
+	    position: fixed;
+	    left: 0; right: 50%;
+	    top: 0;  bottom: 100%;
 	}
 	&::after {
 	    content: "";
@@ -71,9 +71,9 @@ body {
 	    background-color: $default-background;
 	    background-size: 150%;
 	    opacity: 0.1;
-	    position: absolute;
-	    width: 21%; 
-	    left: 100%; top: 0; bottom: 0;
+	    position: fixed;
+	    left: 50%; right: 100%;
+	    top: 0;  bottom: 100%;
 	}
     }
 }
