@@ -54,7 +54,7 @@ body {
     @extend .opaque, .primary;
 
     @media (min-width: $break-wide) {
-	width: 55em;
+	width: $break-wide + 5em;
     	&::before {
 	    content: "";
 	    background-image: url(math-tile.jpg);
