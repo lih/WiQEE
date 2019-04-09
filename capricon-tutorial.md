@@ -121,8 +121,8 @@ start there.
 
 The *raison d'être* of a quote is, simply put, to be able to write a
 program and keep it in stasis, until it can be run from a verb (or
-from the stack, using a special verb called `exec`). In CaPriCon, this
-can be achieved by enclosing the code you want to "freeze" in
+from the stack, using the builtin verb `exec`). In CaPriCon, this
+can be achieved by enclosing the sentence you want to "freeze" in
 brackets, like so :
 
 > pop pop pop 'is 'great
@@ -130,3 +130,13 @@ brackets, like so :
 >? vis
 >? exec vis
 
+That's all fairly straightforward, which is nice, but quotes of this
+form aren't very dynamic. They will always depend on their surrounding
+environment for correct evaluation, which isn't a very robust way to
+write programs.
+
+  
+
+For instance, let's say we want to be able to execute a quote in a
+local environment, so that all nouns defined during that quote's
+execution don't accidentally override the outside vocabulary.
