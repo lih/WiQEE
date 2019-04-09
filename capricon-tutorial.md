@@ -157,12 +157,12 @@ the vocabulary), and restore the old vocabulary afterwards using
 `set-vocabulary`.
 
 The question is : where do we save the old vocabulary, so that
-executing the quote won't accidentally override the place we
-chose. Given what we know about the stack and the environment, nowhere
-is safe. A value on the stack can always be `pop`ped or `clear`ed, and
-a definition in the vocabulary can always be overridden.
+executing the quote won't accidentally override the place we chose ?
+Given what we know about the stack and the environment, nowhere is
+safe. A value on the stack can always be `pop`ped or `clear`ed, and a
+definition in the vocabulary can always be overridden.
 
-Answer, we save it in a quote. Without further ado, here is the
+Answer : we save it in a quote. Without further ado, here is the
 solution that CaPriCon proposes :
 
 > clear 'local-exec {
@@ -170,13 +170,13 @@ solution that CaPriCon proposes :
 >   exec } def
 >? { 'x 130 def x 2 * } local-exec x vis
 
-Let's break this down : `local-quote` is defined as the function that,
+Let's break this down : `local-exec` is defined as the function that,
 first, creates a new function by splicing a constant `vocabulary`
 between executing the top of the stack (our only argument of
 interest), and resetting the vocabulary to whatever the constant was
 at the time of creation.
 
-Then, `local-quote` simply executes the newly-created function that
+Then, `local-exec` simply executes the newly-created function that
 already remembers the `vocabulary` from before. Our argument gets
 executed, then the old vocabulary that was captured is pushed on the
 stack, only to be restored to its rightful place by `set-vocabulary`.
