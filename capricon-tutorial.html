@@ -49,6 +49,7 @@
       <li><a href="#verbs-and-vocabularies">Verbs and Vocabularies</a></li>
       <li><a href="#quotes">Quotes</a></li>
       </ul></li>
+      <li><a href="#proof-assembly">Proof assembly</a></li>
       </ul>
           </span><span class="menu right"><a href="#">More...</a><ul>
 	<li><a href="https://github.com/lih/WiQEE-pages/edit/master/capricon-tutorial.md">Page source</a></li>
@@ -227,13 +228,16 @@ Try It Out
 <p>Then, <code>local-exec</code> simply calls <code>exec</code> to run the newly-created quote that already remembers the <code>vocabulary</code> from before. Our argument gets executed, then the old vocabulary that was captured is pushed on the stack, only to be immediately restored to its rightful place by <code>set-vocabulary</code>. We now have the newly calculated stack, in an environment where our vocabulary is unchanged.</p>
 <p><br/></p>
 <p>This concludes the tour of all the basic CaPriCon language features. Once you’ve mastered those three concepts (nouns, verbs and quotes), and learned about enough builtin operations, all the programs, proofs and examples presented from this point on will be within your reach.</p>
+<p>There’s just one last detail we haven’t gotten around to : building actual proofs. Until now, we’ve been playing around with names and definitions, but we haven’t yet proven anything of interest. That’s with good reason, because we don’t yet know how to build proofs.</p>
+<p>Please bear with me for this last section, as I try to explain how to build mathematical proofs out of stacks, quotes and a bit of magic.</p>
+<h2 id="proof-assembly">Proof assembly</h2>
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
 <li id="fn1" role="doc-endnote"><p>For now, 32-bit integers are the default, but if the need arises, I’ll be glad to throw in some BigInt or floating-point support<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
-      <div id="footer">Page generated on Tuesday, April 09 of 2019, at 17:31 PM UTC, using capricon-0.12.2.1 and pandoc-2.7.2.</div>
+      <div id="footer">Page generated on Tuesday, April 09 of 2019, at 17:37 PM UTC, using capricon-0.12.2.1 and pandoc-2.7.2.</div>
 </div></div></div>
 <script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def 'br { "<br/>" print } def  'collect { { 'exports empty def ,{ } exec exports ,{ vocabulary } set-vocabulary } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { dup source-dir "%s%s" format source swap output-dir "%s%s.mdc" format redirect } def 'require { dup dup "  * Required module: [%s]\(%s.html\)\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def</script>
 <div id="capricon-console"></div>

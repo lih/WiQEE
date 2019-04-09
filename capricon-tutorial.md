@@ -191,4 +191,14 @@ quotes), and learned about enough builtin operations, all the programs,
 proofs and examples presented from this point on will be within your
 reach.
 
+There's just one last detail we haven't gotten around to : building
+actual proofs. Until now, we've been playing around with names and
+definitions, but we haven't yet proven anything of interest. That's
+with good reason, because we don't yet know how to build proofs.
+
+Please bear with me for this last section, as I try to explain how to
+build mathematical proofs out of stacks, quotes and a bit of magic.
+
+Proof assembly
+--------------
 
