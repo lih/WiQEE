@@ -244,11 +244,13 @@ usually call it a *witness* of some property.
 > pop 'Prop intro
 >? vis
 
-We now have a fresh property of $Set_{0}$, called `Prop`, in the
-context. We can now retrieve that property by its name, using the
-`variable` builtin.
+We now have a fresh but unknown property of $Set_{0}$, called `Prop`,
+in the context. We can now retrieve that property by its name, using
+the `variable` builtin, and check that it is indeed an element of the
+universe $Set_{0}$.
 
 > 'Prop variable
 >? vis
+>? dup type vis
 
 <div class="in-progress"></div>
