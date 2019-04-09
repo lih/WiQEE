@@ -185,4 +185,6 @@ environment where our vocabulary is unchanged.
 
 <br/>
 
-All is well that ends well.
+This concludes the tour of all basic CaPriCon language features. Once
+you've mastered those three aspects, and learned about enough builtin
+operations, all the proofs presented herein will be within your reach.
