@@ -202,3 +202,4 @@ build mathematical proofs out of stacks, quotes and a bit of magic.
 Proof assembly
 --------------
 
+<div class="in-progress"></div>
