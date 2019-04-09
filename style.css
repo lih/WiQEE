@@ -1151,6 +1151,12 @@ svg.formula .variable {
   --expand-width: 20;
 }
 
+.in-progress::before {
+  background: red;
+  color: black;
+  content: "In Progress";
+}
+
 #body-theme-chooser {
   display: none;
 }
