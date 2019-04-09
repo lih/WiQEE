@@ -97,6 +97,10 @@ the meaning of that verb and executes it, with a different strategy
 depending on that meaning :
 
   - if it is a quote, then the interpreter runs each step in the quote
+  - if it is a special builtin operation, then that operation is run
+    according to its definition. The initial vocabulary provides a few
+    builtins operations of that sort, which are listed
+    [here](lexicon.html).
   - otherwise, it is simply pushed onto the stack, as a constant
 
 There are two main verbs to interact with the vocabulary : `def`, for
