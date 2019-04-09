@@ -1,5 +1,5 @@
-@mixin keyword($name, $color: primary) {
-    &[data-symbol-name = "#{$name}"] { font-weight: bold; @extend .#{$color}; @include set-level(6); }
+@mixin keyword($name, $tint: 0deg) {
+    &[data-symbol-name = "#{$name}"] { font-weight: bold; --tint: #{$tint}; @include set-level(6); }
 }
 @mixin keyword-replace($name, $repl, $color: primary) {
     &[data-symbol-name = "#{$name}"] {
