@@ -1184,7 +1184,7 @@ body {
     content: "";
     background-image: url(math-tile.jpg);
     background-color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--low-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--low-saturation) * calc(1 / (14 - var(--level)))), calc(50% - calc(var(--level-incr) * (var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) 		      / 2)));
-    background-size: 40em;
+    background-size: 30em;
     opacity: 0.1;
     position: fixed;
     height: 100%;
@@ -1197,7 +1197,7 @@ body {
     content: "";
     background-image: url(math-tile.jpg);
     background-color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--low-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--low-saturation) * calc(1 / (14 - var(--level)))), calc(50% - calc(var(--level-incr) * (var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) 		      / 2)));
-    background-size: 40em;
+    background-size: 30em;
     opacity: 0.1;
     z-index: -1;
     position: fixed;
