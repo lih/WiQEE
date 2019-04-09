@@ -216,9 +216,4 @@ takes in a level and pushes a universe of that level on the stack :
 > 0 universe
 >? vis
 
-The only subtlety is that proofs come together with a implicit *proof
-context*. Much like a vocabulary, a proof context 
-
-### 
-
 <div class="in-progress"></div>
