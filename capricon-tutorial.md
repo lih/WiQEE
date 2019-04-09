@@ -269,4 +269,12 @@ universe $Set_{0}$.
 >? vis
 >? dup type vis
 
+We can go further, though. A property is still a type (because it has
+a type of shape $Set_{n}$, remember ?), so we can introduce a witness
+of it if we want. Let's call that witness `p` :
+
+> 'p intro
+>? vis
+>? 'p variable type vis
+
 <div class="in-progress"></div>
