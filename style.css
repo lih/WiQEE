@@ -807,14 +807,15 @@
   --unquote-depth: 0;
   --max-contrast: 85%;
 }
-.capricon * {
-  --quote-depth: inherit;
-  --unquote-depth: inherit;
-}
 .capricon span.quote {
   --tint: calc((var(--quote-depth) - var(--unquote-depth)) * -72deg);
   --quote-depth: 1;
   --unquote-depth: 0;
+  --unquote-depth: 0;
+}
+.capricon span.quote * {
+  --quote-depth: inherit;
+  --unquote-depth: inherit;
 }
 .capricon span.quote span.quote.quote-brace {
   --quote-depth: 2;
@@ -844,6 +845,21 @@
   --unquote-depth: 4;
 }
 .capricon span.quote span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice span.quote.quote-splice {
+  --unquote-depth: 5;
+}
+.capricon span.quote span.quote.quote-exec {
+  --unquote-depth: 1;
+}
+.capricon span.quote span.quote.quote-exec span.quote.quote-exec {
+  --unquote-depth: 2;
+}
+.capricon span.quote span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec {
+  --unquote-depth: 3;
+}
+.capricon span.quote span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec {
+  --unquote-depth: 4;
+}
+.capricon span.quote span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec span.quote.quote-exec {
   --unquote-depth: 5;
 }
 
