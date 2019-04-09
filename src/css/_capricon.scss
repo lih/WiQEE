@@ -21,7 +21,7 @@
 	@each $k in ('exec', '[',']','each', 'dup','$','swap','dupn','shift','shaft','def','printf', 'cons', 'pop', 'range', 'print', 'swapn', 'format', 'stack', 'set-stack') {
 	    @include keyword($k); }
 	@each $k in ('{',',{','${','}') {
-	    @include keyword($k,hexad-2);
+	    @include keyword($k,120deg);
 	    // &[data-symbol-name = "#{$name}"] { font-weight: bold; color: $color; }
 	};
 	@each $k in ('(',')','type','defconstr', 'hypotheses', 'variable', 'universe', 'extro-forall', 'extro-lambda', 'apply', 'mu', 'pattern-index', 'set-pattern-index', 'index-insert', 'pull', 'intro') {
