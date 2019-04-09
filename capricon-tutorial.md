@@ -227,15 +227,28 @@ us its type, unsurprisingly by using the `type` builtin.
 >? vis
 
 We can see that $Set_{0}$ has type $Set_{1}$. In general, when a term
-has type $Set_{n}$ for some $n$, we can treat that term as a *domain*,
-that can contain *witnesses*.
+has type $Set_{n}$ for some $n$, we can treat that term as a *type*,
+that may or may not contain *objects*. Every term has a type, that can
+be computed with `type` as we observed, but not every term *is* a
+type.
 
-If we have a domain, like we do now, we can `intro`duce a variable
-whose value comes from that domain. If our domain is a universe, like
-$Set_{0}$, we'll call that variable a *property* of the domain, as a
-convention.
+If we have a type, like we do now, we can `intro`duce a variable (or
+hypothesis) whose value comes from that type. Introducing a new
+hypothesis from a type is equivalent to assuming that at least one
+term of that type exists, without caring about that term's specific shape.
+
+If our type is a universe, like $Set_{0}$, we'll call such a
+hypothesis a *property* of its type, as a convention. Otherwise, we'll
+usually call it a *witness* of some property.
 
 > pop 'Prop intro
+>? vis
+
+We now have a fresh property of $Set_{0}$, called `Prop`, in the
+context. We can now retrieve that property by its name, using the
+`variable` builtin.
+
+> 'Prop variable
 >? vis
 
 <div class="in-progress"></div>
