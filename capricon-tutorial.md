@@ -165,7 +165,7 @@ a definition in the vocabulary can always be overridden.
 Answer, we save it in a quote. Without further ado, here is the
 solution that CaPriCon proposes :
 
-> 'local-quote {
+> clear 'local-quote {
 >   { exec ,{ vocabulary } set-vocabulary }
 >   exec } def
 >? { 'x 130 def x 2 * } local-quote x vis
