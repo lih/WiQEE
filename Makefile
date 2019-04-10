@@ -55,9 +55,9 @@ $(CACHE_ROOT)/env: | $(CACHE_ROOT)
 	echo "'output-dir \"$(CACHE_ROOT)/\" def" >> $@
 	echo "'cache-dir \"$(CACHE_ROOT)/\" def" >> $@
 
-$(CACHE_ROOT)/%.tex.md $(CACHE_ROOT)/%.html.md: $(PAGES_ROOT)/%.md $(CACHE_ROOT)/env | $(CACHE_ROOT)
+$(CACHE_ROOT)/%.tex.md $(CACHE_ROOT)/%.html.md: $(PAGES_ROOT)/%.md $(PAGES_ROOT)/prelude $(PAGES_ROOT)/render_prelude $(CACHE_ROOT)/env | $(CACHE_ROOT)
 	rm -f $(CACHE_ROOT)/$*.mdo.blob
-	echo "'$* require" | capricon $(PAGES_ROOT)/prelude $(CACHE_ROOT)/env
+	echo "'$* require" | capricon $(PAGES_ROOT)/prelude $(PAGES_ROOT)/render_prelude $(CACHE_ROOT)/env
 
 $(CACHE_ROOT)/common.mdi: scripts/gencommon $(STATIC_ROOT)/noise.png $(STATIC_ROOT)/steps.png $(PAGES_ROOT)/prelude | $(CACHE_ROOT)
 	$^ > $@
