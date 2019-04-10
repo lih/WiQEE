@@ -40,7 +40,7 @@ clean:
 $(PUBLIC_ROOT): ; mkdir -p $@
 $(CACHE_ROOT):  ; mkdir -p $@
 
-.PRECIOUS: $(CACHE_ROOT)/%.md
+.PRECIOUS: $(CACHE_ROOT)/%.html.md $(CACHE_ROOT)/%.tex.md
 
 ifdef LOCAL_HS_SOURCE
 $(LOCAL_HS_SOURCE)/dist/build/capricon-engine.js/capricon-engine.js: $(LOCAL_HS_SOURCE)/exe/CaPriCon_Engine.hs
