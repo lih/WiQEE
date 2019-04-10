@@ -808,7 +808,7 @@
   --max-contrast: 85%;
 }
 .capricon span.quote {
-  --tint: calc((var(--quote-depth) - var(--unquote-depth)) * -144deg);
+  --tint: calc((var(--quote-depth) - var(--unquote-depth)) * 252deg);
   --quote-depth: 1;
   --unquote-depth: 0;
   --unquote-depth: 0;
