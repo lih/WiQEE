@@ -39,7 +39,7 @@ clean:
 $(PUBLIC_ROOT): ; mkdir -p $@
 $(CACHE_ROOT):  ; mkdir -p $@
 
-.PRECIOUS: $(CACHE_ROOT)/%.mdc
+.PRECIOUS: $(CACHE_ROOT)/%.md
 
 ifdef LOCAL_HS_SOURCE
 $(LOCAL_HS_SOURCE)/dist/build/capricon-engine.js/capricon-engine.js: $(LOCAL_HS_SOURCE)/exe/CaPriCon_Engine.hs
@@ -54,7 +54,7 @@ $(CACHE_ROOT)/env: | $(CACHE_ROOT)
 	echo "'output-dir \"$(CACHE_ROOT)/\" def" >> $@
 	echo "'cache-dir \"$(CACHE_ROOT)/\" def" >> $@
 
-$(CACHE_ROOT)/%.mdc: $(PAGES_ROOT)/%.md $(CACHE_ROOT)/env | $(CACHE_ROOT)
+$(CACHE_ROOT)/%.tex.md $(CACHE_ROOT)/%.html.md: $(PAGES_ROOT)/%.md $(CACHE_ROOT)/env | $(CACHE_ROOT)
 	rm -f $(CACHE_ROOT)/$*.mdo.blob
 	echo "'$* require" | capricon $(PAGES_ROOT)/prelude $(CACHE_ROOT)/env
 
