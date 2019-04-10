@@ -7,7 +7,7 @@ language: generic
 matrix:
   include:
   - compiler: "CaPriCon Pages"
-    addons: {apt: {packages: [pdflatex]}}
+    addons: {apt: {packages: [texlive-full]}}
 
 install:
 - . scripts/ci/inline/install
