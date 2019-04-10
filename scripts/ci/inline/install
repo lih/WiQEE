@@ -4,9 +4,9 @@ sudo mkdir -p /local/opt
 curl -sL https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-1-amd64.deb > pandoc.deb
 sudo dpkg -i pandoc.deb
 
-curl -sL https://github.com/lih/BHR/releases/download/release-capricon-0.12.2.1/capricon.linux.x86_64.tar.xz | \
+curl -sL https://github.com/lih/BHR/releases/download/release-capricon-0.12.3/capricon.linux.x86_64.tar.xz | \
     sudo tar -xJ -C /local/opt
-sudo ln -s /local/opt/capricon-0.12.2.1/capricon /usr/bin/capricon
+sudo ln -s /local/opt/capricon-0.12.3/capricon /usr/bin/capricon
 
 curl -sL https://github.com/sass/dart-sass/releases/download/1.17.4/dart-sass-1.17.4-linux-x64.tar.gz | \
     sudo tar -xz -C /local/opt
