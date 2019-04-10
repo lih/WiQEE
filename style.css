@@ -942,8 +942,11 @@
 }
 
 .capricon-examples {
+  position: relative;
   display: block;
+  text-align: center;
   height: 2.0225em;
+  padding: 0.60675em;
   width: 100%;
   overflow-y: auto;
 }
@@ -951,9 +954,11 @@
   content: "Examples: ";
   font-weight: bold;
   display: inline-block;
-  height: 2.0225em;
+  height: 1.618em;
   padding: 0.20225em;
   vertical-align: middle;
+  position: absolute;
+  left: 0;
 }
 .capricon-examples .capricon-example {
   display: inline-block;

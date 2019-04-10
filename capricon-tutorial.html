@@ -59,12 +59,13 @@
       </ul>
           </span><span class="menu right"><a href="#">More...</a><ul>
 	<li><a href="https://github.com/lih/WiQEE-pages/edit/master/capricon-tutorial.md">Page source</a></li>
+	<li><a href="capricon-tutorial.pdf">PDF version</a></li>
 	<li><a href="#" onclick="document.getElementById('body-theme-chooser').classList.toggle('active')">Tweak theme</a></li>
       </ul></span>
   </div><div id="content-scroll" autofocus="autofocus"><div id="content" class="sheet">
       <h1>First steps with CaPriCon</h1>
 <p>This page is intended as a tutorial on the use of a stack-based proof environment like the one provided on this site. Since we’re going to need to print things out, and we don’t yet have the knowledge to write such features ourselves, let’s first import a few useful functions from a preexisting module.</p>
-<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 2.25">
+<label class="expansible box"><input type="checkbox" checked="checked" /><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 2.25">
 <div class="capricon-steps">
 <pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'utils">'utils</span> <span class="symbol" data-symbol-name="require">require</span> <span class="symbol" data-symbol-name="import">import</span></pre>
 <div class="user-input interactive">
@@ -98,15 +99,15 @@ Try It Out
 </ul>
 <h3 id="nouns">Nouns</h3>
 <p>The simplest kinds of words are <em>nouns</em>, more commonly known as atoms or symbols, and are written as a single quote (<code>'</code>), followed by some non-space characters.</p>
-<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
+<label class="expansible box"><input type="checkbox" checked="checked" /><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 4.25">
 <div class="capricon-steps">
 <pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'Bender">'Bender</span></pre>
 <div class="capricon-examples">
-<button class="capricon-example" data-code="vis">
-<pre class="capricon"><span class="symbol" data-symbol-name="vis">vis</span></pre>
-</button>
 <button class="capricon-example" data-code="&#39;is &#39;great vis">
 <pre class="capricon"><span class="symbol" data-symbol-name="'is">'is</span> <span class="symbol" data-symbol-name="'great">'great</span> <span class="symbol" data-symbol-name="vis">vis</span></pre>
+</button>
+<button class="capricon-example" data-code="vis">
+<pre class="capricon"><span class="symbol" data-symbol-name="vis">vis</span></pre>
 </button>
 </div>
 <div class="user-input interactive">
@@ -123,7 +124,7 @@ Try It Out
 </div>
 <p>As you can see, each noun you write is pushed onto the stack, in the order in which they appear. Nothing mysterious here.</p>
 <p>The CaPriCon interpreter also recognizes numbers<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, in the usual decimal format, as another kind of noun, which means they will mostly behave as expected.</p>
-<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
+<label class="expansible box"><input type="checkbox" checked="checked" /><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 4.25">
 <div class="capricon-steps">
 <pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="1">1</span> <span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="100">100</span></pre>
 <div class="capricon-examples">
@@ -153,7 +154,7 @@ Try It Out
 <li>otherwise, it is simply pushed onto the stack, as a constant</li>
 </ul>
 <p>There are two main verbs to interact with the vocabulary : <code>def</code>, for adding new definitions, and overriding old ones; and <code>$</code>, for looking symbols up. They can be used as follows :</p>
-<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
+<label class="expansible box"><input type="checkbox" checked="checked" /><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 4.25">
 <div class="capricon-steps">
 <pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'x">'x</span> <span class="symbol" data-symbol-name="3">3</span> <span class="symbol" data-symbol-name="def">def</span> <span class="symbol" data-symbol-name="'y">'y</span> <span class="symbol" data-symbol-name="4">4</span> <span class="symbol" data-symbol-name="def">def</span></pre>
 <div class="capricon-examples">
@@ -177,16 +178,16 @@ Try It Out
 <h3 id="quotes">Quotes</h3>
 <p>Many stack-based language have features similar to our quotes. Let’s start there.</p>
 <p>The <em>raison d’être</em> of a quote is, simply put, to be able to write a program and keep it in stasis, until it can be run from a verb (or from the stack, using the builtin verb <code>exec</code>). In CaPriCon, this can be achieved by enclosing the sentence you want to “freeze” in brackets, like so :</p>
-<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 4.5">
+<label class="expansible box"><input type="checkbox" checked="checked" /><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 5.25">
 <div class="capricon-steps">
 <pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="pop">pop</span> <span class="symbol" data-symbol-name="pop">pop</span> <span class="symbol" data-symbol-name="pop">pop</span> <span class="symbol" data-symbol-name="'is">'is</span> <span class="symbol" data-symbol-name="'great">'great</span>
 <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="swap">swap</span> <span class="symbol" data-symbol-name="2">2</span> <span class="symbol" data-symbol-name="shift">shift</span> <span class="symbol" data-symbol-name="&quot;%s %s %s !&quot;">&quot;%s %s %s !&quot;</span> <span class="symbol" data-symbol-name="format">format</span> <span class="symbol" data-symbol-name="}">}</span></span></pre>
 <div class="capricon-examples">
-<button class="capricon-example" data-code="vis">
-<pre class="capricon"><span class="symbol" data-symbol-name="vis">vis</span></pre>
-</button>
 <button class="capricon-example" data-code="exec vis">
 <pre class="capricon"><span class="symbol" data-symbol-name="exec">exec</span> <span class="symbol" data-symbol-name="vis">vis</span></pre>
+</button>
+<button class="capricon-example" data-code="vis">
+<pre class="capricon"><span class="symbol" data-symbol-name="vis">vis</span></pre>
 </button>
 </div>
 <div class="user-input interactive">
@@ -208,7 +209,7 @@ Try It Out
 <p>The idea is to use the <code>vocabulary</code> verb to retrieve the vocabulary before executing the quote, save that vocabulary somewhere, then run the quote (which can perform arbitrary modifications to the stack and the vocabulary), and finally restore the old vocabulary afterwards using <code>set-vocabulary</code>.</p>
 <p>The question is : where do we save the old vocabulary, so that executing our argument won’t accidentally override the place we chose ? Given what we know about the stack and the environment, nowhere is safe. A value on the stack can always be <code>pop</code>ped or <code>clear</code>ed, and a definition in the vocabulary can always be overridden.</p>
 <p>Answer : we save it in a quote. Without further ado, here is the solution that CaPriCon proposes :</p>
-<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 5.5">
+<label class="expansible box"><input type="checkbox" checked="checked" /><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 6.25">
 <div class="capricon-steps">
 <pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="clear">clear</span> <span class="symbol" data-symbol-name="'local-exec">'local-exec</span> <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span>
   <span class="quote quote-brace"><span class="symbol" data-symbol-name="{">{</span> <span class="symbol" data-symbol-name="exec">exec</span> <span class="quote quote-splice"><span class="symbol" data-symbol-name=",{">,{</span> <span class="symbol" data-symbol-name="vocabulary">vocabulary</span> <span class="symbol" data-symbol-name="}">}</span></span> <span class="symbol" data-symbol-name="set-vocabulary">set-vocabulary</span> <span class="symbol" data-symbol-name="}">}</span></span>
@@ -240,7 +241,7 @@ Try It Out
 <p>The easiest way to get comfortable manipulating mathematical proofs and theorems is to treat them like regular objects. In CaPriCon, theorems and proofs – which will hereafter be referred to as <em>terms</em> – are like numbers and symbols, that can be pushed onto the stack, or saved in the vocabulary.</p>
 <h2 id="types-and-universes">Types and Universes</h2>
 <p>The most common kind of basic term you’ll encounter are universes, noted <span class="math inline">\(Set_{n}\)</span>, where <span class="math inline">\(n \in \mathbb{N}\)</span> is the <em>level</em> of that universe. You can introduce them with the <code>universe</code> builtin, that takes in a level and pushes a universe of that level on the stack :</p>
-<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
+<label class="expansible box"><input type="checkbox" checked="checked" /><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 4.25">
 <div class="capricon-steps">
 <pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="0">0</span> <span class="symbol" data-symbol-name="universe">universe</span></pre>
 <div class="capricon-examples">
@@ -262,7 +263,7 @@ Try It Out
 </div>
 <p>We just proved something ! Granted, we only proved that some universes exist, by giving an example of one, but still. Using that universe as a starting point, we can explore a bit further.</p>
 <p>The first useful thing we can do given a term is ask CaPriCon to give us its type, unsurprisingly by using the <code>type</code> builtin.</p>
-<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
+<label class="expansible box"><input type="checkbox" checked="checked" /><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 4.25">
 <div class="capricon-steps">
 <pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="dup">dup</span> <span class="symbol" data-symbol-name="type">type</span></pre>
 <div class="capricon-examples">
@@ -288,7 +289,7 @@ Try It Out
 <h3 id="introducing-new-hypotheses">Introducing new hypotheses</h3>
 <p>CaPriCon works in a similar way. If we have a type on top of the stack, like we do now, we can <code>intro</code>duce a variable (or hypothesis) of that type. Introducing a new hypothesis from a type is equivalent to assuming that at least one term of that type exists, without caring about that term’s specific shape.</p>
 <p>If our type is a universe, like <span class="math inline">\(Set_{0}\)</span>, we’ll call such a hypothesis a <em>property</em> of its type, as a convention. Otherwise, we’ll usually call it a <em>witness</em> of some property.</p>
-<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
+<label class="expansible box"><input type="checkbox" checked="checked" /><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 4.25">
 <div class="capricon-steps">
 <pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="pop">pop</span> <span class="symbol" data-symbol-name="'Prop">'Prop</span> <span class="symbol" data-symbol-name="intro">intro</span></pre>
 <div class="capricon-examples">
@@ -309,15 +310,15 @@ Try It Out
 
 </div>
 <p>We now have a fresh but unknown property of <span class="math inline">\(Set_{0}\)</span>, called <code>Prop</code>, in the context. We can retrieve that property by using its name, using the <code>variable</code> builtin, and check that it is indeed an element of the universe <span class="math inline">\(Set_{0}\)</span>.</p>
-<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
+<label class="expansible box"><input type="checkbox" checked="checked" /><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 4.25">
 <div class="capricon-steps">
 <pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'Prop">'Prop</span> <span class="symbol" data-symbol-name="variable">variable</span></pre>
 <div class="capricon-examples">
-<button class="capricon-example" data-code="vis">
-<pre class="capricon"><span class="symbol" data-symbol-name="vis">vis</span></pre>
-</button>
 <button class="capricon-example" data-code="dup type vis">
 <pre class="capricon"><span class="symbol" data-symbol-name="dup">dup</span> <span class="symbol" data-symbol-name="type">type</span> <span class="symbol" data-symbol-name="vis">vis</span></pre>
+</button>
+<button class="capricon-example" data-code="vis">
+<pre class="capricon"><span class="symbol" data-symbol-name="vis">vis</span></pre>
 </button>
 </div>
 <div class="user-input interactive">
@@ -333,15 +334,15 @@ Try It Out
 
 </div>
 <p>We can go further, though. Our property <code>Prop</code> is still a type (because it has a type of shape <span class="math inline">\(Set_{n}\)</span>, remember ?), so we can introduce a witness of it if we want. Let’s call that witness <code>p</code> :</p>
-<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
+<label class="expansible box"><input type="checkbox" checked="checked" /><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 4.25">
 <div class="capricon-steps">
 <pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'p">'p</span> <span class="symbol" data-symbol-name="intro">intro</span></pre>
 <div class="capricon-examples">
-<button class="capricon-example" data-code="vis">
-<pre class="capricon"><span class="symbol" data-symbol-name="vis">vis</span></pre>
-</button>
 <button class="capricon-example" data-code="&#39;p variable type vis">
 <pre class="capricon"><span class="symbol" data-symbol-name="'p">'p</span> <span class="symbol" data-symbol-name="variable">variable</span> <span class="symbol" data-symbol-name="type">type</span> <span class="symbol" data-symbol-name="vis">vis</span></pre>
+</button>
+<button class="capricon-example" data-code="vis">
+<pre class="capricon"><span class="symbol" data-symbol-name="vis">vis</span></pre>
 </button>
 </div>
 <div class="user-input interactive">
@@ -365,9 +366,9 @@ Try It Out
 <li id="fn1" role="doc-endnote"><p>For now, 32-bit integers are the default, but if the need arises, I’ll be glad to throw in some BigInt or floating-point support<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
-      <div id="footer">Page generated on Tuesday, April 09 of 2019, at 22:51 PM UTC, using capricon-0.12.2.1 and pandoc-2.7.2.</div>
+      <div id="footer">Page generated on Wednesday, April 10 of 2019, at 07:38 AM UTC, using capricon-0.13 and pandoc-2.7.2.</div>
 </div></div></div>
-<script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def 'br { "<br/>" print } def  'collect { { 'exports empty def ,{ } exec exports ,{ vocabulary } set-vocabulary } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { dup source-dir "%s%s" format source swap output-dir "%s%s.mdc" format redirect } def 'require { dup dup "  * Required module: [%s]\(%s.html\)\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def</script>
+<script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'eol. { } def 'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def 'br { "<br/>" print } def  'collect { { 'exports empty def ${ } exports { ,{ ,{ vocabulary } } set-vocabulary ,{ ,{ stack } } set-stack ,{ exports } } exec } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { source-dir "%s%s" format source exec } def 'require { dup dup "  * Required module: [%s]\(%s.html\)\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def   </script>
 <div id="capricon-console"></div>
 <script type="text/javascript">
   window.addEventListener("load",function() {

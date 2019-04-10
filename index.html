@@ -52,6 +52,7 @@
       </ul>
           </span><span class="menu right"><a href="#">More...</a><ul>
 	<li><a href="https://github.com/lih/WiQEE-pages/edit/master/index.md">Page source</a></li>
+	<li><a href="index.pdf">PDF version</a></li>
 	<li><a href="#" onclick="document.getElementById('body-theme-chooser').classList.toggle('active')">Tweak theme</a></li>
       </ul></span>
   </div><div id="content-scroll" autofocus="autofocus"><div id="content" class="sheet">
@@ -61,15 +62,15 @@
 <p>If you do so, you may notice that the source doesn’t look that different from the article itself. That is because CaPriCon is an exclusively <a href="https://en.wikipedia.org/wiki/Literate_programming">literate programming language</a>, in which most text is simply text, and the code is specially identified through dedicated syntaxes. The comment formatting language itself is Markdown in this case, although it would be trivial to adapt it to other textual markup languages such as TeX.</p>
 <h2 id="literate-programming-in-wiki-form">Literate Programming in Wiki Form</h2>
 <p>Everything you’ve read until now is a comment of the “index.md” program. If you want to write programs, though, you will probably need to write some <em>code</em>, which in this case consists in a sequence of <em>steps</em> that are executed in the order in which they appear. The first sort of code that you can execute is a code paragraph, and is indicated in the source by starting a line with <code>&gt;</code>.</p>
-<label class="expansible box"><input type="checkbox" checked="checked"/><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then capricon-with-examples" style="--num-lines: 3.5">
+<label class="expansible box"><input type="checkbox" checked="checked" /><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 4.25">
 <div class="capricon-steps">
 <pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="&quot;&lt;p&gt;Such code is executed, and its output is added to the document.&lt;/p&gt;&quot;">&quot;&lt;p&gt;Such code is executed, and its output is added to the document.&lt;/p&gt;&quot;</span> <span class="symbol" data-symbol-name="printf">printf</span></pre>
 <div class="capricon-examples">
-<button class="capricon-example" data-code="&quot;Hello&quot; printf">
-<pre class="capricon"><span class="symbol" data-symbol-name="&quot;Hello&quot;">&quot;Hello&quot;</span> <span class="symbol" data-symbol-name="printf">printf</span></pre>
-</button>
 <button class="capricon-example" data-code="version &quot;CaPriCon version: %s\n&quot; printf">
 <pre class="capricon"><span class="symbol" data-symbol-name="version">version</span> <span class="symbol" data-symbol-name="&quot;CaPriCon version: %s\n&quot;">&quot;CaPriCon version: %s\n&quot;</span> <span class="symbol" data-symbol-name="printf">printf</span></pre>
+</button>
+<button class="capricon-example" data-code="&quot;Hello&quot; printf">
+<pre class="capricon"><span class="symbol" data-symbol-name="&quot;Hello&quot;">&quot;Hello&quot;</span> <span class="symbol" data-symbol-name="printf">printf</span></pre>
 </button>
 </div>
 <div class="user-input interactive">
@@ -86,7 +87,7 @@ Try It Out
 Such code is executed, and its output is added to the document.
 </p>
 </div>
-<p>You can also write some inline code between “mustaches” (a mustache is a pair of nested <code>{}</code> inside the source), which will be executed as part of a paragraph, and whose output <label class="expansible inline"><span>will look like this </span><input type="checkbox"/><span class="expand-then"><code class="capricon capricon-steps">“will look like this” raw</code></span></label>. If all works well, you should see a small image of steps next to the generated output. Clicking on those steps will, as in the previous case and without surprises, show you the steps that were taken to produce this output.</p>
+<p>You can also write some inline code between “mustaches” (a mustache is a pair of nested <code>{}</code> inside the source), which will be executed as part of a paragraph, and whose output <label class="expansible inline"><span>will look like this </span><input type="checkbox"><span class="expand-then"><code class="capricon capricon-steps"><span class="symbol" data-symbol-name="&quot;will look like this&quot;">“will look like this”</span> <span class="symbol" data-symbol-name="raw">raw</span></code></span></label>. If all works well, you should see a small image of steps next to the generated output. Clicking on those steps will, as in the previous case and without surprises, show you the steps that were taken to produce this output.</p>
 <h2 id="a-concatenative-scripting-language">A Concatenative Scripting Language</h2>
 <p>If you peeked at the examples given before, you may have noticed something strange. In order to produce some output, you’d expect a sentence to look like <code>print "..."</code>, but instead the program was written in the reverse order, as <code>"..." print</code>.</p>
 <p>Indeed, in the tradition of PostScript, CaPriCon is a concatenative, stack-based language. In such a language, programs are represented as sequences of symbols, that are executed from first to last, and that may keep intermediate results on a shared stack. All the power of the language comes from the words that are made available, rather than from the particular syntax of those words.</p>
@@ -119,9 +120,9 @@ Such code is executed, and its output is added to the document.
 <li><a href="Lists.html">Lists</a></li>
 <li><a href="Relations.html">Relations</a></li>
 </ul>
-      <div id="footer">Page generated on Tuesday, April 09 of 2019, at 22:51 PM UTC, using capricon-0.12.2.1 and pandoc-2.7.2.</div>
+      <div id="footer">Page generated on Wednesday, April 10 of 2019, at 07:38 AM UTC, using capricon-0.13 and pandoc-2.7.2.</div>
 </div></div></div>
-<script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def 'br { "<br/>" print } def  'collect { { 'exports empty def ,{ } exec exports ,{ vocabulary } set-vocabulary } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { dup source-dir "%s%s" format source swap output-dir "%s%s.mdc" format redirect } def 'require { dup dup "  * Required module: [%s]\(%s.html\)\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def</script>
+<script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'eol. { } def 'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def 'br { "<br/>" print } def  'collect { { 'exports empty def ${ } exports { ,{ ,{ vocabulary } } set-vocabulary ,{ ,{ stack } } set-stack ,{ exports } } exec } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { source-dir "%s%s" format source exec } def 'require { dup dup "  * Required module: [%s]\(%s.html\)\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def   </script>
 <div id="capricon-console"></div>
 <script type="text/javascript">
   window.addEventListener("load",function() {
