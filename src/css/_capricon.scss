@@ -53,7 +53,7 @@
 	* { --quote-depth: inherit;
 	    --unquote-depth: inherit; }
 	@extend .opaque;
-	--tint: calc((var(--quote-depth) - var(--unquote-depth)) * -60deg);
+	--tint: calc((var(--quote-depth) - var(--unquote-depth)) * -144deg);
 	@include quoteDepth(('quote','brace'),1,9);
 	@include quoteDepth(('unquote','splice'),0,9);
 	@include quoteDepth(('unquote','exec'),0,9);
