@@ -70,7 +70,7 @@ else
 PANDOC_FLAGS += -f markdown+definition_lists+smart -t html
 endif
 
-$(PUBLIC_ROOT)/%.html: $(CACHE_ROOT)/%.mdc $(TEMPLATE_ROOT)/header.html $(CACHE_ROOT)/common.mdi $(TEMPLATE_ROOT)/template.html | $(PUBLIC_ROOT)
+$(PUBLIC_ROOT)/%.html: $(CACHE_ROOT)/%.html.md $(TEMPLATE_ROOT)/header.html $(CACHE_ROOT)/common.mdi $(TEMPLATE_ROOT)/template.html | $(PUBLIC_ROOT)
 	pandoc $(PANDOC_FLAGS) -V module:$*  $< $(CACHE_ROOT)/common.mdi > $@
 
 $(PUBLIC_ROOT)/theme-test.html: $(STATIC_ROOT)/theme-test.html
