@@ -1,4 +1,4 @@
-![Travis Build Status](https://travis-ci.org/lih/WiQEE.svg?branch=master)
+[![Travis Build Status](https://travis-ci.org/lih/WiQEE.svg?branch=master)](https://travis-ci.org/lih/WiQEE)
 
 The WiQEE site template
 =======================
