@@ -58,7 +58,7 @@ $endfor$
 $for(include-before)$
 $include-before$
 $endfor$
-<div id="content-frame" class="frame"><div class="nav header reverse" tabindex="1" autofocus="autofocus">
+<div id="content-frame" class="frame"><div class="nav header reverse" tabindex="1">
     <span class="menu left"><a href="index.html">WiQEE</a><ul>
   	<li><a href="lexicon.html">Lexicon</a></li>
     </ul></span><span class="menu middle"><a class="#">$title$</a>
@@ -70,7 +70,7 @@ $endfor$
 	<li><a href="$module$.pdf">PDF version</a></li>
 	<li><a href="#" onclick="document.getElementById('body-theme-chooser').classList.toggle('active')">Tweak theme</a></li>
       </ul></span>
-  </div><div id="content-scroll"><div id="content" class="sheet" tabindex="0">
+  </div><div id="content-scroll"><div id="content" class="sheet" tabindex="0" autofocus="autofocus">
       <h1>$title$</h1>
 $body$
       <div id="footer">Page generated on $full-date$, using capricon-$capricon-version$ and pandoc-$pandoc-version$.</div>
