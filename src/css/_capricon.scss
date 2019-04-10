@@ -91,11 +91,14 @@
 }
 
 .capricon-examples {
+    position: relative;
     &::before {
 	content: "Examples: "; font-weight: bold; display: inline-block;
 	height: $line-height * 1em;
 	padding: $line-height * 0.125em;
 	vertical-align: middle;
+	position: absolute;
+	left: 0;
     }
     display: block;
     text-align: center; 
