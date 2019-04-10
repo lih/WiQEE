@@ -93,12 +93,12 @@
 .capricon-examples {
     &::before {
 	content: "Examples: "; font-weight: bold; display: inline-block;
-	height: $line-height * 1.25em;
+	height: $line-height * 1em;
 	padding: $line-height * 0.125em;
 	vertical-align: middle;
     }
     display: block;
-    height: $line-height * 1.5em;
+    height: $line-height * 1.25em;
     width: 100%;
     overflow-y: auto;
     .capricon-example {
