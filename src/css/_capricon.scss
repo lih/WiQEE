@@ -93,7 +93,7 @@
 .capricon-examples {
     &::before {
 	content: "Examples: "; font-weight: bold; display: inline-block;
-	height: $line-height * 1.25em;
+	height: $line-height * 1.5em;
 	padding: $line-height * 0.125em;
 	vertical-align: middle;
     }
