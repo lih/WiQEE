@@ -11,6 +11,7 @@ SRC := $(wildcard $(PAGES_ROOT)/*.md)
 STATIC_SRC := $(wildcard $(STATIC_ROOT)/*)
 TARGETS := $(PUBLIC_ROOT)/style.css $(PUBLIC_ROOT)/test.css \
   $(SRC:$(PAGES_ROOT)/%.md=$(PUBLIC_ROOT)/%.html) \
+  $(SRC:$(PAGES_ROOT)/%.md=$(PUBLIC_ROOT)/%.pdf) \
   $(SRC:$(PAGES_ROOT)/%.md=$(PUBLIC_ROOT)/%.md) \
   $(STATIC_SRC:$(STATIC_ROOT)/%=$(PUBLIC_ROOT)/%) 
 FULL_DATE := $(shell date +"%A, %B %d of %Y, at %R %p %Z")
@@ -61,17 +62,19 @@ $(CACHE_ROOT)/%.tex.md $(CACHE_ROOT)/%.html.md: $(PAGES_ROOT)/%.md $(CACHE_ROOT)
 $(CACHE_ROOT)/common.mdi: scripts/gencommon $(STATIC_ROOT)/noise.png $(STATIC_ROOT)/steps.png $(PAGES_ROOT)/prelude | $(CACHE_ROOT)
 	$^ > $@
 
-PANDOC_FLAGS := --standalone --mathjax='mathjax/MathJax.js?config=TeX-AMS_HTML' --toc --css style.css
-PANDOC_FLAGS += -H $(WD)/$(TEMPLATE_ROOT)/header.html --template=$(WD)/$(TEMPLATE_ROOT)/template.html 
-PANDOC_FLAGS += -V "full-date:$(FULL_DATE)"
+PANDOC_FLAGS := --standalone --toc -V "full-date:$(FULL_DATE)"
+PANDOC_HTML_FLAGS := -t html --mathjax='mathjax/MathJax.js?config=TeX-AMS_HTML' --css style.css
+PANDOC_HTML_FLAGS += -H $(WD)/$(TEMPLATE_ROOT)/header.html --template=$(WD)/$(TEMPLATE_ROOT)/template.html 
 ifeq ($(PANDOC_MAJOR_VERSION),1)
-PANDOC_FLAGS += -f markdown+definition_lists --smart -t html
+PANDOC_FLAGS += -f markdown+definition_lists --smart
 else
-PANDOC_FLAGS += -f markdown+definition_lists+smart -t html
+PANDOC_FLAGS += -f markdown+definition_lists+smart
 endif
 
 $(PUBLIC_ROOT)/%.html: $(CACHE_ROOT)/%.html.md $(TEMPLATE_ROOT)/header.html $(CACHE_ROOT)/common.mdi $(TEMPLATE_ROOT)/template.html | $(PUBLIC_ROOT)
-	pandoc $(PANDOC_FLAGS) -V module:$*  $< $(CACHE_ROOT)/common.mdi > $@
+	pandoc $(PANDOC_FLAGS) $(PANDOC_HTML_FLAGS) -V module:$*  $< $(CACHE_ROOT)/common.mdi > $@
+$(PUBLIC_ROOT)/%.pdf: $(CACHE_ROOT)/%.tex.md $(TEMPLATE_ROOT)/header.tex $(CACHE_ROOT)/common.mdi | $(PUBLIC_ROOT)
+	pandoc $(PANDOC_FLAGS) -H $(TEMPLATE_ROOT)/header.tex -V module:$* $< -o $@
 
 $(PUBLIC_ROOT)/theme-test.html: $(STATIC_ROOT)/theme-test.html
 	cp $< $@
