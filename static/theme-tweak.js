@@ -88,6 +88,7 @@ var Theme = {
     },
     setProp: function (p,v) {
 	this.props[this.ambiance][p] = v;
+	window.localStorage.setItem('theme/'+window.location.pathname, JSON.stringify(this.props));
 	return this;
     },
     getStyleText: function() {
