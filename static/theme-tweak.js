@@ -43,7 +43,7 @@ var ThemeConfig = {
 		'font-size']
 };
 
-function setGroundClass(e,isLight) {
+function setLightGround(e,isLight) {
     if(isLight) {
 	e.classList.replace('ground-dark', 'ground-light');
     }
@@ -62,7 +62,7 @@ var Theme = {
 	this.roots.push(root);
 	var rootI = this.roots.length - 1;
 
-	setGroundClass(root,this.getPropVal('light'));
+	setLightGround(root,this.getPropVal('light'));
 	this.updateElement(rootI);
 	
 	var elts = root.getElementsByClassName('theme-slider');
@@ -96,12 +96,13 @@ var Theme = {
 	    var prop = this.config.propNames[p];
 	    stl = stl + " " + prop+': '+this.getPropText(prop) + ";"
 	}
+	alert(stl);
 	return stl;
     },
     updateElement: function (i) {
 	var elt = this.roots[i];
 	elt.setAttribute('style', this.getStyleText());
-	setGroundClass(elt,this.getPropVal('light'));
+	setLightGround(elt,this.getPropVal('light'));
 	
 	var spans = elt.getElementsByClassName('theme-prop-display');
 	for (var spanI in spans) {
