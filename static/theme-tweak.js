@@ -65,6 +65,12 @@ var Theme = {
 
 	setLightGround(root,this.getPropVal('light'));
 	this.updateElement(rootI);
+
+	var amb = root.getElementsByClassName('theme-ambiance-select');
+	amb.value = this.ambiance;
+	amb.addEventListener('change', function() {
+	    this.setAmbiance(amb.value);
+	});
 	
 	var elts = root.getElementsByClassName('theme-slider');
 	for(var x in elts) {
