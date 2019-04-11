@@ -1,4 +1,4 @@
-function rawUnit(u) { return function (x) { x + u; }; }
+function rawUnit(u) { return function (x) { x.toString() + u; }; }
 
 var Theme = {
     'props': JSON.parse(localStorage.getItem('theme/'+window.location.pathname)),
@@ -76,7 +76,7 @@ if(Theme.props === null) {
 	'--low-hue': '-50', '--low-saturation': '30',
 	'--high-hue': '50', '--high-saturation': '30',
 	'--min-contrast': '50', '--max-contrast': '85',
-	'--luminosity': '50'
+	'--luminosity': '50',o
 	'font-size': '100'
     };
 }
