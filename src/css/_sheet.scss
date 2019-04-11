@@ -127,11 +127,11 @@
 	pre { @include set-level(9); @extend .opaque;
 	      code { background: none; } }
 	
-	input, textarea, select { @include set-level(9); @include set-ground(0deg); @extend .opaque; @extend .with-border; }
+	input, textarea { @include set-level(9); @include set-ground(0deg); @extend .opaque; @extend .with-border; }
 	
 	a { @include set-level(6); @include set-ground(3 * 72deg); }
 
-        button {
+        button, select {
 	    @include set-level(6);
 	    @extend .shiny;
 	    @extend .with-border;
