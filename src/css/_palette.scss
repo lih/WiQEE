@@ -57,7 +57,7 @@ $default-color: hsl(calc(var(--tint) + var(--prim-hue) * #{$local-rate-r} + var(
 		    calc(var(--luminosity) * 100% + #{$lum-incr} * #{$contrast-delta})); 
 $default-background: hsl(calc(var(--tint) + var(--prim-hue) * #{$local-rate-r} + var(--low-hue) * #{$local-rate}),
 			 calc(var(--prim-saturation) * #{$local-rate-r} + var(--low-saturation) * #{$local-rate}),
-			 calc((1 - var(--luminosity)) * 100% + #{$lum-incr-r} * #{$contrast-delta}));
+			 calc(var(--luminosity) * 100% + #{$lum-incr-r} * #{$contrast-delta}));
 $default-border: hsla(calc(var(--tint) + var(--prim-hue) * #{$local-rate-r} + var(--high-hue) * #{$local-rate}),
 		      calc(var(--prim-saturation) * #{$local-rate-r} + var(--high-saturation) * #{$local-rate}),
 		      calc(var(--luminosity) * 100% + #{$lum-incr} * #{$contrast-delta}),0.3); 
