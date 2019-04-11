@@ -122,6 +122,7 @@ var Theme = {
 	    var span = spans.item(spanI);
 	    if(span !== null) {
 		var prop = span.getAttribute('data-prop-name');
+		span.value = this.getPropVal(prop);
 		span.textContent = this.getPropText(prop);
 	    }
 	}
