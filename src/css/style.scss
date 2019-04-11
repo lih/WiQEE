@@ -8,6 +8,10 @@ $break-wide: 60em;
 @import "menu";
 @import "capricon";
 
+.smooth-colors * {
+    transition: color 1s, background-color 1s;
+}
+
 svg.formula {
     display: inline-block; vertical-align: top;
     // border: 1px solid black;
