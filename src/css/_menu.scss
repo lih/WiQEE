@@ -9,8 +9,8 @@
 	@include set-level(3);
 	@extend .opaque;
 	@extend .shiny;
-	&:hover:not(:active) { @include set-level(7); }
-	&:active { @include set-level(5); }
+	&:hover:not(:active) { @include set-level(6); }
+	&:active { @include set-level(1); }
 	display: block; padding: ($line-height * 0.125em);
 	height: $line-height * 1em;
 	overflow: hidden;
