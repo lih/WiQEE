@@ -45,10 +45,10 @@ var ThemeConfig = {
 
 function setGroundClass(e,isLight) {
     if(isLight) {
-	root.classList.replace('ground-dark', 'ground-light');
+	e.classList.replace('ground-dark', 'ground-light');
     }
     else {
-	root.classList.replace('ground-light', 'ground-dark');
+	e.classList.replace('ground-light', 'ground-dark');
     }
 }
 
