@@ -91,6 +91,10 @@ var Theme = {
 	window.localStorage.setItem('theme/'+window.location.pathname, JSON.stringify(this.props));
 	return this;
     },
+    setAmbiance: function(ambiance) {
+	this.ambiance = ambiance;
+	window.localStorage.setItem('ambiance/'+window.location.pathname, this.ambiance);
+    },
     getStyleText: function() {
 	var stl = "", p;
 	for(var p in this.config.propNames) {
