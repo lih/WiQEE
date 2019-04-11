@@ -18,8 +18,8 @@ var ThemeConfig = {
 	    '--prim-hue': 53, '--prim-saturation': 36,
 	    '--low-hue': -50, '--low-saturation': 30,
 	    '--high-hue': 50, '--high-saturation': 30,
-	    '--min-contrast': 50, '--max-contrast': 85,
-	    '--luminosity': 50,
+	    '--min-contrast': 30, '--max-contrast': 65,
+	    '--luminosity': 30,
 	    'font-size': 100
 	}
     },
