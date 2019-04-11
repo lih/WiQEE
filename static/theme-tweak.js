@@ -66,7 +66,7 @@ var Theme = {
 	setLightGround(root,this.getPropVal('light'));
 	this.updateElement(rootI);
 
-	var amb = root.getElementsByClassName('theme-ambiance-select');
+	var amb = root.getElementsByClassName('theme-ambiance-select')[0];
 	amb.value = this.ambiance;
 	amb.addEventListener('change', function() {
 	    this.setAmbiance(amb.value);
