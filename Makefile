@@ -69,7 +69,7 @@ $(CACHE_ROOT)/common.tex.mdi: scripts/gencommon $(STATIC_ROOT)/steps-32x32.png $
 
 PANDOC_FLAGS := --standalone --toc -V "full-date:$(FULL_DATE)"
 PANDOC_HTML_FLAGS := -t html --mathjax='mathjax/MathJax.js?config=TeX-AMS_HTML' --css style.css 
-PANDOC_HTML_FLAGS += -H $(TEMPLATE_ROOT)/header.html --template $(TEMPLATE_ROOT)/template.html
+PANDOC_HTML_FLAGS += -H $(TEMPLATE_ROOT)/header.html --template=$(TEMPLATE_ROOT)/template.html
 ifeq ($(PANDOC_MAJOR_VERSION),1)
 PANDOC_FLAGS += -f markdown+definition_lists --smart
 else
