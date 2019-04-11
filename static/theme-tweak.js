@@ -69,6 +69,7 @@ var Theme = {
 
 	(function(amb,tw) {
 	    amb.value = this.ambiance;
+	    alert('Set ambiance value: '+amb.value);
 	    amb.addEventListener('change', function() {
 		tw.setAmbiance(amb.value).updateAll();
 	    });
