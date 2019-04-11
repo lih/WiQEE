@@ -5,7 +5,7 @@ TEMPLATE_ROOT := src/template
 CACHE_ROOT := cache
 STATIC_ROOT := static
 PUBLIC_ROOT := public
-SASSC := $(shell which sassc || which scss 2>/dev/null)
+SASSC := $(shell which sassc || which sass 2>/dev/null)
 
 SRC := $(wildcard $(PAGES_ROOT)/*.md)
 STATIC_SRC := $(wildcard $(STATIC_ROOT)/*)
@@ -25,6 +25,9 @@ export PAGES_ROOT STATIC_ROOT CACHE_ROOT PUBLIC_ROOT
 
 ifeq ($(CSS_COMPRESS),true)
 SASSC_FLAGS += --style compressed
+endif
+ifeq ($(notdir $(SASSC)),sass)
+SASSC_FLAGS += --no-source-map
 endif
 
 all: $(TARGETS)
