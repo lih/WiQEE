@@ -231,9 +231,9 @@ us its type, unsurprisingly by using the `type` builtin.
 
 We can see that $Set_{0}$ has type $Set_{1}$. In general, when a term
 has type $Set_{n}$ for some $n$, we can treat that term as a *type*,
-that may or may not contain *objects*. Every term has a type, that can
-be computed with `type` as we observed, but not every term *is* a
-type.
+that may or may not contain *objects*. Every well-formed term has a
+type, that can be computed with `type` as we observed, but not every
+term *is* a type, even well-formed.
 
 The proof context
 -----------------

@@ -283,7 +283,7 @@ Try It Out
 <div class="capricon-paragraphresult">
 
 </div>
-<p>We can see that <span class="math inline">\(Set_{0}\)</span> has type <span class="math inline">\(Set_{1}\)</span>. In general, when a term has type <span class="math inline">\(Set_{n}\)</span> for some <span class="math inline">\(n\)</span>, we can treat that term as a <em>type</em>, that may or may not contain <em>objects</em>. Every term has a type, that can be computed with <code>type</code> as we observed, but not every term <em>is</em> a type.</p>
+<p>We can see that <span class="math inline">\(Set_{0}\)</span> has type <span class="math inline">\(Set_{1}\)</span>. In general, when a term has type <span class="math inline">\(Set_{n}\)</span> for some <span class="math inline">\(n\)</span>, we can treat that term as a <em>type</em>, that may or may not contain <em>objects</em>. Every well-formed term has a type, that can be computed with <code>type</code> as we observed, but not every term <em>is</em> a type, even well-formed.</p>
 <h2 id="the-proof-context">The proof context</h2>
 <p>Many mathematical proofs begin by assuming the existence of a few objects, before studying those objects in more detail (“let n, m be two natural numbers, …”, “let f be a function from A to B, …”). Once those objects are <em>introduced</em> to the reader, the rest of the proof can refer to them as though they already had a proper value of the given type.</p>
 <h3 id="introducing-new-hypotheses">Introducing new hypotheses</h3>
@@ -366,7 +366,7 @@ Try It Out
 <li id="fn1" role="doc-endnote"><p>For now, 32-bit integers are the default, but if the need arises, I’ll be glad to throw in some BigInt or floating-point support<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
-      <div id="footer">Page generated on Thursday, April 11 of 2019, at 16:08 PM UTC, using capricon-0.13 and pandoc-2.7.2.</div>
+      <div id="footer">Page generated on Thursday, April 11 of 2019, at 16:12 PM UTC, using capricon-0.13 and pandoc-2.7.2.</div>
 </div></div></div>
 <script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'eol. { } def 'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def 'br { "<br/>" print } def  'collect { { 'exports empty def ${ } exports { ,{ ,{ vocabulary } } set-vocabulary ,{ ,{ stack } } set-stack ,{ exports } } exec } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { source-dir "%s%s" format source exec } def 'require { dup dup "  * Required module: [%s]\(%s.html\)\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def   </script>
 <div id="capricon-console"></div>
