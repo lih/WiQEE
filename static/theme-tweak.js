@@ -133,8 +133,6 @@ var Theme = {
 		span.textContent = this.getPropText(prop);
 	    }
 	}
-
-	elt.classList.toggle('smooth-colors');
     },
     updateSlider: function(i) {
 	if(i === null) {
