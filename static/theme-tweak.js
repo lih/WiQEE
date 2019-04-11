@@ -57,7 +57,7 @@ var Theme = {
     roots: [],
     config: ThemeConfig,
     props: JSON.parse(window.localStorage.getItem('theme/'+window.location.pathname)) || ThemeConfig.defaultProps,
-    ambiance: window.localStorage.getItem('ambiance/'+window.location.pathname) || ThemeConfig.defaultAmbiance,
+    ambiance: window.localStorage.getItem('theme-ambiance') || ThemeConfig.defaultAmbiance,
     
     attach: function (root) {
 	this.roots.push(root);
