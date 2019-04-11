@@ -101,6 +101,10 @@ $endif$
     });
   </script>
   <button onclick="Theme.setProp('light', !(Theme.getPropVal('light'))).updateAll()">Invert Lights</button>
+  <select onchange="Theme.setAmbiance(this.value)">
+    <option value="day">Day</option>
+    <option value="night">Night</option>
+  </select>
   <style>.theme-prop-display { min-width: 4em; display: inline-block; }</style>
   <label class="theme-slider" style="display: block">Primary hue<input type="range" min="0" max="360" value="180"/><span class="theme-prop-display" data-prop-name="--prim-hue"></span></label>	
   <label class="theme-slider" style="display: block">Primary saturation<input type="range" min="0" max="100" value="50" /><span class="theme-prop-display" data-prop-name="--prim-saturation"></span></label>
