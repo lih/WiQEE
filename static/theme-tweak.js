@@ -73,7 +73,6 @@ var Theme = {
 		var prop = th_val.getAttribute('data-prop-name');
 		slide.value = tw.getPropVal(prop);
 		slide.addEventListener('input',function () {
-		    alert('slider for '+prop);
 		    tw.setProp(root,prop,this.value).updateAll();
 		});
 	    })(this,elt,elt.getElementsByTagName('input')[0]);
@@ -97,7 +96,6 @@ var Theme = {
 	    var prop = this.config.propNames[p];
 	    stl = stl + " " + prop+': '+this.getPropText(prop) + ";"
 	}
-	alert(stl);
 	return stl;
     },
     updateElement: function (i) {
