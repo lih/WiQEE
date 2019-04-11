@@ -46,7 +46,7 @@
 }
 
 .opaque, .menu a, .frame .sheet .expansible.inline, .frame .sheet .expansible input[type=checkbox] ~ *.expand-else, .frame .sheet .expansible input[type=checkbox] ~ *.expand-then, .frame .sheet .expansible, .frame .sheet button, .frame .sheet input, .frame .sheet textarea, .frame .sheet pre, .frame .sheet code, .frame .sheet, .frame {
-  background-color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--low-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--low-saturation) * calc(1 / (14 - var(--level)))), calc((1 - var(--luminosity)) * 100% + calc(calc((var(--level-incr) + 1) / 2) * var(--luminosity) + calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity))) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  background-color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--low-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--low-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% - calc(calc((var(--level-incr) + 1) / 2) * var(--luminosity) + calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity))) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
 .with-border, .menu.right > ul li ul, .menu:not(.right) > ul li ul, .frame .sheet button, .frame .sheet input, .frame .sheet textarea {
