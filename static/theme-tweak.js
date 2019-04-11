@@ -77,15 +77,15 @@ var Theme = {
 	var elts = root.getElementsByClassName('theme-slider');
 	for(var x in elts) {
 	    var elt = elts.item(x);
-	    this.sliders.push(elt.getElementsByTagName('input')[0]);
 	    (function (tw,elt,slide) {
 		var th_val = elt.getElementsByClassName('theme-prop-display')[0];
 		var prop = th_val.getAttribute('data-prop-name');
+		tw.sliders.push({ slide: slide, prop: prop });
 		slide.value = tw.getPropVal(prop);
 		slide.addEventListener('input',function () {
 		    tw.setProp(prop,this.value).updateAll();
 		});
-	    })(this,elt,this.sliders[this.sliders.length - 1]);
+	    })(this,elt,elt.getElementsByTagName('input')[0]);
 	}
 
 	return rootI;
@@ -128,9 +128,16 @@ var Theme = {
 	    }
 	}
     },
+    updateSlider: function(i) {
+	var x = this.sliders[i];
+	x.slide.value = this.getPropVal(x.prop);
+    },
     updateAll: function() {
 	for(var i=0;i<this.roots.length; i++) {
 	    this.updateElement(i);
+	}
+	for(var i=0;i<this.sliders.length; i++) {
+	    this.updateSlider(i);
 	}
     }
 };
