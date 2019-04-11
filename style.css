@@ -21,7 +21,7 @@
 }
 
 .ground-light {
-  --level-incr: 1;
+  --level-incr: -1;
   --prim-hue: 53deg;
   --prim-saturation: 36%;
   --low-hue: -50deg;
@@ -30,11 +30,11 @@
   --high-saturation: 30%;
 }
 .ground-light .reverse {
-  --level-incr: -1;
+  --level-incr: 1;
 }
 
 .ground-dark {
-  --level-incr: -1;
+  --level-incr: 1;
   --prim-hue: 53deg;
   --prim-saturation: 36%;
   --low-hue: 50deg;
@@ -43,7 +43,7 @@
   --high-saturation: -30%;
 }
 .ground-dark .reverse {
-  --level-incr: 1;
+  --level-incr: -1;
 }
 
 .opaque, body, #capricon-console .capricon-steps.active .header, .capricon span.quote, .menu a, .frame .sheet .expansible.inline, .frame .sheet .expansible input[type=checkbox] ~ *.expand-else, #body-theme-chooser .sheet .expansible input[type=checkbox] ~ *.expand-else, #capricon-console .sheet .expansible input[type=checkbox] ~ *.expand-else, #capricon-console .capricon-steps .expansible input[type=checkbox] ~ *.expand-else, .frame .sheet .expansible input[type=checkbox] ~ *.expand-then, #body-theme-chooser .sheet .expansible input[type=checkbox] ~ *.expand-then, #capricon-console .sheet .expansible input[type=checkbox] ~ *.expand-then, #capricon-console .capricon-steps .expansible input[type=checkbox] ~ *.expand-then, .frame .sheet .expansible, #body-theme-chooser .sheet .expansible, #capricon-console .sheet .expansible, #capricon-console .capricon-steps .expansible, .frame .sheet button, #body-theme-chooser .sheet button, #capricon-console .sheet button, #capricon-console .capricon-steps button, .frame .sheet input, #body-theme-chooser .sheet input, #capricon-console .sheet input, #capricon-console .capricon-steps input, .frame .sheet textarea, #body-theme-chooser .sheet textarea, #capricon-console .sheet textarea, #capricon-console .capricon-steps textarea, .frame .sheet pre, #body-theme-chooser .sheet pre, #capricon-console .sheet pre, #capricon-console .capricon-steps pre, .frame .sheet code, #body-theme-chooser .sheet code, #capricon-console .sheet code, #capricon-console .capricon-steps code, .frame .sheet, #body-theme-chooser .sheet, #capricon-console .sheet, #capricon-console .capricon-steps, .frame, #body-theme-chooser, #capricon-console {

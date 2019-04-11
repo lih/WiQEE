@@ -20,7 +20,7 @@
 }
 
 .ground-light {
-  --level-incr: 1;
+  --level-incr: -1;
   --prim-hue: 53deg;
   --prim-saturation: 36%;
   --low-hue: -50deg;
@@ -29,11 +29,11 @@
   --high-saturation: 30%;
 }
 .ground-light .reverse {
-  --level-incr: -1;
+  --level-incr: 1;
 }
 
 .ground-dark {
-  --level-incr: -1;
+  --level-incr: 1;
   --prim-hue: 53deg;
   --prim-saturation: 36%;
   --low-hue: 50deg;
@@ -42,7 +42,7 @@
   --high-saturation: -30%;
 }
 .ground-dark .reverse {
-  --level-incr: 1;
+  --level-incr: -1;
 }
 
 .opaque, .menu a, .frame .sheet .expansible.inline, .frame .sheet .expansible input[type=checkbox] ~ *.expand-else, .frame .sheet .expansible input[type=checkbox] ~ *.expand-then, .frame .sheet .expansible, .frame .sheet button, .frame .sheet input, .frame .sheet textarea, .frame .sheet pre, .frame .sheet code, .frame .sheet, .frame {
