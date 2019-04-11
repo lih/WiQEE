@@ -1,16 +1,18 @@
+function rawUnit(u) { return function (x) { x + u; }; }
+
 var Theme = {
     'props': JSON.parse(localStorage.getItem('theme/'+window.location.pathname)),
     'propUnits': {
-	'--luminosity': '%',
-	'--prim-hue': 'deg',
-	'--low-hue': 'deg',
-	'--high-hue': 'deg',
-	'--prim-saturation': '%',
-	'--low-saturation': '%',
-	'--high-saturation': '%',
-	'--min-contrast': '%',
-	'--max-contrast': '%',
-	'font-size': '%',
+	'--luminosity': function (n) { return (n / 100).toString(); },
+	'--prim-hue': rawUnit('deg'),
+	'--low-hue': rawUnit('deg'),
+	'--high-hue': rawUnit('deg'),
+	'--prim-saturation': rawUnit('%'),
+	'--low-saturation': rawUnit('%'),
+	'--high-saturation': rawUnit('%'),
+	'--min-contrast': rawUnit('%'),
+	'--max-contrast': rawUnit('%'),
+	'font-size': rawUnit('%'),
     },
     'propNames': ['--prim-hue','--prim-saturation','--low-hue','--low-saturation','--high-hue','--high-saturation', '--min-contrast', '--max-contrast', '--luminosity', 'font-size'],
     'setProp': function (e,prop,val) {
@@ -26,7 +28,8 @@ var Theme = {
 	else {
 	    var stl = "", p;
 	    for(var p in this.propNames) {
-		stl = stl + " " + this.propNames[p]+': '+this.props[this.propNames[p]] + ";"
+		var prop = this.propNames[p];
+		stl = stl + " " + prop+': '+this.propUnits[prop](this.props[prop]) + ";"
 	    }
 	    e.setAttribute('style', stl);
 
@@ -34,7 +37,8 @@ var Theme = {
 	    for (var spanI in spans) {
 		var span = spans.item(spanI);
 		if(span !== null) {
-		    span.textContent = this.props[span.getAttribute('data-prop-name')];
+		    var prop = span.getAttribute('data-prop-name');
+		    span.textContent = this.propUnits[prop](this.props[prop]);
 		}
 	    }
 	}
@@ -58,7 +62,7 @@ var Theme = {
 		var prop = th_val.getAttribute('data-prop-name');
 		slide.value = parseInt(tw.props[prop]);
 		slide.addEventListener('input',function () {
-		    tw.setProp(e,prop,this.value + tw.propUnits[prop]);
+		    tw.setProp(e,prop,this.value);
 		});
 	    })(this,elt,elt.getElementsByTagName('input')[0]);
 	}
@@ -68,11 +72,12 @@ var Theme = {
 if(Theme.props === null) {
     Theme.props = {
 	'light': true,
-	'--prim-hue': '53deg', '--prim-saturation': '36%',
-	'--low-hue': '-50deg', '--low-saturation': '30%',
-	'--high-hue': '50deg', '--high-saturation': '30%',
-	'--min-contrast': '50%', '--max-contrast': '85%',
-	'font-size': '100%'
+	'--prim-hue': '53', '--prim-saturation': '36',
+	'--low-hue': '-50', '--low-saturation': '30',
+	'--high-hue': '50', '--high-saturation': '30',
+	'--min-contrast': '50', '--max-contrast': '85',
+	'--luminosity': '50',
+	'font-size': '100'
     };
 }
 
