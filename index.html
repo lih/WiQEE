@@ -146,7 +146,7 @@ Such code is executed, and its output is added to the document.
     });
   </script>
   <button onclick="Theme.setProp('light', !(Theme.getPropVal('light'))).updateAll()">Invert Lights</button>
-  <select onchange="Theme.setAmbiance(value).updateAll()">
+  <select class="theme-ambiance-select">
     <option value="day">Day</option>
     <option value="night">Night</option>
   </select>
