@@ -20,6 +20,7 @@ var ThemeConfig = {
 	    '--high-hue': 50, '--high-saturation': 30,
 	    '--min-contrast': 50, '--max-contrast': 85,
 	    '--luminosity': 50,
+	    'font-size': 100
 	}
     },
     propUnits: {
@@ -56,7 +57,7 @@ var Theme = {
     roots: [],
     config: ThemeConfig,
     props: JSON.parse(window.localStorage.getItem('theme/'+window.location.pathname)) || ThemeConfig.defaultProps,
-    ambiance: window.localStorage.getItem('ambiance/'+window.location.pathname) || ThemeConfig.defaultAmbiance,
+    ambiance: window.localStorage.getItem('theme-ambiance') || ThemeConfig.defaultAmbiance,
     
     attach: function (root) {
 	this.roots.push(root);
