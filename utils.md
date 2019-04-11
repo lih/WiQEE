@@ -1,7 +1,7 @@
 % Miscellaneous utilities
 % Marc Coiffier
 
-Reminder : all builtin functions can be found documented [here][:lexicon]
+Reminder : all builtin functions can be found documented [here](lexicon.html)
 
 #### Exporting definitions
 
