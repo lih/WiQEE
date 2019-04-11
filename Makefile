@@ -62,7 +62,7 @@ $(CACHE_ROOT)/%.tex.md $(CACHE_ROOT)/%.html.md: $(PAGES_ROOT)/%.md $(PAGES_ROOT)
 	rm -f $(CACHE_ROOT)/$*.mdo.blob
 	echo "'$* require" | capricon $(PAGES_ROOT)/prelude $(PAGES_ROOT)/render_prelude $(CACHE_ROOT)/env
 
-$(CACHE_ROOT)/common.mdi: scripts/gencommon $(STATIC_ROOT)/steps.png $(PAGES_ROOT)/prelude | $(CACHE_ROOT)
+$(CACHE_ROOT)/common.mdi: scripts/gencommon $(STATIC_ROOT)/steps-32x32.png $(PAGES_ROOT)/prelude | $(CACHE_ROOT)
 	$^ > $@
 
 PANDOC_FLAGS := --standalone --toc -V "full-date:$(FULL_DATE)"
