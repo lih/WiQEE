@@ -121,6 +121,7 @@ var Theme = {
 	    return;
 	}
 	var elt = this.roots[i];
+	elt.classList.toggle('smooth-colors');
 	elt.setAttribute('style', this.getStyleText());
 	setLightGround(elt,this.getPropVal('light'));
 	
