@@ -35,12 +35,12 @@ var ThemeConfig = {
 	'font-size': rawUnit('%'),
     },
 
-    propNames = ['--prim-hue','--prim-saturation',
-		 '--low-hue','--low-saturation',
-		 '--high-hue','--high-saturation',
-		 '--min-contrast', '--max-contrast',
-		 '--luminosity',
-		 'font-size'],
+    propNames: ['--prim-hue','--prim-saturation',
+		'--low-hue','--low-saturation',
+		'--high-hue','--high-saturation',
+		'--min-contrast', '--max-contrast',
+		'--luminosity',
+		'font-size']
 };
 
 function setGroundClass(e,isLight) {
