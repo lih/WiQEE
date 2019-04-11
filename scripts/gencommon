@@ -1,16 +1,19 @@
 #!/bin/bash
+steps="$1"; shift
+prelude="$1"; shift
+type="$1"; shift
 echo
 echo ---
 capricon_version="$(capricon src/pages/prelude <<< "version print")"
 printf "capricon-version: \"%s\"\n" "$capricon_version"
 printf "pandoc-version: \"%s\"\n" $(pandoc --version | head -1 | cut -d' ' -f2)
-printf "steps-image-url: \"data:image/png;base64,%s\"\n" "$(base64 -w0 "$1")"
-printf "prelude-text: '<script id=\"capricon-prelude\" type=\"text/plain\">%s</script>'\n" "$(sed ':loop;$!{N;bloop};'s/\'/\'\'/g';s/\n/ /gm' "$2")"
+printf "steps-image-url: \"data:image/png;base64,%s\"\n" "$(base64 -w0 "$steps")"
+printf "prelude-text: '<script id=\"capricon-prelude\" type=\"text/plain\">%s</script>'\n" "$(sed ':loop;$!{N;bloop};'s/\'/\'\'/g';s/\n/ /gm' "$prelude")"
 echo --- 
 echo
 for i in "$PAGES_ROOT"/*.md; do
     i=${i#"$PAGES_ROOT/"}; i=${i%.md}
-    printf "[:%s]: %s.html\n" $i $i
+    printf "[:%s]: %s.%s\n" $i $i "$type"
 done
 echo
 cat <<EOF

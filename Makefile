@@ -62,8 +62,10 @@ $(CACHE_ROOT)/%.tex.md $(CACHE_ROOT)/%.html.md: $(PAGES_ROOT)/%.md $(PAGES_ROOT)
 	rm -f $(CACHE_ROOT)/$*.mdo.blob
 	echo "'$* require" | capricon $(PAGES_ROOT)/prelude $(PAGES_ROOT)/render_prelude $(CACHE_ROOT)/env
 
-$(CACHE_ROOT)/common.mdi: scripts/gencommon $(STATIC_ROOT)/steps-32x32.png $(PAGES_ROOT)/prelude | $(CACHE_ROOT)
-	$^ > $@
+$(CACHE_ROOT)/common.html.mdi: scripts/gencommon $(STATIC_ROOT)/steps-32x32.png $(PAGES_ROOT)/prelude | $(CACHE_ROOT)
+	$^ html > $@
+$(CACHE_ROOT)/common.tex.mdi: scripts/gencommon $(STATIC_ROOT)/steps-32x32.png $(PAGES_ROOT)/prelude | $(CACHE_ROOT)
+	$^ tex > $@
 
 PANDOC_FLAGS := --standalone --toc -V "full-date:$(FULL_DATE)"
 PANDOC_HTML_FLAGS := -t html --mathjax='mathjax/MathJax.js?config=TeX-AMS_HTML' --css style.css
