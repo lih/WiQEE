@@ -94,6 +94,7 @@ var Theme = {
     setAmbiance: function(ambiance) {
 	this.ambiance = ambiance;
 	window.localStorage.setItem('ambiance/'+window.location.pathname, this.ambiance);
+	return this;
     },
     getStyleText: function() {
 	var stl = "", p;
