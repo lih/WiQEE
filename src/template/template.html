@@ -97,7 +97,7 @@ $endif$
 <div id="body-theme-chooser" style="z-index: 100; position: fixed; text-align: right; right: 0; bottom: 0; font-size: 1rem !important" class="opaque sheet frame level-12">
   <script>
     document.addEventListener('DOMContentLoaded',function() {
-	Theme.attach(document.getElementsByTagName('body')[0]);
+	alert(Theme.attach(document.getElementsByTagName('body')[0]));
     });
   </script>
   <button onclick="Theme.setProp('light', !(Theme.getPropVal('light'))).updateAll()">Invert Lights</button>
