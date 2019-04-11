@@ -75,9 +75,7 @@ else
 PANDOC_FLAGS += -f markdown+definition_lists+smart
 endif
 
-.PHONY: -H --template
--H:
---template: 
+-%:
 
 $(PUBLIC_ROOT)/%.html: -H $(TEMPLATE_ROOT)/header.html --template $(TEMPLATE_ROOT)/template.html $(CACHE_ROOT)/%.html.md $(CACHE_ROOT)/common.html.mdi | $(PUBLIC_ROOT)
 	pandoc $(PANDOC_FLAGS) $(PANDOC_HTML_FLAGS) -V module:$* $^ -o $@
