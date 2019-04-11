@@ -79,10 +79,10 @@ endif
 -H:
 --template: 
 
-$(PUBLIC_ROOT)/%.html: $(CACHE_ROOT)/%.html.md -H $(TEMPLATE_ROOT)/header.html --template $(TEMPLATE_ROOT)/template.html $(CACHE_ROOT)/common.html.mdi | $(PUBLIC_ROOT)
-	pandoc $(PANDOC_FLAGS) $(PANDOC_HTML_FLAGS) -V module:$* $^ > $@
-$(PUBLIC_ROOT)/%.pdf: $(CACHE_ROOT)/%.tex.md $(TEMPLATE_ROOT)/header.tex $(CACHE_ROOT)/common.tex.mdi | $(PUBLIC_ROOT)
-	pandoc $(PANDOC_FLAGS) -H $(TEMPLATE_ROOT)/header.tex -V module:$* $< -o $@
+$(PUBLIC_ROOT)/%.html: -H $(TEMPLATE_ROOT)/header.html --template $(TEMPLATE_ROOT)/template.html $(CACHE_ROOT)/%.html.md $(CACHE_ROOT)/common.html.mdi | $(PUBLIC_ROOT)
+	pandoc $(PANDOC_FLAGS) $(PANDOC_HTML_FLAGS) -V module:$* $^ -o $@
+$(PUBLIC_ROOT)/%.pdf: -H $(TEMPLATE_ROOT)/header.tex $(CACHE_ROOT)/%.tex.md $(CACHE_ROOT)/common.tex.mdi | $(PUBLIC_ROOT)
+	pandoc $(PANDOC_FLAGS) -V module:$* $^ -o $@
 
 $(PUBLIC_ROOT)/theme-test.html: $(STATIC_ROOT)/theme-test.html
 	cp $< $@
