@@ -61,32 +61,18 @@
   </div><div id="content-scroll"><div id="content" class="sheet" tabindex="1">
       <h1>First steps with CaPriCon</h1>
 <p>This page is intended as a tutorial on the use of a stack-based proof environment like the one provided on this site. Since we’re going to need to print things out, and we don’t yet have the knowledge to write such features ourselves, let’s first import a few useful functions from a preexisting module.</p>
-<label class="expansible box"><input type="checkbox" checked="checked" /><span class="expand-else capricon-show"></span><span class="expand-then capricon-hide"></span><span class="expand-then" style="--num-lines: 2.25">
-<div class="capricon-steps">
-<pre class="capricon capricon-paragraph capricon-context"><span class="symbol" data-symbol-name="'utils">'utils</span> <span class="symbol" data-symbol-name="require">require</span> <span class="symbol" data-symbol-name="import">import</span></pre>
-<div class="user-input interactive">
-<button class="capricon-trigger">
-Try It Out
-</button>
-<label class="capricon-input-prefix">&gt; <input type="text" class="capricon-input" /></label>
-<pre class="capricon-output"></pre>
-</div>
-</div>
-</span></label>
-<div class="capricon-paragraphresult">
 <ul>
 <li>Required module: <a href="utils.html">utils</a></li>
 </ul>
-</div>
 <p>Among other things, this module defines one function that will be of interest to us : <code>vis</code>. When called, this function simply prints out every hypothesis in context and every value currently on the stack. It’s very useful as the final word in a sentence, to show the resulting context. It doesn’t change anything, so feel free to sprinkle it at any point of your scripts for debugging purposes.</p>
 <p>Now, in order to understand what a stack-based language is, we first have to understand the basic concept of a <em>stack</em>, and the role it plays during the execution of a script.</p>
-<p>{.newpage.}</p>
 <h2 id="stacks-and-the-stack">Stacks, and The Stack</h2>
 <p>A stack, in general, is a list of values, to which we arbitrarily assign two extremes, a <em>top</em> and a <em>bottom</em>. We can operate on either side, but as a general simplifying convention, all stack operations will take place at the top unless specified otherwise.</p>
 <p>The most fundamental operations that can be carried out on a stack are <em>pushing</em> and <em>popping</em> values to and from it (at the top).</p>
 <p><br/></p>
 <p>What does that have to do with CaPriCon ? Well, stack-based languages, as their name implies, implicitly operate on a stack, that serves as temporary storage for all the intermediate results of a computation. When we talk about <em>the stack</em>, without any more context, you can assume we’re talking about this one.</p>
 <p>In most stack-based languages, including CaPriCon, words designate <em>instructions</em> that modify the stack according to predefined rules, and complex scripts can be written by stringing words together in the right order, changing the stack in ever more interesting ways.</p>
+<hr/>
 <h2 id="your-first-words">Your First Words</h2>
 <p>Let’s start talking a little. As mentioned above, a sentence (or program) is comprised of several words separated by whitespace. Words can fall into one of three categories :</p>
 <ul>
@@ -234,7 +220,7 @@ Try It Out
 <p>This concludes the tour of all the basic CaPriCon language features. Once you’ve mastered those three concepts (nouns, verbs and quotes), and learned about enough builtin operations, all the programs, proofs and examples presented from this point on will be within your reach.</p>
 <p>There’s just one last detail we haven’t gotten around to : building actual proofs. Until now, we’ve been playing around with names and definitions, but we haven’t yet proven anything of interest. That’s with good reason, because we don’t yet know how to build proofs.</p>
 <p>Please bear with me for this last section, as I try to explain how to build mathematical proofs out of stacks, quotes and a bit of magic.</p>
-<p>{.newpage.}</p>
+<hr/>
 <h1 id="proof-assembly">Proof assembly</h1>
 <p>The easiest way to get comfortable manipulating mathematical proofs and theorems is to treat them like regular objects. In CaPriCon, theorems and proofs – which will hereafter be referred to as <em>terms</em> – are like numbers and symbols, that can be pushed onto the stack, or saved in the vocabulary.</p>
 <h2 id="types-and-universes">Types and Universes</h2>
@@ -364,7 +350,7 @@ Try It Out
 <li id="fn1" role="doc-endnote"><p>For now, 32-bit integers are the default, but if the need arises, I’ll be glad to throw in some BigInt or floating-point support<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
-      <div id="footer">Page generated on Thursday, April 11 of 2019, at 22:34 PM UTC, using capricon-0.13 and pandoc-2.7.2.</div>
+      <div id="footer">Page generated on Thursday, April 11 of 2019, at 22:49 PM UTC, using capricon-0.13.1 and pandoc-2.7.2.</div>
 </div></div></div>
 <script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'eol. { } def 'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def 'newline { } def  'collect { { 'exports empty def ${ } exports { ,{ ,{ vocabulary } } set-vocabulary ,{ ,{ stack } } set-stack ,{ exports } } exec } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { source-dir "%s%s" format source exec } def 'require { dup dup "  * Required module: [%s][:%s]\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def   </script>
 <div id="capricon-console"></div>

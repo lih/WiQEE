@@ -7,7 +7,7 @@ need to print things out, and we don't yet have the knowledge to write
 such features ourselves, let's first import a few useful functions
 from a preexisting module.
 
-> 'utils require import
+{.'utils require import.}
 
 Among other things, this module defines one function that will be of
 interest to us : `vis`. When called, this function simply prints out
@@ -19,8 +19,6 @@ sprinkle it at any point of your scripts for debugging purposes.
 Now, in order to understand what a stack-based language is, we first
 have to understand the basic concept of a *stack*, and the role it
 plays during the execution of a script.
-
-{.newpage.}
 
 Stacks, and The Stack
 ---------------------
@@ -45,6 +43,8 @@ In most stack-based languages, including CaPriCon, words designate
 *instructions* that modify the stack according to predefined rules,
 and complex scripts can be written by stringing words together in the
 right order, changing the stack in ever more interesting ways.
+
+{.newpage.}
 
 Your First Words
 ----------------
