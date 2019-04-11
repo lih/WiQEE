@@ -101,7 +101,7 @@ var Theme = {
     },
     setAmbiance: function(ambiance) {
 	this.ambiance = ambiance;
-	window.localStorage.setItem('ambiance/'+window.location.pathname, this.ambiance);
+	window.localStorage.setItem('theme-ambiance', this.ambiance);
 	return this;
     },
     getStyleText: function() {
