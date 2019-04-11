@@ -72,12 +72,12 @@ var Theme = {
 if(Theme.props === null) {
     Theme.props = {
 	'light': true,
-	'--prim-hue': '53', '--prim-saturation': '36',
-	'--low-hue': '-50', '--low-saturation': '30',
-	'--high-hue': '50', '--high-saturation': '30',
-	'--min-contrast': '50', '--max-contrast': '85',
-	'--luminosity': '50',
-	'font-size': '100'
+	'--prim-hue': 53, '--prim-saturation': 36,
+	'--low-hue': -50, '--low-saturation': 30,
+	'--high-hue': 50, '--high-saturation': 30,
+	'--min-contrast': 50, '--max-contrast': 85,
+	'--luminosity': 50,
+	'font-size': 100
     };
 }
 
