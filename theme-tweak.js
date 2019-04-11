@@ -1,6 +1,7 @@
 var Theme = {
     'props': JSON.parse(localStorage.getItem('theme/'+window.location.pathname)),
     'propUnits': {
+	'--luminosity': '%',
 	'--prim-hue': 'deg',
 	'--low-hue': 'deg',
 	'--high-hue': 'deg',
@@ -11,7 +12,7 @@ var Theme = {
 	'--max-contrast': '%',
 	'font-size': '%',
     },
-    'propNames': ['--prim-hue','--prim-saturation','--low-hue','--low-saturation','--high-hue','--high-saturation', '--min-contrast', '--max-contrast', 'font-size'],
+    'propNames': ['--prim-hue','--prim-saturation','--low-hue','--low-saturation','--high-hue','--high-saturation', '--min-contrast', '--max-contrast', '--luminosity', 'font-size'],
     'setProp': function (e,prop,val) {
 	var oldval = this.props[prop];
 	this.props[prop] = val;
