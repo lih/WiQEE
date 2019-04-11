@@ -74,7 +74,7 @@ var Theme = {
 		slide.value = tw.getPropVal(prop);
 		slide.addEventListener('input',function () {
 		    alert('slider for '+prop);
-		    tw.setProp(root,prop,this.value);
+		    tw.setProp(root,prop,this.value).updateAll();
 		});
 	    })(this,elt,elt.getElementsByTagName('input')[0]);
 	}
