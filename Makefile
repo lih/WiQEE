@@ -65,7 +65,7 @@ $(CACHE_ROOT)/%.tex.md $(CACHE_ROOT)/%.html.md: $(PAGES_ROOT)/%.md $(PAGES_ROOT)
 $(CACHE_ROOT)/common.html.mdi: scripts/gencommon $(STATIC_ROOT)/steps-32x32.png $(PAGES_ROOT)/prelude | $(CACHE_ROOT)
 	$^ html > $@
 $(CACHE_ROOT)/common.tex.mdi: scripts/gencommon $(STATIC_ROOT)/steps-32x32.png $(PAGES_ROOT)/prelude | $(CACHE_ROOT)
-	$^ tex > $@
+	$^ pdf > $@
 
 PANDOC_FLAGS := --standalone --toc -V "full-date:$(FULL_DATE)"
 PANDOC_HTML_FLAGS := -H $(TEMPLATE_ROOT)/header.html --template $(TEMPLATE_ROOT)/template.html
@@ -77,9 +77,9 @@ PANDOC_FLAGS += -f markdown+definition_lists+smart
 endif
 
 $(PUBLIC_ROOT)/%.html: $(TEMPLATE_ROOT)/header.html $(TEMPLATE_ROOT)/template.html $(CACHE_ROOT)/%.html.md $(CACHE_ROOT)/common.html.mdi | $(PUBLIC_ROOT)
-	pandoc $(PANDOC_FLAGS) $(PANDOC_HTML_FLAGS) -V module:$* $^ -o $@
+	pandoc $(PANDOC_FLAGS) $(PANDOC_HTML_FLAGS) -V module:$* $(CACHE_ROOT)/$*.html.md $(CACHE_ROOT)/common.html.mdi -o $@
 $(PUBLIC_ROOT)/%.pdf: $(TEMPLATE_ROOT)/header.tex $(CACHE_ROOT)/%.tex.md $(CACHE_ROOT)/common.tex.mdi | $(PUBLIC_ROOT)
-	pandoc $(PANDOC_FLAGS) -H $(TEMPLATE_ROOT)/header.tex -V module:$* $^ -o $@
+	pandoc $(PANDOC_FLAGS) -H $(TEMPLATE_ROOT)/header.tex -V module:$* $(CACHE_ROOT)/$*.tex.md $(CACHE_ROOT)/common.tex.mdi -o $@
 
 $(PUBLIC_ROOT)/theme-test.html: $(STATIC_ROOT)/theme-test.html
 	cp $< $@
