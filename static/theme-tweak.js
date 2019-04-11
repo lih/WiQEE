@@ -116,7 +116,7 @@ var Theme = {
     },
     updateElement: function (i) {
 	if(i === null) {
-	    for(var j=0; j<this.sliders.length; j++)
+	    for(var j=0; j<this.roots.length; j++)
 		this.updateElement(j);
 	    return;
 	}
