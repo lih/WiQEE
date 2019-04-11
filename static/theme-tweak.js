@@ -76,7 +76,7 @@ if(Theme.props === null) {
 	'--low-hue': '-50', '--low-saturation': '30',
 	'--high-hue': '50', '--high-saturation': '30',
 	'--min-contrast': '50', '--max-contrast': '85',
-	'--luminosity': '50'
+	'--luminosity': '50',
 	'font-size': '100'
     };
 }
