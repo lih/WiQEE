@@ -7,7 +7,7 @@ need to print things out, and we don't yet have the knowledge to write
 such features ourselves, let's first import a few useful functions
 from a preexisting module.
 
-{.'utils require import.}
+> 'utils require import
 
 Among other things, this module defines one function that will be of
 interest to us : `vis`. When called, this function simply prints out
