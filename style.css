@@ -476,8 +476,11 @@
   text-decoration: none;
   line-height: 1.618em;
 }
-.menu a:hover {
+.menu a:hover:not(:active) {
   --level: 6;
+}
+.menu a:active {
+  --level: 9;
 }
 .menu > ul {
   opacity: 0;
