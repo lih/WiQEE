@@ -101,7 +101,7 @@ var Theme = {
     updateElement: function (i) {
 	var elt = this.roots[i];
 	elt.setAttribute('style', this.getStyleText());
-	setGroundClass(elt.getPropVal('light'));
+	setGroundClass(elt,this.getPropVal('light'));
 	
 	var spans = elt.getElementsByClassName('theme-prop-display');
 	for (var spanI in spans) {
