@@ -55,6 +55,7 @@ function setLightGround(e,isLight) {
 
 var Theme = {
     roots: [],
+    sliders: [],
     config: ThemeConfig,
     props: JSON.parse(window.localStorage.getItem('theme/'+window.location.pathname)) || ThemeConfig.defaultProps,
     ambiance: window.localStorage.getItem('theme-ambiance') || ThemeConfig.defaultAmbiance,
@@ -76,6 +77,7 @@ var Theme = {
 	var elts = root.getElementsByClassName('theme-slider');
 	for(var x in elts) {
 	    var elt = elts.item(x);
+	    this.sliders.push(elt.getElementsByTagName('input')[0]);
 	    (function (tw,elt,slide) {
 		var th_val = elt.getElementsByClassName('theme-prop-display')[0];
 		var prop = th_val.getAttribute('data-prop-name');
@@ -83,7 +85,7 @@ var Theme = {
 		slide.addEventListener('input',function () {
 		    tw.setProp(prop,this.value).updateAll();
 		});
-	    })(this,elt,elt.getElementsByTagName('input')[0]);
+	    })(this,elt,this.sliders[this.sliders.length - 1]);
 	}
 
 	return rootI;
@@ -122,7 +124,6 @@ var Theme = {
 	    var span = spans.item(spanI);
 	    if(span !== null) {
 		var prop = span.getAttribute('data-prop-name');
-		span.value = this.getPropVal(prop);
 		span.textContent = this.getPropText(prop);
 	    }
 	}
