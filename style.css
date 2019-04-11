@@ -47,116 +47,116 @@
 }
 
 .opaque, body, #capricon-console .capricon-steps.active .header, .capricon span.quote, .menu a, .frame .sheet .expansible.inline, .frame .sheet .expansible input[type=checkbox] ~ *.expand-else, #body-theme-chooser .sheet .expansible input[type=checkbox] ~ *.expand-else, #capricon-console .sheet .expansible input[type=checkbox] ~ *.expand-else, #capricon-console .capricon-steps .expansible input[type=checkbox] ~ *.expand-else, .frame .sheet .expansible input[type=checkbox] ~ *.expand-then, #body-theme-chooser .sheet .expansible input[type=checkbox] ~ *.expand-then, #capricon-console .sheet .expansible input[type=checkbox] ~ *.expand-then, #capricon-console .capricon-steps .expansible input[type=checkbox] ~ *.expand-then, .frame .sheet .expansible, #body-theme-chooser .sheet .expansible, #capricon-console .sheet .expansible, #capricon-console .capricon-steps .expansible, .frame .sheet button, #body-theme-chooser .sheet button, #capricon-console .sheet button, #capricon-console .capricon-steps button, .frame .sheet input, #body-theme-chooser .sheet input, #capricon-console .sheet input, #capricon-console .capricon-steps input, .frame .sheet textarea, #body-theme-chooser .sheet textarea, #capricon-console .sheet textarea, #capricon-console .capricon-steps textarea, .frame .sheet pre, #body-theme-chooser .sheet pre, #capricon-console .sheet pre, #capricon-console .capricon-steps pre, .frame .sheet code, #body-theme-chooser .sheet code, #capricon-console .sheet code, #capricon-console .capricon-steps code, .frame .sheet, #body-theme-chooser .sheet, #capricon-console .sheet, #capricon-console .capricon-steps, .frame, #body-theme-chooser, #capricon-console {
-  background-color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--low-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--low-saturation) * calc(1 / (14 - var(--level)))), calc((1 - var(--luminosity)) * 100% + calc(calc((var(--level-incr) - 1) / 2) * var(--luminosity) + calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity))) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  background-color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--low-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--low-saturation) * calc(1 / (14 - var(--level)))), calc((1 - var(--luminosity)) * 100% + calc(calc((var(--level-incr) - 1) / 2) * var(--luminosity) + calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity))) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 .with-border, #capricon-console .capricon-steps, .user-input .capricon-input-prefix, .menu.right > ul li ul, .menu:not(.right) > ul li ul, .frame .sheet button, #body-theme-chooser .sheet button, #capricon-console .sheet button, #capricon-console .capricon-steps button, .frame .sheet input, #body-theme-chooser .sheet input, #capricon-console .sheet input, #capricon-console .capricon-steps input, .frame .sheet textarea, #body-theme-chooser .sheet textarea, #capricon-console .sheet textarea, #capricon-console .capricon-steps textarea {
-  border-color: hsla(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)), 0.3);
+  border-color: hsla(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)), 0.3);
 }
 
 .primary, body, .frame body, #capricon-console body, #body-theme-chooser body, #body-theme-chooser, .sheet .capricon span.symbol[data-symbol-name="'lambdas"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'lambdas"]::after, .sheet .capricon span.symbol[data-symbol-name="'foralls"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'foralls"]::after, .sheet .capricon span.symbol[data-symbol-name="->"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="->"]::after, .sheet .capricon span.symbol[data-symbol-name="?"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="?"]::after, .sheet .capricon span.symbol[data-symbol-name="!"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="!"]::after, .frame .primary, #body-theme-chooser .primary, #capricon-console .primary {
   --tint: 0deg;
 }
 .primary, body, .frame body, #capricon-console body, #body-theme-chooser body, #body-theme-chooser, .sheet .capricon span.symbol[data-symbol-name="'lambdas"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'lambdas"]::after, .sheet .capricon span.symbol[data-symbol-name="'foralls"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'foralls"]::after, .sheet .capricon span.symbol[data-symbol-name="->"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="->"]::after, .sheet .capricon span.symbol[data-symbol-name="?"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="?"]::after, .sheet .capricon span.symbol[data-symbol-name="!"]::after, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="!"]::after, .frame .primary, #body-theme-chooser .primary, #capricon-console .primary, .primary *, body *, .frame body *, #capricon-console body *, #body-theme-chooser *, .sheet .capricon span.symbol[data-symbol-name="'lambdas"]::after *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'lambdas"]::after *, .sheet .capricon span.symbol[data-symbol-name="'foralls"]::after *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="'foralls"]::after *, .sheet .capricon span.symbol[data-symbol-name="->"]::after *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="->"]::after *, .sheet .capricon span.symbol[data-symbol-name="?"]::after *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="?"]::after *, .sheet .capricon span.symbol[data-symbol-name="!"]::after *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name="!"]::after *, .frame .primary *, #capricon-console .primary * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 .hexad-1, .frame .hexad-1, #body-theme-chooser .hexad-1, #capricon-console .hexad-1 {
   --tint: 60deg;
 }
 .hexad-1, .frame .hexad-1, #body-theme-chooser .hexad-1, #capricon-console .hexad-1, .hexad-1 *, .frame .hexad-1 *, #body-theme-chooser .hexad-1 *, #capricon-console .hexad-1 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 .hexad-2, .frame .hexad-2, #body-theme-chooser .hexad-2, #capricon-console .hexad-2 {
   --tint: 120deg;
 }
 .hexad-2, .frame .hexad-2, #body-theme-chooser .hexad-2, #capricon-console .hexad-2, .hexad-2 *, .frame .hexad-2 *, #body-theme-chooser .hexad-2 *, #capricon-console .hexad-2 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 .hexad-3, #capricon-console .capricon-steps.active .header, .frame .hexad-3, #body-theme-chooser .hexad-3, #capricon-console .hexad-3 {
   --tint: 180deg;
 }
 .hexad-3, #capricon-console .capricon-steps.active .header, .frame .hexad-3, #body-theme-chooser .hexad-3, #capricon-console .hexad-3, .hexad-3 *, #capricon-console .capricon-steps.active .header *, .frame .hexad-3 *, #body-theme-chooser .hexad-3 *, #capricon-console .hexad-3 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 .hexad-4, .frame .hexad-4, #body-theme-chooser .hexad-4, #capricon-console .hexad-4 {
   --tint: 240deg;
 }
 .hexad-4, .frame .hexad-4, #body-theme-chooser .hexad-4, #capricon-console .hexad-4, .hexad-4 *, .frame .hexad-4 *, #body-theme-chooser .hexad-4 *, #capricon-console .hexad-4 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 .hexad-5, .frame .hexad-5, #body-theme-chooser .hexad-5, #capricon-console .hexad-5 {
   --tint: 300deg;
 }
 .hexad-5, .frame .hexad-5, #body-theme-chooser .hexad-5, #capricon-console .hexad-5, .hexad-5 *, .frame .hexad-5 *, #body-theme-chooser .hexad-5 *, #capricon-console .hexad-5 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 .pentad-1, .frame .pentad-1, #body-theme-chooser .pentad-1, #capricon-console .pentad-1 {
   --tint: 72deg;
 }
 .pentad-1, .frame .pentad-1, #body-theme-chooser .pentad-1, #capricon-console .pentad-1, .pentad-1 *, .frame .pentad-1 *, #body-theme-chooser .pentad-1 *, #capricon-console .pentad-1 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 .pentad-2, .sheet .capricon span.symbol[data-symbol-name^="'"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name^="'"], .frame .sheet .capricon span.symbol[data-symbol-name^="'"], #body-theme-chooser .sheet .capricon span.symbol[data-symbol-name^="'"], #capricon-console .sheet .capricon span.symbol[data-symbol-name^="'"], .sheet .capricon .frame span.symbol[data-symbol-name^="'"], .sheet .capricon #body-theme-chooser span.symbol[data-symbol-name^="'"], .sheet .capricon #capricon-console span.symbol[data-symbol-name^="'"], .frame .pentad-2, #body-theme-chooser .pentad-2, #capricon-console .pentad-2 {
   --tint: 144deg;
 }
 .pentad-2, .sheet .capricon span.symbol[data-symbol-name^="'"], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name^="'"], .frame .sheet .capricon span.symbol[data-symbol-name^="'"], #body-theme-chooser .sheet .capricon span.symbol[data-symbol-name^="'"], #capricon-console .sheet .capricon span.symbol[data-symbol-name^="'"], .sheet .capricon .frame span.symbol[data-symbol-name^="'"], .sheet .capricon #body-theme-chooser span.symbol[data-symbol-name^="'"], .sheet .capricon #capricon-console span.symbol[data-symbol-name^="'"], .frame .pentad-2, #body-theme-chooser .pentad-2, #capricon-console .pentad-2, .pentad-2 *, .sheet .capricon span.symbol[data-symbol-name^="'"] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name^="'"] *, .frame .sheet .capricon span.symbol[data-symbol-name^="'"] *, #body-theme-chooser .sheet .capricon span.symbol[data-symbol-name^="'"] *, #capricon-console .sheet .capricon span.symbol[data-symbol-name^="'"] *, .sheet .capricon .frame span.symbol[data-symbol-name^="'"] *, .sheet .capricon #body-theme-chooser span.symbol[data-symbol-name^="'"] *, .sheet .capricon #capricon-console span.symbol[data-symbol-name^="'"] *, .frame .pentad-2 *, #body-theme-chooser .pentad-2 *, #capricon-console .pentad-2 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 .pentad-3, .frame .pentad-3, #body-theme-chooser .pentad-3, #capricon-console .pentad-3 {
   --tint: 216deg;
 }
 .pentad-3, .frame .pentad-3, #body-theme-chooser .pentad-3, #capricon-console .pentad-3, .pentad-3 *, .frame .pentad-3 *, #body-theme-chooser .pentad-3 *, #capricon-console .pentad-3 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 .pentad-4, .sheet .capricon span.symbol[data-symbol-name^='"'][data-symbol-name$='"'], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name^='"'][data-symbol-name$='"'], .frame .pentad-4, #body-theme-chooser .pentad-4, #capricon-console .pentad-4 {
   --tint: 288deg;
 }
 .pentad-4, .sheet .capricon span.symbol[data-symbol-name^='"'][data-symbol-name$='"'], #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name^='"'][data-symbol-name$='"'], .frame .pentad-4, #body-theme-chooser .pentad-4, #capricon-console .pentad-4, .pentad-4 *, .sheet .capricon span.symbol[data-symbol-name^='"'][data-symbol-name$='"'] *, #capricon-console .capricon-steps .capricon span.symbol[data-symbol-name^='"'][data-symbol-name$='"'] *, .frame .pentad-4 *, #body-theme-chooser .pentad-4 *, #capricon-console .pentad-4 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 .tetrad-1, .frame .tetrad-1, #body-theme-chooser .tetrad-1, #capricon-console .tetrad-1 {
   --tint: 90deg;
 }
 .tetrad-1, .frame .tetrad-1, #body-theme-chooser .tetrad-1, #capricon-console .tetrad-1, .tetrad-1 *, .frame .tetrad-1 *, #body-theme-chooser .tetrad-1 *, #capricon-console .tetrad-1 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 .tetrad-2, .frame .tetrad-2, #body-theme-chooser .tetrad-2, #capricon-console .tetrad-2 {
   --tint: 180deg;
 }
 .tetrad-2, .frame .tetrad-2, #body-theme-chooser .tetrad-2, #capricon-console .tetrad-2, .tetrad-2 *, .frame .tetrad-2 *, #body-theme-chooser .tetrad-2 *, #capricon-console .tetrad-2 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 .tetrad-3, .frame .tetrad-3, #body-theme-chooser .tetrad-3, #capricon-console .tetrad-3 {
   --tint: 270deg;
 }
 .tetrad-3, .frame .tetrad-3, #body-theme-chooser .tetrad-3, #capricon-console .tetrad-3, .tetrad-3 *, .frame .tetrad-3 *, #body-theme-chooser .tetrad-3 *, #capricon-console .tetrad-3 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 .triad-1, .frame .triad-1, #body-theme-chooser .triad-1, #capricon-console .triad-1 {
   --tint: 120deg;
 }
 .triad-1, .frame .triad-1, #body-theme-chooser .triad-1, #capricon-console .triad-1, .triad-1 *, .frame .triad-1 *, #body-theme-chooser .triad-1 *, #capricon-console .triad-1 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 .triad-2, .frame .triad-2, #body-theme-chooser .triad-2, #capricon-console .triad-2 {
   --tint: 240deg;
 }
 .triad-2, .frame .triad-2, #body-theme-chooser .triad-2, #capricon-console .triad-2, .triad-2 *, .frame .triad-2 *, #body-theme-chooser .triad-2 *, #capricon-console .triad-2 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 @font-face {
@@ -317,7 +317,7 @@
   --tint: 0deg;
 }
 .frame, #body-theme-chooser, #capricon-console, .frame *, #body-theme-chooser *, #capricon-console * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 .frame .header, #body-theme-chooser .header, #capricon-console .header {
   --level: 3;
@@ -327,7 +327,7 @@
   --tint: 0deg;
 }
 .frame .sheet, #body-theme-chooser .sheet, #capricon-console .sheet, #capricon-console .capricon-steps, .frame .sheet *, #body-theme-chooser .sheet *, #capricon-console .sheet *, #capricon-console .capricon-steps * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 .frame .sheet p, #body-theme-chooser .sheet p, #capricon-console .sheet p, #capricon-console .capricon-steps p {
   --level: 12;
@@ -346,14 +346,14 @@
   --tint: 0deg;
 }
 .frame .sheet input, #body-theme-chooser .sheet input, #capricon-console .sheet input, #capricon-console .capricon-steps input, .frame .sheet input *, #body-theme-chooser .sheet input *, #capricon-console .sheet input *, #capricon-console .capricon-steps input *, .frame .sheet textarea, #body-theme-chooser .sheet textarea, #capricon-console .sheet textarea, #capricon-console .capricon-steps textarea, .frame .sheet textarea *, #body-theme-chooser .sheet textarea *, #capricon-console .sheet textarea *, #capricon-console .capricon-steps textarea * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 .frame .sheet a, #body-theme-chooser .sheet a, #capricon-console .sheet a, #capricon-console .capricon-steps a {
   --level: 6;
   --tint: 216deg;
 }
 .frame .sheet a, #body-theme-chooser .sheet a, #capricon-console .sheet a, #capricon-console .capricon-steps a, .frame .sheet a *, #body-theme-chooser .sheet a *, #capricon-console .sheet a *, #capricon-console .capricon-steps a * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 .frame .sheet button, #body-theme-chooser .sheet button, #capricon-console .sheet button, #capricon-console .capricon-steps button {
   --level: 6;
@@ -370,7 +370,7 @@
   position: relative;
 }
 .frame .sheet .expansible, #body-theme-chooser .sheet .expansible, #capricon-console .sheet .expansible, #capricon-console .capricon-steps .expansible, .frame .sheet .expansible *, #body-theme-chooser .sheet .expansible *, #capricon-console .sheet .expansible *, #capricon-console .capricon-steps .expansible * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 .frame .sheet .expansible input[type=checkbox], #body-theme-chooser .sheet .expansible input[type=checkbox], #capricon-console .sheet .expansible input[type=checkbox], #capricon-console .capricon-steps .expansible input[type=checkbox] {
   display: none;
@@ -386,14 +386,14 @@
   --level: 6;
 }
 .frame .sheet .expansible input[type=checkbox] ~ *.expand-then, #body-theme-chooser .sheet .expansible input[type=checkbox] ~ *.expand-then, #capricon-console .sheet .expansible input[type=checkbox] ~ *.expand-then, #capricon-console .capricon-steps .expansible input[type=checkbox] ~ *.expand-then, .frame .sheet .expansible input[type=checkbox] ~ *.expand-then *, #body-theme-chooser .sheet .expansible input[type=checkbox] ~ *.expand-then *, #capricon-console .sheet .expansible input[type=checkbox] ~ *.expand-then *, #capricon-console .capricon-steps .expansible input[type=checkbox] ~ *.expand-then * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 .frame .sheet .expansible input[type=checkbox] ~ *.expand-else, #body-theme-chooser .sheet .expansible input[type=checkbox] ~ *.expand-else, #capricon-console .sheet .expansible input[type=checkbox] ~ *.expand-else, #capricon-console .capricon-steps .expansible input[type=checkbox] ~ *.expand-else {
   --tint: 0deg;
   --level: 9;
 }
 .frame .sheet .expansible input[type=checkbox] ~ *.expand-else, #body-theme-chooser .sheet .expansible input[type=checkbox] ~ *.expand-else, #capricon-console .sheet .expansible input[type=checkbox] ~ *.expand-else, #capricon-console .capricon-steps .expansible input[type=checkbox] ~ *.expand-else, .frame .sheet .expansible input[type=checkbox] ~ *.expand-else *, #body-theme-chooser .sheet .expansible input[type=checkbox] ~ *.expand-else *, #capricon-console .sheet .expansible input[type=checkbox] ~ *.expand-else *, #capricon-console .capricon-steps .expansible input[type=checkbox] ~ *.expand-else * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 .frame .sheet .expansible input[type=checkbox] ~ .expand-then, #body-theme-chooser .sheet .expansible input[type=checkbox] ~ .expand-then, #capricon-console .sheet .expansible input[type=checkbox] ~ .expand-then, #capricon-console .capricon-steps .expansible input[type=checkbox] ~ .expand-then, .frame .sheet .expansible input[type=checkbox]:checked ~ .expand-else, #body-theme-chooser .sheet .expansible input[type=checkbox]:checked ~ .expand-else, #capricon-console .sheet .expansible input[type=checkbox]:checked ~ .expand-else, #capricon-console .capricon-steps .expansible input[type=checkbox]:checked ~ .expand-else {
   height: 0;
@@ -409,7 +409,7 @@
   vertical-align: bottom;
 }
 .frame .sheet .expansible.inline, #body-theme-chooser .sheet .expansible.inline, #capricon-console .sheet .expansible.inline, #capricon-console .capricon-steps .expansible.inline, .frame .sheet .expansible.inline *, #body-theme-chooser .sheet .expansible.inline *, #capricon-console .sheet .expansible.inline *, #capricon-console .capricon-steps .expansible.inline * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 .frame .sheet .expansible.inline input[type=checkbox], #body-theme-chooser .sheet .expansible.inline input[type=checkbox], #capricon-console .sheet .expansible.inline input[type=checkbox], #capricon-console .capricon-steps .expansible.inline input[type=checkbox] {
   display: inline-block;
@@ -1088,7 +1088,7 @@ svg.formula .small {
 }
 svg.formula .variable {
   font-style: italic;
-  fill: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  fill: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 .expansible.inline {
@@ -1128,7 +1128,7 @@ body {
   body::before {
     content: "";
     background-image: url(math-tile.jpg);
-    background-color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--low-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--low-saturation) * calc(1 / (14 - var(--level)))), calc((1 - var(--luminosity)) * 100% + calc(calc((var(--level-incr) - 1) / 2) * var(--luminosity) + calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity))) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+    background-color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--low-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--low-saturation) * calc(1 / (14 - var(--level)))), calc((1 - var(--luminosity)) * 100% + calc(calc((var(--level-incr) - 1) / 2) * var(--luminosity) + calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity))) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
     background-size: 20em;
     opacity: 0.1;
     position: fixed;
@@ -1141,7 +1141,7 @@ body {
   body::after {
     content: "";
     background-image: url(math-tile.jpg);
-    background-color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--low-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--low-saturation) * calc(1 / (14 - var(--level)))), calc((1 - var(--luminosity)) * 100% + calc(calc((var(--level-incr) - 1) / 2) * var(--luminosity) + calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity))) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+    background-color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--low-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--low-saturation) * calc(1 / (14 - var(--level)))), calc((1 - var(--luminosity)) * 100% + calc(calc((var(--level-incr) - 1) / 2) * var(--luminosity) + calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity))) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
     background-size: 20em;
     opacity: 0.1;
     z-index: -1;
@@ -1214,7 +1214,7 @@ ul > li {
   display: block;
   width: 90%;
   margin: auto;
-  border-bottom: 1px solid hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)));
+  border-bottom: 1px solid hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2)));
 }
 
 .math.inline {
