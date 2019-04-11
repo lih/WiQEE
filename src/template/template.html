@@ -57,7 +57,7 @@ $endfor$
 	    <li><a href="lexicon.html">Lexicon</a></li>
   	    <li><a href="capricon-tutorial.html">Tutorial</a></li>
 	</ul></li>
-	<li><a href="#" onclick="document.getElementById('body-theme-chooser').classList.toggle('active')">Tweak theme</a></li>
+	<li><a href="#" onclick="document.getElementById('body-theme-chooser').classList.toggle('active'); document.body.classList.toggle('smooth-colors');">Tweak theme</a></li>
     </ul></span><span class="menu middle"><a class="#">$title$</a>
       $if(toc)$
       $toc$
@@ -112,7 +112,7 @@ $endif$
     <label class="theme-slider" style="display: block">Min contrast<input type="range" min="10" max="100" value="50" /><span class="theme-prop-display" data-prop-name="--min-contrast"></span></label>
     <label class="theme-slider" style="display: block">Max contrast<input type="range" min="10" max="100" value="0" /><span class="theme-prop-display" data-prop-name="--max-contrast"></span></label>
     <label class="theme-slider" style="display: block">Luminosity<input type="range" min="0" max="100" value="180"/><span class="theme-prop-display" data-prop-name="--luminosity"></span></label>
-    <button onclick="document.getElementById('body-theme-chooser').classList.toggle('active')">Close</button>
+    <button onclick="document.getElementById('body-theme-chooser').classList.toggle('active'); document.body.classList.toggle('smooth-colors');">Close</button>
   </div>
 </div>
 $for(include-after)$
