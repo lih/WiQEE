@@ -45,10 +45,10 @@ var ThemeConfig = {
 
 function setGroundClass(e,isLight) {
     if(isLight) {
-	root.classList.replace('ground-dark', 'ground-light');
+	e.classList.replace('ground-dark', 'ground-light');
     }
     else {
-	root.classList.replace('ground-light', 'ground-dark');
+	e.classList.replace('ground-light', 'ground-dark');
     }
 }
 
@@ -72,7 +72,7 @@ var Theme = {
 		var prop = th_val.getAttribute('data-prop-name');
 		slide.value = tw.getPropVal(prop);
 		slide.addEventListener('input',function () {
-		    tw.setProp(e,prop,this.value);
+		    tw.setProp(root,prop,this.value);
 		});
 	    })(this,elt,elt.getElementsByTagName('input')[0]);
 	}
