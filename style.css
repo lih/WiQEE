@@ -46,11 +46,11 @@
   --level-incr: -1;
 }
 
-.opaque, body, #capricon-console .capricon-steps.active .header, .capricon span.quote, .menu a, .frame .sheet .expansible.inline, .frame .sheet .expansible input[type=checkbox] ~ *.expand-else, #body-theme-chooser .sheet .expansible input[type=checkbox] ~ *.expand-else, #capricon-console .sheet .expansible input[type=checkbox] ~ *.expand-else, #capricon-console .capricon-steps .expansible input[type=checkbox] ~ *.expand-else, .frame .sheet .expansible input[type=checkbox] ~ *.expand-then, #body-theme-chooser .sheet .expansible input[type=checkbox] ~ *.expand-then, #capricon-console .sheet .expansible input[type=checkbox] ~ *.expand-then, #capricon-console .capricon-steps .expansible input[type=checkbox] ~ *.expand-then, .frame .sheet .expansible, #body-theme-chooser .sheet .expansible, #capricon-console .sheet .expansible, #capricon-console .capricon-steps .expansible, .frame .sheet button, #body-theme-chooser .sheet button, #capricon-console .sheet button, #capricon-console .capricon-steps button, .frame .sheet input, #body-theme-chooser .sheet input, #capricon-console .sheet input, #capricon-console .capricon-steps input, .frame .sheet textarea, #body-theme-chooser .sheet textarea, #capricon-console .sheet textarea, #capricon-console .capricon-steps textarea, .frame .sheet pre, #body-theme-chooser .sheet pre, #capricon-console .sheet pre, #capricon-console .capricon-steps pre, .frame .sheet code, #body-theme-chooser .sheet code, #capricon-console .sheet code, #capricon-console .capricon-steps code, .frame .sheet, #body-theme-chooser .sheet, #capricon-console .sheet, #capricon-console .capricon-steps, .frame, #body-theme-chooser, #capricon-console {
+.opaque, body, #capricon-console .capricon-steps.active .header, .capricon span.quote, .menu a, .frame .sheet .expansible.inline, .frame .sheet .expansible input[type=checkbox] ~ *.expand-else, #body-theme-chooser .sheet .expansible input[type=checkbox] ~ *.expand-else, #capricon-console .sheet .expansible input[type=checkbox] ~ *.expand-else, #capricon-console .capricon-steps .expansible input[type=checkbox] ~ *.expand-else, .frame .sheet .expansible input[type=checkbox] ~ *.expand-then, #body-theme-chooser .sheet .expansible input[type=checkbox] ~ *.expand-then, #capricon-console .sheet .expansible input[type=checkbox] ~ *.expand-then, #capricon-console .capricon-steps .expansible input[type=checkbox] ~ *.expand-then, .frame .sheet .expansible, #body-theme-chooser .sheet .expansible, #capricon-console .sheet .expansible, #capricon-console .capricon-steps .expansible, .frame .sheet button, #body-theme-chooser .sheet button, #capricon-console .sheet button, #capricon-console .capricon-steps button, .frame .sheet input, #body-theme-chooser .sheet input, #capricon-console .sheet input, #capricon-console .capricon-steps input, .frame .sheet textarea, #body-theme-chooser .sheet textarea, #capricon-console .sheet textarea, #capricon-console .capricon-steps textarea, .frame .sheet select, #body-theme-chooser .sheet select, #capricon-console .sheet select, #capricon-console .capricon-steps select, .frame .sheet pre, #body-theme-chooser .sheet pre, #capricon-console .sheet pre, #capricon-console .capricon-steps pre, .frame .sheet code, #body-theme-chooser .sheet code, #capricon-console .sheet code, #capricon-console .capricon-steps code, .frame .sheet, #body-theme-chooser .sheet, #capricon-console .sheet, #capricon-console .capricon-steps, .frame, #body-theme-chooser, #capricon-console {
   background-color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 3 / (16 - var(--level))) + var(--low-hue) * calc(3 / (16 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 3 / (16 - var(--level))) + var(--low-saturation) * calc(3 / (16 - var(--level)))), calc(var(--luminosity) * 100% - calc(calc((var(--level-incr) + 1) / 2) * var(--luminosity) + calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity))) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
-.with-border, #capricon-console .capricon-steps, .user-input .capricon-input-prefix, .menu.right > ul li ul, .menu:not(.right) > ul li ul, .frame .sheet button, #body-theme-chooser .sheet button, #capricon-console .sheet button, #capricon-console .capricon-steps button, .frame .sheet input, #body-theme-chooser .sheet input, #capricon-console .sheet input, #capricon-console .capricon-steps input, .frame .sheet textarea, #body-theme-chooser .sheet textarea, #capricon-console .sheet textarea, #capricon-console .capricon-steps textarea {
+.with-border, #capricon-console .capricon-steps, .user-input .capricon-input-prefix, .menu.right > ul li ul, .menu:not(.right) > ul li ul, .frame .sheet button, #body-theme-chooser .sheet button, #capricon-console .sheet button, #capricon-console .capricon-steps button, .frame .sheet input, #body-theme-chooser .sheet input, #capricon-console .sheet input, #capricon-console .capricon-steps input, .frame .sheet textarea, #body-theme-chooser .sheet textarea, #capricon-console .sheet textarea, #capricon-console .capricon-steps textarea, .frame .sheet select, #body-theme-chooser .sheet select, #capricon-console .sheet select, #capricon-console .capricon-steps select {
   border-color: hsla(calc(var(--tint) + var(--prim-hue) * calc(1 - 3 / (16 - var(--level))) + var(--high-hue) * calc(3 / (16 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 3 / (16 - var(--level))) + var(--high-saturation) * calc(3 / (16 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))), 0.3);
 }
 
@@ -190,7 +190,7 @@
   font-size: 125%;
 }
 
-.medium, .frame input, #body-theme-chooser input, #capricon-console input, .frame textarea, #body-theme-chooser textarea, #capricon-console textarea, .frame button, #body-theme-chooser button, #capricon-console button, .frame h5, #body-theme-chooser h5, #capricon-console h5, .frame h4, #body-theme-chooser h4, #capricon-console h4, .frame .handlebar, #body-theme-chooser .handlebar, #capricon-console .handlebar {
+.medium, .frame input, #body-theme-chooser input, #capricon-console input, .frame textarea, #body-theme-chooser textarea, #capricon-console textarea, .frame select, #body-theme-chooser select, #capricon-console select, .frame button, #body-theme-chooser button, #capricon-console button, .frame h5, #body-theme-chooser h5, #capricon-console h5, .frame h4, #body-theme-chooser h4, #capricon-console h4, .frame .handlebar, #body-theme-chooser .handlebar, #capricon-console .handlebar {
   font-size: 100%;
 }
 
@@ -289,7 +289,7 @@
 .frame a:hover, #body-theme-chooser a:hover, #capricon-console a:hover {
   text-decoration: underline;
 }
-.frame input, #body-theme-chooser input, #capricon-console input, .frame textarea, #body-theme-chooser textarea, #capricon-console textarea {
+.frame input, #body-theme-chooser input, #capricon-console input, .frame textarea, #body-theme-chooser textarea, #capricon-console textarea, .frame select, #body-theme-chooser select, #capricon-console select {
   line-height: calc(1.618em - 2px);
   border-width: 1px;
   border-style: solid;
@@ -304,7 +304,7 @@
   top: -1px;
   left: -1px;
 }
-.frame input, #body-theme-chooser input, #capricon-console input {
+.frame input, #body-theme-chooser input, #capricon-console input, .frame select, #body-theme-chooser select, #capricon-console select {
   padding: 0;
   height: calc(2.0225em - 2px);
 }
@@ -341,11 +341,11 @@
 .frame .sheet pre code, #body-theme-chooser .sheet pre code, #capricon-console .sheet pre code, #capricon-console .capricon-steps pre code {
   background: none;
 }
-.frame .sheet input, #body-theme-chooser .sheet input, #capricon-console .sheet input, #capricon-console .capricon-steps input, .frame .sheet textarea, #body-theme-chooser .sheet textarea, #capricon-console .sheet textarea, #capricon-console .capricon-steps textarea {
+.frame .sheet input, #body-theme-chooser .sheet input, #capricon-console .sheet input, #capricon-console .capricon-steps input, .frame .sheet textarea, #body-theme-chooser .sheet textarea, #capricon-console .sheet textarea, #capricon-console .capricon-steps textarea, .frame .sheet select, #body-theme-chooser .sheet select, #capricon-console .sheet select, #capricon-console .capricon-steps select {
   --level: 9;
   --tint: 0deg;
 }
-.frame .sheet input, #body-theme-chooser .sheet input, #capricon-console .sheet input, #capricon-console .capricon-steps input, .frame .sheet input *, #body-theme-chooser .sheet input *, #capricon-console .sheet input *, #capricon-console .capricon-steps input *, .frame .sheet textarea, #body-theme-chooser .sheet textarea, #capricon-console .sheet textarea, #capricon-console .capricon-steps textarea, .frame .sheet textarea *, #body-theme-chooser .sheet textarea *, #capricon-console .sheet textarea *, #capricon-console .capricon-steps textarea * {
+.frame .sheet input, #body-theme-chooser .sheet input, #capricon-console .sheet input, #capricon-console .capricon-steps input, .frame .sheet input *, #body-theme-chooser .sheet input *, #capricon-console .sheet input *, #capricon-console .capricon-steps input *, .frame .sheet textarea, #body-theme-chooser .sheet textarea, #capricon-console .sheet textarea, #capricon-console .capricon-steps textarea, .frame .sheet textarea *, #body-theme-chooser .sheet textarea *, #capricon-console .sheet textarea *, #capricon-console .capricon-steps textarea *, .frame .sheet select, #body-theme-chooser .sheet select, #capricon-console .sheet select, #capricon-console .capricon-steps select, .frame .sheet select *, #body-theme-chooser .sheet select *, #capricon-console .sheet select *, #capricon-console .capricon-steps select * {
   color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 3 / (16 - var(--level))) + var(--high-hue) * calc(3 / (16 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 3 / (16 - var(--level))) + var(--high-saturation) * calc(3 / (16 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 .frame .sheet a, #body-theme-chooser .sheet a, #capricon-console .sheet a, #capricon-console .capricon-steps a {
