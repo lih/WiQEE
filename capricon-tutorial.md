@@ -1,6 +1,8 @@
 % First steps with CaPriCon
 % Marc Coiffier
 
+{.newpage.}
+
 This page is intended as a tutorial on the use of a stack-based proof
 environment like the one provided on this site. Since we're going to
 need to print things out, and we don't yet have the knowledge to write
@@ -19,6 +21,8 @@ sprinkle it at any point of your scripts for debugging purposes.
 Now, in order to understand what a stack-based language is, we first
 have to understand the basic concept of a *stack*, and the role it
 plays during the execution of a script.
+
+{.newpage.}
 
 Stacks, and The Stack
 ---------------------
@@ -198,6 +202,8 @@ with good reason, because we don't yet know how to build proofs.
 
 Please bear with me for this last section, as I try to explain how to
 build mathematical proofs out of stacks, quotes and a bit of magic.
+
+{.newpage.}
 
 Proof assembly
 ==============
