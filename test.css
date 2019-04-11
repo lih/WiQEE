@@ -46,116 +46,116 @@
 }
 
 .opaque, .menu a, .frame .sheet .expansible.inline, .frame .sheet .expansible input[type=checkbox] ~ *.expand-else, .frame .sheet .expansible input[type=checkbox] ~ *.expand-then, .frame .sheet .expansible, .frame .sheet button, .frame .sheet input, .frame .sheet textarea, .frame .sheet pre, .frame .sheet code, .frame .sheet, .frame {
-  background-color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--low-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--low-saturation) * calc(1 / (14 - var(--level)))), calc((1 - var(--luminosity)) * 100% + calc(calc((var(--level-incr) - 1) / 2) * var(--luminosity) + calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity))) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  background-color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--low-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--low-saturation) * calc(1 / (14 - var(--level)))), calc((1 - var(--luminosity)) * 100% + calc(calc((var(--level-incr) + 1) / 2) * var(--luminosity) + calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity))) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
 .with-border, .menu.right > ul li ul, .menu:not(.right) > ul li ul, .frame .sheet button, .frame .sheet input, .frame .sheet textarea {
-  border-color: hsla(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))), 0.3);
+  border-color: hsla(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))), 0.3);
 }
 
 .primary, .frame .primary {
   --tint: 0deg;
 }
 .primary, .frame .primary, .primary *, .frame .primary * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
 .hexad-1, .frame .hexad-1 {
   --tint: 60deg;
 }
 .hexad-1, .frame .hexad-1, .hexad-1 *, .frame .hexad-1 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
 .hexad-2, .frame .hexad-2 {
   --tint: 120deg;
 }
 .hexad-2, .frame .hexad-2, .hexad-2 *, .frame .hexad-2 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
 .hexad-3, .frame .hexad-3 {
   --tint: 180deg;
 }
 .hexad-3, .frame .hexad-3, .hexad-3 *, .frame .hexad-3 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
 .hexad-4, .frame .hexad-4 {
   --tint: 240deg;
 }
 .hexad-4, .frame .hexad-4, .hexad-4 *, .frame .hexad-4 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
 .hexad-5, .frame .hexad-5 {
   --tint: 300deg;
 }
 .hexad-5, .frame .hexad-5, .hexad-5 *, .frame .hexad-5 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
 .pentad-1, .frame .pentad-1 {
   --tint: 72deg;
 }
 .pentad-1, .frame .pentad-1, .pentad-1 *, .frame .pentad-1 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
 .pentad-2, .frame .pentad-2 {
   --tint: 144deg;
 }
 .pentad-2, .frame .pentad-2, .pentad-2 *, .frame .pentad-2 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
 .pentad-3, .frame .pentad-3 {
   --tint: 216deg;
 }
 .pentad-3, .frame .pentad-3, .pentad-3 *, .frame .pentad-3 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
 .pentad-4, .frame .pentad-4 {
   --tint: 288deg;
 }
 .pentad-4, .frame .pentad-4, .pentad-4 *, .frame .pentad-4 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
 .tetrad-1, .frame .tetrad-1 {
   --tint: 90deg;
 }
 .tetrad-1, .frame .tetrad-1, .tetrad-1 *, .frame .tetrad-1 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
 .tetrad-2, .frame .tetrad-2 {
   --tint: 180deg;
 }
 .tetrad-2, .frame .tetrad-2, .tetrad-2 *, .frame .tetrad-2 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
 .tetrad-3, .frame .tetrad-3 {
   --tint: 270deg;
 }
 .tetrad-3, .frame .tetrad-3, .tetrad-3 *, .frame .tetrad-3 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
 .triad-1, .frame .triad-1 {
   --tint: 120deg;
 }
 .triad-1, .frame .triad-1, .triad-1 *, .frame .triad-1 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
 .triad-2, .frame .triad-2 {
   --tint: 240deg;
 }
 .triad-2, .frame .triad-2, .triad-2 *, .frame .triad-2 * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 
 @font-face {
@@ -316,7 +316,7 @@
   --tint: 0deg;
 }
 .frame, .frame * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 .frame .header {
   --level: 3;
@@ -326,7 +326,7 @@
   --tint: 0deg;
 }
 .frame .sheet, .frame .sheet * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 .frame .sheet p {
   --level: 12;
@@ -345,14 +345,14 @@
   --tint: 0deg;
 }
 .frame .sheet input, .frame .sheet input *, .frame .sheet textarea, .frame .sheet textarea * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 .frame .sheet a {
   --level: 6;
   --tint: 216deg;
 }
 .frame .sheet a, .frame .sheet a * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 .frame .sheet button {
   --level: 6;
@@ -369,7 +369,7 @@
   position: relative;
 }
 .frame .sheet .expansible, .frame .sheet .expansible * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 .frame .sheet .expansible input[type=checkbox] {
   display: none;
@@ -385,14 +385,14 @@
   --level: 6;
 }
 .frame .sheet .expansible input[type=checkbox] ~ *.expand-then, .frame .sheet .expansible input[type=checkbox] ~ *.expand-then * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 .frame .sheet .expansible input[type=checkbox] ~ *.expand-else {
   --tint: 0deg;
   --level: 9;
 }
 .frame .sheet .expansible input[type=checkbox] ~ *.expand-else, .frame .sheet .expansible input[type=checkbox] ~ *.expand-else * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 .frame .sheet .expansible input[type=checkbox] ~ .expand-then, .frame .sheet .expansible input[type=checkbox]:checked ~ .expand-else {
   height: 0;
@@ -408,7 +408,7 @@
   vertical-align: bottom;
 }
 .frame .sheet .expansible.inline, .frame .sheet .expansible.inline * {
-  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) - 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) + 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
+  color: hsl(calc(var(--tint) + var(--prim-hue) * calc(1 - 1 / (14 - var(--level))) + var(--high-hue) * calc(1 / (14 - var(--level)))), calc(var(--prim-saturation) * calc(1 - 1 / (14 - var(--level))) + var(--high-saturation) * calc(1 / (14 - var(--level)))), calc(var(--luminosity) * 100% + calc(calc((var(--level-incr) + 1) / 2) * (1 - var(--luminosity)) + calc((var(--level-incr) - 1) / 2) * var(--luminosity)) * calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11))));
 }
 .frame .sheet .expansible.inline input[type=checkbox] {
   display: inline-block;
