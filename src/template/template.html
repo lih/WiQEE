@@ -95,22 +95,22 @@ $endif$
   });
 </script>
 <div id="body-theme-chooser" style="z-index: 100; position: fixed; text-align: right; right: 0; bottom: 0; font-size: 1rem !important" class="opaque sheet frame level-12">
-    <script>
-      document.addEventListener('DOMContentLoaded',function() {
-	  Theme.attach(document.getElementsByTagName('body')[0]);
-      });
-    </script>
-    <button onclick="Theme.setProp(document.getElementsByTagName('body')[0],'light', !(Theme.props['light']))">Invert Lights</button>
-    <style>.theme-prop-display { min-width: 4em; display: inline-block; }</style>
-    <label class="theme-slider" style="display: block">Primary hue<input type="range" min="0" max="360" value="180"/><span class="theme-prop-display" data-prop-name="--prim-hue"></span></label>	
-    <label class="theme-slider" style="display: block">Primary saturation<input type="range" min="0" max="100" value="50" /><span class="theme-prop-display" data-prop-name="--prim-saturation"></span></label>
-    <label class="theme-slider" style="display: block">Low hue<input type="range" min="-180" max="180" value="0"/><span class="theme-prop-display" data-prop-name="--low-hue"></span></label>	
-    <label class="theme-slider" style="display: block">Low saturation<input type="range" min="0" max="100" value="50"/><span class="theme-prop-display" data-prop-name="--low-saturation"></span></label>
-    <label class="theme-slider" style="display: block">High hue<input type="range" min="-180" max="180" value="0"/><span class="theme-prop-display" data-prop-name="--high-hue"></span></label>	
-    <label class="theme-slider" style="display: block">High saturation<input type="range" min="0" max="100" value="50"/><span class="theme-prop-display" data-prop-name="--high-saturation"></span></label>
-    <label class="theme-slider" style="display: block">Min contrast<input type="range" min="10" max="100" value="50" /><span class="theme-prop-display" data-prop-name="--min-contrast"></span></label>
-    <label class="theme-slider" style="display: block">Max contrast<input type="range" min="10" max="100" value="0" /><span class="theme-prop-display" data-prop-name="--max-contrast"></span></label>
-    <label class="theme-slider" style="display: block">Luminosity<input type="range" min="0" max="100" value="180"/><span class="theme-prop-display" data-prop-name="--luminosity"></span></label>
+  <script>
+    document.addEventListener('DOMContentLoaded',function() {
+	Theme.attach(document.getElementsByTagName('body')[0]);
+    });
+  </script>
+  <button onclick="Theme.setProp('light', !(Theme.getPropVal('light'))).updateAll()">Invert Lights</button>
+  <style>.theme-prop-display { min-width: 4em; display: inline-block; }</style>
+  <label class="theme-slider" style="display: block">Primary hue<input type="range" min="0" max="360" value="180"/><span class="theme-prop-display" data-prop-name="--prim-hue"></span></label>	
+  <label class="theme-slider" style="display: block">Primary saturation<input type="range" min="0" max="100" value="50" /><span class="theme-prop-display" data-prop-name="--prim-saturation"></span></label>
+  <label class="theme-slider" style="display: block">Low hue<input type="range" min="-180" max="180" value="0"/><span class="theme-prop-display" data-prop-name="--low-hue"></span></label>	
+  <label class="theme-slider" style="display: block">Low saturation<input type="range" min="0" max="100" value="50"/><span class="theme-prop-display" data-prop-name="--low-saturation"></span></label>
+  <label class="theme-slider" style="display: block">High hue<input type="range" min="-180" max="180" value="0"/><span class="theme-prop-display" data-prop-name="--high-hue"></span></label>	
+  <label class="theme-slider" style="display: block">High saturation<input type="range" min="0" max="100" value="50"/><span class="theme-prop-display" data-prop-name="--high-saturation"></span></label>
+  <label class="theme-slider" style="display: block">Min contrast<input type="range" min="10" max="100" value="50" /><span class="theme-prop-display" data-prop-name="--min-contrast"></span></label>
+  <label class="theme-slider" style="display: block">Max contrast<input type="range" min="10" max="100" value="0" /><span class="theme-prop-display" data-prop-name="--max-contrast"></span></label>
+  <label class="theme-slider" style="display: block">Luminosity<input type="range" min="0" max="100" value="180"/><span class="theme-prop-display" data-prop-name="--luminosity"></span></label>
 </div>
 $for(include-after)$
 $include-after$
