@@ -20,6 +20,7 @@ var ThemeConfig = {
 	    '--high-hue': 50, '--high-saturation': 30,
 	    '--min-contrast': 50, '--max-contrast': 85,
 	    '--luminosity': 50,
+	    'font-size': 100
 	}
     },
     propUnits: {
