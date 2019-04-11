@@ -69,7 +69,7 @@ var Theme = {
 	(function(amb,tw) {
 	    amb.value = this.ambiance;
 	    amb.addEventListener('change', function() {
-		tw.setAmbiance(amb.value);
+		tw.setAmbiance(amb.value).updateAll();
 	    });
 	})(root.getElementsByClassName('theme-ambiance-select')[0],this);
 	
