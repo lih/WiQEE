@@ -63,7 +63,7 @@ var Theme = {
 	var rootI = this.roots.length - 1;
 
 	setGroundClass(root,this.getPropVal('light'));
-	updateElement(rootI);
+	this.updateElement(rootI);
 	
 	var elts = root.getElementsByClassName('theme-slider');
 	for(var x in elts) {
