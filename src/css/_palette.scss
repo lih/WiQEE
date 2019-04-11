@@ -46,7 +46,7 @@
 
 $local-rate: calc(1 / (14 - var(--level)));
 $local-rate-r: calc(1 - 1 / (14 - var(--level)));
-$contrast-delta: calc(var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11);
+$contrast-delta: calc((var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11) / 2);
 $incr-pos: calc((var(--level-incr) - 1) / 2);
 $incr-neg: calc((var(--level-incr) + 1) / 2);
 $lum-incr: calc(#{$incr-pos} * (1 - var(--luminosity)) + #{$incr-neg} * var(--luminosity));
