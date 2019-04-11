@@ -1044,6 +1044,9 @@
   display: block;
   width: 100%;
 }
+#capricon-console .capricon-steps.active .user-input * {
+  opacity: 1;
+}
 #capricon-console .capricon-steps.active .user-input .capricon-output {
   display: block;
   max-height: 15em;
