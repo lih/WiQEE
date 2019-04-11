@@ -168,7 +168,7 @@
 	    pre { margin: 0; }
 	    .capricon-trigger, .capricon-examples { display: none; }
 	    .user-input {
-		opacity: 1;
+		* { opacity: 1; }
 		display: block; width: 100%; 
 		.capricon-output { display: block; max-height: 15em; overflow: auto; }
 		.capricon-input-prefix {
