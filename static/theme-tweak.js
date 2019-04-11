@@ -83,7 +83,7 @@ var Theme = {
 		tw.sliders.push({ slide: slide, prop: prop });
 		slide.value = tw.getPropVal(prop);
 		slide.addEventListener('input',function () {
-		    tw.setProp(prop,this.value).updateAll();
+		    tw.setProp(prop,this.value).updateElement(null);
 		});
 	    })(this,elt,elt.getElementsByTagName('input')[0]);
 	}
@@ -115,6 +115,11 @@ var Theme = {
 	return stl;
     },
     updateElement: function (i) {
+	if(i === null) {
+	    for(var j=0; j<this.sliders.length; j++)
+		this.updateElement(j);
+	    return;
+	}
 	var elt = this.roots[i];
 	elt.setAttribute('style', this.getStyleText());
 	setLightGround(elt,this.getPropVal('light'));
@@ -129,16 +134,17 @@ var Theme = {
 	}
     },
     updateSlider: function(i) {
+	if(i === null) {
+	    for(var j=0; j<this.sliders.length; j++)
+		this.updateSlider(j);
+	    return;
+	}
 	var x = this.sliders[i];
 	x.slide.value = this.getPropVal(x.prop);
     },
     updateAll: function() {
-	for(var i=0;i<this.roots.length; i++) {
-	    this.updateElement(i);
-	}
-	for(var i=0;i<this.sliders.length; i++) {
-	    this.updateSlider(i);
-	}
+	this.updateElement(null);
+	this.updateSlider(null);
     }
 };
 
