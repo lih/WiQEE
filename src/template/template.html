@@ -101,7 +101,7 @@ $endif$
     });
   </script>
   <button onclick="Theme.setProp('light', !(Theme.getPropVal('light'))).updateAll()">Invert Lights</button>
-  <select onchange="Theme.setAmbiance(this.value)">
+  <select onchange="Theme.setAmbiance(this.value).updateAll()">
     <option value="day">Day</option>
     <option value="night">Night</option>
   </select>
