@@ -62,7 +62,8 @@ var Theme = {
 	this.roots.push(root);
 	var rootI = this.roots.length - 1;
 
-	setGroundClass(root,this.getPropVal('light')); 
+	setGroundClass(root,this.getPropVal('light'));
+	this.updateElement(rootI);
 	
 	var elts = root.getElementsByClassName('theme-slider');
 	for(var x in elts) {
@@ -72,7 +73,7 @@ var Theme = {
 		var prop = th_val.getAttribute('data-prop-name');
 		slide.value = tw.getPropVal(prop);
 		slide.addEventListener('input',function () {
-		    tw.setProp(e,prop,this.value);
+		    tw.setProp(root,prop,this.value);
 		});
 	    })(this,elt,elt.getElementsByTagName('input')[0]);
 	}
@@ -100,7 +101,7 @@ var Theme = {
     updateElement: function (i) {
 	var elt = this.roots[i];
 	elt.setAttribute('style', this.getStyleText());
-	setGroundClass(elt.getPropVal('light'));
+	setGroundClass(elt,this.getPropVal('light'));
 	
 	var spans = elt.getElementsByClassName('theme-prop-display');
 	for (var spanI in spans) {
