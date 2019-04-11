@@ -8,7 +8,7 @@ $break-wide: 60em;
 @import "menu";
 @import "capricon";
 
-.smooth-colors * {
+.smooth-colors, .smooth-colors * {
     transition: color 1s, background-color 1s;
 }
 
