@@ -89,7 +89,7 @@
 	text-decoration: none;
  	&:hover { text-decoration: underline; }
     }
-    input, textarea {
+    input, textarea, select {
 	@extend .medium;
 	line-height: calc(#{$line-height * 1em} - 2px);
 	border-width: 1px;
@@ -103,7 +103,7 @@
 	position: relative;
 	top: -1px; left: -1px;
     }
-    input {
+    input, select {
 	padding: 0;
 	height: calc(#{$line-height * 1.25em} - 2px);
     }
