@@ -52,7 +52,6 @@ $incr-neg: calc((var(--level-incr) - 1) / 2);
 $lum-incr: calc(#{$incr-pos} * (1 - var(--luminosity)) + #{$incr-neg} * var(--luminosity));
 $lum-incr-r: calc(#{$incr-pos} * var(--luminosity) + #{$incr-neg} * (1 - var(--luminosity)));
 
-
 $default-color: hsl(calc(var(--tint) + var(--prim-hue) * #{$local-rate-r} + var(--high-hue) * #{$local-rate}),
 		    calc(var(--prim-saturation) * #{$local-rate-r} + var(--high-saturation) * #{$local-rate}),
 		    calc(var(--luminosity) * 100% + #{$lum-incr} * #{$contrast-delta})); 
