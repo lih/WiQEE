@@ -19,8 +19,8 @@
     --max-contrast: 90%;
 }
 .ground-light {
-    --level-incr: -1;
-    .reverse { --level-incr: 1; }
+    --level-incr: 1;
+    .reverse { --level-incr: -1; }
     --prim-hue: #{hue(nth($primary,3))};
     --prim-saturation: #{saturation(nth($primary,3))};
     --low-hue: #{nth($primary,1)};
@@ -30,8 +30,8 @@
 }
 
 .ground-dark {
-    --level-incr: 1;
-    .reverse { --level-incr: -1; }
+    --level-incr: -1;
+    .reverse { --level-incr: 1; }
     --prim-hue: #{hue(nth($primary,3))};
     --prim-saturation: #{saturation(nth($primary,3))};
     --low-hue: #{nth($primary,4)};
