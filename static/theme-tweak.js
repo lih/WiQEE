@@ -1,4 +1,6 @@
-function rawUnit(u) { return function (x) { '' + x.toString() + u; }; }
+function rawUnit(u) { return function (x) {
+    alert('adding unit '+u+' to value '+x);
+    '' + x.toString() + u; }; }
 
 var Theme = {
     'props': JSON.parse(localStorage.getItem('theme/'+window.location.pathname)),
