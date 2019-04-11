@@ -14,6 +14,7 @@
 
 .ground-light, .ground-dark {
     --level: 12;
+    --luminosity: 0.5;
     --min-contrast: 54%; 
     --max-contrast: 90%;
 }
@@ -45,18 +46,17 @@
 
 $local-rate: calc(1 / (14 - var(--level)));
 $local-rate-r: calc(1 - 1 / (14 - var(--level)));
-$contrast-delta: calc(var(--level-incr) * (var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11)
-		      / 2);
+$contrast-delta: calc(var(--level-incr) * (var(--min-contrast) + (var(--max-contrast) - var(--min-contrast)) * (var(--level) - 1) / 11));
 
 $default-color: hsl(calc(var(--tint) + var(--prim-hue) * #{$local-rate-r} + var(--high-hue) * #{$local-rate}),
 		    calc(var(--prim-saturation) * #{$local-rate-r} + var(--high-saturation) * #{$local-rate}),
-		    calc(50% + #{$contrast-delta})); 
+		    calc(var(--luminosity) * 100% + (1 - var(--luminosity)) * #{$contrast-delta})); 
 $default-background: hsl(calc(var(--tint) + var(--prim-hue) * #{$local-rate-r} + var(--low-hue) * #{$local-rate}),
 			 calc(var(--prim-saturation) * #{$local-rate-r} + var(--low-saturation) * #{$local-rate}),
-			 calc(50% - #{$contrast-delta}));
+			 calc(var(--luminosity) * (100% - #{$contrast-delta})));
 $default-border: hsla(calc(var(--tint) + var(--prim-hue) * #{$local-rate-r} + var(--high-hue) * #{$local-rate}),
 		      calc(var(--prim-saturation) * #{$local-rate-r} + var(--high-saturation) * #{$local-rate}),
-		      calc(50% + #{$contrast-delta}),0.3); 
+		      calc(var(--luminosity) * 100% + (1 - var(--luminosity)) * #{$contrast-delta}),0.3); 
 
 @mixin set-ground($tint) {
     --tint: #{$tint};
