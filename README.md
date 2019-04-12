@@ -28,15 +28,16 @@ pages that were created in the `public/` directory.
 
 ### Integration with GitHub Pages
 
-This WiQEE comes equipped with a fully-functional Travis CI configuration
-that builds all commits committed on the `master` branch, and uploads
-them to GitHub Pages.
+This WiQEE comes equipped with a fully-functional Travis CI
+configuration that automatically builds all commits pushed on the
+`master` branch, and uploads them to GitHub Pages.
 
 In short, if you want to host your own version of this WiQEE on
 GitHub, all you have to do is :
 
   - fork this project on GitHub
-  - enable GitHub Pages on the branch called `gh-pages` in the settings page
+  - enable GitHub Pages on the branch called `gh-pages` in the
+    settings page of your fork
   - log into [Travis CI] with your GitHub account, and enable the
     service for your newly-forked repository (it should be
     automatically detected by Travis).
