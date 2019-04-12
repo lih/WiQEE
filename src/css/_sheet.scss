@@ -138,7 +138,6 @@
 	    &:hover { @include set-level(9); }
 	    &:active { @include set-level(3); }
 	    @extend .opaque;
-	    transition: none !important;
 	}
     }
     @each $var in $color-variations {
