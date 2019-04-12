@@ -102,7 +102,7 @@ depending on that meaning :
   - if it is a special builtin operation, then that operation is run
     according to its definition. The initial vocabulary provides a few
     builtins operations of that sort, which are listed
-    [here](lexicon.html).
+    [here][:lexicon].
   - otherwise, it is simply pushed onto the stack, as a constant
 
 There are two main verbs to interact with the vocabulary : `def`, for
