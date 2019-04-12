@@ -9,7 +9,7 @@ $break-wide: 60em;
 @import "capricon";
 
 .smooth-colors, .smooth-colors * {
-    transition: color 1s, background 1s !important;
+    transition: color 1s, background 1s;
 }
 
 svg.formula {
