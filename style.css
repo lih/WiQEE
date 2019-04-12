@@ -1084,7 +1084,7 @@
 }
 
 .smooth-colors, .smooth-colors * {
-  transition: color 1s, background 1s;
+  transition: color 1s, background 1s !important;
 }
 
 svg.formula {
