@@ -36,23 +36,21 @@ In short, if you want to host your own version of this WiQEE on
 GitHub, all you have to do is :
 
   - fork this project on GitHub
-  
   - enable GitHub Pages on the branch called `gh-pages` in the settings page
-
   - log into [Travis CI] with your GitHub account, and enable the
     service for your newly-forked repository (it should be
     automatically detected by Travis).
-
-    Allow Travis to upload the pages back to GitHub :
-
+  - allow Travis to upload the pages back to GitHub :
      - generate a new [GitHub Access
        Token](https://github.com/settings/tokens) (or reuse a previous
        one, but good security recommends the former)
-
      - set the variable GITHUB_API_KEY to that new token, in the
        "Settings" page of your project on Travis (at
        https://travis-ci.org/$USERNAME/WiQEE/settings)
-
+  - commit to `master`, and wait a few minutes (8-10 minutes, because
+    Travis reinstalls LaTeX each time). If all goes well, your own
+    WiQEE should be fully-functional and available on
+    https://$USERNAME.github.io/WiQEE .
 
 ### Questions ?
 
