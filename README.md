@@ -11,10 +11,11 @@ those pages.
 Beyond the obvious (`make` and a shell), the following utilities will
 need to be installed on your system beforehand :
 
-  - [SassC][sassc], a SCSS preprocessor, comes in many forms, and is
-    usually found in the system package manager. If not, you can
-    install it from the above link, or from [the official Sass/SCSS
-    site](https://sass-lang.com/install), whichever is easiest
+  - [SassC][sassc], a SCSS preprocessor, comes in many forms, and can
+    usually be found in your system package manager (search for `scss`
+    or `sass`). If not, you can install it from the above link, or
+    from [the official Sass/SCSS site](https://sass-lang.com/install),
+    whichever is easiest
 
   - [Pandoc][pandoc] is a general-purpose document converter, which is here used
     to convert Markdown documents into their final HTML form
