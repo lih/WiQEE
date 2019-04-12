@@ -41,7 +41,7 @@ List combinators
 > 'list_map Type 'A -> Type 'B -> A 'x -> B ? 'f -> List ( A ) 'l ->
 >    l (
 >      List ( B ) 
->      A 'x -> List ( A ) 'l -> cons ( B f ( x ) l ) ! !
+>      A 'x -> List ( B ) 'l -> cons ( B f ( x ) l ) ! !
 >      nil ( B )
 >    ) 4 lambdas def
 
