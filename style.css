@@ -357,7 +357,6 @@
 }
 .frame .sheet button, #body-theme-chooser .sheet button, #capricon-console .sheet button, #capricon-console .capricon-steps button, .frame .sheet select, #body-theme-chooser .sheet select, #capricon-console .sheet select, #capricon-console .capricon-steps select {
   --level: 6;
-  transition: none !important;
 }
 .frame .sheet button:hover, #body-theme-chooser .sheet button:hover, #capricon-console .sheet button:hover, #capricon-console .capricon-steps button:hover, .frame .sheet select:hover, #body-theme-chooser .sheet select:hover, #capricon-console .sheet select:hover, #capricon-console .capricon-steps select:hover {
   --level: 9;

@@ -356,7 +356,6 @@
 }
 .frame .sheet button, .frame .sheet select {
   --level: 6;
-  transition: none !important;
 }
 .frame .sheet button:hover, .frame .sheet select:hover {
   --level: 9;
