@@ -51,7 +51,7 @@ GitHub, all you have to do is :
 
      - set the variable GITHUB_API_KEY to that new token, in the
        "Settings" page of your project on Travis (at
-       https://travis-ci.org/<your-username>/WiQEE/settings)
+       https://travis-ci.org/$USERNAME/WiQEE/settings)
 
 
 ### Questions ?
