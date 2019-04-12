@@ -13,7 +13,7 @@ need to be installed on your system beforehand :
 
   - [SassC][sassc], a SCSS preprocessor, comes in many forms, and is
     usually found in the system package manager. If not, you can
-    install it from the above link, or from [the official Sass
+    install it from the above link, or from [the official Sass/SCSS
     site](https://sass-lang.com/install), whichever is easiest
 
   - [Pandoc][pandoc] is a general-purpose document converter, which is here used
