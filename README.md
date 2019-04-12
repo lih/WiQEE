@@ -11,9 +11,9 @@ those pages.
 Beyond the obvious (`make` and a shell), the following utilities will
 need to be installed on your system beforehand :
 
-  - [SassC][sassc], a SCSS preprocessor, is a Ruby gem, usually found
-    in the system package manager. If not, you can install it from the
-    above link, or from [the official Sass
+  - [SassC][sassc], a SCSS preprocessor, comes in many forms, and is
+    usually found in the system package manager. If not, you can
+    install it from the above link, or from [the official Sass
     site](https://sass-lang.com/install), whichever is easiest
 
   - [Pandoc][pandoc] is a general-purpose document converter, which is here used
