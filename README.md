@@ -26,12 +26,43 @@ That's it ! Once those are installed, run `make`, and your WiQEE
 should now be viewable in any ol' browser, by opening one of the HTML
 pages that were created in the `public/` directory.
 
+### Integration with GitHub Pages
+
+This WiQEE comes equipped with a fully-functional Travis CI configuration
+that builds all commits committed on the `master` branch, and uploads
+them to GitHub Pages.
+
+In short, if you want to host your own version of this WiQEE on
+GitHub, all you have to do is :
+
+  - fork this project on GitHub
+  
+  - enable GitHub Pages on the branch called `gh-pages` in the settings page
+
+  - log into [Travis CI] with your GitHub account, and enable the
+    service for your newly-forked repository (it should be
+    automatically detected by Travis).
+
+    Allow Travis to upload the pages back to GitHub :
+
+     - generate a new [GitHub Access
+       Token](https://github.com/settings/tokens) (or reuse a previous
+       one, but good security recommends the former)
+
+     - set the variable GITHUB_API_KEY to that new token, in the
+       "Settings" page of your project on Travis (at
+       https://travis-ci.org/<your-username>/WiQEE/settings)
+
+
+### Questions ?
+
 Don't hesitate to open an issue in this repository if you have some
 trouble, or suggestions to make it better, or simply questions about
 it.
 
 Happy hacking !
 
+[Travis CI]: https://travis-ci.org/
 [sassc]: https://github.com/sass/sassc
 [pandoc]: https://pandoc.org/
 [capricon]: https://github.com/lih/BHR/releases
