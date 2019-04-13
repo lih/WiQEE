@@ -43,12 +43,10 @@ window.addEventListener('load',function () {
 		    
 		var mainExamples = root.getElementsByClassName('capricon-example');
 		var runConsole = function () {
-		    if(!consoleRoot.classList.contains('active')) {
-			consoleRoot.classList.add('active');
-			consoleInput.value = mainInput.value;
-			evalCaPriCon(st0,consoleInput.value,function(ret) { consoleOutput.textContent = ret; });
-		      	consoleInput.focus();
-		    }
+		    consoleRoot.classList.add('active');
+		    consoleInput.value = mainInput.value;
+		    evalCaPriCon(st0,consoleInput.value,function(ret) { consoleOutput.textContent = ret; });
+		    consoleInput.focus();
 		};
 
 		for(var j = 0; j < mainExamples.length; j++) {
