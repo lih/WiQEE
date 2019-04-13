@@ -51,6 +51,13 @@ $endfor$
 $for(include-before)$
 $include-before$
 $endfor$
+<script>
+  function escapeHtml(str) {
+      var div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+  }
+</script>
 <div id="content-frame" class="frame"><div class="nav header reverse">
     <span class="menu left"><a href="index.html">WiQEE</a><ul>
   	<li><a href="#">Documentation</a><ul>
