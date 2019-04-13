@@ -64,6 +64,7 @@ $endfor$
 	  alert('argument: '+arguments[i]);
 	  ret += ((syms[i-1] !== undefined) ? syms[i-1] : "") + escapeHtml(arguments[i]);
       }
+      ret += syms[i-1];
       alert(ret);
       var p = new DOMParser();
       return p.parseFromString(ret,'text/xml');
