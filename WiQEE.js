@@ -42,22 +42,6 @@ window.addEventListener('load',function () {
 		var consoleOutput = consoleRoot.getElementsByClassName('capricon-output')[0];
 		    
 		var mainExamples = root.getElementsByClassName('capricon-example');
-		var runConsole = function () {
-		    consoleRoot.classList.add('active');
-		    consoleInput.value = mainInput.value;
-		    evalCaPriCon(st0,consoleInput.value,function(ret) { consoleOutput.textContent = ret; });
-		    consoleInput.focus();
-		};
-
-		for(var j = 0; j < mainExamples.length; j++) {
-		    (function () {
-			var example = mainExamples[j];
-			example.addEventListener('click', function (ev) {
-			    mainInput.value = example.getAttribute('data-code');
-			    runConsole();
-			});
-		    })();
-		}
 
 		consoleClose.textContent = "Close";
 		consoleClose.addEventListener('click', function() {
@@ -79,6 +63,22 @@ window.addEventListener('load',function () {
 		var text = root.getElementsByClassName('capricon')[0].textContent;
 		runCaPriCon(st,text,function(st0) {
 		    var mainTrigger = root.getElementsByClassName('capricon-trigger')[0];
+		    var runConsole = function () {
+			consoleRoot.classList.add('active');
+			consoleInput.value = mainInput.value;
+			evalCaPriCon(st0,consoleInput.value,function(ret) { consoleOutput.textContent = ret; });
+			consoleInput.focus();
+		    };
+		    
+		    for(var j = 0; j < mainExamples.length; j++) {
+			(function () {
+			    var example = mainExamples[j];
+			    example.addEventListener('click', function (ev) {
+				mainInput.value = example.getAttribute('data-code');
+				runConsole();
+			    });
+			})();
+		    }
 		    
 		    mainInput.classList.add('ready'); mainInput.classList.remove('pending');
 		    mainTrigger.addEventListener('click', function (ev) { runConsole(); });
