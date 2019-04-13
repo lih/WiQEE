@@ -61,7 +61,7 @@ $endfor$
       var syms = arguments[0];
       var ret = "";
       for (var i=1;i < arguments.length; i++) {
-	  ret += (syms[i-1] || "") + escapeHtml(arguments[i]);
+	  ret += ((syms[i-1] !== undefined) ? syms[i-1] : "") + escapeHtml(arguments[i]);
       }
       alert(ret);
       var p = new DOMParser();
