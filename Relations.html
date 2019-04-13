@@ -31,6 +31,13 @@
   <script src="theme-tweak.js"></script>
 </head>
 <body class="ground-light primary" style="font-size: 100%;">
+<script>
+  function escapeHtml(str) {
+      var div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+  }
+</script>
 <div id="content-frame" class="frame"><div class="nav header reverse">
     <span class="menu left"><a href="index.html">WiQEE</a><ul>
   	<li><a href="#">Documentation</a><ul>
@@ -97,7 +104,7 @@ Try It Out
 <div class="capricon-paragraphresult">
 
 </div>
-      <div id="footer">Page generated on Saturday, April 13 of 2019, at 01:25 AM UTC, using capricon-0.13.1 and pandoc-2.7.2.</div>
+      <div id="footer">Page generated on Saturday, April 13 of 2019, at 14:57 PM UTC, using capricon-0.13.1 and pandoc-2.7.2.</div>
 </div></div></div>
 <script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'eol. { } def 'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def 'newline { } def  'collect { { 'exports empty def ${ } exports { ,{ ,{ vocabulary } } set-vocabulary ,{ ,{ stack } } set-stack ,{ exports } } exec } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { source-dir "%s%s" format source exec } def 'require { dup dup "  * Required module: [%s][:%s]\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def   </script>
 <div id="capricon-console"></div>
