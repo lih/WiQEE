@@ -31,23 +31,6 @@
   <script src="theme-tweak.js"></script>
 </head>
 <body class="ground-light primary" style="font-size: 100%;">
-<script>
-  function escapeHtml(str) {
-      var div = document.createElement('div');
-      div.appendChild(document.createTextNode(str));
-      return div.innerHTML;
-  }
-  function cons_html() {
-      var syms = arguments[0];
-      var ret = "";
-      for (var i=1;i < arguments.length; i++) {
-	  ret += ((syms[i-1] !== undefined) ? syms[i-1] : "") + escapeHtml(arguments[i]);
-      }
-      ret += syms[i-1];
-      var p = new DOMParser();
-      return p.parseFromString(ret,'application/xhtml+xml').documentElement;
-  }
-</script>
 <div id="content-frame" class="frame"><div class="nav header reverse">
     <span class="menu left"><a href="index.html">WiQEE</a><ul>
   	<li><a href="#">Documentation</a><ul>

@@ -1,3 +1,19 @@
+function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+}
+function cons_html() {
+    var syms = arguments[0];
+    var ret = "";
+    for (var i=1;i < arguments.length; i++) {
+	ret += ((syms[i-1] !== undefined) ? syms[i-1] : "") + escapeHtml(arguments[i]);
+    }
+    ret += syms[i-1];
+    var p = new DOMParser();
+      return p.parseFromString(ret,'application/xhtml+xml').documentElement;
+}
+
 window.addEventListener('load',function () {
     var wloc = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
     window.console.log('window location: ' + wloc);
