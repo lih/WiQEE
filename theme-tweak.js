@@ -67,13 +67,14 @@ var Theme = {
 	setLightGround(root,this.getPropVal('light'));
 	this.updateElement(rootI);
 
-	(function(amb) {
+	{
+	    var amb = root.getElementsByClassName('theme-ambiance-select')[0];
 	    var tw = this;
 	    amb.value = tw.ambiance;
 	    amb.addEventListener('change', function() {
 		tw.setAmbiance(amb.value).updateAll();
 	    });
-	}).call(this, root.getElementsByClassName('theme-ambiance-select')[0]);
+	};
 	
 	var elts = root.getElementsByClassName('theme-slider');
 	for(var x in elts) {
