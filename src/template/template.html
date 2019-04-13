@@ -61,6 +61,7 @@ $endfor$
       var syms = arguments[0];
       var ret = "";
       for (var i=1;i < arguments.length; i++) {
+	  alert('argument: '+arguments[i]);
 	  ret += ((syms[i-1] !== undefined) ? syms[i-1] : "") + escapeHtml(arguments[i]);
       }
       alert(ret);
