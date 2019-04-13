@@ -39,15 +39,14 @@ window.addEventListener('load',function () {
 		var consoleTitle = document.createElement('h4');
 		var consoleClose = document.createElement('button');
 		var consoleInput = consoleRoot.getElementsByClassName('capricon-input')[0];
+		var consoleOutput = consoleRoot.getElementsByClassName('capricon-output')[0];
 		    
 		var mainExamples = root.getElementsByClassName('capricon-example');
 		var runConsole = function () {
-		    if(!consoleRoot.classList.contains('active')) {
-			consoleRoot.classList.add('active');
-			consoleInput.value = mainInput.value;
-			evalCaPriCon(st0,consoleInput.value,function(ret) { consoleOutput.textContent = ret; });
-		      	consoleInput.focus();
-		    }
+		    consoleRoot.classList.add('active');
+		    consoleInput.value = mainInput.value;
+		    evalCaPriCon(st0,consoleInput.value,function(ret) { consoleOutput.textContent = ret; });
+		    consoleInput.focus();
 		};
 
 		for(var j = 0; j < mainExamples.length; j++) {
@@ -80,7 +79,6 @@ window.addEventListener('load',function () {
 		var text = root.getElementsByClassName('capricon')[0].textContent;
 		runCaPriCon(st,text,function(st0) {
 		    var mainTrigger = root.getElementsByClassName('capricon-trigger')[0];
-		    var consoleOutput = consoleRoot.getElementsByClassName('capricon-output')[0];
 		    
 		    mainInput.classList.add('ready'); mainInput.classList.remove('pending');
 		    mainTrigger.addEventListener('click', function (ev) { runConsole(); });
