@@ -305,6 +305,7 @@ found "transferred" to the term on the stack.
 {.newline.}
 
 That's about all there is to hypotheses : use `intro` to create new
-ones; and `variable` to refer to them. One last thing you can 
+ones; create some terms using `variable` et al.; and finally,
+clear them from the environment using some kind of extroduction.
 
 <div class="in-progress"></div>
