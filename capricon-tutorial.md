@@ -264,6 +264,8 @@ usually call it a *witness* of some property.
 > pop 'Prop intro
 >? vis
 
+### Using hypotheses
+
 We now have a fresh but unknown property of $Set_{0}$, called `Prop`,
 in the context. We can retrieve that property by using its name, using
 the `variable` builtin, and check that it is indeed an element of the
@@ -280,5 +282,29 @@ of it if we want. Let's call that witness `p` :
 > 'p intro
 >? vis
 >? 'p variable type vis
+
+### Clearing hypotheses
+
+Once a variable has been introduced, and used to construct some terms,
+it can be *extroduced* from the context, which has the effect of
+closing those terms under binders. The builtin verbs `extro-lambda`
+and `extro-forall` have the function of extroducing the last
+hypothesis that was introduced, respectively using lambda abstractions
+and products ("forall").
+
+In our running example, we can for example create the term {{'p
+variable lambda tex}} by extroducing a lambda abstraction after
+creating the term {{'p variable tex}}.
+
+> 'p variable extro-lambda
+>? vis
+
+Notice how the `p` hypothesis disappeared from the context, only to be
+found "transferred" to the term on the stack.
+
+{.newline.}
+
+That's about all there is to hypotheses : use `intro` to create new
+ones; and `variable` to refer to them. One last thing you can 
 
 <div class="in-progress"></div>

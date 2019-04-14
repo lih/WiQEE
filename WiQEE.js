@@ -37,6 +37,11 @@ window.addEventListener('load',function () {
 	workerCallbacks.push(then);
 	capriconWorker.postMessage([1,nextCallback,state,code]);
     };
+    var execCaPriCon = function(state,code,then) {
+	var nextCallback = workerCallbacks.length;
+	workerCallbacks.push(then);
+	capriconWorker.postMessage([2,nextCallback,state,code]);
+    };
     
     var prel = document.getElementById('capricon-prelude').textContent;
     var roots = Array.prototype.slice.call(document.getElementsByClassName('capricon-steps'));
