@@ -296,7 +296,7 @@ In our running example, we can for example create the term {{'p
 variable lambda tex}} by extroducing a lambda abstraction after
 creating the term {{'p variable tex}}.
 
-> 'p variable 'Prop variable pull extro-lambda
+> 'p variable 'Prop variable extro-lambda
 >? vis
 
 Notice how the `p` hypothesis disappeared from the context, only to be
