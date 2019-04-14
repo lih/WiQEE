@@ -313,7 +313,4 @@ clear them from the environment using some kind of extroduction.
 Functions, Products and Applications
 ------------------------------------
 
-> dup 'p intro pull extro-forall
->? vis
-
 <div class="in-progress"></div>
