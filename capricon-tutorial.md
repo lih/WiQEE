@@ -300,7 +300,9 @@ creating the term {{'p variable tex}}.
 >? vis
 
 Notice how the `p` hypothesis disappeared from the context, only to be
-found "transferred" to the term on the stack.
+found "transferred" to the terms on the stack that reference it. The
+`Prop` hypothesis was not affected because it couldn't possibly refer
+to `p`, being defined before it.
 
 {.newline.}
 
