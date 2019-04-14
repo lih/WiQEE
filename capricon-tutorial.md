@@ -310,4 +310,10 @@ That's about all there is to hypotheses : use `intro` to create new
 ones; create some terms using `variable` et al.; and finally,
 clear them from the environment using some kind of extroduction.
 
+Functions, Products and Applications
+------------------------------------
+
+> dup 'p intro pull extro-forall
+>? vis
+
 <div class="in-progress"></div>
