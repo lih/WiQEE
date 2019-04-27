@@ -51,6 +51,7 @@ window.addEventListener('load',function () {
 	if(i < roots.length) {
     	    var root = roots[i];
 	    if(root.tagName == 'CODE') {
+		alert(root.textContent);
 		runCaPriCon(st,root.textContent + " mustache.",loop0(i+1));
 	    }
 	    else {
