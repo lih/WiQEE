@@ -58,7 +58,7 @@ can fall into one of three categories :
   - *verbs* are operational words, that can modify the stack or the
      environment when they are run
   - *quotes* are sequences of *steps*, where a step can be either a
-    word step, or a splice step (quotes and steps will de described in
+    word step, or a splice step (quotes and steps will be described in
     more detail below).
 
 ### Nouns
