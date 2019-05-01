@@ -124,7 +124,7 @@ ul > li {
     ol { display: inline-block; }
 }
 
-footer {
+#content-scroll footer {
     opacity: 0.7;
     &::before {
 	content: "";
