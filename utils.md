@@ -26,7 +26,7 @@ Reminder : all builtin functions can be found documented [here][:lexicon]
 
 #### Constructing typed terms
 
-> 'Type { 0 universe } defX
+> 'Type { 0 universe pull } defX
 
 > 'foralls { { extro-forall } swap times } defX
 > 'lambdas { { extro-lambda } swap times } defX
