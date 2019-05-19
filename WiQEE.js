@@ -14,6 +14,17 @@ function cons_html() {
       return p.parseFromString(ret,'application/xhtml+xml').documentElement;
 }
 
+function foldrM(stIni,l,f) {
+    var rec = function(i) {
+	return function(st) {
+	    if(i<l.length) {
+		f(st,l[i],rec(i+1));
+	    }
+	};
+    };
+    rec(0)(stIni);
+}
+
 window.addEventListener('load',function () {
     "use strict";
     
@@ -46,12 +57,11 @@ window.addEventListener('load',function () {
     var prel = document.getElementById('capricon-prelude').textContent;
     var roots = Array.prototype.slice.call(document.getElementsByClassName('capricon-steps'));
     var console = document.getElementById('capricon-console');
-    function loop0(i) { return function (st) {
-	// alert('loop0 called with '+i+' roots.length='+roots.length);
-	if(i < roots.length) {
-    	    var root = roots[i];
+
+    runCaPriCon(0,prel,function (stIni) {
+	foldrM(stIni,roots,function (st,root,cont) {
 	    if(root.tagName == 'CODE') {
-		runCaPriCon(st,root.textContent + " mustache.",loop0(i+1));
+		runCaPriCon(st,root.textContent + " mustache.",cont);
 	    }
 	    else {
 		var mainInput = root.getElementsByClassName('capricon-input')[0];
@@ -63,7 +73,7 @@ window.addEventListener('load',function () {
 		var consoleClose = document.createElement('button');
 		var consoleInput = consoleRoot.getElementsByClassName('capricon-input')[0];
 		var consoleOutput = consoleRoot.getElementsByClassName('capricon-output')[0];
-		    
+		
 		var mainExamples = root.getElementsByClassName('capricon-example');
 
 		consoleClose.textContent = "Close";
@@ -121,10 +131,10 @@ window.addEventListener('load',function () {
 			}
 		    });
 
-		    loop0(i+1)(st0);
+		    cont(st0);
 		});
 	    }
-	}
-    };}
-    runCaPriCon(0,prel,loop0(0));
+	    
+	});
+    });
 });
