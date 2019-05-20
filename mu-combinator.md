@@ -38,9 +38,9 @@ shapes, $true$ or $false$, and cannot be any other thing.
 This means that, if we want to prove a property $P\,x$ for some unknown
 Boolean $x$, all we need is to prove $P\,true$ and $P\,false$.
 
-This information is summed up in what we call the *induction
+This exact information is summed up in what we call the *induction
 principle* for Booleans. In Coq, it will be given the name
-`Boolean_rect`, and have the type $\forall
+`Boolean_rect`, for instance, and have the type $\forall
 (P:Boolean\,\rightarrow\,Type),\ P\,true\ \rightarrow\ P\,false\
 \rightarrow\ \forall (b:Boolean),\ P\,b$.
 
