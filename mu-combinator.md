@@ -21,4 +21,12 @@ Inductive T : forall A..., Type :=
 .
 ~~~~~~~~~
 
-Here, we declare the inductive type $T : \forall A..., Type$, and its constructors called $t_{i}$ ($i \in \{0..n\}$).
+Here, we declare the inductive type $T : \forall A..., Type$, and its
+constructors called $t_{i}$ ($i \in \{0..n\}$).
+
+As a more concrete example, here is how the type of Booleans can be
+defined inductively :
+
+~~~~~~~{.coq}
+Inductive Boolean : Type := true : Boolean | false : Boolean.
+~~~~~~~~
