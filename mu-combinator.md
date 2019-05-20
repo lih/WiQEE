@@ -35,5 +35,5 @@ The above definition is essentially a formal statement of the
 following description of Booleans : a Boolean can have one of two
 shapes, $true$ or $false$, and cannot be any other thing.
 
-This means that, if we want to prove a property $P$ that depends on an
-unknown Boolean $x$, all you need is to prove $P true$ and $P false$.
+This means that, if we want to prove a property $P\,x$ for some unknown
+Boolean $x$, all we need is to prove $P\,true$ and $P\,false$.
