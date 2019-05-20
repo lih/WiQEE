@@ -78,6 +78,14 @@ rather than abstract concepts.
 Given a Boolean $b$, we would like to be able to return different
 values from a function, depending on whether $b$ is true or false. 
 
+With all that in mind, here is the type I propose for $true$ and $false$ :
+
+$$
+Boolean = \forall (P:Prop), \forall (ptrue:P), \forall (pfalse:P), P
+$$
+
+That is, given a
+
 
 Inductive Types
 -----------
