@@ -93,7 +93,16 @@ definition :
 
   - $true = \lambda (P:Prop). \lambda (ptrue:P). \lambda (pfalse:P). ptrue$
   - $false = \lambda (P:Prop). \lambda (ptrue:P). \lambda (pfalse:P). pfalse$
-  
+
+### Sameness, and negation
+
+Two values $x$ and $y$ can be said to be the same when everything that
+can be proven of $x$ can also be proven of $y$. More formally, given a
+type $A$ of things, and two values $x$ and $y$ of type $A$ we have :
+
+$$
+(x\ sameas\ y) = \forall (P:A\ \rightarrow\ Set_{n}), P\,x\ \rightarrow\ P\,y
+$$
 
 Inductive Types
 -----------
