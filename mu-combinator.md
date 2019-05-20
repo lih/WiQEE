@@ -21,3 +21,4 @@ Inductive T : forall A..., Type :=
 .
 ~~~~~~~~~
 
+Here, we declare the inductive type $T : \forall A..., Type$.
