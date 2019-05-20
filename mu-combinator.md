@@ -12,7 +12,7 @@ The pure Calculus of Construction
 It is already very well-described elsewhere, so I won't try to provide
 a full and correct history of the CoC. Suffice to say that it is a
 logically consistent programming language, that can prove properties
-withing the framework of intuitionistic logic.
+within the framework of intuitionistic logic.
 
 At its simplest, it provides five basic constructions :
 
@@ -44,6 +44,8 @@ At its simplest, it provides five basic constructions :
     For instance, given a proof $f$ of $\forall (x:\mathbb{N}), \exists
     (y:\mathbb{N}), y = x+1$, we can prove that $\exists
     (y:\mathbb{N}), y=10+1$, by applying $f$ to $10$ (aka. $f\,10$).
+
+
 
 Inductive Types
 -----------
