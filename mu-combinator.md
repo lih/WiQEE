@@ -88,7 +88,8 @@ $$
 That is, a Boolean is a way to produce any $P$, given two alternatives
 $ptrue$ and $pfalse$, and nothing else.
 
-There are two ways to construct a Boolean, given this definition :
+There are, conveniently, two ways to construct a Boolean, given this
+definition :
 
   - $true = \lambda (P:Prop). \lambda (ptrue:P). \lambda (pfalse:P). ptrue$
   - $false = \lambda (P:Prop). \lambda (ptrue:P). \lambda (pfalse:P). pfalse$
