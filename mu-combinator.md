@@ -6,6 +6,37 @@ based, is an extension of the standard
 [CoC](https://en.wikipedia.org/wiki/Calculus_of_constructions) with a
 mechanism for discriminating inductive constructors.
 
+The pure Calculus of Construction
+----------------------------
+
+It is already very well-described elsewhere, so I won't try to provide
+a full and correct history of the CoC. Suffice to say that it is a
+logically consistent programming language, that can prove properties
+withing the framework of intuitionistic logic.
+
+At its simplest, it provides five basic constructions :
+
+  - universes, of the form $Set_n$, are the "types of
+    types". $Set_{n+1}$ is the type of $Set_{n}$
+
+  - products, noted $\forall (x:X), Y\,x$ -- or $X\ \rightarrow\ Y$
+    when $Y$ doesn't depend on x -- are the "types of
+    functions". $\mathbb{N}\ \rightarrow\ \mathbb{R}$, for instance is
+    the type of functions from the natural numbers to the real numbers.
+
+  - functions or lambdas, noted $\lambda (x:X), Y\,x$, are the "proofs
+    of products". A valid lambda can be interpreted as the proof of a
+    property, quantified over its variable.
+
+  - hypotheses, or variables, are the symbols introduced by
+    surrounding quantifiers ($\lambda$ and $\forall$). In their
+    context, they are valid proofs of their type.
+
+    For example, the identity function can be written $\lambda
+    (A:Set_{0}), \lambda (a:A), a$, and it is a valid proof of
+    $\forall (A:Set_{0}), \forall (a:A), A$, since $a$ is a valid
+    proof of $A$ in its context.
+
 Inductive Types
 -----------
 

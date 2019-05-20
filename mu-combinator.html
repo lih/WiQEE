@@ -41,6 +41,7 @@
 	<li><a class="interactive" href="#" onclick="document.getElementById('body-theme-chooser').classList.toggle('active'); document.body.classList.toggle('smooth-colors');">Tweak theme</a></li>
     </ul></span><span class="menu middle"><a class="#">Reflections on Prismatic Constructions</a>
             <ul>
+      <li><a href="#the-pure-calculus-of-construction">The pure Calculus of Construction</a></li>
       <li><a href="#inductive-types">Inductive Types</a></li>
       </ul>
           </span><span class="menu right"><a href="mu-combinator.md">Page source</a><ul>
@@ -50,6 +51,16 @@
   </header><div id="content-scroll"><article id="content" class="sheet" tabindex="1">
 <h1>Reflections on Prismatic Constructions</h1>
 <p>The Calculus of Prismatic Constructions, upon which this platform is based, is an extension of the standard <a href="https://en.wikipedia.org/wiki/Calculus_of_constructions">CoC</a> with a mechanism for discriminating inductive constructors.</p>
+<h2 id="the-pure-calculus-of-construction">The pure Calculus of Construction</h2>
+<p>It is already very well-described elsewhere, so I won’t try to provide a full and correct history of the CoC. Suffice to say that it is a logically consistent programming language, that can prove properties withing the framework of intuitionistic logic.</p>
+<p>At its simplest, it provides five basic constructions :</p>
+<ul>
+<li><p>universes, of the form <span class="math inline">\(Set_n\)</span>, are the “types of types”. <span class="math inline">\(Set_{n+1}\)</span> is the type of <span class="math inline">\(Set_{n}\)</span></p></li>
+<li><p>products, noted <span class="math inline">\(\forall (x:X), Y\,x\)</span> – or <span class="math inline">\(X\ \rightarrow\ Y\)</span> when <span class="math inline">\(Y\)</span> doesn’t depend on x – are the “types of functions”. <span class="math inline">\(\mathbb{N}\ \rightarrow\ \mathbb{R}\)</span>, for instance is the type of functions from the natural numbers to the real numbers.</p></li>
+<li><p>functions or lambdas, noted <span class="math inline">\(\lambda (x:X), Y\,x\)</span>, are the “proofs of products”. A valid lambda can be interpreted as the proof of a property, quantified over its variable.</p></li>
+<li><p>hypotheses, or variables, are the symbols introduced by surrounding quantifiers (<span class="math inline">\(\lambda\)</span> and <span class="math inline">\(\forall\)</span>). In their context, they are valid proofs of their type.</p>
+<p>For example, the identity function can be written <span class="math inline">\(\lambda (A:Set_{0}), \lambda (a:A), a\)</span>, and it is a valid proof of <span class="math inline">\(\forall (A:Set_{0}), \forall (a:A), A\)</span>, since <span class="math inline">\(a\)</span> is a valid proof of <span class="math inline">\(A\)</span> in its context.</p></li>
+</ul>
 <h2 id="inductive-types">Inductive Types</h2>
 <p>Inductive types can be described as enumerations of constructors. In Coq (and similarly in other proof assistants), an inductive type must be declared along with its constructors, using a syntax like :</p>
 <pre class="coq"><code>Inductive T : forall A..., Type :=
@@ -64,7 +75,7 @@
 <p>This means that, if we want to prove a property <span class="math inline">\(P\,x\)</span> for some unknown Boolean <span class="math inline">\(x\)</span>, all we need is to prove <span class="math inline">\(P\,true\)</span> and <span class="math inline">\(P\,false\)</span>.</p>
 <p>This exact information is summed up in what we call the <em>induction principle</em> for Booleans. In Coq, it will be given the name <code>Boolean_rect</code>, for instance, and have the type <span class="math inline">\(\forall (P:Boolean\,\rightarrow\,Type),\ P\,true\ \rightarrow\ P\,false\
 \rightarrow\ \forall (b:Boolean),\ P\,b\)</span>.</p>
-<footer>Page generated on Monday, May 20 of 2019, at 11:02 AM UTC, using capricon-0.13.1.2 and pandoc-2.7.2.</footer>
+<footer>Page generated on Monday, May 20 of 2019, at 13:01 PM UTC, using capricon-0.13.1.2 and pandoc-2.7.2.</footer>
     </article></div></main>
 <script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'eol. { } def 'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def 'newline { } def  'collect { { 'exports empty def ${ } exports { ,{ ,{ vocabulary } } set-vocabulary ,{ ,{ stack } } set-stack ,{ exports } } exec } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { source-dir "%s%s" format source exec } def 'require { dup dup "  * Required module: [%s][:%s]\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def   </script>
 <div id="capricon-console"></div>
