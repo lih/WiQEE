@@ -12,7 +12,7 @@ The pure Calculus of Construction
 It is already very well-described elsewhere, so I won't try to provide
 a full and correct history of the CoC. Suffice to say that it is a
 logically consistent programming language, that can prove properties
-within the framework of intuitionistic logic.
+withing the framework of intuitionistic logic.
 
 At its simplest, it provides five basic constructions :
 
