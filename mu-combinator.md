@@ -60,10 +60,23 @@ To illustrate the kind of reasoning that can't be carried out with raw
 intuitionistic logic, let's take an obvious statement : true is not
 false (and vice-versa).
 
-We'd like to prove this statemnt using only the tools given by the
+We'd like to prove this statement using only the tools given by the
 CoC. For this, we have to define a few concepts, namely $true$,
 $false$, and what it means to "not be" something.
 
+### Intuitionistic Booleans
+
+In order for two things to be considered the same, they must at least
+belong to the same family. In this case, it means that $true$ and
+$false$ must have the same type.
+
+By convention, we like to call the type of "true or false" the
+$Boolean$ type, in honor of George Boole, who was one of the first
+logicians to start considering truth and falsity as concrete values
+rather than abstract concepts.
+
+Given a Boolean $b$, we would like to be able to return different
+values from a function, depending on whether $b$ is true or false. 
 
 
 Inductive Types
