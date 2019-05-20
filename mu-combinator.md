@@ -6,7 +6,7 @@ based, is an extension of the standard
 [CoC](https://en.wikipedia.org/wiki/Calculus_of_constructions) with a
 mechanism for discriminating inductive constructors.
 
-The Problem
+Inductive Types
 -----------
 
 Inductive types can be described as enumerations of constructors. In
@@ -42,4 +42,6 @@ This information is summed up in what we call the *induction
 principle* for Booleans. In Coq, it will be given the name
 `Boolean_rect`, and have the type $\forall
 (P:Boolean\,\rightarrow\,Type),\ P\,true\ \rightarrow\ P\,false\
-\rightarrow\ \forall (b:Boolean),\ P\,b$
+\rightarrow\ \forall (b:Boolean),\ P\,b$.
+
+
