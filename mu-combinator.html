@@ -74,12 +74,17 @@
 <h3 id="intuitionistic-booleans">Intuitionistic Booleans</h3>
 <p>In order for two things to be considered the same, they must at least belong to the same family. In this case, it means that <span class="math inline">\(true\)</span> and <span class="math inline">\(false\)</span> must have the same type.</p>
 <p>By convention, we like to call the type of “true or false” the <span class="math inline">\(Boolean\)</span> type, in honor of George Boole, who was one of the first logicians to start considering truth and falsity as concrete values rather than abstract concepts.</p>
-<p>Given a Boolean <span class="math inline">\(b\)</span>, we would like to be able to return different values from a function, depending on whether <span class="math inline">\(b\)</span> is true or false.</p>
-<p>With all that in mind, here is the type I propose for <span class="math inline">\(true\)</span> and <span class="math inline">\(false\)</span> :</p>
+<p>Given a Boolean <span class="math inline">\(b\)</span>, we would like to be able to return different values from a function, depending on whether <span class="math inline">\(b\)</span> is true or false. Otherwise, our Boolean wouldn’t be much use in a computation.</p>
+<p>With all that in mind, here is the definition I propose the <span class="math inline">\(Boolean\)</span> type :</p>
 <p><span class="math display">\[
 Boolean = \forall (P:Prop), \forall (ptrue:P), \forall (pfalse:P), P
 \]</span></p>
-<p>That is, given a</p>
+<p>That is, a Boolean is a way to produce any <span class="math inline">\(P\)</span>, given two alternatives <span class="math inline">\(ptrue\)</span> and <span class="math inline">\(pfalse\)</span>, and nothing else.</p>
+<p>There are two ways to construct a Boolean, given this definition :</p>
+<ul>
+<li><span class="math inline">\(true = \lambda (P:Prop). \lambda (ptrue:P). \lambda (pfalse:P). ptrue\)</span></li>
+<li><span class="math inline">\(false = \lambda (P:Prop). \lambda (ptrue:P). \lambda (pfalse:P). pfalse\)</span></li>
+</ul>
 <h2 id="inductive-types">Inductive Types</h2>
 <p>Inductive types can be described as enumerations of constructors. In Coq (and similarly in other proof assistants), an inductive type must be declared along with its constructors, using a syntax like :</p>
 <pre class="coq"><code>Inductive T : forall A..., Type :=
@@ -94,7 +99,7 @@ Boolean = \forall (P:Prop), \forall (ptrue:P), \forall (pfalse:P), P
 <p>This means that, if we want to prove a property <span class="math inline">\(P\,x\)</span> for some unknown Boolean <span class="math inline">\(x\)</span>, all we need is to prove <span class="math inline">\(P\,true\)</span> and <span class="math inline">\(P\,false\)</span>.</p>
 <p>This exact information is summed up in what we call the <em>induction principle</em> for Booleans. In Coq, it will be given the name <code>Boolean_rect</code>, for instance, and have the type <span class="math inline">\(\forall (P:Boolean\,\rightarrow\,Type),\ P\,true\ \rightarrow\ P\,false\
 \rightarrow\ \forall (b:Boolean),\ P\,b\)</span>.</p>
-<footer>Page generated on Monday, May 20 of 2019, at 13:41 PM UTC, using capricon-0.13.1.2 and pandoc-2.7.2.</footer>
+<footer>Page generated on Monday, May 20 of 2019, at 13:46 PM UTC, using capricon-0.13.1.2 and pandoc-2.7.2.</footer>
     </article></div></main>
 <script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'eol. { } def 'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def 'newline { } def  'collect { { 'exports empty def ${ } exports { ,{ ,{ vocabulary } } set-vocabulary ,{ ,{ stack } } set-stack ,{ exports } } exec } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { source-dir "%s%s" format source exec } def 'require { dup dup "  * Required module: [%s][:%s]\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def   </script>
 <div id="capricon-console"></div>

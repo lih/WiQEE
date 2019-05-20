@@ -76,16 +76,23 @@ logicians to start considering truth and falsity as concrete values
 rather than abstract concepts.
 
 Given a Boolean $b$, we would like to be able to return different
-values from a function, depending on whether $b$ is true or false. 
+values from a function, depending on whether $b$ is true or
+false. Otherwise, our Boolean wouldn't be much use in a computation.
 
-With all that in mind, here is the type I propose for $true$ and $false$ :
+With all that in mind, here is the definition I propose the $Boolean$ type :
 
 $$
 Boolean = \forall (P:Prop), \forall (ptrue:P), \forall (pfalse:P), P
 $$
 
-That is, given a
+That is, a Boolean is a way to produce any $P$, given two alternatives
+$ptrue$ and $pfalse$, and nothing else.
 
+There are two ways to construct a Boolean, given this definition :
+
+  - $true = \lambda (P:Prop). \lambda (ptrue:P). \lambda (pfalse:P). ptrue$
+  - $false = \lambda (P:Prop). \lambda (ptrue:P). \lambda (pfalse:P). pfalse$
+  
 
 Inductive Types
 -----------
