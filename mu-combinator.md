@@ -21,4 +21,4 @@ Inductive T : forall A..., Type :=
 .
 ~~~~~~~~~
 
-Here, we declare the inductive type $T : \forall A..., Type$.
+Here, we declare the inductive type $T : \forall A..., Type$, and its constructors called $t_{i}$ ($i \in \{0..n\}$).
