@@ -45,6 +45,25 @@ At its simplest, it provides five basic constructions :
     (y:\mathbb{N}), y = x+1$, we can prove that $\exists
     (y:\mathbb{N}), y=10+1$, by applying $f$ to $10$ (aka. $f\,10$).
 
+Given these axioms, we can build many theorems and their proofs, in a
+verifiable manner (i.e. there exists an algorithm to automatically
+check whether a claim like $x : X$ holds).
+
+However, it's been known for a while that the CoC by itself is not
+capable of handling a large class of the proofs that modern
+mathematicians (and even ancient ones) take for granted.
+
+The Limits of Constructions
+---------------------------
+
+To illustrate the kind of reasoning that can't be carried out with raw
+intuitionistic logic, let's take an obvious statement : true is not
+false (and vice-versa).
+
+We'd like to prove this statemnt using only the tools given by the
+CoC. For this, we have to define a few concepts, namely $true$,
+$false$, and what it means to "not be" something.
+
 
 
 Inductive Types

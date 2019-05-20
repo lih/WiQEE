@@ -42,6 +42,7 @@
     </ul></span><span class="menu middle"><a class="#">Reflections on Prismatic Constructions</a>
             <ul>
       <li><a href="#the-pure-calculus-of-construction">The pure Calculus of Construction</a></li>
+      <li><a href="#the-limits-of-constructions">The Limits of Constructions</a></li>
       <li><a href="#inductive-types">Inductive Types</a></li>
       </ul>
           </span><span class="menu right"><a href="mu-combinator.md">Page source</a><ul>
@@ -63,6 +64,11 @@
 <li><p>Applications, of the form <span class="math inline">\(f\,x\)</span>, where <span class="math inline">\(f : \forall (x:X), Y\,x\)</span> and <span class="math inline">\(x : X\)</span>, signify the specialization of a quantified property over an object <span class="math inline">\(x\)</span>.</p>
 <p>For instance, given a proof <span class="math inline">\(f\)</span> of <span class="math inline">\(\forall (x:\mathbb{N}), \exists (y:\mathbb{N}), y = x+1\)</span>, we can prove that <span class="math inline">\(\exists (y:\mathbb{N}), y=10+1\)</span>, by applying <span class="math inline">\(f\)</span> to <span class="math inline">\(10\)</span> (aka. <span class="math inline">\(f\,10\)</span>).</p></li>
 </ul>
+<p>Given these axioms, we can build many theorems and their proofs, in a verifiable manner (i.e. there exists an algorithm to automatically check whether a claim like <span class="math inline">\(x : X\)</span> holds).</p>
+<p>However, it’s been known for a while that the CoC by itself is not capable of handling a large class of the proofs that modern mathematicians (and even ancient ones) take for granted.</p>
+<h2 id="the-limits-of-constructions">The Limits of Constructions</h2>
+<p>To illustrate the kind of reasoning that can’t be carried out with raw intuitionistic logic, let’s take an obvious statement : true is not false (and vice-versa).</p>
+<p>We’d like to prove this statemnt using only the tools given by the CoC. For this, we have to define a few concepts, namely <span class="math inline">\(true\)</span>, <span class="math inline">\(false\)</span>, and what it means to “not be” something.</p>
 <h2 id="inductive-types">Inductive Types</h2>
 <p>Inductive types can be described as enumerations of constructors. In Coq (and similarly in other proof assistants), an inductive type must be declared along with its constructors, using a syntax like :</p>
 <pre class="coq"><code>Inductive T : forall A..., Type :=
@@ -77,7 +83,7 @@
 <p>This means that, if we want to prove a property <span class="math inline">\(P\,x\)</span> for some unknown Boolean <span class="math inline">\(x\)</span>, all we need is to prove <span class="math inline">\(P\,true\)</span> and <span class="math inline">\(P\,false\)</span>.</p>
 <p>This exact information is summed up in what we call the <em>induction principle</em> for Booleans. In Coq, it will be given the name <code>Boolean_rect</code>, for instance, and have the type <span class="math inline">\(\forall (P:Boolean\,\rightarrow\,Type),\ P\,true\ \rightarrow\ P\,false\
 \rightarrow\ \forall (b:Boolean),\ P\,b\)</span>.</p>
-<footer>Page generated on Monday, May 20 of 2019, at 13:09 PM UTC, using capricon-0.13.1.2 and pandoc-2.7.2.</footer>
+<footer>Page generated on Monday, May 20 of 2019, at 13:24 PM UTC, using capricon-0.13.1.2 and pandoc-2.7.2.</footer>
     </article></div></main>
 <script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'eol. { } def 'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def 'newline { } def  'collect { { 'exports empty def ${ } exports { ,{ ,{ vocabulary } } set-vocabulary ,{ ,{ stack } } set-stack ,{ exports } } exec } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { source-dir "%s%s" format source exec } def 'require { dup dup "  * Required module: [%s][:%s]\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def   </script>
 <div id="capricon-console"></div>
