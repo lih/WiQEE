@@ -68,12 +68,8 @@ $false$, and what it means to "not be" something.
 
 In order for two things to be considered the same, they must at least
 belong to the same family. In this case, it means that $true$ and
-$false$ must have the same type.
-
-By convention, we like to call the type of "true or false" the
-$Boolean$ type, in honor of George Boole, who was one of the first
-logicians to start considering truth and falsity as concrete values
-rather than abstract concepts.
+$false$ must have the same type. By convention, we'll call the type of
+"true or false" the $Boolean$ type, in honor of George Boole.
 
 Given a Boolean $b$, we would like to be able to return different
 values from a function, depending on whether $b$ is true or
@@ -82,7 +78,7 @@ false. Otherwise, our Boolean wouldn't be much use in a computation.
 With all that in mind, here is the definition I propose the $Boolean$ type :
 
 $$
-Boolean = \forall (P:Prop), \forall (ptrue:P), \forall (pfalse:P), P
+Boolean = \forall (P:Prop) (ptrue:P) (pfalse:P), P
 $$
 
 That is, a Boolean is a way to produce any $P$, given two alternatives
@@ -91,10 +87,10 @@ $ptrue$ and $pfalse$, and nothing else.
 There are, conveniently, two ways to construct a Boolean, given this
 definition :
 
-  - $true = \lambda (P:Prop). \lambda (ptrue:P). \lambda (pfalse:P). ptrue$
-  - $false = \lambda (P:Prop). \lambda (ptrue:P). \lambda (pfalse:P). pfalse$
+  - $true = \lambda (P:Prop) (ptrue:P) (pfalse:P). ptrue$
+  - $false = \lambda (P:Prop) (ptrue:P) (pfalse:P). pfalse$
 
-### Sameness, and negation
+### Sameness (aka. Identity)
 
 Two values $x$ and $y$ can be said to be the same when everything that
 can be proven of $x$ can also be proven of $y$. More formally, given a
@@ -106,8 +102,17 @@ $$
 
 We can easily prove simple properties for the $sameas$ relation, such as :
 
-  - reflexivity : $\lambda (P:A\ \rightarrow\ Set_{n}), \lambda (p:P x), p : (x\ sameas\ x)$
+  - reflexivity : $\lambda (P:A\ \rightarrow\ Set_{n}) (p:P x). p : (x\ sameas\ x)$
 
+  - symmetry : $(x\ sameas\ y) \rightarrow (y\ sameas\ x)$, proven by
+    $\lambda (e:x\ sameas\ y) (P:A\ \rightarrow\ Set_{n}) (py:P y), e
+    (\lambda (a:A). P\,a \rightarrow P\,x) (\lambda (px:P\,y). px) py$
+    	      
+  - transitivity : $(x\ sameas\ y)\ \rightarrow\ (y\ sameas\ z)\
+    \rightarrow\ (x\ sameas\ z)$, as proven by $\lambda (e1:x\ sameas\
+    y) (e2:y\ sameas\ z) (P:A\ \rightarrow\ Set_{n}) (px:P x). e2 P
+    (e1 P px)$
+                
 Inductive Types
 -----------
 
