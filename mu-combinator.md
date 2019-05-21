@@ -146,7 +146,8 @@ We now have everything we need to prove that $true$ is not
 $false$. First, let's formally state the type of the term we need :
 
 $$
-\neg (true\ sameas\ false) = \rightarrow\ \bot
+\neg (true\ sameas\ false) \\
+= (\forall (P:Boolean\ \rightarrow\ Set_{n}), P\,true\ \rightarrow\ P\,false)\ \rightarrow\ \bot
 $$
 
 Inductive Types
