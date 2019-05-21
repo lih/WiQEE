@@ -45,7 +45,6 @@
       <li><a href="#the-limits-of-constructions">The Limits of Constructions</a><ul>
       <li><a href="#intuitionistic-booleans">Intuitionistic Booleans</a></li>
       <li><a href="#sameness-aka.-identity">Sameness (aka. Identity)</a></li>
-      <li><a href="#absurdity">Absurdity</a></li>
       <li><a href="#putting-it-all-together">Putting it all together</a></li>
       </ul></li>
       <li><a href="#inductive-types">Inductive Types</a></li>
@@ -72,49 +71,39 @@
 <p>Given these axioms, we can build many theorems and their proofs, in a verifiable manner (i.e. there exists an algorithm to automatically check whether a claim like <span class="math inline">\(x : X\)</span> holds).</p>
 <p>However, it’s been known for a while that the CoC by itself is not capable of handling a large class of the proofs that modern mathematicians (and even ancient ones) take for granted.</p>
 <h2 id="the-limits-of-constructions">The Limits of Constructions</h2>
-<p>To illustrate the kind of reasoning that can’t be carried out with raw intuitionistic logic, let’s take an obvious statement : true is not false (and vice-versa).</p>
-<p>We’d like to prove this statement using only the tools given by the CoC. For this, we have to define a few concepts, namely <span class="math inline">\(true\)</span>, <span class="math inline">\(false\)</span>, and what it means to “not be” something.</p>
+<p>To illustrate the kind of reasoning that can’t be carried out with raw intuitionistic logic, let’s take an obvious statement : a boolean is either equal to true or to false.</p>
+<p>We’d like to prove this statement using only the tools given by the CoC. For this, we have to define a few concepts, namely our Booleans, <span class="math inline">\(true\)</span> and <span class="math inline">\(false\)</span>, and what it means for two things to be equal.</p>
 <h3 id="intuitionistic-booleans">Intuitionistic Booleans</h3>
 <p>In order for two things to be considered the same, they must at least belong to the same family. In this case, it means that <span class="math inline">\(true\)</span> and <span class="math inline">\(false\)</span> must have the same type. By convention, we’ll call the type of “true or false” the <span class="math inline">\(Boolean\)</span> type, in honor of George Boole.</p>
 <p>Given a Boolean <span class="math inline">\(b\)</span>, we would like to be able to return different values from a function, depending on whether <span class="math inline">\(b\)</span> is true or false. Otherwise, our Boolean wouldn’t be much use in a computation.</p>
 <p>With all that in mind, here is the definition I propose the <span class="math inline">\(Boolean\)</span> type :</p>
 <p><span class="math display">\[
-Boolean = \forall (P:Prop) (ptrue:P) (pfalse:P), P
+Boolean \equiv \forall (P:Prop) (ptrue:P) (pfalse:P), P
 \]</span></p>
 <p>That is, a Boolean is a way to produce any <span class="math inline">\(P\)</span>, given two alternatives <span class="math inline">\(ptrue\)</span> and <span class="math inline">\(pfalse\)</span>, and nothing else.</p>
 <p>There are, conveniently, two ways to construct a Boolean, given this definition :</p>
 <ul>
-<li><span class="math inline">\(true = \lambda (P:Prop) (ptrue:P) (pfalse:P). ptrue\)</span></li>
-<li><span class="math inline">\(false = \lambda (P:Prop) (ptrue:P) (pfalse:P). pfalse\)</span></li>
+<li><span class="math inline">\(true \equiv \lambda (P:Prop) (ptrue:P) (pfalse:P). ptrue\)</span></li>
+<li><span class="math inline">\(false \equiv \lambda (P:Prop) (ptrue:P) (pfalse:P). pfalse\)</span></li>
 </ul>
 <h3 id="sameness-aka.-identity">Sameness (aka. Identity)</h3>
 <p>Two values <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> can be said to be the same when everything that can be proven of <span class="math inline">\(x\)</span> can also be proven of <span class="math inline">\(y\)</span>. More formally, given a type <span class="math inline">\(A\)</span> of things, and two values <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> of type <span class="math inline">\(A\)</span> we have :</p>
 <p><span class="math display">\[
-(x\ sameas\ y) = \forall (P:A\ \rightarrow\ Set_{n}), P\,x\ \rightarrow\ P\,y
+(x\ =\ y) = \forall (P:A\ \rightarrow\ Set_{n}), P\,x\ \rightarrow\ P\,y
 \]</span></p>
-<p>We can easily prove some intuitive properties for the <span class="math inline">\(sameas\)</span> relation, such as :</p>
+<p>We can easily prove some intuitive properties for the <span class="math inline">\(=\)</span> relation, such as :</p>
 <ul>
-<li><p>reflexivity : <span class="math inline">\((x\ sameas\ x)\)</span>, as proven by <span class="math inline">\(\lambda (P:A\ \rightarrow\ Set_{n}) (p:P x). p\)</span></p></li>
-<li><p>symmetry : <span class="math inline">\((x\ sameas\ y) \rightarrow (y\ sameas\ x)\)</span>, proven by <span class="math inline">\(\lambda (e:x\ sameas\ y) (P:A\ \rightarrow\ Set_{n}) (py:P y), e \,(\lambda (a:A). P\,a \rightarrow P\,x)\,(\lambda (px:P\,x). px)\,py\)</span></p></li>
-<li><p>transitivity : <span class="math inline">\((x\ sameas\ y)\ \rightarrow\ (y\ sameas\ z)\
-\rightarrow\ (x\ sameas\ z)\)</span>, as proven by <span class="math inline">\(\lambda (e_1:x\ sameas\
-y) (e_2:y\ sameas\ z) (P:A\ \rightarrow\ Set_{n}) (px:P x). e_2\,P\, (e_1\,P\,px)\)</span></p></li>
+<li><p>reflexivity : <span class="math inline">\((x\ =\ x)\)</span>, as proven by <span class="math inline">\(\lambda (P:A\ \rightarrow\ Set_{n}) (p:P x). p\)</span></p></li>
+<li><p>symmetry : <span class="math inline">\((x\ =\ y) \rightarrow (y\ =\ x)\)</span>, proven by <span class="math inline">\(\lambda (e:x\ =\ y) (P:A\ \rightarrow\ Set_{n}) (py:P y), e \,(\lambda (a:A). P\,a \rightarrow P\,x)\,(\lambda (px:P\,x). px)\,py\)</span></p></li>
+<li><p>transitivity : <span class="math inline">\((x\ =\ y)\ \rightarrow\ (y\ =\ z)\
+\rightarrow\ (x\ =\ z)\)</span>, as proven by <span class="math inline">\(\lambda (e_1:x\ =\
+y) (e_2:y\ =\ z) (P:A\ \rightarrow\ Set_{n}) (px:P x). e_2\,P\, (e_1\,P\,px)\)</span></p></li>
 </ul>
-<h3 id="absurdity">Absurdity</h3>
-<p>In the framework of intuitionistic logic, theorems are not simply true or false. Some are provable, some are provably improvable, and some are neither of those.</p>
-<p>In order to prove something (for example, the sameness of “true” and “false”), we have to construct a term of the right type.</p>
-<p>In order to prove that we can’t prove something, we must be able to reduce our initial assumption to an absurd one. If we can do so, and our logic is consistent, then our assumption must be absurd (unprovable) as well.</p>
-<p>A suitably simple representation of a generic absurd theorem can be found in the following type which, if provable, reduces our logic to a trivial one :</p>
-<p><span class="math display">\[
-\bot = \forall (P:Set_{n}), P
-\]</span></p>
-<p>We’ll write <span class="math inline">\(\neg P\)</span> (pronounced “not P”) as a shortcut for <span class="math inline">\(P\
-\rightarrow\ \bot\)</span>, to better expose the meaning of the upcoming proofs.</p>
 <h3 id="putting-it-all-together">Putting it all together</h3>
 <p>We now have everything we need to prove that <span class="math inline">\(true\)</span> is not <span class="math inline">\(false\)</span>. First, let’s formally state the type of the term we need :</p>
 <p><span class="math display">\[
-\neg (true\ sameas\ false) \\
-= (\forall (P:Boolean\ \rightarrow\ Set_{n}), P\,true\ \rightarrow\ P\,false)\ \rightarrow\ \bot
+\forall (b:Boolean), (b\ =\ true) \cup (b\ =\ false) \\
+= \forall (b:Boolean), (\forall (P:Set_{n}), (b\ =\ true\ \rightarrow\ P)\ \rightarrow\ (b\ =\ false\ \rightarrow\ P)\ \rightarrow\ P
 \]</span></p>
 <h2 id="inductive-types">Inductive Types</h2>
 <p>Inductive types can be described as enumerations of constructors. In Coq (and similarly in other proof assistants), an inductive type must be declared along with its constructors, using a syntax like :</p>
@@ -130,7 +119,7 @@ y) (e_2:y\ sameas\ z) (P:A\ \rightarrow\ Set_{n}) (px:P x). e_2\,P\, (e_1\,P\,px
 <p>This means that, if we want to prove a property <span class="math inline">\(P\,x\)</span> for some unknown Boolean <span class="math inline">\(x\)</span>, all we need is to prove <span class="math inline">\(P\,true\)</span> and <span class="math inline">\(P\,false\)</span>.</p>
 <p>This exact information is summed up in what we call the <em>induction principle</em> for Booleans. In Coq, it will be given the name <code>Boolean_rect</code>, for instance, and have the type <span class="math inline">\(\forall (P:Boolean\,\rightarrow\,Type),\ P\,true\ \rightarrow\ P\,false\
 \rightarrow\ \forall (b:Boolean),\ P\,b\)</span>.</p>
-<footer>Page generated on Tuesday, May 21 of 2019, at 16:12 PM UTC, using capricon-0.13.1.2 and pandoc-2.7.2.</footer>
+<footer>Page generated on Tuesday, May 21 of 2019, at 19:15 PM UTC, using capricon-0.13.1.2 and pandoc-2.7.2.</footer>
     </article></div></main>
 <script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'eol. { } def 'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def 'newline { } def  'collect { { 'exports empty def ${ } exports { ,{ ,{ vocabulary } } set-vocabulary ,{ ,{ stack } } set-stack ,{ exports } } exec } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { source-dir "%s%s" format source exec } def 'require { dup dup "  * Required module: [%s][:%s]\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def   </script>
 <div id="capricon-console"></div>

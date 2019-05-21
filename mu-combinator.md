@@ -57,12 +57,12 @@ The Limits of Constructions
 ---------------------------
 
 To illustrate the kind of reasoning that can't be carried out with raw
-intuitionistic logic, let's take an obvious statement : true is not
-false (and vice-versa).
+intuitionistic logic, let's take an obvious statement : a boolean is
+either equal to true or to false.
 
 We'd like to prove this statement using only the tools given by the
-CoC. For this, we have to define a few concepts, namely $true$,
-$false$, and what it means to "not be" something.
+CoC. For this, we have to define a few concepts, namely our Booleans,
+$true$ and $false$, and what it means for two things to be equal.
 
 ### Intuitionistic Booleans
 
@@ -78,7 +78,7 @@ false. Otherwise, our Boolean wouldn't be much use in a computation.
 With all that in mind, here is the definition I propose the $Boolean$ type :
 
 $$
-Boolean = \forall (P:Prop) (ptrue:P) (pfalse:P), P
+Boolean \equiv \forall (P:Prop) (ptrue:P) (pfalse:P), P
 $$
 
 That is, a Boolean is a way to produce any $P$, given two alternatives
@@ -87,8 +87,8 @@ $ptrue$ and $pfalse$, and nothing else.
 There are, conveniently, two ways to construct a Boolean, given this
 definition :
 
-  - $true = \lambda (P:Prop) (ptrue:P) (pfalse:P). ptrue$
-  - $false = \lambda (P:Prop) (ptrue:P) (pfalse:P). pfalse$
+  - $true \equiv \lambda (P:Prop) (ptrue:P) (pfalse:P). ptrue$
+  - $false \equiv \lambda (P:Prop) (ptrue:P) (pfalse:P). pfalse$
 
 ### Sameness (aka. Identity)
 
@@ -97,48 +97,22 @@ can be proven of $x$ can also be proven of $y$. More formally, given a
 type $A$ of things, and two values $x$ and $y$ of type $A$ we have :
 
 $$
-(x\ sameas\ y) = \forall (P:A\ \rightarrow\ Set_{n}), P\,x\ \rightarrow\ P\,y
+(x\ =\ y) = \forall (P:A\ \rightarrow\ Set_{n}), P\,x\ \rightarrow\ P\,y
 $$
 
-We can easily prove some intuitive properties for the $sameas$
+We can easily prove some intuitive properties for the $=$
 relation, such as :
 
-  - reflexivity : $(x\ sameas\ x)$, as proven by $\lambda (P:A\ \rightarrow\ Set_{n}) (p:P x). p$
+  - reflexivity : $(x\ =\ x)$, as proven by $\lambda (P:A\ \rightarrow\ Set_{n}) (p:P x). p$
 
-  - symmetry : $(x\ sameas\ y) \rightarrow (y\ sameas\ x)$, proven by
-    $\lambda (e:x\ sameas\ y) (P:A\ \rightarrow\ Set_{n}) (py:P y), e
+  - symmetry : $(x\ =\ y) \rightarrow (y\ =\ x)$, proven by
+    $\lambda (e:x\ =\ y) (P:A\ \rightarrow\ Set_{n}) (py:P y), e
     \,(\lambda (a:A). P\,a \rightarrow P\,x)\,(\lambda (px:P\,x). px)\,py$
     	      
-  - transitivity : $(x\ sameas\ y)\ \rightarrow\ (y\ sameas\ z)\
-    \rightarrow\ (x\ sameas\ z)$, as proven by $\lambda (e_1:x\ sameas\
-    y) (e_2:y\ sameas\ z) (P:A\ \rightarrow\ Set_{n}) (px:P x). e_2\,P\,
+  - transitivity : $(x\ =\ y)\ \rightarrow\ (y\ =\ z)\
+    \rightarrow\ (x\ =\ z)$, as proven by $\lambda (e_1:x\ =\
+    y) (e_2:y\ =\ z) (P:A\ \rightarrow\ Set_{n}) (px:P x). e_2\,P\,
     (e_1\,P\,px)$
-
-### Absurdity
-
-In the framework of intuitionistic logic, theorems are not simply true
-or false. Some are provable, some are provably improvable, and some
-are neither of those.
-
-In order to prove something (for example, the sameness of "true" and
-"false"), we have to construct a term of the right type.
-
-In order to prove that we can't prove something, we must be able to
-reduce our initial assumption to an absurd one. If we can do so, and
-our logic is consistent, then our assumption must be absurd
-(unprovable) as well.
-
-A suitably simple representation of a generic absurd theorem can be
-found in the following type which, if provable, reduces our logic to a
-trivial one :
-
-$$
-\bot = \forall (P:Set_{n}), P
-$$
-
-We'll write $\neg P$ (pronounced "not P") as a shortcut for $P\
-\rightarrow\ \bot$, to better expose the meaning of the upcoming
-proofs.
 
 ### Putting it all together
 
@@ -146,8 +120,8 @@ We now have everything we need to prove that $true$ is not
 $false$. First, let's formally state the type of the term we need :
 
 $$
-\neg (true\ sameas\ false) \\
-= (\forall (P:Boolean\ \rightarrow\ Set_{n}), P\,true\ \rightarrow\ P\,false)\ \rightarrow\ \bot
+\forall (b:Boolean), (b\ =\ true) \cup (b\ =\ false) \\
+= \forall (b:Boolean), (\forall (P:Set_{n}), (b\ =\ true\ \rightarrow\ P)\ \rightarrow\ (b\ =\ false\ \rightarrow\ P)\ \rightarrow\ P
 $$
 
 Inductive Types
