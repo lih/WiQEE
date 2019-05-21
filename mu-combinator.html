@@ -90,13 +90,13 @@ Boolean = \forall (P:Prop) (ptrue:P) (pfalse:P), P
 <p><span class="math display">\[
 (x\ sameas\ y) = \forall (P:A\ \rightarrow\ Set_{n}), P\,x\ \rightarrow\ P\,y
 \]</span></p>
-<p>We can easily prove simple properties for the <span class="math inline">\(sameas\)</span> relation, such as :</p>
+<p>We can easily prove some intuitive properties for the <span class="math inline">\(sameas\)</span> relation, such as :</p>
 <ul>
-<li><p>reflexivity : <span class="math inline">\(\lambda (P:A\ \rightarrow\ Set_{n}) (p:P x). p : (x\ sameas\ x)\)</span></p></li>
-<li><p>symmetry : <span class="math inline">\((x\ sameas\ y) \rightarrow (y\ sameas\ x)\)</span>, proven by <span class="math inline">\(\lambda (e:x\ sameas\ y) (P:A\ \rightarrow\ Set_{n}) (py:P y), e (\lambda (a:A). P\,a \rightarrow P\,x) (\lambda (px:P\,y). px) py\)</span></p></li>
+<li><p>reflexivity : <span class="math inline">\((x\ sameas\ x)\)</span>, as proven by <span class="math inline">\(\lambda (P:A\ \rightarrow\ Set_{n}) (p:P x). p\)</span></p></li>
+<li><p>symmetry : <span class="math inline">\((x\ sameas\ y) \rightarrow (y\ sameas\ x)\)</span>, proven by <span class="math inline">\(\lambda (e:x\ sameas\ y) (P:A\ \rightarrow\ Set_{n}) (py:P y), e \,(\lambda (a:A). P\,a \rightarrow P\,x)\,(\lambda (px:P\,x). px)\,py\)</span></p></li>
 <li><p>transitivity : <span class="math inline">\((x\ sameas\ y)\ \rightarrow\ (y\ sameas\ z)\
-\rightarrow\ (x\ sameas\ z)\)</span>, as proven by <span class="math inline">\(\lambda (e1:x\ sameas\
-y) (e2:y\ sameas\ z) (P:A\ \rightarrow\ Set_{n}) (px:P x). e2 P (e1 P px)\)</span></p></li>
+\rightarrow\ (x\ sameas\ z)\)</span>, as proven by <span class="math inline">\(\lambda (e_1:x\ sameas\
+y) (e_2:y\ sameas\ z) (P:A\ \rightarrow\ Set_{n}) (px:P x). e_2\,P\, (e_1\,P\,px)\)</span></p></li>
 </ul>
 <h2 id="inductive-types">Inductive Types</h2>
 <p>Inductive types can be described as enumerations of constructors. In Coq (and similarly in other proof assistants), an inductive type must be declared along with its constructors, using a syntax like :</p>
@@ -112,7 +112,7 @@ y) (e2:y\ sameas\ z) (P:A\ \rightarrow\ Set_{n}) (px:P x). e2 P (e1 P px)\)</spa
 <p>This means that, if we want to prove a property <span class="math inline">\(P\,x\)</span> for some unknown Boolean <span class="math inline">\(x\)</span>, all we need is to prove <span class="math inline">\(P\,true\)</span> and <span class="math inline">\(P\,false\)</span>.</p>
 <p>This exact information is summed up in what we call the <em>induction principle</em> for Booleans. In Coq, it will be given the name <code>Boolean_rect</code>, for instance, and have the type <span class="math inline">\(\forall (P:Boolean\,\rightarrow\,Type),\ P\,true\ \rightarrow\ P\,false\
 \rightarrow\ \forall (b:Boolean),\ P\,b\)</span>.</p>
-<footer>Page generated on Tuesday, May 21 of 2019, at 15:46 PM UTC, using capricon-0.13.1.2 and pandoc-2.7.2.</footer>
+<footer>Page generated on Tuesday, May 21 of 2019, at 15:50 PM UTC, using capricon-0.13.1.2 and pandoc-2.7.2.</footer>
     </article></div></main>
 <script id="capricon-prelude" type="text/plain">'nop { { } } def 'get { nop nop lookup } def  'each list 1 dupn get def 'dict-keys dict 'keys get def 'import-keys {   { 1 dupn 1 dupn get def } each   pop } def  'import {   dup dict-keys import-keys  } def  [ dict term-index construction query context io list arith string ] { import } each  'printf { format print pop } def 'show { "%v\n" printf } def 'show-stack { stack { show } each } def 'times { range { pop dup exec } each pop } def 'reverse { [ ] swap { cons } each } def  'eol. { } def 'mustache. { show } def 'tex { 'mustache. { "$%l$\n" printf 'mustache. ,{ dup $ } def } def } def 'svg { 'mustache. { "<svg class='capricon-formula' width='150px' height='2em' viewBox='0 0 100 100' xmlns=\"http://www.w3.org/2000/svg\"><text class='formula-text' x='0' y='100'>%g</text></svg>" printf 'mustache. ,{ dup $ } def } def } def 'raw { 'mustache. { "%s\n" printf 'mustache. ,{ dup $ } def } def } def 'newline { } def  'collect { { 'exports empty def ${ } exports { ,{ ,{ vocabulary } } set-vocabulary ,{ ,{ stack } } set-stack ,{ exports } } exec } exec } def 'exports empty def 'export { exports swap dup $ insert 'exports swap def } def  [ 'source-dir 'output-dir 'cache-dir ] { "" def } each  'module { source-dir "%s%s" format source exec } def 'require { dup dup "  * Required module: [%s][:%s]\n" printf { ,{ dup } { module } collect } swap cache-dir "%s%s.mdo" format cache } def   </script>
 <div id="capricon-console"></div>

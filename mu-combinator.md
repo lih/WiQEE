@@ -100,18 +100,19 @@ $$
 (x\ sameas\ y) = \forall (P:A\ \rightarrow\ Set_{n}), P\,x\ \rightarrow\ P\,y
 $$
 
-We can easily prove simple properties for the $sameas$ relation, such as :
+We can easily prove some intuitive properties for the $sameas$
+relation, such as :
 
-  - reflexivity : $\lambda (P:A\ \rightarrow\ Set_{n}) (p:P x). p : (x\ sameas\ x)$
+  - reflexivity : $(x\ sameas\ x)$, as proven by $\lambda (P:A\ \rightarrow\ Set_{n}) (p:P x). p$
 
   - symmetry : $(x\ sameas\ y) \rightarrow (y\ sameas\ x)$, proven by
     $\lambda (e:x\ sameas\ y) (P:A\ \rightarrow\ Set_{n}) (py:P y), e
-    (\lambda (a:A). P\,a \rightarrow P\,x) (\lambda (px:P\,y). px) py$
+    \,(\lambda (a:A). P\,a \rightarrow P\,x)\,(\lambda (px:P\,x). px)\,py$
     	      
   - transitivity : $(x\ sameas\ y)\ \rightarrow\ (y\ sameas\ z)\
-    \rightarrow\ (x\ sameas\ z)$, as proven by $\lambda (e1:x\ sameas\
-    y) (e2:y\ sameas\ z) (P:A\ \rightarrow\ Set_{n}) (px:P x). e2 P
-    (e1 P px)$
+    \rightarrow\ (x\ sameas\ z)$, as proven by $\lambda (e_1:x\ sameas\
+    y) (e_2:y\ sameas\ z) (P:A\ \rightarrow\ Set_{n}) (px:P x). e_2\,P\,
+    (e_1\,P\,px)$
                 
 Inductive Types
 -----------
