@@ -113,7 +113,42 @@ relation, such as :
     \rightarrow\ (x\ sameas\ z)$, as proven by $\lambda (e_1:x\ sameas\
     y) (e_2:y\ sameas\ z) (P:A\ \rightarrow\ Set_{n}) (px:P x). e_2\,P\,
     (e_1\,P\,px)$
-                
+
+### Absurdity
+
+In the framework of intuitionistic logic, theorems are not simply true
+or false. Some are provable, some are provably improvable, and some
+are neither of those.
+
+In order to prove something (for example, the sameness of "true" and
+"false"), we have to construct a term of the right type.
+
+In order to prove that we can't prove something, we must be able to
+reduce our initial assumption to an absurd one. If we can do so, and
+our logic is consistent, then our assumption must be absurd
+(unprovable) as well.
+
+A suitably simple representation of a generic absurd theorem can be
+found in the following type which, if provable, reduces our logic to a
+trivial one :
+
+$$
+\bot = \forall (P:Set_{n}), P
+$$
+
+We'll write $\neg P$ (pronounced "not P") as a shortcut for $P\
+\rightarrow\ \bot$, to better expose the meaning of the upcoming
+proofs.
+
+### Putting it all together
+
+We now have everything we need to prove that $true$ is not
+$false$. First, let's formally state the type of the term we need :
+
+$$
+\neg (true\ sameas\ false) = \rightarrow\ \bot
+$$
+
 Inductive Types
 -----------
 
