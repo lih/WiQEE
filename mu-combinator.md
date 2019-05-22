@@ -116,12 +116,12 @@ relation, such as :
 
 ### Putting it all together
 
-We now have everything we need to prove that $true$ is not
-$false$. First, let's formally state the type of the term we need :
+We now have everything we need to prove that every Boolean is either
+$true$ or $false$. First, let's formally state that property :
 
 $$
 \forall (b:Boolean), (b\ =\ true) \cup (b\ =\ false) \\
-= \forall (b:Boolean), (\forall (P:Set_{n}), (b\ =\ true\ \rightarrow\ P)\ \rightarrow\ (b\ =\ false\ \rightarrow\ P)\ \rightarrow\ P
+= \forall (b:Boolean) (P:Set_{n}), (b\ =\ true\ \rightarrow\ P)\ \rightarrow\ (b\ =\ false\ \rightarrow\ P)\ \rightarrow\ P
 $$
 
 Inductive Types
