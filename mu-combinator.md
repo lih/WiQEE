@@ -97,7 +97,7 @@ can be proven of $x$ can also be proven of $y$. More formally, given a
 type $A$ of things, and two values $x$ and $y$ of type $A$ we have :
 
 $$
-(x\ =\ y) = \forall (P:A\ \rightarrow\ Set_{n}), P\,x\ \rightarrow\ P\,y
+(x\ =\ y) \equiv \forall (P:A\ \rightarrow\ Set_{n}), P\,x\ \rightarrow\ P\,y
 $$
 
 We can easily prove some intuitive properties for the $=$
@@ -121,7 +121,7 @@ $true$ or $false$. First, let's formally state that property :
 
 $$
 \forall (b:Boolean), (b\ =\ true) \cup (b\ =\ false) \\
-= \forall (b:Boolean) (P:Set_{n}), (b\ =\ true\ \rightarrow\ P)\ \rightarrow\ (b\ =\ false\ \rightarrow\ P)\ \rightarrow\ P
+\equiv \forall (b:Boolean) (P:Set_{n}), (b\ =\ true\ \rightarrow\ P)\ \rightarrow\ (b\ =\ false\ \rightarrow\ P)\ \rightarrow\ P
 $$
 
 Inductive Types
