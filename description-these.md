@@ -24,12 +24,13 @@ Lors de ces explorations, j'ai voulu modéliser des $\omega$-catégories
 intuitivement à l'aide des structures suivantes :
 
 Soient $O$ un type d'objets, et pour toute paire d'objets $x$ et $y$,
-un type $M x y$ des morphismes de $x$ vers $y$. On aimerait définir
+un type $M x y$ des 0-morphismes de $x$ vers $y$. On aimerait définir
 les familles de types inductifs $V_{n} : Type$ et $M_{n} : V_{n}
-\rightarrow V_{n} \rightarrow Type$ des diagrammes de dimension $n$,
-dotés des constructeurs suivants :
+\rightarrow V_{n} \rightarrow Type$ (resp. des n-objets et
+n-morphismes de notre $\omega$-catégorie), dotés des constructeurs
+suivants :
 
-j\begin{align}
+\begin{align}
 v_0 &: O \rightarrow V_{0} \\
 v_S &: \forall n (x y : V_{n}), M_{n} x y \rightarrow V_{S n} \\
 m_0 &: \forall (x y : O), M x y \rightarrow M_{0} (v_0 x) (v_0 y) \\
