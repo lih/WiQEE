@@ -67,7 +67,7 @@ encodages de Church, plutôt que sur des types "définis inductifs".
 Pour ce faire, je me fie à une observation qui semble se vérifier en
 pratique : les principes d'induction ont une forme qui reflètent celle
 de l'encodage de Church de l'inductif sur lequel ils travaillent. Par
-exemple, le principe d'induction des Booléens (`Boolean_rect` en Coq)
+exemple, le principe d'induction des booléens (`Boolean_rect` en Coq)
 a le type suivant :
 
 $$
@@ -87,7 +87,7 @@ $$
 \forall (P:Type), P \rightarrow P \rightarrow P
 $$
 
-Autrement dit, la même structure, moins un paramètres Booléen ! Bien
+Autrement dit, la même structure, moins un paramètres booléen ! Bien
 sûr, les choses sont plus compliquées dans le cas de types récursifs
 (tels les naturels), car il s'agit de mêler discrimination et
 récursion dans la sémantique opérationnelle des principes d'induction.
