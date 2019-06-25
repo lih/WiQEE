@@ -6,6 +6,7 @@ Reminder : all builtin functions can be found documented [here][:lexicon]
 #### Exporting definitions
 
 > 'defX { 1 dupn swap def export } def 'defX export
+> 'synonym { $ def } defX
 
 #### Navigating the environment
 

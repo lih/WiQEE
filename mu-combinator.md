@@ -84,17 +84,21 @@ $$
 That is, a Boolean is a way to produce any $P$, given two alternatives
 $ptrue$ and $pfalse$, and nothing else.
 
-There are, conveniently, two ways to construct a Boolean, given this
-definition :
+There are, intuitively, only two distinct ways to construct a closed
+Boolean term, given the above definition :
 
   - $true \equiv \lambda (P:Prop) (ptrue:P) (pfalse:P). ptrue$
   - $false \equiv \lambda (P:Prop) (ptrue:P) (pfalse:P). pfalse$
 
+Our goal in the following sections will be to try and confirm this
+intuition, by proving it in the CoC.
+
 ### Sameness (aka. Identity)
 
-Two values $x$ and $y$ can be said to be the same when everything that
-can be proven of $x$ can also be proven of $y$. More formally, given a
-type $A$ of things, and two values $x$ and $y$ of type $A$ we have :
+Two values $x$ and $y$ can be said to be the same (when it comes to
+proving theorems) if everything that can be proven of $x$ can also
+be proven of $y$. More formally, given a type $A$ of things, and two
+values $x$ and $y$ of type $A$ we have :
 
 $$
 (x\ =\ y) \equiv \forall (P:A\ \rightarrow\ Set_{n}), P\,x\ \rightarrow\ P\,y
@@ -123,6 +127,8 @@ $$
 \forall (b:Boolean), (b\ =\ true) \cup (b\ =\ false) \\
 \equiv \forall (b:Boolean) (P:Set_{n}), (b\ =\ true\ \rightarrow\ P)\ \rightarrow\ (b\ =\ false\ \rightarrow\ P)\ \rightarrow\ P
 $$
+
+
 
 Inductive Types
 -----------
@@ -162,4 +168,25 @@ principle* for Booleans. In Coq, it will be given the name
 (P:Boolean\,\rightarrow\,Type),\ P\,true\ \rightarrow\ P\,false\
 \rightarrow\ \forall (b:Boolean),\ P\,b$.
 
+The $\mu$ Combinator : Lambda-constructions with extra steps
+--------------------
+
+$$
+\mu(x) \equiv \mu_{\varnothing}(x)
+$$
+
+$$
+\mu_{\Gamma}(\lambda(x:T). y)
+\equiv
+\mu_{\Gamma, (x:T)}(y)
+$$
+
+$$
+\mu_{\Gamma}(H x...) \equiv \lambda^* \Gamma^\uparrow. \Gamma^\uparrow[H x]...
+$$
+
+$$
+\varnothing^\uparrow \equiv \varnothing \\
+(\Gamma, (x:T_{\Gamma}))^\uparrow \equiv \Gamma^\uparrow, (x:T_{\Gamma^\uparrow})
+$$
 
