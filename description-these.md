@@ -21,7 +21,7 @@ Limites du CIC simple
 
 Lors de ces explorations, j'ai voulu modéliser des $\omega$-catégories
 (si je ne m'abuse sur les nomenclatures), qui peuvent être définies
-intuitivement à l'aide des structures suivantes:
+intuitivement à l'aide des structures suivantes :
 
 Soient $O$ un type d'objets, et pour toute paire d'objets $x$ et $y$,
 un type $M x y$ des morphismes de $x$ vers $y$. On aimerait définir
@@ -104,5 +104,5 @@ Un interpréteur de ce nouveau modèle de calcul -- CoC + $\mu$, appelé
 le Calcul des Constructions Prismatiques pour rappeler la métaphore
 des "reflets with extra steps" -- est rendu disponible sur une
 plateforme Web interactive, ainsi que sous une forme plus classique, à
-l'adresse [https://wiqee.curly-lang.org](https://wiqee.curly-lang.org).
-
+l'adresse [https://wiqee.curly-lang.org](https://wiqee.curly-lang.org)
+.
