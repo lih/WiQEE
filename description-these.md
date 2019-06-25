@@ -25,7 +25,7 @@ intuitivement à l'aide des structures suivantes :
 
 Soient $O$ un type d'objets, et pour toute paire d'objets $x$ et $y$,
 un type $M x y$ des morphismes de $x$ vers $y$. On aimerait définir
-les types inductifs $O_{n}$ et $M_{n} x y$ des diagrammes de dimension
+les familles de types inductifs $O_{n}$ et $M_{n} x y$ des diagrammes de dimension
 $n$, dotés des constructeurs suivants :
 
 \begin{align}
