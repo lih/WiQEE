@@ -45,7 +45,7 @@ constructeur si les deux appartiennent à la même famille.
 
 Il est curieux de trouver de telles limites sur les familles
 inductives mutuellement récursives, puisqu'il est plutôt simple --
-dans un contexte de types dépendents -- d'en définir un encodage de
+dans un contexte de types dépendants -- d'en définir un encodage de
 Church ($O_{n} \equiv \forall (O:\mathbb{N} \rightarrow Type)
 (M:\forall i, O i \rightarrow O i \rightarrow Type) (o0 : o
 \rightarrow O 0) (oS : ...) ..., O n$, par exemple).
