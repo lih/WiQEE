@@ -25,21 +25,19 @@ intuitivement à l'aide des structures suivantes :
 
 Soient $O$ un type d'objets, et pour toute paire d'objets $x$ et $y$,
 un type $M x y$ des morphismes de $x$ vers $y$. On aimerait définir
-les familles de types inductifs $O_{n}$ et $M_{n} x y$ des diagrammes de dimension
-$n$, dotés des constructeurs suivants :
+les familles de types inductifs $V_{n} : Type$ et $M_{n} : V_{n}
+\rightarrow V_{n} \rightarrow Type$ des diagrammes de dimension $n$,
+dotés des constructeurs suivants :
 
-\begin{align}
-V_n &: Type \\
-M_{n} &: O_{n} \rightarrow O_{n} \rightarrow Type \\
-\\
-v_O &: O \rightarrow V_{0} \\
+j\begin{align}
+v_0 &: O \rightarrow V_{0} \\
 v_S &: \forall n (x y : V_{n}), M_{n} x y \rightarrow V_{S n} \\
-m_O &: \forall (x y : O), M x y \rightarrow M_{0} (v_O x) (v_O y) \\
-m_S &: \forall n (x y z t : V_{n}) (f : M_{n} x y) (g : M_{n} z t), M_{S n} (v_S n x y f) (v_S n z t g) 
+m_0 &: \forall (x y : O), M x y \rightarrow M_{0} (v_0 x) (v_0 y) \\
+m_S &: \forall n (x y z t : V_{n}) (f : M_{n} x y) (g : M_{n} z t), M_{S n} (v_S\,n\,x\,y\,f) (v_S\,n\,z\,t\,g) 
 \end{align}
 
 Coq (et d'autres assistants basés sur le CIC) ne permet pas la
-définition de familles mutuellement inductives (comme les $O_n$ et
+définition de familles mutuellement inductives (comme les $V_n$ et
 $M_n$ définis ci-dessus) si l'une des familles doit servir d'index à
 l'autre. Cette limite est justifiée par l'apparente impossibilité de
 faire référence à un constructeur dans le type d'un autre
