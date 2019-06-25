@@ -57,6 +57,12 @@ h1, h2, h3, h4, h5, h6 {
     &:active, &:focus { padding: 0; }
 }
 
+.math {
+    &.display {
+	text-align: left
+    }
+}
+
 @mixin grad($col) {
     background-image: linear-gradient(darken($col,10%) 5%, $col 80%, darken($col,5%));
 }
