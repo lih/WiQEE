@@ -35,7 +35,7 @@ M_{n} &: O_{n} \rightarrow O_{n} \rightarrow Type \\
 o_O &: O \rightarrow O_{0} \\
 o_S &: \forall n (x y : O_{n}), M_{n} x y \rightarrow O_{S n} \\
 m_O &: \forall (x y : O), M x y \rightarrow M_{0} (o_O x) (o_O y) \\
-m_S &: \forall n (x y z t : O_{n}) (f : M_{n} x y) (g : M_{n} z t), M_{S n} (o_S ... f) (o_S ... g) 
+m_S &: \forall n (x y z t : O_{n}) (f : M_{n} x y) (g : M_{n} z t), M_{S n} (o_S n x y f) (o_S n z t g) 
 \end{align}
 
 Coq (et d'autres assistants basés sur le CIC) ne permet pas la
