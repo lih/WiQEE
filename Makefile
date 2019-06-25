@@ -77,9 +77,9 @@ PANDOC_FLAGS += -f markdown+definition_lists+smart
 endif
 
 $(PUBLIC_ROOT)/%.html: $(TEMPLATE_ROOT)/header.html $(TEMPLATE_ROOT)/template.html $(CACHE_ROOT)/%.html.md $(CACHE_ROOT)/common.html.mdi | $(PUBLIC_ROOT)
-	pandoc $(PANDOC_FLAGS) $(PANDOC_HTML_FLAGS) -V module:$* $(CACHE_ROOT)/$*.html.md $(CACHE_ROOT)/common.html.mdi -o $@
-$(PUBLIC_ROOT)/%.pdf: $(TEMPLATE_ROOT)/header.tex $(CACHE_ROOT)/%.tex.md $(CACHE_ROOT)/common.tex.mdi | $(PUBLIC_ROOT)
-	pandoc $(PANDOC_FLAGS) -H $(TEMPLATE_ROOT)/header.tex -V module:$* $(CACHE_ROOT)/$*.tex.md $(CACHE_ROOT)/common.tex.mdi -o $@
+	pandoc $(PANDOC_FLAGS) $(PANDOC_HTML_FLAGS)  $(TEMPLATE_ROOT)/template.tex -V module:$* $(CACHE_ROOT)/$*.html.md $(CACHE_ROOT)/common.html.mdi -o $@
+$(PUBLIC_ROOT)/%.pdf: $(TEMPLATE_ROOT)/header.tex  $(TEMPLATE_ROOT)/template.tex $(CACHE_ROOT)/%.tex.md $(CACHE_ROOT)/common.tex.mdi | $(PUBLIC_ROOT)
+	pandoc $(PANDOC_FLAGS) -H $(TEMPLATE_ROOT)/header.tex --template $(TEMPLATE_ROOT)/template.tex -V module:$* $(CACHE_ROOT)/$*.tex.md $(CACHE_ROOT)/common.tex.mdi -o $@
 
 $(PUBLIC_ROOT)/theme-test.html: $(STATIC_ROOT)/theme-test.html
 	cp $< $@
