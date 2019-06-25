@@ -29,9 +29,11 @@ les familles de types inductifs $O_{n}$ et $M_{n} x y$ des diagrammes de dimensi
 $n$, dotés des constructeurs suivants :
 
 \begin{align}
+O_n &: Type \\
+M_{n} &: O_{n} \rightarrow O_{n} \rightarrow Type \\
+\\
 o_O &: O \rightarrow O_{0} \\
 o_S &: \forall n (x y : O_{n}), M_{n} x y \rightarrow O_{S n} \\
-M_{n} &: O_{n} \rightarrow O_{n} \rightarrow Type \\
 m_O &: \forall (x y : O), M x y \rightarrow M_{0} (o_O x) (o_O y) \\
 m_S &: \forall n (x y z t : O_{n}) (f : M_{n} x y) (g : M_{n} z t), M_{S n} (o_S ... f) (o_S ... g) 
 \end{align}
