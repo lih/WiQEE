@@ -34,7 +34,7 @@ suivants :
 v_0 &: O \rightarrow V_{0} \\
 v_S &: \forall n (x y : V_{n}), M_{n} x y \rightarrow V_{S n} \\
 m_0 &: \forall (x y : O), M x y \rightarrow M_{0} (v_0 x) (v_0 y) \\
-m_S &: \forall n (x y z t : V_{n}) (f : M_{n} x y) (g : M_{n} z t), M_{S n} (v_S\,n\,x\,y\,f) (v_S\,n\,z\,t\,g) 
+m_S &: \forall n (x y z t : V_{n}) (f : M_{n} x y) (g : M_{n} z t), M_{n} x z \rightarrow M_{n} y t \rightarrow M_{S n} (v_S\,n\,x\,y\,f) (v_S\,n\,z\,t\,g) 
 \end{align*}
 
 Coq (et d'autres assistants basés sur le CIC) ne permet pas la
