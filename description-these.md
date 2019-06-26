@@ -30,12 +30,12 @@ les familles de types inductifs $V_{n} : Type$ et $M_{n} : V_{n}
 n-morphismes de notre $\omega$-catégorie), dotés des constructeurs
 suivants :
 
-\begin{align}
+\begin{align*}
 v_0 &: O \rightarrow V_{0} \\
 v_S &: \forall n (x y : V_{n}), M_{n} x y \rightarrow V_{S n} \\
 m_0 &: \forall (x y : O), M x y \rightarrow M_{0} (v_0 x) (v_0 y) \\
 m_S &: \forall n (x y z t : V_{n}) (f : M_{n} x y) (g : M_{n} z t), M_{S n} (v_S\,n\,x\,y\,f) (v_S\,n\,z\,t\,g) 
-\end{align}
+\end{align*}
 
 Coq (et d'autres assistants basés sur le CIC) ne permet pas la
 définition de familles mutuellement inductives (comme les $V_n$ et
