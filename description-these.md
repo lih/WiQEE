@@ -1,8 +1,6 @@
 % Thèse : Définition et implémentation de schémas calculatoires pour la preuve de programmes
 % Marc Coiffier
 
-\newpage
-
 Ma thèse se faisant dans le cadre du project VOCAL (Verified OCAml
 Library, pour les intimes), j'ai tout d'abord découvert l'univers de
 la preuve formelle assistée par ordinateur, en me familiarisant avec
