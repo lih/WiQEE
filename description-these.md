@@ -24,6 +24,42 @@ théories mathématiques établies, afin de me faire une idée des limites
 que l'on pouvait rencontrer, et peut-être de trouver une contribution
 intéressante à apporter.
 
+Expériences avec Coq et Ltac
+--------------------------
+
+L'environnement de preuve interactif de Coq se base sur deux langages :
+
+  - le calcul des construction inductives (alias CIC), qui par
+    l'isomorphisme de Curry-Howard permet de justifier la véracité de
+    propriétés mathématique en fournissant des programmes qui
+    "implémentent" ces propriétés.
+
+    L'existence d'un terme de type $P$ suffit, en CIC, à prouver la
+    propriété $P$ (de façon plus générale, on peut supposer que la
+    propriété et sa preuve partagent un contexte $\Gamma$, qui peut
+    donner accès à certaines valeurs ou propriétés supplémentaires
+    sous forme d'hypothèses)
+
+  - un langage de tactiques, abrégé Ltac, qui permet de construire des
+    termes en CIC en suivant les propriétés que l'on cherche à
+    prouver, qui deviennent des *objectifs* de preuve (en anglais,
+    celà donne du *goal-oriented programming*).
+
+    En Ltac, on se préoccupe de raffiner des objectifs de preuve
+    jusqu'à la trivialité, c'est-à-dire jusqu'à que les propriétés que
+    l'on cherche à prouver soient fournies dans le contexte.
+
+D'un point de vue linguistique, Ltac réifie les objets du CIC, ce qui
+permet une manipulation de premier ordre des contextes et des preuves
+lors du développement de ces dernières. Ltac permet également la
+manipulation d'objets qui ne sont pas directement liés à la preuve,
+tels les entiers naturels et les noms d'hypothèses (dans la tactique
+`fix <n> <hyp>`, par exemple), ainsi que les tactiques elles-même, qui
+peuvent êtres stockées dans des "tactic objects", et utilisées au même
+titre que des tactiques natives.
+
+
+
 Limites du CIC simple
 ---------------------
 
