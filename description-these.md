@@ -55,8 +55,8 @@ lors du développement de ces dernières. Ltac permet également la
 manipulation d'objets qui ne sont pas directement liés à la preuve,
 tels les entiers naturels et les noms d'hypothèses (dans la tactique
 `fix <n> <hyp>`, par exemple), ainsi que les tactiques elles-même, qui
-peuvent êtres stockées dans des "tactic objects", et utilisées au même
-titre que des tactiques natives.
+peuvent êtres stockées dans des "tactic objects", et utilisées de
+manière similaire aux tactiques natives.
 
 
 
