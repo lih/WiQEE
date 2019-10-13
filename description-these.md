@@ -64,11 +64,36 @@ inversions", qui permet l'inversion de certaines hypothèses de manière
 plus concise que la tactique d'inversion générale, sans introduire de
 preuves d'égalité comme cette dernière.
 
+Lors de l'écriture de cette tactique, j'ai pu identifier certaines
+limites à la capacité de Ltac à inspecter des termes arbitraires, tout
+particulièrement des points fixes. En effet, les points fixes de Coq
+font l'objet de contraintes structurelles qui se prêtent mal à la
+déconstruction, de part la présence de paramètres privilégiés (dits
+*paramètres structurels*) qui se doivent de donner lieu à une preuve
+de décroissance structurelle lors de l'instanciation du point fixe
+considéré sur un argument inductif concret.
+
+De plus, Ltac étant un langage principalement dédié à l'exploration de
+plusieurs alternatives lors de la construction de preuves, il ne s'est
+pas doté de primitives simples pour la définition de structures de
+données hors du champ du CIC, ce qui complique considérablement son
+utilisation lors de l'écriture de scripts complexes. Les seules
+abstractions dont il dispose pour ce faire sont les "fonctions
+tactiques", des sortes de lambdas non-typées, qui permettent donc de
+retrouver cette expressivité manquante par encodage de Church et
+autres machinations peu recommandables.
+
+Ces limites (et d'autres plus techniques), à la fois dans le CIC de
+Coq et dans son langage de tactique, m'ont conduit à une réflexion sur
+la conception d'un environnement de preuve similaire, mais capable
+d'offrir à la fois un calcul capable de toutes les introspections, et
+un langage de manipulation de termes dans lequel l'exploration de
+nouvelles tactiques pourrait se faire plus naturellement.
 
 Limites du CIC simple
 ---------------------
 
-Lors de ces explorations, j'ai voulu modéliser des $\omega$-catégories
+Lors de cette réflexion, j'ai voulu modéliser des $\omega$-catégories
 (si je ne m'abuse sur les nomenclatures), qui peuvent être définies
 intuitivement à l'aide des structures suivantes :
 
