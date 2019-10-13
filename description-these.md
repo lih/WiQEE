@@ -58,6 +58,11 @@ tels les entiers naturels et les noms d'hypothèses (dans la tactique
 peuvent êtres stockées dans des "tactic objects", et utilisées de
 manière similaire aux tactiques natives.
 
+D'avril à juillet 2018, à la fin de ma première année, j'ai pu
+utiliser cette réification pour implémenter une tactique de "petites
+inversions", qui permet l'inversion de certaines hypothèses de manière
+plus concise que la tactique d'inversion générale, sans introduire de
+preuves d'égalité comme cette dernière.
 
 
 Limites du CIC simple
