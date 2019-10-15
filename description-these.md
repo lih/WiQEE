@@ -2,7 +2,7 @@
 % Marc Coiffier
 
 -----
-institute: Université Grenoble Alpes
+institute: Université Grenoble Alpes, France
 -----
 
 *À faire* :
