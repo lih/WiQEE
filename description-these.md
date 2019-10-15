@@ -27,7 +27,7 @@ intéressante à apporter.
 Expériences avec Coq et Ltac
 --------------------------
 
-L'environnement de preuve interactif de Coq se base sur deux langages :
+L'environnement de preuve interactif de Coq repose sur deux langages :
 
   - le calcul des construction inductives (alias CIC), qui par
     l'isomorphisme de Curry-Howard permet de justifier la véracité de
