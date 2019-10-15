@@ -1,6 +1,10 @@
 % Thèse : Définition et implémentation de schémas calculatoires pour la preuve de programmes
 % Marc Coiffier
 
+-----
+institute: Université Grenoble Alpes
+-----
+
 *À faire* :
 
   - renseigner machine CAM
