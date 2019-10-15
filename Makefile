@@ -5,6 +5,7 @@ TEMPLATE_ROOT := src/template
 CACHE_ROOT := cache
 STATIC_ROOT := static
 PUBLIC_ROOT := public
+PAPERS_ROOT := papers
 SASSC := $(shell which sassc || which sass 2>/dev/null)
 
 SRC := $(wildcard $(PAGES_ROOT)/*.md)
@@ -79,6 +80,9 @@ endif
 $(PUBLIC_ROOT)/%.html: $(TEMPLATE_ROOT)/header.html $(TEMPLATE_ROOT)/template.html $(CACHE_ROOT)/%.html.md $(CACHE_ROOT)/common.html.mdi | $(PUBLIC_ROOT)
 	pandoc $(PANDOC_FLAGS) $(PANDOC_HTML_FLAGS) -V module:$* $(CACHE_ROOT)/$*.html.md $(CACHE_ROOT)/common.html.mdi -o $@
 $(PUBLIC_ROOT)/%.pdf: $(TEMPLATE_ROOT)/header.tex  $(TEMPLATE_ROOT)/template.tex $(CACHE_ROOT)/%.tex.md $(CACHE_ROOT)/common.tex.mdi | $(PUBLIC_ROOT)
+	pandoc $(PANDOC_FLAGS) -H $(TEMPLATE_ROOT)/header.tex --template $(TEMPLATE_ROOT)/template.tex -V module:$* $(CACHE_ROOT)/$*.tex.md $(CACHE_ROOT)/common.tex.mdi -o $@
+
+$(PAPERS_ROOT)/%.tex: $(TEMPLATE_ROOT)/header.tex  $(PAPERS_ROOT)/%/template.tex $(CACHE_ROOT)/%.tex.md $(CACHE_ROOT)/common.tex.mdi
 	pandoc $(PANDOC_FLAGS) -H $(TEMPLATE_ROOT)/header.tex --template $(TEMPLATE_ROOT)/template.tex -V module:$* $(CACHE_ROOT)/$*.tex.md $(CACHE_ROOT)/common.tex.mdi -o $@
 
 $(PUBLIC_ROOT)/theme-test.html: $(STATIC_ROOT)/theme-test.html
