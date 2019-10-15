@@ -62,7 +62,8 @@ D'avril à juillet 2018, à la fin de ma première année, j'ai pu
 utiliser cette réification pour implémenter une tactique de "petites
 inversions", qui permet l'inversion de certaines hypothèses de manière
 plus concise que la tactique d'inversion générale, sans introduire de
-preuves d'égalité comme cette dernière.
+preuves d'égalité comme cette dernière, et parfois de façon à éviter
+une dépendance sur l'axiome K lors d'inductions fortement dépendantes.
 
 Lors de l'écriture de cette tactique, j'ai pu identifier certaines
 limites à la capacité de Ltac à inspecter des termes arbitraires, tout
